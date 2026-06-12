@@ -1,0 +1,35 @@
+{
+  "product": "Devia",
+  "channel": "stable",
+  "version": "0.21.0",
+  "pubDate": "2026-06-12T00:00:00Z",
+  "notes": "Primera publicación del sitio de descargas y actualizaciones de Devia Desktop.",
+  "notesUrl": "https://dherrero.github.io/devia/descargas/",
+  "platforms": {
+    "win32-x64": {
+      "url": "",
+      "sha512": "",
+      "size": 0
+    },
+    "darwin-x64": {
+      "url": "",
+      "sha512": "",
+      "size": 0
+    },
+    "darwin-arm64": {
+      "url": "",
+      "sha512": "",
+      "size": 0
+    },
+    "linux-x64-appimage": {
+      "url": "",
+      "sha512": "",
+      "size": 0
+    },
+    "linux-x64-deb": {
+      "url": "",
+      "sha512": "",
+      "size": 0
+    }
+  }
+}

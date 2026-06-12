@@ -1,0 +1,285 @@
+/* Devia Desktop — GitHub Pages site
+   Dark theme inspired by the app's M3 dark palette (--dv-* tokens). */
+
+:root {
+  --bg: #121212;
+  --bg-alt: #1a1a1f;
+  --surface: #1e1e24;
+  --surface-2: #26262e;
+  --border: #34343e;
+  --text: #e6e6eb;
+  --text-dim: #a6a6b3;
+  --acc: #8ab4f8;
+  --acc-strong: #aecbfa;
+  --acc-contrast: #0b1526;
+  --radius: 0.75rem;
+  --maxw: 70rem;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; }
+
+a { color: var(--acc); text-decoration: none; }
+a:hover { color: var(--acc-strong); text-decoration: underline; }
+
+code {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 0.3em;
+  padding: 0.1em 0.35em;
+  font-size: 0.9em;
+}
+
+pre {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  overflow-x: auto;
+}
+pre code { background: none; border: 0; padding: 0; }
+
+.container {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* ---------- header ---------- */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(18, 18, 18, 0.85);
+  backdrop-filter: blur(0.5rem);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 3.5rem;
+  gap: 1rem;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--text);
+}
+.brand:hover { text-decoration: none; color: var(--text); }
+.brand img { border-radius: 0.4rem; }
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+.nav-links a { color: var(--text-dim); }
+.nav-links a:hover, .nav-links a[aria-current="page"] { color: var(--text); }
+
+/* ---------- buttons ---------- */
+
+.btn {
+  display: inline-block;
+  border: 1px solid var(--border);
+  border-radius: 2rem;
+  padding: 0.6rem 1.4rem;
+  color: var(--text);
+  background: var(--surface);
+  font-weight: 600;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+.btn:hover { background: var(--surface-2); text-decoration: none; color: var(--text); }
+
+.btn-primary {
+  background: var(--acc);
+  border-color: var(--acc);
+  color: var(--acc-contrast);
+}
+.btn-primary:hover { background: var(--acc-strong); border-color: var(--acc-strong); color: var(--acc-contrast); }
+
+.btn-sm { padding: 0.35rem 1rem; font-size: 0.95rem; }
+
+/* ---------- hero ---------- */
+
+.hero {
+  text-align: center;
+  padding: 5rem 0 4rem;
+  background:
+    radial-gradient(60rem 30rem at 50% -10rem, rgba(138, 180, 248, 0.12), transparent),
+    var(--bg);
+}
+
+.hero-logo { border-radius: 1.25rem; margin-bottom: 1.5rem; }
+
+.hero h1 {
+  font-size: clamp(1.8rem, 4.5vw, 3rem);
+  line-height: 1.15;
+  margin: 0 0 1rem;
+}
+
+.lead {
+  max-width: 46rem;
+  margin: 0 auto 1.5rem;
+  color: var(--text-dim);
+  font-size: 1.15rem;
+}
+
+.lead-sm {
+  max-width: 50rem;
+  color: var(--text-dim);
+  font-size: 1.05rem;
+}
+
+.hero-badges { display: flex; flex-wrap: wrap; gap: 0.6rem; justify-content: center; margin-bottom: 2rem; }
+
+.badge {
+  display: inline-block;
+  border: 1px solid var(--border);
+  border-radius: 2rem;
+  padding: 0.25rem 0.9rem;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  background: var(--surface);
+}
+
+.hero-actions { display: flex; flex-wrap: wrap; gap: 0.9rem; justify-content: center; }
+
+/* ---------- sections ---------- */
+
+.section { padding: 4rem 0; }
+.section-alt { background: var(--bg-alt); border-block: 1px solid var(--border); }
+.section h2 { font-size: 1.75rem; margin: 0 0 1.5rem; }
+.section-inner { margin-top: 3rem; }
+.center { text-align: center; }
+.center .lead-sm { margin-inline: auto; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  gap: 1.25rem;
+}
+
+.grid-platforms { grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr)); }
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+}
+.card h3 { margin: 0 0 0.6rem; font-size: 1.1rem; }
+.card p { margin: 0; color: var(--text-dim); font-size: 0.97rem; }
+
+.cols-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.cols-3 h3 { margin: 0 0 0.5rem; color: var(--acc); }
+.cols-3 p { color: var(--text-dim); margin: 0; }
+
+/* ---------- downloads ---------- */
+
+.platform h2 { font-size: 1.3rem; margin: 0 0 0.6rem; }
+.platform .btn { margin: 0.5rem 0.5rem 0.25rem 0; }
+.platform .hint { font-size: 0.85rem; margin-top: 0.9rem; }
+.dl-fallback { color: var(--text-dim); font-style: italic; margin: 0.75rem 0 0; }
+
+/* ---------- docs ---------- */
+
+.docs-layout {
+  display: grid;
+  grid-template-columns: 14rem minmax(0, 1fr);
+  gap: 3rem;
+  padding-top: 2.5rem;
+  padding-bottom: 4rem;
+}
+
+.docs-toc nav {
+  position: sticky;
+  top: 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+}
+.docs-toc strong { margin-bottom: 0.25rem; }
+.docs-toc a { color: var(--text-dim); }
+.docs-toc a:hover { color: var(--text); text-decoration: none; }
+
+.docs-content h1 { font-size: 2rem; margin-top: 0; }
+.docs-content section { margin-bottom: 3rem; }
+.docs-content h2 {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.4rem;
+  margin-top: 2.5rem;
+}
+.docs-content h3 { margin-top: 1.75rem; }
+.docs-content li { margin-bottom: 0.35rem; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+th, td {
+  text-align: left;
+  border: 1px solid var(--border);
+  padding: 0.55rem 0.8rem;
+}
+th { background: var(--surface); }
+tr:nth-child(even) td { background: var(--bg-alt); }
+
+/* ---------- footer ---------- */
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  background: var(--bg-alt);
+  padding: 2.5rem 0 1.5rem;
+  margin-top: 2rem;
+}
+
+.footer-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.footer-grid p { color: var(--text-dim); margin: 0.25rem 0 0; }
+
+.footer-links { display: flex; flex-direction: column; gap: 0.4rem; }
+
+.copyright {
+  margin-top: 2rem;
+  color: var(--text-dim);
+  font-size: 0.85rem;
+}
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 48rem) {
+  .docs-layout { grid-template-columns: 1fr; gap: 1.5rem; }
+  .docs-toc nav { position: static; }
+  .nav-links { gap: 0.9rem; font-size: 0.95rem; }
+  .hero { padding: 3.5rem 0 3rem; }
+}

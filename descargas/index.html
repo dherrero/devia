@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Descargas — Devia Desktop</title>
+  <meta name="description" content="Descarga Devia Desktop para Windows, macOS y Linux. Gratis, con el 100% de las funcionalidades.">
+  <link rel="icon" type="image/png" href="../assets/img/devia.png">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <script>window.DEVIA_ROOT = '..';</script>
+  <script defer src="../assets/js/main.js"></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="container nav">
+      <a class="brand" href="../">
+        <img src="../assets/img/devia.png" alt="" width="32" height="32">
+        <span>Devia</span>
+      </a>
+      <div class="nav-links">
+        <a href="../#funcionalidades">Funcionalidades</a>
+        <a href="../docs/">Documentación</a>
+        <a href="./" class="btn btn-sm" aria-current="page">Descargar</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <h1>Descargas</h1>
+        <p class="lead-sm">
+          Última versión: <strong id="dl-version">—</strong>
+          <span id="dl-date"></span>
+        </p>
+
+        <div class="grid grid-platforms">
+
+          <article class="card platform" data-platform="win32-x64">
+            <h2>🪟 Windows</h2>
+            <p>Instalador NSIS para Windows 10/11 (x64). Permite elegir el directorio de instalación.</p>
+            <a class="btn btn-primary dl-btn" data-key="win32-x64" href="#" hidden>Descargar .exe</a>
+            <p class="dl-fallback" data-key="win32-x64">Próximamente</p>
+            <p class="hint">Si SmartScreen muestra un aviso, pulsa «Más información → Ejecutar de todas formas».</p>
+          </article>
+
+          <article class="card platform" data-platform="darwin">
+            <h2>🍎 macOS</h2>
+            <p>Imagen de disco <code>.dmg</code> firmada y notarizada. Arrastra Devia a Aplicaciones.</p>
+            <a class="btn btn-primary dl-btn" data-key="darwin-arm64" href="#" hidden>Apple Silicon (.dmg)</a>
+            <a class="btn btn-primary dl-btn" data-key="darwin-x64" href="#" hidden>Intel (.dmg)</a>
+            <p class="dl-fallback" data-key="darwin-arm64">Próximamente</p>
+            <p class="hint">Compatible con macOS 11 Big Sur o superior.</p>
+          </article>
+
+          <article class="card platform" data-platform="linux">
+            <h2>🐧 Linux</h2>
+            <p>AppImage universal o paquete <code>.deb</code> para Debian/Ubuntu (x64).</p>
+            <a class="btn btn-primary dl-btn" data-key="linux-x64-appimage" href="#" hidden>AppImage</a>
+            <a class="btn btn-primary dl-btn" data-key="linux-x64-deb" href="#" hidden>.deb</a>
+            <p class="dl-fallback" data-key="linux-x64-appimage">Próximamente</p>
+            <p class="hint">AppImage: da permisos de ejecución con <code>chmod +x</code> y lánzalo.</p>
+          </article>
+
+        </div>
+
+        <section class="section-inner">
+          <h2>Notas de la versión</h2>
+          <p id="dl-notes">—</p>
+        </section>
+
+        <section class="section-inner">
+          <h2>Actualizaciones</h2>
+          <p>
+            Devia Desktop comprueba nuevas versiones contra el manifiesto público de este sitio:
+            <a href="../updates/latest.json"><code>updates/latest.json</code></a>.
+            Puedes consultarlo manualmente o integrarlo en tus propios scripts.
+          </p>
+        </section>
+
+        <section class="section-inner">
+          <h2>Requisitos</h2>
+          <ul>
+            <li>Al menos un agente CLI de codificación instalado: Claude Code, OpenAI Codex, Gemini CLI,
+                OpenCode, Cursor Agent, GitHub Copilot CLI, Qwen, DeepSeek o Qoder. Devia los detecta automáticamente.</li>
+            <li>Git instalado (recomendado) para el estado del repositorio, los diffs y los worktrees de la vista dividida.</li>
+            <li>Docker (opcional) para la orquestación de Docker Compose por proyecto.</li>
+          </ul>
+        </section>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <strong>Devia Desktop</strong>
+        <p>Tu centro de mando para el desarrollo de software con IA.</p>
+      </div>
+      <nav class="footer-links">
+        <a href="../docs/">Documentación</a>
+        <a href="./">Descargas</a>
+        <a href="../updates/latest.json">Feed de actualizaciones</a>
+      </nav>
+    </div>
+    <div class="container copyright">
+      <p>© 2026 Dani Herrero · Devia</p>
+    </div>
+  </footer>
+
+</body>
+</html>

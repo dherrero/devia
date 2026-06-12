@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Devia Desktop — Tu centro de mando para el desarrollo de software con IA</title>
+  <meta name="description" content="Devia Desktop es una aplicación de escritorio gratuita (Windows, macOS y Linux) para dirigir agentes de codificación CLI — Claude Code, Codex, Gemini CLI, OpenCode y más — desde una sola ventana.">
+  <link rel="icon" type="image/png" href="assets/img/devia.png">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script>window.DEVIA_ROOT = '.';</script>
+  <script defer src="assets/js/main.js"></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="container nav">
+      <a class="brand" href="./">
+        <img src="assets/img/devia.png" alt="" width="32" height="32">
+        <span>Devia</span>
+      </a>
+      <div class="nav-links">
+        <a href="#funcionalidades">Funcionalidades</a>
+        <a href="docs/">Documentación</a>
+        <a href="descargas/" class="btn btn-sm">Descargar</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="container">
+        <img class="hero-logo" src="assets/img/devia.png" alt="Logo de Devia" width="96" height="96">
+        <h1>Tu centro de mando para el<br>desarrollo de software con IA</h1>
+        <p class="lead">
+          Devia Desktop es una interfaz amigable y unificada sobre múltiples herramientas CLI agénticas
+          — Claude Code, Codex, Gemini CLI, OpenCode y más — que convierte el trabajo con agentes en
+          terminal en una experiencia visual, organizada y multiproyecto.
+        </p>
+        <p class="hero-badges">
+          <span class="badge">FreeWare — 100% de las funcionalidades, gratis</span>
+          <span class="badge">Windows · macOS · Linux</span>
+          <span class="badge" id="hero-version" hidden></span>
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="descargas/">Descargar Devia Desktop</a>
+          <a class="btn" href="docs/">Leer la documentación</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="funcionalidades" class="section">
+      <div class="container">
+        <h2>¿Qué hace Devia Desktop?</h2>
+        <div class="grid">
+
+          <article class="card">
+            <h3>🤖 Multi-agente</h3>
+            <p>Trabaja con Claude Code, OpenAI Codex, Gemini CLI, OpenCode, Cursor Agent, GitHub Copilot CLI,
+            Qwen, DeepSeek o Qoder, y cambia de agente sin cambiar de herramienta. Devia detecta los CLIs
+            instalados y configura cada proyecto para que funcionen sin ajustes manuales.</p>
+          </article>
+
+          <article class="card">
+            <h3>💬 Chat visual sobre el agente</h3>
+            <p>Streaming de respuestas, markdown, llamadas a herramientas desplegables, visor de diffs
+            y adjuntos de imágenes para modelos multimodales.</p>
+          </article>
+
+          <article class="card">
+            <h3>🪟 Multiproyecto y multisesión</h3>
+            <p>Historial de sesiones por proyecto, cola de instrucciones y vista dividida de hasta 4 paneles
+            con sesión y git worktree independientes por panel — varios agentes trabajando en paralelo
+            en una sola ventana.</p>
+          </article>
+
+          <article class="card">
+            <h3>📋 Kanban con SDD integrado</h3>
+            <p>Tablero por proyecto que el propio agente lee y actualiza vía MCP (<code>devia-kanban</code>),
+            con specs, tareas, dependencias y flujo spec-driven development.</p>
+          </article>
+
+          <article class="card">
+            <h3>🧠 Memoria persistente</h3>
+            <p>Devia incluye su propia memoria entre sesiones (<code>devia-memory</code>), con ámbito personal
+            y por proyecto, que el agente consulta y alimenta automáticamente.</p>
+          </article>
+
+          <article class="card">
+            <h3>🌿 Git integrado</h3>
+            <p>Estado del repositorio en vivo, visor de cambios con comentarios en línea para pedir
+            revisiones al agente, y soporte de worktrees.</p>
+          </article>
+
+          <article class="card">
+            <h3>🔌 Gestor de servidores MCP</h3>
+            <p>Instala, activa y comparte servidores MCP entre agentes; Devia inyecta la configuración
+            en el formato nativo de cada CLI.</p>
+          </article>
+
+          <article class="card">
+            <h3>✨ Skills y prompt packs</h3>
+            <p>Descubre e instala skills (locales o desde GitHub) y define paquetes de prompt de sistema
+            por proyecto.</p>
+          </article>
+
+          <article class="card">
+            <h3>📱 Control remoto por Telegram</h3>
+            <p>Lanza ejecuciones, consulta el estado y conversa con el agente desde Telegram, con espejo
+            opcional de la conversación de escritorio.</p>
+          </article>
+
+          <article class="card">
+            <h3>🖥️ Terminal y shell</h3>
+            <p>Terminal integrado por proyecto (PTY real), apertura en tu IDE favorito y orquestación
+            de Docker Compose.</p>
+          </article>
+
+          <article class="card">
+            <h3>🎙️ Voz</h3>
+            <p>Transcripción local con Whisper, sin enviar audio a ninguna API.</p>
+          </article>
+
+          <article class="card">
+            <h3>🛡️ Snapshots y auditoría</h3>
+            <p>Instantáneas y rollback antes de operaciones destructivas, y registro de auditoría de cada
+            tool-call con rotación y retención automática.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <h2>Hecho para trabajar en local</h2>
+        <p class="lead-sm">
+          Devia Desktop funciona sobre tus proyectos y tus CLIs, en tu máquina. Tus sesiones, tu memoria,
+          tu kanban y tu configuración viven en tu disco (<code>~/.devia-app/</code>). Sin cuentas,
+          sin nube y sin telemetría: instalas, eliges tu carpeta de trabajo y empiezas a dirigir agentes.
+        </p>
+        <div class="cols-3">
+          <div>
+            <h3>1 · Instala</h3>
+            <p>Descarga el instalador de tu plataforma y ábrelo. No requiere configuración previa.</p>
+          </div>
+          <div>
+            <h3>2 · Conecta tus agentes</h3>
+            <p>Devia detecta los CLIs de codificación que ya tienes instalados (Claude Code, Codex,
+            Gemini CLI…) y los deja listos para usar.</p>
+          </div>
+          <div>
+            <h3>3 · Dirige</h3>
+            <p>Abre un proyecto de tu workspace y conversa: el agente programa, tú revisas diffs,
+            apruebas y encolas las siguientes instrucciones.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container center">
+        <h2>Descarga Devia Desktop</h2>
+        <p class="lead-sm">Gratis, con el 100% de las funcionalidades. Disponible para Windows, macOS y Linux.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="descargas/">Ir a descargas</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <strong>Devia Desktop</strong>
+        <p>Tu centro de mando para el desarrollo de software con IA.</p>
+      </div>
+      <nav class="footer-links">
+        <a href="docs/">Documentación</a>
+        <a href="descargas/">Descargas</a>
+        <a href="updates/latest.json">Feed de actualizaciones</a>
+      </nav>
+    </div>
+    <div class="container copyright">
+      <p>© 2026 Dani Herrero · Devia</p>
+    </div>
+  </footer>
+
+</body>
+</html>

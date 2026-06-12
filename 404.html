@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página no encontrada — Devia Desktop</title>
+  <style>
+    body {
+      margin: 0; min-height: 100vh; display: grid; place-items: center;
+      background: #121212; color: #e6e6eb;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      text-align: center;
+    }
+    h1 { font-size: 3rem; margin: 0 0 0.5rem; }
+    p { color: #a6a6b3; }
+    a { color: #8ab4f8; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>404</h1>
+    <p>Esta página no existe.</p>
+    <p><a href="javascript:history.back()">Volver atrás</a> · <a href="/" id="home-link">Ir al inicio</a></p>
+  </main>
+  <script>
+    // En una project page el sitio cuelga del primer segmento de la ruta
+    // (p. ej. /devia/ o /devia.github.io/); en una org page cuelga de la raíz.
+    (function () {
+      var seg = location.pathname.split('/')[1];
+      if (seg) document.getElementById('home-link').href = '/' + seg + '/';
+    })();
+  </script>
+</body>
+</html>
