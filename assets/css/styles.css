@@ -69,6 +69,7 @@ pre code { background: none; border: 0; padding: 0; }
 }
 
 .nav {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -92,8 +93,21 @@ pre code { background: none; border: 0; padding: 0; }
   align-items: center;
   gap: 1.25rem;
 }
-.nav-links a { color: var(--text-dim); }
+.nav-links a { color: var(--text-dim); white-space: nowrap; }
 .nav-links a:hover, .nav-links a[aria-current="page"] { color: var(--text); }
+
+.nav-toggle {
+  display: none;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  color: var(--text);
+  padding: 0.35rem 0.65rem;
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.nav-toggle:hover { background: var(--surface-2); }
 
 /* ---------- buttons ---------- */
 
@@ -277,9 +291,31 @@ tr:nth-child(even) td { background: var(--bg-alt); }
 
 /* ---------- responsive ---------- */
 
+@media (max-width: 52rem) {
+  .nav-toggle { display: inline-block; }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background: var(--bg-alt);
+    border-bottom: 1px solid var(--border);
+    padding: 0.5rem 1.25rem 1rem;
+    box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.4);
+  }
+  .nav.nav-open .nav-links { display: flex; }
+
+  .nav-links a { padding: 0.65rem 0; }
+  .nav-links .btn { align-self: flex-start; margin-top: 0.5rem; padding: 0.5rem 1.25rem; }
+}
+
 @media (max-width: 48rem) {
   .docs-layout { grid-template-columns: 1fr; gap: 1.5rem; }
   .docs-toc nav { position: static; }
-  .nav-links { gap: 0.9rem; font-size: 0.95rem; }
   .hero { padding: 3.5rem 0 3rem; }
 }
