@@ -2,7 +2,7 @@
   <img src="assets/img/devia.png" alt="Devia" width="96">
 </p>
 
-<h1 align="center">Devia Desktop</h1>
+<h1 align="center">Devia</h1>
 
 <p align="center">
   <strong>Tu centro de mando para el desarrollo de software con IA.</strong><br>
