@@ -1,35 +1,35 @@
 {
   "product": "Devia",
   "channel": "stable",
-  "version": "0.21.0",
-  "pubDate": "2026-06-12T00:00:00Z",
-  "notes": "Primera publicación del sitio de descargas y actualizaciones de Devia Desktop.",
+  "version": "0.29.4",
+  "pubDate": "2026-06-18T09:01:50.189Z",
+  "notes": "Devia Desktop v0.29.4",
   "notesUrl": "https://dherrero.github.io/devia/descargas/",
   "platforms": {
     "win32-x64": {
-      "url": "",
+      "url": "https://github.com/dherrero/devia/releases/download/v0.29.4/Devia-Setup-0.29.4.exe",
       "sha512": "",
-      "size": 0
+      "size": 111316384
     },
     "darwin-x64": {
-      "url": "",
+      "url": "https://github.com/dherrero/devia/releases/download/v0.29.4/Devia-0.29.4.dmg",
       "sha512": "",
-      "size": 0
+      "size": 133545661
     },
     "darwin-arm64": {
-      "url": "",
+      "url": "https://github.com/dherrero/devia/releases/download/v0.29.4/Devia-0.29.4-arm64.dmg",
       "sha512": "",
-      "size": 0
+      "size": 126419998
     },
     "linux-x64-appimage": {
-      "url": "",
+      "url": "https://github.com/dherrero/devia/releases/download/v0.29.4/Devia-0.29.4.AppImage",
       "sha512": "",
-      "size": 0
+      "size": 128351001
     },
     "linux-x64-deb": {
-      "url": "",
+      "url": "https://github.com/dherrero/devia/releases/download/v0.29.4/devia-app_0.29.4_amd64.deb",
       "sha512": "",
-      "size": 0
+      "size": 101342824
     }
   }
 }
