@@ -233,7 +233,7 @@
           { "q": "Devia inclou els agents d'IA?", "a": "No: Devia és la interfície que els dirigix. Necessites tindre instal·lat almenys un CLI agèntic (Claude Code, Codex, Gemini CLI, OpenCode…) amb les seues credencials. Devia els detecta i s'encarrega de la resta." },
           { "q": "Les meues dades ixen de la meua màquina?", "a": "No. Sessions, memòria, kanban i configuració viuen en <code>~/.devia-app/</code>. La transcripció de veu amb Whisper també s'executa en local. L'únic que viaja és el que l'agent CLI que uses envia al seu propi proveïdor." },
           { "q": "En quins idiomes està disponible?", "a": "Espanyol, anglés, valencià, francés, alemany, italià, portugués, rus, xinés, hindi i àrab." },
-          { "q": "Com reporto un problema?", "a": "Obri una incidència en el repositori de GitHub de Devia amb els passos per a reproduir-lo i la teua plataforma (Windows/macOS/Linux)." }
+          { "q": "Com reporto un problema?", "a": "Obri una incidència en el <a href=\"https://github.com/dherrero/devia/issues\" target=\"_blank\" rel=\"noopener\">repositori de GitHub de Devia</a> amb els passos per a reproduir-lo i la teua plataforma (Windows/macOS/Linux)." }
         ]
       }
     }
