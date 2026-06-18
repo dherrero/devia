@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documentation — Devia Desktop</title>
+  <meta name="description" content="Devia Desktop documentation: installation, getting started, features, configuration, and updates.">
+  <link rel="canonical" href="https://dherrero.github.io/devia/en/docs/">
+  <link rel="alternate" hreflang="es" href="https://dherrero.github.io/devia/docs/">
+  <link rel="alternate" hreflang="en" href="https://dherrero.github.io/devia/en/docs/">
+  <link rel="alternate" hreflang="ca" href="https://dherrero.github.io/devia/ca/docs/">
+  <link rel="alternate" hreflang="fr" href="https://dherrero.github.io/devia/fr/docs/">
+  <link rel="alternate" hreflang="de" href="https://dherrero.github.io/devia/de/docs/">
+  <link rel="alternate" hreflang="it" href="https://dherrero.github.io/devia/it/docs/">
+  <link rel="alternate" hreflang="pt" href="https://dherrero.github.io/devia/pt/docs/">
+  <link rel="alternate" hreflang="ru" href="https://dherrero.github.io/devia/ru/docs/">
+  <link rel="alternate" hreflang="zh" href="https://dherrero.github.io/devia/zh/docs/">
+  <link rel="alternate" hreflang="hi" href="https://dherrero.github.io/devia/hi/docs/">
+  <link rel="alternate" hreflang="ar" href="https://dherrero.github.io/devia/ar/docs/">
+  <link rel="alternate" hreflang="x-default" href="https://dherrero.github.io/devia/docs/">
+  <link rel="icon" type="image/png" href="../../assets/img/devia.png">
+  <link rel="stylesheet" href="../../assets/css/styles.css">
+  <script>window.DEVIA_ROOT = '../..';</script>
+  <script>window.DEVIA_I18N = {"heroVersionLabel":"Latest version: v","publishedOn":" · released on ","locale":"en-US"};</script>
+  <script defer src="../../assets/js/main.js"></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="container nav">
+      <a class="brand" href="../../en/">
+        <img src="../../assets/img/devia.png" alt="" width="32" height="32">
+        <span>Devia</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">☰</button>
+      <div class="nav-links" id="nav-menu">
+        <a href="../../en/#funcionalidades">Features</a>
+        <a href="../../en/docs/" aria-current="page">Documentation</a>
+        <a href="../../en/descargas/" class="btn btn-sm">Download</a>
+        <label class="lang-switch">
+          <span class="sr-only">Language</span>
+          <select class="lang-select" aria-label="Language">
+          <option value="../../docs/" data-lang="es">Español</option>
+          <option value="../../en/docs/" data-lang="en" selected>English</option>
+          <option value="../../ca/docs/" data-lang="ca">Valencià</option>
+          <option value="../../fr/docs/" data-lang="fr">Français</option>
+          <option value="../../de/docs/" data-lang="de">Deutsch</option>
+          <option value="../../it/docs/" data-lang="it">Italiano</option>
+          <option value="../../pt/docs/" data-lang="pt">Português</option>
+          <option value="../../ru/docs/" data-lang="ru">Русский</option>
+          <option value="../../zh/docs/" data-lang="zh">简体中文</option>
+          <option value="../../hi/docs/" data-lang="hi">हिन्दी</option>
+          <option value="../../ar/docs/" data-lang="ar">العربية</option>
+        </select>
+        </label>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container docs-layout">
+
+    <aside class="docs-toc" aria-label="Contents">
+      <nav>
+        <strong>Contents</strong>
+        <a href="#que-es">What is Devia Desktop?</a>
+        <a href="#instalacion">Installation</a>
+        <a href="#primeros-pasos">Getting started</a>
+        <a href="#agentes">Supported agents</a>
+        <a href="#funcionalidades">Features</a>
+        <a href="#configuracion">Configuration and data</a>
+        <a href="#actualizaciones">Updates</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+    </aside>
+
+    <article class="docs-content">
+
+      <h1>Devia Desktop Documentation</h1>
+
+      <section id="que-es">
+        <h2>What is Devia Desktop?</h2>
+        <p>Devia Desktop is a desktop application for developing software with AI agents. It is a friendly, unified interface over multiple agentic CLI tools (Claude Code, Codex, Gemini CLI, and more) that turns working with terminal agents into a visual, organized, multi-project experience.</p>
+        <p>It is <strong>FreeWare</strong>: free with 100% of features included, available for Windows, macOS, and Linux. Everything runs locally, on top of your projects and your CLIs — no account or connection to any external service required.</p>
+      </section>
+
+      <section id="instalacion">
+        <h2>Installation</h2>
+
+        <h3>Windows</h3>
+        <ol>
+          <li>Download the <code>.exe</code> installer from the <a href="../../en/descargas/">downloads page</a>.</li>
+          <li>Run it and choose the installation directory (per-user installation, no administrator privileges needed).</li>
+          <li>If SmartScreen shows a warning, click "More info → Run anyway".</li>
+        </ol>
+
+        <h3>macOS</h3>
+        <ol>
+          <li>Download the <code>.dmg</code> for your architecture (Apple Silicon or Intel).</li>
+          <li>Open it and drag <strong>Devia</strong> into the <strong>Applications</strong> folder.</li>
+          <li>The app is signed and notarized by Apple: it opens with no additional steps.</li>
+        </ol>
+
+        <h3>Linux</h3>
+        <ol>
+          <li><strong>AppImage</strong>: download it, make it executable with <code>chmod +x Devia-*.AppImage</code>, and run it.</li>
+          <li><strong>Debian/Ubuntu</strong>: install the package with <code>sudo dpkg -i devia_*_amd64.deb</code>.</li>
+        </ol>
+      </section>
+
+      <section id="primeros-pasos">
+        <h2>Getting started</h2>
+        <ol>
+          <li><strong>Choose your workspace.</strong> The first time you open Devia, a modal asks for the root folder where your projects live (for example, <code>~/repos</code>). Devia lists the projects it finds and detects their technology stack.</li>
+          <li><strong>Connect an agent.</strong> Devia detects the agentic CLIs installed on your machine and lets you choose the active agent in Settings. Each project is configured so the agent works with no manual adjustments.</li>
+          <li><strong>Chat.</strong> Open a project and type your first instruction in the composer. Choose the execution mode — <em>plan</em> (plan only), <em>apply</em> (apply with permissions), or <em>apply-yolo</em> (no confirmations) — depending on how much autonomy you want to grant.</li>
+          <li><strong>Review.</strong> Each response streams in with markdown, tool calls expand into cards, and the agent's changes appear as inline diffs.</li>
+        </ol>
+      </section>
+
+      <section id="agentes">
+        <h2>Supported agents</h2>
+        <p>Devia works with the following coding CLIs, and you can switch between them without leaving the app:</p>
+        <table>
+          <thead><tr><th>Agent</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td>Claude Code</td><td>Full integration, including per-run MCP servers</td></tr>
+            <tr><td>OpenAI Codex</td><td>JSON event streaming</td></tr>
+            <tr><td>Gemini CLI</td><td>JSON event streaming</td></tr>
+            <tr><td>OpenCode</td><td>JSON event streaming</td></tr>
+            <tr><td>Cursor Agent</td><td>JSON event streaming</td></tr>
+            <tr><td>GitHub Copilot CLI</td><td>JSON event streaming</td></tr>
+            <tr><td>Qwen · DeepSeek · Qoder</td><td>Plain-text output</td></tr>
+          </tbody>
+        </table>
+        <p>When continuing a session with a different agent than the one that started it, Devia performs an <strong>automatic context handoff</strong>: it injects a summary of the work (goal, files touched, and recent exchanges) into the new agent's first turn and places a divider in the chat.</p>
+      </section>
+
+      <section id="funcionalidades">
+        <h2>Features</h2>
+
+        <h3>Multi-project and sessions</h3>
+        <ul>
+          <li>List, create (blank or from a template), and clone projects; pin favorites to the sidebar.</li>
+          <li>Per-project session history that survives restarts; resume or restart a session with one click.</li>
+          <li>Instruction queue: queue prompts while the agent is busy, reorder with drag and drop, pause and resume.</li>
+        </ul>
+
+        <h3>Multi-session split view</h3>
+        <ul>
+          <li>Up to 4 panels (2×2) in the same window, each with its own session and its agent working in parallel.</li>
+          <li>Each additional panel works <strong>isolated in its own git worktree</strong> (a new branch from the main branch) so two agents never step on the same files.</li>
+          <li>The split and its worktrees survive app restarts, restoring each session's files.</li>
+        </ul>
+
+        <h3>Kanban with built-in SDD</h3>
+        <ul>
+          <li>Per-project Kanban board with specs, tasks, and dependencies.</li>
+          <li>The agent itself reads and updates the board via MCP (<code>devia-kanban</code>): end-to-end spec-driven development workflow.</li>
+          <li>Board state lives outside the repository, in Devia's data folder.</li>
+        </ul>
+
+        <h3>Persistent memory</h3>
+        <ul>
+          <li>Cross-session memory (<code>devia-memory</code>) scoped personally and per project.</li>
+          <li>The agent queries and feeds it automatically: decisions, resolved bugs, and discoveries are all recorded.</li>
+          <li>Management panel in Settings: search, pin, forget, or clear observations.</li>
+        </ul>
+
+        <h3>Built-in Git</h3>
+        <ul>
+          <li>Live repository status in the sidebar.</li>
+          <li>Change viewer with inline comments: annotate diff lines and send them to the agent as a review request.</li>
+          <li>Worktree support and snapshots with rollback before destructive operations.</li>
+        </ul>
+
+        <h3>MCP servers, skills, and prompts</h3>
+        <ul>
+          <li>Model Context Protocol server manager: install, enable, test, and share servers across agents; Devia injects the configuration in each CLI's native format.</li>
+          <li>Discover and install local or GitHub-hosted skills.</li>
+          <li>Prompt packs: per-project system prompt packages.</li>
+          <li>Reusable multi-CLI sub-agent manager, shared across projects.</li>
+        </ul>
+
+        <h3>Remote control via Telegram</h3>
+        <ul>
+          <li>Launch runs, check status (branch, context used, cost), and chat with the agent from Telegram.</li>
+          <li>Optional mirroring of the desktop conversation and forwarding of attachments (photos, documents) to the agent.</li>
+        </ul>
+
+        <h3>Terminal, voice, and more</h3>
+        <ul>
+          <li>Per-project integrated terminal with a real PTY, and open-in-your-favorite-IDE support.</li>
+          <li>Docker Compose orchestration: deploy, down, and logs per project.</li>
+          <li>Local voice transcription with Whisper — audio never leaves your machine.</li>
+          <li>Drag-and-drop image attachments for multimodal models.</li>
+          <li>Project file browser in the right rail and an archive of files generated by the agent (outbox).</li>
+          <li>Audit log of every tool-call with rotation and a 30-day retention policy.</li>
+          <li>11 languages (es, en, ca, fr, de, it, pt, ru, zh, hi, ar), 8 Material 3 accent palettes, and adjustable font size.</li>
+        </ul>
+      </section>
+
+      <section id="configuracion">
+        <h2>Configuration and data</h2>
+        <p>All Devia data lives on your disk, under <code>~/.devia-app/</code> (on Windows, <code>C:\Users\&lt;tu-usuario&gt;\.devia-app\</code>):</p>
+        <table>
+          <thead><tr><th>Path</th><th>Contents</th></tr></thead>
+          <tbody>
+            <tr><td><code>devia-app.config.json</code></td><td>Settings: workspace, active agent, theme, language…</td></tr>
+            <tr><td><code>sessions/&lt;proyecto&gt;/</code></td><td>Per-project chat history</td></tr>
+            <tr><td><code>projects/&lt;clave&gt;/kanban.json</code></td><td>Project Kanban board</td></tr>
+            <tr><td><code>memory-global.json</code> · <code>projects/&lt;clave&gt;/memory.json</code></td><td>Persistent memory (personal · per project)</td></tr>
+            <tr><td><code>mcp-servers.json</code></td><td>Configured MCP servers</td></tr>
+            <tr><td><code>outbox-archive/</code></td><td>Files generated by the agent</td></tr>
+            <tr><td><code>attachments/</code></td><td>Images attached in the input</td></tr>
+            <tr><td><code>audit.log</code></td><td>Tool-call log (JSONL with rotation)</td></tr>
+          </tbody>
+        </table>
+        <p>To back up your Devia data, simply copy that folder. Deleting it resets the app to its initial state.</p>
+      </section>
+
+      <section id="actualizaciones">
+        <h2>Updates</h2>
+        <p>Published versions are announced in this site's public manifest: <a href="../../updates/latest.json"><code>updates/latest.json</code></a>. It contains the latest available version, the release date, release notes, and download links per platform.</p>
+        <p>Devia Desktop checks that manifest to notify you when a new version is available. You can also check it manually or from your own scripts:</p>
+        <pre><code>curl -s https://dherrero.github.io/devia/updates/latest.json | jq .version</code></pre>
+      </section>
+
+      <section id="faq">
+        <h2>FAQ</h2>
+
+        <h3>Is Devia free?</h3>
+        <p>Yes. Devia Desktop is FreeWare with 100% of features included, on all platforms.</p>
+
+        <h3>Do I need an account or a connection to any Devia service?</h3>
+        <p>No. Devia Desktop works entirely locally. The only external services used are those of the CLI agents you have configured yourself.</p>
+
+        <h3>Does Devia include the AI agents?</h3>
+        <p>No — Devia is the interface that directs them. You need at least one agentic CLI installed (Claude Code, Codex, Gemini CLI, OpenCode…) with its credentials. Devia detects them and takes care of the rest.</p>
+
+        <h3>Does my data leave my machine?</h3>
+        <p>No. Sessions, memory, Kanban boards, and configuration all live in <code>~/.devia-app/</code>. Voice transcription with Whisper also runs locally. The only thing that travels is what the CLI agent you use sends to its own provider.</p>
+
+        <h3>What languages are available?</h3>
+        <p>Spanish, English, Valencian, French, German, Italian, Portuguese, Russian, Chinese, Hindi, and Arabic.</p>
+
+        <h3>How do I report an issue?</h3>
+        <p>Open an issue in the Devia GitHub repository with the steps to reproduce it and your platform (Windows/macOS/Linux).</p>
+      </section>
+
+    </article>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <strong>Devia Desktop</strong>
+        <p>Your command center for AI-powered software development.</p>
+      </div>
+      <nav class="footer-links">
+        <a href="../../en/docs/">Documentation</a>
+        <a href="../../en/descargas/">Downloads</a>
+        <a href="../../updates/latest.json">Updates feed</a>
+      </nav>
+    </div>
+    <div class="container copyright">
+      <p>© 2026 Dani Herrero · Devia</p>
+    </div>
+  </footer>
+
+</body>
+</html>

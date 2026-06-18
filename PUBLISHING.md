@@ -5,6 +5,11 @@ privado compila Devia Desktop y sube los instaladores + manifiestos a este repo
 al crear una release. Esta guía documenta ese flujo y deja, al final, el
 procedimiento manual de emergencia.
 
+> Esto cubre la **publicación de versiones** (binarios + manifiesto). El
+> **contenido del sitio** (landing, docs, descargas) es multilingüe y se genera
+> desde `build/i18n/<idioma>.json` con `npm run build`; su arquitectura está en
+> [`AGENTS.md`](AGENTS.md).
+
 ## Flujo automático (recomendado)
 
 1. En el monorepo privado se mergea a `main` un commit `feat:` / `fix:`.

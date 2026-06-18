@@ -1,0 +1,291 @@
+{
+  "common": {
+    "brand": "Devia",
+    "menuLabel": "Obrir menú",
+    "langLabel": "Idioma",
+    "heroVersionLabel": "Última versió: v",
+    "publishedOn": " · publicada el ",
+    "nav": {
+      "features": "Funcionalitats",
+      "docs": "Documentació",
+      "download": "Descarregar"
+    },
+    "footer": {
+      "tagline": "El teu centre de comandament per al desenvolupament de programari amb IA.",
+      "docs": "Documentació",
+      "downloads": "Descàrregues",
+      "updates": "Feed d'actualitzacions",
+      "copyright": "© 2026 Dani Herrero · Devia"
+    }
+  },
+
+  "home": {
+    "meta": {
+      "title": "Devia Desktop — El teu centre de comandament per al desenvolupament de programari amb IA",
+      "description": "Devia Desktop és una aplicació d'escriptori gratuïta (Windows, macOS i Linux) per a dirigir agents de codificació CLI — Claude Code, Codex, Gemini CLI, OpenCode i més — des d'una sola finestra."
+    },
+    "heroLogoAlt": "Logo de Devia",
+    "heroTitle": "El teu centre de comandament per al<br>desenvolupament de programari amb IA",
+    "heroLead": "Devia Desktop és una interfície amigable i unificada sobre múltiples ferramentes CLI agèntiques — Claude Code, Codex, Gemini CLI, OpenCode i més — que convertix el treball amb agents en terminal en una experiència visual, organitzada i multiprojecte.",
+    "heroQuote": "«Si Claude Code és el motor, Devia seria la carrosseria i el volant.»",
+    "badges": [
+      "FreeWare — 100% de les funcionalitats, gratis",
+      "Windows · macOS · Linux"
+    ],
+    "ctaDownload": "Descarregar Devia Desktop",
+    "ctaDocs": "Llegir la documentació",
+    "featuresTitle": "Què fa Devia Desktop?",
+    "features": [
+      { "title": "🤖 Multi-agent", "body": "Treballa amb Claude Code, OpenAI Codex, Gemini CLI, OpenCode, Cursor Agent, GitHub Copilot CLI, Qwen, DeepSeek o Qoder, i canvia d'agent sense canviar de ferramenta. Devia detecta els CLIs instal·lats i configura cada projecte perquè funcionen sense ajustos manuals." },
+      { "title": "💬 Xat visual sobre l'agent", "body": "Streaming de respostes, markdown, crides a ferramentes desplegables, visor de diffs i adjunts d'imatges per a models multimodals." },
+      { "title": "🪟 Multiprojecte i multisessió", "body": "Historial de sessions per projecte, cua d'instruccions i vista dividida de fins a 4 panells amb sessió i git worktree independents per panell — diversos agents treballant en paral·lel en una sola finestra." },
+      { "title": "📋 Kanban amb SDD integrat", "body": "Tauler per projecte que el propi agent llig i actualitza via MCP (<code>devia-kanban</code>), amb specs, tasques, dependències i flux spec-driven development." },
+      { "title": "🧠 Memòria persistent", "body": "Devia inclou la seua pròpia memòria entre sessions (<code>devia-memory</code>), amb àmbit personal i per projecte, que l'agent consulta i alimenta automàticament." },
+      { "title": "🌿 Git integrat", "body": "Estat del repositori en viu, visor de canvis amb comentaris en línia per a demanar revisions a l'agent, i suport de worktrees." },
+      { "title": "🔌 Gestor de servidors MCP", "body": "Instal·la, activa i compartix servidors MCP entre agents; Devia injecta la configuració en el format natiu de cada CLI." },
+      { "title": "✨ Skills i prompt packs", "body": "Descobrix i instal·la skills (locals o des de GitHub) i definix paquets de prompt de sistema per projecte." },
+      { "title": "📱 Control remot per Telegram", "body": "Llança execucions, consulta l'estat i conversa amb l'agent des de Telegram, amb mirall opcional de la conversació d'escriptori." },
+      { "title": "🖥️ Terminal i shell", "body": "Terminal integrat per projecte (PTY real), obertura en el teu IDE favorit i orquestració de Docker Compose." },
+      { "title": "🎙️ Veu", "body": "Transcripció local amb Whisper, sense enviar àudio a cap API." },
+      { "title": "🛡️ Snapshots i auditoria", "body": "Instantànies i rollback abans d'operacions destructives, i registre d'auditoria de cada tool-call amb rotació i retenció automàtica." }
+    ],
+    "localTitle": "Fet per a treballar en local",
+    "localLead": "Devia Desktop funciona sobre els teus projectes i els teus CLIs, en la teua màquina. Les teues sessions, la teua memòria, el teu kanban i la teua configuració viuen en el teu disc (<code>~/.devia-app/</code>). Sense comptes, sense núvol i sense telemetria: instal·les, tries la teua carpeta de treball i comences a dirigir agents.",
+    "steps": [
+      { "title": "1 · Instal·la", "body": "Descarrega l'instal·lador de la teua plataforma i obri'l. No requerix configuració prèvia." },
+      { "title": "2 · Connecta els teus agents", "body": "Devia detecta els CLIs de codificació que ja tens instal·lats (Claude Code, Codex, Gemini CLI…) i els deixa llestos per a usar." },
+      { "title": "3 · Dirigix", "body": "Obri un projecte del teu workspace i conversa: l'agent programa, tu revises diffs, approves i encues les instruccions següents." }
+    ],
+    "downloadTitle": "Descarrega Devia Desktop",
+    "downloadLead": "Gratis, amb el 100% de les funcionalitats. Disponible per a Windows, macOS i Linux.",
+    "downloadCta": "Anar a descàrregues"
+  },
+
+  "docs": {
+    "meta": {
+      "title": "Documentació — Devia Desktop",
+      "description": "Documentació de Devia Desktop: instal·lació, primers passos, funcionalitats, configuració i actualitzacions."
+    },
+    "pageTitle": "Documentació de Devia Desktop",
+    "tocTitle": "Índex",
+    "toc": [
+      { "id": "que-es", "label": "Què és Devia Desktop?" },
+      { "id": "instalacion", "label": "Instal·lació" },
+      { "id": "primeros-pasos", "label": "Primers passos" },
+      { "id": "agentes", "label": "Agents compatibles" },
+      { "id": "funcionalidades", "label": "Funcionalitats" },
+      { "id": "configuracion", "label": "Configuració i dades" },
+      { "id": "actualizaciones", "label": "Actualitzacions" },
+      { "id": "faq", "label": "Preguntes freqüents" }
+    ],
+    "sections": {
+      "queEs": {
+        "paras": [
+          "Devia Desktop és una aplicació d'escriptori per a desenvolupar programari amb agents d'IA. És una interfície amigable i unificada sobre múltiples ferramentes CLI agèntiques (Claude Code, Codex, Gemini CLI i més) que convertix el treball amb agents en terminal en una experiència visual, organitzada i multiprojecte.",
+          "És <strong>FreeWare</strong>: gratis amb el 100% de les funcionalitats, disponible per a Windows, macOS i Linux. Tot funciona en local, sobre els teus projectes i els teus CLIs; no necessita compte ni connexió a cap servici."
+        ]
+      },
+      "instalacion": {
+        "win": {
+          "title": "Windows",
+          "steps": [
+            "Descarrega l'instal·lador <code>.exe</code> des de la <a href=\"{{descargas}}\">pàgina de descàrregues</a>.",
+            "Executa'l i tria el directori d'instal·lació (instal·lació per usuari, sense permisos d'administrador).",
+            "Si SmartScreen mostra un avís, prem «Més informació → Executar de totes formes»."
+          ]
+        },
+        "mac": {
+          "title": "macOS",
+          "steps": [
+            "Descarrega el <code>.dmg</code> de la teua arquitectura (Apple Silicon o Intel).",
+            "Obri'l i arrossega <strong>Devia</strong> a la carpeta <strong>Aplicacions</strong>.",
+            "L'app està signada i notaritzada per Apple: s'obri sense passos addicionals."
+          ]
+        },
+        "linux": {
+          "title": "Linux",
+          "steps": [
+            "<strong>AppImage</strong>: descarrega'l, dona-li permisos amb <code>chmod +x Devia-*.AppImage</code> i executa'l.",
+            "<strong>Debian/Ubuntu</strong>: instal·la el paquet amb <code>sudo dpkg -i devia_*_amd64.deb</code>."
+          ]
+        }
+      },
+      "primerosPasos": {
+        "steps": [
+          "<strong>Tria el teu workspace.</strong> La primera vegada que obris Devia, un modal et demana la carpeta arrel on viuen els teus projectes (per exemple <code>~/repos</code>). Devia llista els projectes que conté i detecta la seua tecnologia.",
+          "<strong>Connecta un agent.</strong> Devia detecta els CLIs agèntics instal·lats en la teua màquina i et deixa triar l'agent actiu en Configuració. Cada projecte queda configurat perquè l'agent funcione sense ajustos manuals.",
+          "<strong>Conversa.</strong> Obri un projecte i escriu la teua primera instrucció en el compositor. Tria el mode d'execució — <em>plan</em> (només planifica), <em>apply</em> (aplica amb permisos) o <em>apply-yolo</em> (sense confirmacions) — segons quanta autonomia vulgues donar.",
+          "<strong>Revisa.</strong> Cada resposta arriba en streaming amb markdown, les crides a ferramentes es despleguen en targetes i els canvis de l'agent es veuen com a diffs en línia."
+        ]
+      },
+      "agentes": {
+        "intro": "Devia funciona amb els següents CLIs de codificació, i pots canviar d'un a l'altre sense eixir de l'app:",
+        "tableHead": { "agent": "Agent", "notes": "Notes" },
+        "rows": [
+          { "agent": "Claude Code", "notes": "Integració completa, inclosos servidors MCP per execució" },
+          { "agent": "OpenAI Codex", "notes": "Streaming d'events JSON" },
+          { "agent": "Gemini CLI", "notes": "Streaming d'events JSON" },
+          { "agent": "OpenCode", "notes": "Streaming d'events JSON" },
+          { "agent": "Cursor Agent", "notes": "Streaming d'events JSON" },
+          { "agent": "GitHub Copilot CLI", "notes": "Streaming d'events JSON" },
+          { "agent": "Qwen · DeepSeek · Qoder", "notes": "Eixida en text pla" }
+        ],
+        "handoff": "En continuar una sessió amb un agent distint del que la va iniciar, Devia fa un <strong>traspàs de context automàtic</strong>: injecta un resum del treball (objectiu, fitxers tocats i últims intercanvis) en el primer torn del nou agent i deixa un divisor en el xat."
+      },
+      "funcionalidades": {
+        "groups": [
+          {
+            "title": "Multiprojecte i sessions",
+            "items": [
+              "Llistat, creació (buit o des de plantilla) i clonació de projectes; ancorat de favorits en la barra lateral.",
+              "Historial de sessions per projecte que sobreviu als reinicis; continua o reinicia una sessió amb un clic.",
+              "Cua d'instruccions: encua prompts mentre l'agent està ocupat, reordena amb arrossegar i soltar, pausa i reprén."
+            ]
+          },
+          {
+            "title": "Vista dividida multi-sessió",
+            "items": [
+              "Fins a 4 panells (2×2) en la mateixa finestra, cadascun amb la seua pròpia sessió i el seu agent treballant en paral·lel.",
+              "Cada panell addicional treballa <strong>aïllat en el seu propi git worktree</strong> (branca nova des de la branca principal) perquè dos agents mai trepitgen els mateixos fitxers.",
+              "El split i els seus worktrees sobreviuen al reinici de l'app, recuperant els fitxers de cada sessió."
+            ]
+          },
+          {
+            "title": "Kanban amb SDD integrat",
+            "items": [
+              "Tauler Kanban per projecte amb specs, tasques i dependències.",
+              "El propi agent llig i actualitza el tauler via MCP (<code>devia-kanban</code>): flux spec-driven development de principi a fi.",
+              "L'estat viu fora del repositori, en la carpeta de dades de Devia."
+            ]
+          },
+          {
+            "title": "Memòria persistent",
+            "items": [
+              "Memòria pròpia entre sessions (<code>devia-memory</code>) amb àmbit personal i per projecte.",
+              "L'agent la consulta i l'alimenta automàticament: decisions, bugs resolts i descobriments queden registrats.",
+              "Panell de gestió en Configuració: busca, fixa, oblida o neteja observacions."
+            ]
+          },
+          {
+            "title": "Git integrat",
+            "items": [
+              "Estat del repositori en viu en la barra lateral.",
+              "Visor de canvis amb comentaris en línia: anota línies del diff i envia-les a l'agent com a petició de revisió.",
+              "Suport de worktrees i snapshots amb rollback abans d'operacions destructives."
+            ]
+          },
+          {
+            "title": "Servidors MCP, skills i prompts",
+            "items": [
+              "Gestor de servidors Model Context Protocol: instal·la, activa, prova i compartix servidors entre agents; Devia injecta la configuració en el format natiu de cada CLI.",
+              "Descobrix i instal·la skills locals o des de GitHub.",
+              "Prompt packs: paquets de prompt de sistema per projecte.",
+              "Gestor de sub-agents multi-CLI reutilitzables entre projectes."
+            ]
+          },
+          {
+            "title": "Control remot per Telegram",
+            "items": [
+              "Llança execucions, consulta l'estat (branca, context usat, cost) i conversa amb l'agent des de Telegram.",
+              "Mirall opcional de la conversació d'escriptori i enviament d'adjunts (fotos, documents) a l'agent."
+            ]
+          },
+          {
+            "title": "Terminal, veu i més",
+            "items": [
+              "Terminal integrat per projecte amb PTY real, i obertura del projecte en el teu IDE favorit.",
+              "Orquestració de Docker Compose: deploy, down i logs per projecte.",
+              "Transcripció de veu local amb Whisper — l'àudio mai ix de la teua màquina.",
+              "Adjunts d'imatge amb arrossegar i soltar per a models multimodals.",
+              "Navegador de fitxers del projecte en el rail dret i arxiu de fitxers generats per l'agent (outbox).",
+              "Registre d'auditoria de cada tool-call amb rotació i retenció de 30 dies.",
+              "11 idiomes (es, en, ca, fr, de, it, pt, ru, zh, hi, ar), 8 paletes d'accent Material 3 i mida de font ajustable."
+            ]
+          }
+        ]
+      },
+      "configuracion": {
+        "intro": "Tota la informació de Devia viu en el teu disc, baix <code>~/.devia-app/</code> (en Windows, <code>C:\\Users\\&lt;tu-usuario&gt;\\.devia-app\\</code>):",
+        "tableHead": { "path": "Ruta", "content": "Contingut" },
+        "rows": [
+          { "path": "<code>devia-app.config.json</code>", "content": "Configuració: workspace, agent actiu, tema, idioma…" },
+          { "path": "<code>sessions/&lt;proyecto&gt;/</code>", "content": "Historial de xat per projecte" },
+          { "path": "<code>projects/&lt;clave&gt;/kanban.json</code>", "content": "Tauler Kanban del projecte" },
+          { "path": "<code>memory-global.json</code> · <code>projects/&lt;clave&gt;/memory.json</code>", "content": "Memòria persistent (personal · per projecte)" },
+          { "path": "<code>mcp-servers.json</code>", "content": "Servidors MCP configurats" },
+          { "path": "<code>outbox-archive/</code>", "content": "Fitxers generats per l'agent" },
+          { "path": "<code>attachments/</code>", "content": "Imatges adjuntades en l'input" },
+          { "path": "<code>audit.log</code>", "content": "Registre de tool-calls (JSONL amb rotació)" }
+        ],
+        "outro": "Per a fer còpia de seguretat de Devia n'hi ha prou amb copiar esta carpeta. Esborrar-la torna l'app al seu estat inicial."
+      },
+      "actualizaciones": {
+        "paras": [
+          "Les versions publicades s'anuncien en el manifest públic d'este lloc: <a href=\"{{updates}}\"><code>updates/latest.json</code></a>. Conté l'última versió disponible, la data de publicació, les notes i els enllaços de descàrrega per plataforma.",
+          "Devia Desktop consulta este manifest per a avisar-te que hi ha una versió nova. També pots comprovar-ho a mà o des dels teus scripts:"
+        ],
+        "code": "curl -s https://dherrero.github.io/devia/updates/latest.json | jq .version"
+      },
+      "faq": {
+        "items": [
+          { "q": "Devia és gratis?", "a": "Sí. Devia Desktop és FreeWare amb el 100% de les funcionalitats, en totes les plataformes." },
+          { "q": "Necessite compte o connexió a algun servici de Devia?", "a": "No. Devia Desktop funciona completament en local. Els únics servicis externs que s'usen són els dels propis agents CLI que tu tingues configurats." },
+          { "q": "Devia inclou els agents d'IA?", "a": "No: Devia és la interfície que els dirigix. Necessites tindre instal·lat almenys un CLI agèntic (Claude Code, Codex, Gemini CLI, OpenCode…) amb les seues credencials. Devia els detecta i s'encarrega de la resta." },
+          { "q": "Les meues dades ixen de la meua màquina?", "a": "No. Sessions, memòria, kanban i configuració viuen en <code>~/.devia-app/</code>. La transcripció de veu amb Whisper també s'executa en local. L'únic que viaja és el que l'agent CLI que uses envia al seu propi proveïdor." },
+          { "q": "En quins idiomes està disponible?", "a": "Espanyol, anglés, valencià, francés, alemany, italià, portugués, rus, xinés, hindi i àrab." },
+          { "q": "Com reporto un problema?", "a": "Obri una incidència en el repositori de GitHub de Devia amb els passos per a reproduir-lo i la teua plataforma (Windows/macOS/Linux)." }
+        ]
+      }
+    }
+  },
+
+  "descargas": {
+    "meta": {
+      "title": "Descàrregues — Devia Desktop",
+      "description": "Descarrega Devia Desktop per a Windows, macOS i Linux. Gratis, amb el 100% de les funcionalitats."
+    },
+    "pageTitle": "Descàrregues",
+    "lastVersionLabel": "Última versió:",
+    "platforms": {
+      "windows": {
+        "title": "🪟 Windows",
+        "desc": "Instal·lador NSIS per a Windows 10/11 (x64). Permet triar el directori d'instal·lació.",
+        "btn": "Descarregar .exe",
+        "soon": "Prompte disponible",
+        "hint": "Si SmartScreen mostra un avís, prem «Més informació → Executar de totes formes»."
+      },
+      "macos": {
+        "title": "🍎 macOS",
+        "desc": "Imatge de disc <code>.dmg</code> signada i notaritzada. Arrossega Devia a Aplicacions.",
+        "btnArm": "Apple Silicon (.dmg)",
+        "btnIntel": "Intel (.dmg)",
+        "soon": "Prompte disponible",
+        "hint": "Compatible amb macOS 11 Big Sur o superior."
+      },
+      "linux": {
+        "title": "🐧 Linux",
+        "desc": "AppImage universal o paquet <code>.deb</code> per a Debian/Ubuntu (x64).",
+        "btnAppimage": "AppImage",
+        "btnDeb": ".deb",
+        "soon": "Prompte disponible",
+        "hint": "AppImage: dona permisos d'execució amb <code>chmod +x</code> i llança'l."
+      }
+    },
+    "notesTitle": "Notes de la versió",
+    "updatesTitle": "Actualitzacions",
+    "updatesBody": "Devia Desktop comprova noves versions contra el manifest públic d'este lloc: <a href=\"{{updates}}\"><code>updates/latest.json</code></a>. Pots consultar-lo manualment o integrar-lo en els teus propis scripts.",
+    "reqTitle": "Requisits",
+    "reqs": [
+      "Almenys un agent CLI de codificació instal·lat: Claude Code, OpenAI Codex, Gemini CLI, OpenCode, Cursor Agent, GitHub Copilot CLI, Qwen, DeepSeek o Qoder. Devia els detecta automàticament.",
+      "Git instal·lat (recomanat) per a l'estat del repositori, els diffs i els worktrees de la vista dividida.",
+      "Docker (opcional) per a l'orquestració de Docker Compose per projecte."
+    ]
+  },
+
+  "notFound": {
+    "title": "Pàgina no trobada — Devia Desktop",
+    "message": "Esta pàgina no existix.",
+    "back": "Tornar arrere",
+    "home": "Anar a l'inici"
+  }
+}

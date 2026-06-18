@@ -1,0 +1,291 @@
+{
+  "common": {
+    "brand": "Devia",
+    "menuLabel": "打开菜单",
+    "langLabel": "语言",
+    "heroVersionLabel": "最新版本：v",
+    "publishedOn": " · 发布于 ",
+    "nav": {
+      "features": "功能特性",
+      "docs": "文档",
+      "download": "下载"
+    },
+    "footer": {
+      "tagline": "您的 AI 软件开发指挥中心。",
+      "docs": "文档",
+      "downloads": "下载",
+      "updates": "更新订阅",
+      "copyright": "© 2026 Dani Herrero · Devia"
+    }
+  },
+
+  "home": {
+    "meta": {
+      "title": "Devia Desktop — 您的 AI 软件开发指挥中心",
+      "description": "Devia Desktop 是一款免费的桌面应用（支持 Windows、macOS 和 Linux），可在同一窗口中统一管理多个 CLI 编程 Agent——Claude Code、Codex、Gemini CLI、OpenCode 等。"
+    },
+    "heroLogoAlt": "Devia 标志",
+    "heroTitle": "您的 AI 软件开发<br>指挥中心",
+    "heroLead": "Devia Desktop 是多款 CLI Agent 工具的友好统一界面——支持 Claude Code、Codex、Gemini CLI、OpenCode 等——将终端 Agent 工作流转化为可视化、有序的多项目开发体验。",
+    "heroQuote": "「如果 Claude Code 是引擎，Devia 就是车身和方向盘。」",
+    "badges": [
+      "FreeWare — 全功能免费",
+      "Windows · macOS · Linux"
+    ],
+    "ctaDownload": "下载 Devia Desktop",
+    "ctaDocs": "阅读文档",
+    "featuresTitle": "Devia Desktop 能做什么？",
+    "features": [
+      { "title": "🤖 多 Agent 支持", "body": "支持 Claude Code、OpenAI Codex、Gemini CLI、OpenCode、Cursor Agent、GitHub Copilot CLI、Qwen、DeepSeek 或 Qoder，无需切换工具即可随时切换 Agent。Devia 自动检测已安装的 CLI 并为每个项目完成配置，无需手动调整。" },
+      { "title": "💬 可视化 Agent 对话", "body": "支持流式响应、markdown 渲染、可展开的工具调用卡片、差异查看器，以及为多模态模型提供的图片附件功能。" },
+      { "title": "🪟 多项目与多会话", "body": "按项目保存会话历史、支持指令队列，以及最多 4 面板（2×2）的分屏视图——每个面板拥有独立的会话和 git worktree，多个 Agent 可在同一窗口中并行工作。" },
+      { "title": "📋 内置 SDD 的 Kanban 看板", "body": "每个项目配备 Kanban 看板，Agent 通过 MCP（<code>devia-kanban</code>）读取并更新看板，支持 spec、任务、依赖关系和完整的 spec-driven development 工作流。" },
+      { "title": "🧠 持久化记忆", "body": "Devia 内置跨会话记忆（<code>devia-memory</code>），支持个人和项目两种作用域，Agent 可自动查询和写入记忆。" },
+      { "title": "🌿 Git 集成", "body": "实时显示仓库状态，支持带行内注释的变更查看器（可直接向 Agent 发起审查请求），以及 worktree 支持。" },
+      { "title": "🔌 MCP 服务器管理器", "body": "安装、启用并在 Agent 间共享 MCP 服务器；Devia 会自动将配置注入每个 CLI 的原生格式。" },
+      { "title": "✨ Skills 与 prompt packs", "body": "发现并安装 skills（本地或来自 GitHub），并为每个项目定义系统 prompt 包。" },
+      { "title": "📱 Telegram 远程控制", "body": "通过 Telegram 发起任务、查询状态，并与 Agent 对话；可选开启桌面对话镜像功能。" },
+      { "title": "🖥️ 终端与 Shell", "body": "每个项目配备真实 PTY 终端，支持在您喜爱的 IDE 中打开项目，以及 Docker Compose 编排。" },
+      { "title": "🎙️ 语音输入", "body": "使用 Whisper 进行本地语音转录，音频不会发送至任何外部 API。" },
+      { "title": "🛡️ 快照与审计", "body": "在破坏性操作前自动创建快照并支持回滚，同时记录每次工具调用的审计日志，自动轮转与保留。" }
+    ],
+    "localTitle": "专为本地开发而生",
+    "localLead": "Devia Desktop 在您自己的机器上运行，基于您的项目和 CLI。您的会话、记忆、看板和配置均保存在本地磁盘（<code>~/.devia-app/</code>）。无需注册账号、无需云服务、无遥测数据：安装后选择工作目录，即可开始指挥 Agent。",
+    "steps": [
+      { "title": "1 · 安装", "body": "下载适合您平台的安装包并打开。无需任何前置配置。" },
+      { "title": "2 · 连接 Agent", "body": "Devia 自动检测您已安装的编程 CLI（Claude Code、Codex、Gemini CLI……）并使其立即可用。" },
+      { "title": "3 · 开始指挥", "body": "打开工作区中的项目并开始对话：Agent 编写代码，您审查差异、确认更改并将后续指令加入队列。" }
+    ],
+    "downloadTitle": "下载 Devia Desktop",
+    "downloadLead": "完全免费，全功能开放。支持 Windows、macOS 和 Linux。",
+    "downloadCta": "前往下载页"
+  },
+
+  "docs": {
+    "meta": {
+      "title": "文档 — Devia Desktop",
+      "description": "Devia Desktop 文档：安装、快速上手、功能介绍、配置说明与版本更新。"
+    },
+    "pageTitle": "Devia Desktop 文档",
+    "tocTitle": "目录",
+    "toc": [
+      { "id": "que-es", "label": "什么是 Devia Desktop？" },
+      { "id": "instalacion", "label": "安装" },
+      { "id": "primeros-pasos", "label": "快速上手" },
+      { "id": "agentes", "label": "支持的 Agent" },
+      { "id": "funcionalidades", "label": "功能特性" },
+      { "id": "configuracion", "label": "配置与数据" },
+      { "id": "actualizaciones", "label": "版本更新" },
+      { "id": "faq", "label": "常见问题" }
+    ],
+    "sections": {
+      "queEs": {
+        "paras": [
+          "Devia Desktop 是一款专为 AI Agent 辅助软件开发打造的桌面应用。它是多款 CLI Agent 工具（Claude Code、Codex、Gemini CLI 等）的友好统一界面，将终端 Agent 工作流转化为可视化、有序的多项目开发体验。",
+          "它是 <strong>FreeWare</strong>：全功能免费，支持 Windows、macOS 和 Linux。一切均在本地运行，基于您自己的项目和 CLI；无需账号，无需连接任何外部服务。"
+        ]
+      },
+      "instalacion": {
+        "win": {
+          "title": "Windows",
+          "steps": [
+            "从<a href=\"{{descargas}}\">下载页</a>下载 <code>.exe</code> 安装包。",
+            "运行安装包并选择安装目录（按用户安装，无需管理员权限）。",
+            "如果 SmartScreen 显示警告，请点击「更多信息 → 仍要运行」。"
+          ]
+        },
+        "mac": {
+          "title": "macOS",
+          "steps": [
+            "下载适合您芯片架构的 <code>.dmg</code>（Apple Silicon 或 Intel）。",
+            "打开镜像文件，将 <strong>Devia</strong> 拖入 <strong>应用程序</strong> 文件夹。",
+            "应用已经过 Apple 签名与公证，可直接打开，无需额外步骤。"
+          ]
+        },
+        "linux": {
+          "title": "Linux",
+          "steps": [
+            "<strong>AppImage</strong>：下载后使用 <code>chmod +x Devia-*.AppImage</code> 授予执行权限，然后直接运行。",
+            "<strong>Debian/Ubuntu</strong>：使用 <code>sudo dpkg -i devia_*_amd64.deb</code> 安装软件包。"
+          ]
+        }
+      },
+      "primerosPasos": {
+        "steps": [
+          "<strong>选择工作区。</strong>首次打开 Devia 时，会弹出对话框请您选择项目根目录（例如 <code>~/repos</code>）。Devia 将列出其中包含的项目并自动识别技术栈。",
+          "<strong>连接 Agent。</strong>Devia 检测您机器上已安装的 CLI Agent，并允许您在设置中选择当前使用的 Agent。每个项目将自动完成配置，无需手动调整。",
+          "<strong>开始对话。</strong>打开一个项目，在输入框中输入您的第一条指令。根据您希望赋予 Agent 的自主程度，选择执行模式——<em>plan</em>（仅规划）、<em>apply</em>（带权限确认执行）或 <em>apply-yolo</em>（无需确认直接执行）。",
+          "<strong>审查结果。</strong>每条响应以流式传输并渲染 markdown，工具调用以卡片形式展开，Agent 的代码变更以行内差异形式呈现。"
+        ]
+      },
+      "agentes": {
+        "intro": "Devia 支持以下编程 CLI，您可以在不离开应用的情况下随时切换：",
+        "tableHead": { "agent": "Agent", "notes": "备注" },
+        "rows": [
+          { "agent": "Claude Code", "notes": "完整集成，支持每次执行的 MCP 服务器" },
+          { "agent": "OpenAI Codex", "notes": "JSON 事件流" },
+          { "agent": "Gemini CLI", "notes": "JSON 事件流" },
+          { "agent": "OpenCode", "notes": "JSON 事件流" },
+          { "agent": "Cursor Agent", "notes": "JSON 事件流" },
+          { "agent": "GitHub Copilot CLI", "notes": "JSON 事件流" },
+          { "agent": "Qwen · DeepSeek · Qoder", "notes": "纯文本输出" }
+        ],
+        "handoff": "当您在会话中切换到与原始 Agent 不同的 Agent 时，Devia 会自动执行<strong>上下文交接</strong>：将工作摘要（目标、修改的文件及最近交互内容）注入新 Agent 的第一轮对话，并在聊天中插入分隔线。"
+      },
+      "funcionalidades": {
+        "groups": [
+          {
+            "title": "多项目与会话管理",
+            "items": [
+              "项目列表、创建（空白或从模板）与克隆；在侧边栏中固定常用项目。",
+              "按项目保存的会话历史，重启后依然保留；一键继续或重新开始会话。",
+              "指令队列：在 Agent 忙碌时排队输入 prompt，支持拖拽重排、暂停与恢复。"
+            ]
+          },
+          {
+            "title": "多会话分屏视图",
+            "items": [
+              "同一窗口最多支持 4 个面板（2×2），每个面板拥有独立会话，Agent 并行工作。",
+              "每个附加面板均<strong>运行在独立的 git worktree 中</strong>（从主分支创建新分支），确保多个 Agent 不会互相干扰同一文件。",
+              "分屏状态及其 worktree 在应用重启后自动恢复，保留每个会话的文件。"
+            ]
+          },
+          {
+            "title": "内置 SDD 的 Kanban 看板",
+            "items": [
+              "每个项目配备 Kanban 看板，支持 spec、任务和依赖关系管理。",
+              "Agent 通过 MCP（<code>devia-kanban</code>）直接读取和更新看板，实现端到端的 spec-driven development 工作流。",
+              "看板状态存储于 Devia 数据目录，独立于代码仓库之外。"
+            ]
+          },
+          {
+            "title": "持久化记忆",
+            "items": [
+              "内置跨会话记忆（<code>devia-memory</code>），支持个人和项目两种作用域。",
+              "Agent 自动查询和写入记忆：决策、已解决的 bug 和重要发现均会被记录。",
+              "设置中提供记忆管理面板：可搜索、置顶、遗忘或清除记忆条目。"
+            ]
+          },
+          {
+            "title": "Git 集成",
+            "items": [
+              "侧边栏实时显示仓库状态。",
+              "带行内注释的变更查看器：在差异行上添加注释并发送给 Agent 请求审查。",
+              "支持 worktree 和快照，可在破坏性操作前进行回滚。"
+            ]
+          },
+          {
+            "title": "MCP 服务器、Skills 与 Prompt",
+            "items": [
+              "Model Context Protocol 服务器管理器：安装、启用、测试并在 Agent 间共享服务器；Devia 自动将配置注入每个 CLI 的原生格式。",
+              "发现并安装本地或来自 GitHub 的 skills。",
+              "Prompt packs：为每个项目定义系统 prompt 包。",
+              "可跨项目复用的多 CLI 子 Agent 管理器。"
+            ]
+          },
+          {
+            "title": "Telegram 远程控制",
+            "items": [
+              "通过 Telegram 发起任务、查询状态（分支、上下文用量、费用）并与 Agent 对话。",
+              "可选开启桌面对话镜像功能，支持向 Agent 发送附件（图片、文档）。"
+            ]
+          },
+          {
+            "title": "终端、语音及更多",
+            "items": [
+              "每个项目配备真实 PTY 终端，支持在您喜爱的 IDE 中打开项目。",
+              "Docker Compose 编排：按项目执行 deploy、down 和日志查看。",
+              "使用 Whisper 进行本地语音转录——音频始终留在您的机器上。",
+              "支持拖拽图片附件，适用于多模态模型。",
+              "右侧栏提供项目文件浏览器，以及 Agent 生成文件的归档（outbox）。",
+              "每次工具调用的审计日志，保留期 30 天，自动轮转。",
+              "11 种语言（es, en, ca, fr, de, it, pt, ru, zh, hi, ar）、8 种 Material 3 主题色和可调字体大小。"
+            ]
+          }
+        ]
+      },
+      "configuracion": {
+        "intro": "Devia 的所有数据均保存在本地磁盘，位于 <code>~/.devia-app/</code>（Windows 下为 <code>C:\\Users\\&lt;tu-usuario&gt;\\.devia-app\\</code>）：",
+        "tableHead": { "path": "路径", "content": "内容" },
+        "rows": [
+          { "path": "<code>devia-app.config.json</code>", "content": "配置：工作区、当前 Agent、主题、语言……" },
+          { "path": "<code>sessions/&lt;proyecto&gt;/</code>", "content": "按项目保存的对话历史" },
+          { "path": "<code>projects/&lt;clave&gt;/kanban.json</code>", "content": "项目 Kanban 看板" },
+          { "path": "<code>memory-global.json</code> · <code>projects/&lt;clave&gt;/memory.json</code>", "content": "持久化记忆（个人 · 按项目）" },
+          { "path": "<code>mcp-servers.json</code>", "content": "已配置的 MCP 服务器" },
+          { "path": "<code>outbox-archive/</code>", "content": "Agent 生成的文件" },
+          { "path": "<code>attachments/</code>", "content": "输入框中附加的图片" },
+          { "path": "<code>audit.log</code>", "content": "工具调用日志（JSONL 格式，自动轮转）" }
+        ],
+        "outro": "备份 Devia 只需复制该文件夹。删除该文件夹将使应用恢复到初始状态。"
+      },
+      "actualizaciones": {
+        "paras": [
+          "已发布的版本将在本站的公开更新清单中公告：<a href=\"{{updates}}\"><code>updates/latest.json</code></a>。清单包含最新可用版本号、发布日期、更新说明及各平台下载链接。",
+          "Devia Desktop 会自动检查该清单并在有新版本时通知您。您也可以手动查询或在脚本中集成："
+        ],
+        "code": "curl -s https://dherrero.github.io/devia/updates/latest.json | jq .version"
+      },
+      "faq": {
+        "items": [
+          { "q": "Devia 免费吗？", "a": "是的。Devia Desktop 是 FreeWare，在所有平台上提供 100% 完整功能，永久免费。" },
+          { "q": "我需要注册账号或连接 Devia 的服务吗？", "a": "不需要。Devia Desktop 完全在本地运行。唯一会使用的外部服务是您自己配置的 CLI Agent 所属的服务。" },
+          { "q": "Devia 包含 AI Agent 吗？", "a": "不包含：Devia 是指挥 Agent 的界面。您需要至少安装一个 CLI Agent（Claude Code、Codex、Gemini CLI、OpenCode……）并配置相应的凭证。Devia 会自动检测并处理其余一切。" },
+          { "q": "我的数据会上传到云端吗？", "a": "不会。会话、记忆、看板和配置均保存在 <code>~/.devia-app/</code>。Whisper 语音转录也在本地执行。唯一会传输的数据是您所使用的 CLI Agent 发送给其自身服务提供商的内容。" },
+          { "q": "支持哪些语言？", "a": "西班牙语、英语、瓦伦西亚语、法语、德语、意大利语、葡萄牙语、俄语、中文、印地语和阿拉伯语。" },
+          { "q": "如何反馈问题？", "a": "请在 Devia 的 GitHub 仓库中提交 Issue，并附上复现步骤及您的操作系统（Windows/macOS/Linux）。" }
+        ]
+      }
+    }
+  },
+
+  "descargas": {
+    "meta": {
+      "title": "下载 — Devia Desktop",
+      "description": "下载适用于 Windows、macOS 和 Linux 的 Devia Desktop。免费，全功能开放。"
+    },
+    "pageTitle": "下载",
+    "lastVersionLabel": "最新版本：",
+    "platforms": {
+      "windows": {
+        "title": "🪟 Windows",
+        "desc": "适用于 Windows 10/11（x64）的 NSIS 安装包，可自定义安装目录。",
+        "btn": "下载 .exe",
+        "soon": "即将推出",
+        "hint": "如果 SmartScreen 显示警告，请点击「更多信息 → 仍要运行」。"
+      },
+      "macos": {
+        "title": "🍎 macOS",
+        "desc": "已签名并经 Apple 公证的 <code>.dmg</code> 磁盘映像。将 Devia 拖入应用程序文件夹即可。",
+        "btnArm": "Apple Silicon (.dmg)",
+        "btnIntel": "Intel (.dmg)",
+        "soon": "即将推出",
+        "hint": "需要 macOS 11 Big Sur 或更高版本。"
+      },
+      "linux": {
+        "title": "🐧 Linux",
+        "desc": "通用 AppImage 或适用于 Debian/Ubuntu（x64）的 <code>.deb</code> 软件包。",
+        "btnAppimage": "AppImage",
+        "btnDeb": ".deb",
+        "soon": "即将推出",
+        "hint": "AppImage：使用 <code>chmod +x</code> 授予执行权限后直接运行。"
+      }
+    },
+    "notesTitle": "版本说明",
+    "updatesTitle": "版本更新",
+    "updatesBody": "Devia Desktop 通过本站公开的更新清单检查新版本：<a href=\"{{updates}}\"><code>updates/latest.json</code></a>。您可以手动查询，也可以将其集成到您自己的脚本中。",
+    "reqTitle": "系统要求",
+    "reqs": [
+      "至少安装一个编程 CLI Agent：Claude Code、OpenAI Codex、Gemini CLI、OpenCode、Cursor Agent、GitHub Copilot CLI、Qwen、DeepSeek 或 Qoder。Devia 会自动检测。",
+      "建议安装 Git，以支持仓库状态显示、差异查看和分屏视图的 worktree 功能。",
+      "Docker（可选），用于按项目进行 Docker Compose 编排。"
+    ]
+  },
+
+  "notFound": {
+    "title": "页面未找到 — Devia Desktop",
+    "message": "此页面不存在。",
+    "back": "返回上一页",
+    "home": "回到首页"
+  }
+}
