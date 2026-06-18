@@ -233,7 +233,7 @@
           { "q": "Does Devia include the AI agents?", "a": "No — Devia is the interface that directs them. You need at least one agentic CLI installed (Claude Code, Codex, Gemini CLI, OpenCode…) with its credentials. Devia detects them and takes care of the rest." },
           { "q": "Does my data leave my machine?", "a": "No. Sessions, memory, Kanban boards, and configuration all live in <code>~/.devia-app/</code>. Voice transcription with Whisper also runs locally. The only thing that travels is what the CLI agent you use sends to its own provider." },
           { "q": "What languages are available?", "a": "Spanish, English, Valencian, French, German, Italian, Portuguese, Russian, Chinese, Hindi, and Arabic." },
-          { "q": "How do I report an issue?", "a": "Open an issue in the Devia GitHub repository with the steps to reproduce it and your platform (Windows/macOS/Linux)." }
+          { "q": "How do I report an issue?", "a": "Open an issue in the <a href=\"https://github.com/dherrero/devia/issues\" target=\"_blank\" rel=\"noopener\">Devia GitHub repository</a> with the steps to reproduce it and your platform (Windows/macOS/Linux)." }
         ]
       }
     }

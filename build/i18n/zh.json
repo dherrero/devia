@@ -233,7 +233,7 @@
           { "q": "Devia 包含 AI Agent 吗？", "a": "不包含：Devia 是指挥 Agent 的界面。您需要至少安装一个 CLI Agent（Claude Code、Codex、Gemini CLI、OpenCode……）并配置相应的凭证。Devia 会自动检测并处理其余一切。" },
           { "q": "我的数据会上传到云端吗？", "a": "不会。会话、记忆、看板和配置均保存在 <code>~/.devia-app/</code>。Whisper 语音转录也在本地执行。唯一会传输的数据是您所使用的 CLI Agent 发送给其自身服务提供商的内容。" },
           { "q": "支持哪些语言？", "a": "西班牙语、英语、瓦伦西亚语、法语、德语、意大利语、葡萄牙语、俄语、中文、印地语和阿拉伯语。" },
-          { "q": "如何反馈问题？", "a": "请在 Devia 的 GitHub 仓库中提交 Issue，并附上复现步骤及您的操作系统（Windows/macOS/Linux）。" }
+          { "q": "如何反馈问题？", "a": "请在 <a href=\"https://github.com/dherrero/devia/issues\" target=\"_blank\" rel=\"noopener\">Devia 的 GitHub 仓库</a>中提交 Issue，并附上复现步骤及您的操作系统（Windows/macOS/Linux）。" }
         ]
       }
     }
