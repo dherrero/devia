@@ -1,0 +1,10 @@
+{
+  "name": "devia-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "GitHub Pages site for Devia Desktop — multilingual static-site generator.",
+  "type": "module",
+  "scripts": {
+    "build": "node build/build.mjs"
+  }
+}

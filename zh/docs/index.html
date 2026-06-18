@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh" data-lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>文档 — Devia Desktop</title>
+  <meta name="description" content="Devia Desktop 文档：安装、快速上手、功能介绍、配置说明与版本更新。">
+  <link rel="canonical" href="https://dherrero.github.io/devia/zh/docs/">
+  <link rel="alternate" hreflang="es" href="https://dherrero.github.io/devia/docs/">
+  <link rel="alternate" hreflang="en" href="https://dherrero.github.io/devia/en/docs/">
+  <link rel="alternate" hreflang="ca" href="https://dherrero.github.io/devia/ca/docs/">
+  <link rel="alternate" hreflang="fr" href="https://dherrero.github.io/devia/fr/docs/">
+  <link rel="alternate" hreflang="de" href="https://dherrero.github.io/devia/de/docs/">
+  <link rel="alternate" hreflang="it" href="https://dherrero.github.io/devia/it/docs/">
+  <link rel="alternate" hreflang="pt" href="https://dherrero.github.io/devia/pt/docs/">
+  <link rel="alternate" hreflang="ru" href="https://dherrero.github.io/devia/ru/docs/">
+  <link rel="alternate" hreflang="zh" href="https://dherrero.github.io/devia/zh/docs/">
+  <link rel="alternate" hreflang="hi" href="https://dherrero.github.io/devia/hi/docs/">
+  <link rel="alternate" hreflang="ar" href="https://dherrero.github.io/devia/ar/docs/">
+  <link rel="alternate" hreflang="x-default" href="https://dherrero.github.io/devia/docs/">
+  <link rel="icon" type="image/png" href="../../assets/img/devia.png">
+  <link rel="stylesheet" href="../../assets/css/styles.css">
+  <script>window.DEVIA_ROOT = '../..';</script>
+  <script>window.DEVIA_I18N = {"heroVersionLabel":"最新版本：v","publishedOn":" · 发布于 ","locale":"zh-CN"};</script>
+  <script defer src="../../assets/js/main.js"></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="container nav">
+      <a class="brand" href="../../zh/">
+        <img src="../../assets/img/devia.png" alt="" width="32" height="32">
+        <span>Devia</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="nav-menu">☰</button>
+      <div class="nav-links" id="nav-menu">
+        <a href="../../zh/#funcionalidades">功能特性</a>
+        <a href="../../zh/docs/" aria-current="page">文档</a>
+        <a href="../../zh/descargas/" class="btn btn-sm">下载</a>
+        <label class="lang-switch">
+          <span class="sr-only">语言</span>
+          <select class="lang-select" aria-label="语言">
+          <option value="../../docs/" data-lang="es">Español</option>
+          <option value="../../en/docs/" data-lang="en">English</option>
+          <option value="../../ca/docs/" data-lang="ca">Valencià</option>
+          <option value="../../fr/docs/" data-lang="fr">Français</option>
+          <option value="../../de/docs/" data-lang="de">Deutsch</option>
+          <option value="../../it/docs/" data-lang="it">Italiano</option>
+          <option value="../../pt/docs/" data-lang="pt">Português</option>
+          <option value="../../ru/docs/" data-lang="ru">Русский</option>
+          <option value="../../zh/docs/" data-lang="zh" selected>简体中文</option>
+          <option value="../../hi/docs/" data-lang="hi">हिन्दी</option>
+          <option value="../../ar/docs/" data-lang="ar">العربية</option>
+        </select>
+        </label>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container docs-layout">
+
+    <aside class="docs-toc" aria-label="目录">
+      <nav>
+        <strong>目录</strong>
+        <a href="#que-es">什么是 Devia Desktop？</a>
+        <a href="#instalacion">安装</a>
+        <a href="#primeros-pasos">快速上手</a>
+        <a href="#agentes">支持的 Agent</a>
+        <a href="#funcionalidades">功能特性</a>
+        <a href="#configuracion">配置与数据</a>
+        <a href="#actualizaciones">版本更新</a>
+        <a href="#faq">常见问题</a>
+      </nav>
+    </aside>
+
+    <article class="docs-content">
+
+      <h1>Devia Desktop 文档</h1>
+
+      <section id="que-es">
+        <h2>什么是 Devia Desktop？</h2>
+        <p>Devia Desktop 是一款专为 AI Agent 辅助软件开发打造的桌面应用。它是多款 CLI Agent 工具（Claude Code、Codex、Gemini CLI 等）的友好统一界面，将终端 Agent 工作流转化为可视化、有序的多项目开发体验。</p>
+        <p>它是 <strong>FreeWare</strong>：全功能免费，支持 Windows、macOS 和 Linux。一切均在本地运行，基于您自己的项目和 CLI；无需账号，无需连接任何外部服务。</p>
+      </section>
+
+      <section id="instalacion">
+        <h2>安装</h2>
+
+        <h3>Windows</h3>
+        <ol>
+          <li>从<a href="../../zh/descargas/">下载页</a>下载 <code>.exe</code> 安装包。</li>
+          <li>运行安装包并选择安装目录（按用户安装，无需管理员权限）。</li>
+          <li>如果 SmartScreen 显示警告，请点击「更多信息 → 仍要运行」。</li>
+        </ol>
+
+        <h3>macOS</h3>
+        <ol>
+          <li>下载适合您芯片架构的 <code>.dmg</code>（Apple Silicon 或 Intel）。</li>
+          <li>打开镜像文件，将 <strong>Devia</strong> 拖入 <strong>应用程序</strong> 文件夹。</li>
+          <li>应用已经过 Apple 签名与公证，可直接打开，无需额外步骤。</li>
+        </ol>
+
+        <h3>Linux</h3>
+        <ol>
+          <li><strong>AppImage</strong>：下载后使用 <code>chmod +x Devia-*.AppImage</code> 授予执行权限，然后直接运行。</li>
+          <li><strong>Debian/Ubuntu</strong>：使用 <code>sudo dpkg -i devia_*_amd64.deb</code> 安装软件包。</li>
+        </ol>
+      </section>
+
+      <section id="primeros-pasos">
+        <h2>快速上手</h2>
+        <ol>
+          <li><strong>选择工作区。</strong>首次打开 Devia 时，会弹出对话框请您选择项目根目录（例如 <code>~/repos</code>）。Devia 将列出其中包含的项目并自动识别技术栈。</li>
+          <li><strong>连接 Agent。</strong>Devia 检测您机器上已安装的 CLI Agent，并允许您在设置中选择当前使用的 Agent。每个项目将自动完成配置，无需手动调整。</li>
+          <li><strong>开始对话。</strong>打开一个项目，在输入框中输入您的第一条指令。根据您希望赋予 Agent 的自主程度，选择执行模式——<em>plan</em>（仅规划）、<em>apply</em>（带权限确认执行）或 <em>apply-yolo</em>（无需确认直接执行）。</li>
+          <li><strong>审查结果。</strong>每条响应以流式传输并渲染 markdown，工具调用以卡片形式展开，Agent 的代码变更以行内差异形式呈现。</li>
+        </ol>
+      </section>
+
+      <section id="agentes">
+        <h2>支持的 Agent</h2>
+        <p>Devia 支持以下编程 CLI，您可以在不离开应用的情况下随时切换：</p>
+        <table>
+          <thead><tr><th>Agent</th><th>备注</th></tr></thead>
+          <tbody>
+            <tr><td>Claude Code</td><td>完整集成，支持每次执行的 MCP 服务器</td></tr>
+            <tr><td>OpenAI Codex</td><td>JSON 事件流</td></tr>
+            <tr><td>Gemini CLI</td><td>JSON 事件流</td></tr>
+            <tr><td>OpenCode</td><td>JSON 事件流</td></tr>
+            <tr><td>Cursor Agent</td><td>JSON 事件流</td></tr>
+            <tr><td>GitHub Copilot CLI</td><td>JSON 事件流</td></tr>
+            <tr><td>Qwen · DeepSeek · Qoder</td><td>纯文本输出</td></tr>
+          </tbody>
+        </table>
+        <p>当您在会话中切换到与原始 Agent 不同的 Agent 时，Devia 会自动执行<strong>上下文交接</strong>：将工作摘要（目标、修改的文件及最近交互内容）注入新 Agent 的第一轮对话，并在聊天中插入分隔线。</p>
+      </section>
+
+      <section id="funcionalidades">
+        <h2>功能特性</h2>
+
+        <h3>多项目与会话管理</h3>
+        <ul>
+          <li>项目列表、创建（空白或从模板）与克隆；在侧边栏中固定常用项目。</li>
+          <li>按项目保存的会话历史，重启后依然保留；一键继续或重新开始会话。</li>
+          <li>指令队列：在 Agent 忙碌时排队输入 prompt，支持拖拽重排、暂停与恢复。</li>
+        </ul>
+
+        <h3>多会话分屏视图</h3>
+        <ul>
+          <li>同一窗口最多支持 4 个面板（2×2），每个面板拥有独立会话，Agent 并行工作。</li>
+          <li>每个附加面板均<strong>运行在独立的 git worktree 中</strong>（从主分支创建新分支），确保多个 Agent 不会互相干扰同一文件。</li>
+          <li>分屏状态及其 worktree 在应用重启后自动恢复，保留每个会话的文件。</li>
+        </ul>
+
+        <h3>内置 SDD 的 Kanban 看板</h3>
+        <ul>
+          <li>每个项目配备 Kanban 看板，支持 spec、任务和依赖关系管理。</li>
+          <li>Agent 通过 MCP（<code>devia-kanban</code>）直接读取和更新看板，实现端到端的 spec-driven development 工作流。</li>
+          <li>看板状态存储于 Devia 数据目录，独立于代码仓库之外。</li>
+        </ul>
+
+        <h3>持久化记忆</h3>
+        <ul>
+          <li>内置跨会话记忆（<code>devia-memory</code>），支持个人和项目两种作用域。</li>
+          <li>Agent 自动查询和写入记忆：决策、已解决的 bug 和重要发现均会被记录。</li>
+          <li>设置中提供记忆管理面板：可搜索、置顶、遗忘或清除记忆条目。</li>
+        </ul>
+
+        <h3>Git 集成</h3>
+        <ul>
+          <li>侧边栏实时显示仓库状态。</li>
+          <li>带行内注释的变更查看器：在差异行上添加注释并发送给 Agent 请求审查。</li>
+          <li>支持 worktree 和快照，可在破坏性操作前进行回滚。</li>
+        </ul>
+
+        <h3>MCP 服务器、Skills 与 Prompt</h3>
+        <ul>
+          <li>Model Context Protocol 服务器管理器：安装、启用、测试并在 Agent 间共享服务器；Devia 自动将配置注入每个 CLI 的原生格式。</li>
+          <li>发现并安装本地或来自 GitHub 的 skills。</li>
+          <li>Prompt packs：为每个项目定义系统 prompt 包。</li>
+          <li>可跨项目复用的多 CLI 子 Agent 管理器。</li>
+        </ul>
+
+        <h3>Telegram 远程控制</h3>
+        <ul>
+          <li>通过 Telegram 发起任务、查询状态（分支、上下文用量、费用）并与 Agent 对话。</li>
+          <li>可选开启桌面对话镜像功能，支持向 Agent 发送附件（图片、文档）。</li>
+        </ul>
+
+        <h3>终端、语音及更多</h3>
+        <ul>
+          <li>每个项目配备真实 PTY 终端，支持在您喜爱的 IDE 中打开项目。</li>
+          <li>Docker Compose 编排：按项目执行 deploy、down 和日志查看。</li>
+          <li>使用 Whisper 进行本地语音转录——音频始终留在您的机器上。</li>
+          <li>支持拖拽图片附件，适用于多模态模型。</li>
+          <li>右侧栏提供项目文件浏览器，以及 Agent 生成文件的归档（outbox）。</li>
+          <li>每次工具调用的审计日志，保留期 30 天，自动轮转。</li>
+          <li>11 种语言（es, en, ca, fr, de, it, pt, ru, zh, hi, ar）、8 种 Material 3 主题色和可调字体大小。</li>
+        </ul>
+      </section>
+
+      <section id="configuracion">
+        <h2>配置与数据</h2>
+        <p>Devia 的所有数据均保存在本地磁盘，位于 <code>~/.devia-app/</code>（Windows 下为 <code>C:\Users\&lt;tu-usuario&gt;\.devia-app\</code>）：</p>
+        <table>
+          <thead><tr><th>路径</th><th>内容</th></tr></thead>
+          <tbody>
+            <tr><td><code>devia-app.config.json</code></td><td>配置：工作区、当前 Agent、主题、语言……</td></tr>
+            <tr><td><code>sessions/&lt;proyecto&gt;/</code></td><td>按项目保存的对话历史</td></tr>
+            <tr><td><code>projects/&lt;clave&gt;/kanban.json</code></td><td>项目 Kanban 看板</td></tr>
+            <tr><td><code>memory-global.json</code> · <code>projects/&lt;clave&gt;/memory.json</code></td><td>持久化记忆（个人 · 按项目）</td></tr>
+            <tr><td><code>mcp-servers.json</code></td><td>已配置的 MCP 服务器</td></tr>
+            <tr><td><code>outbox-archive/</code></td><td>Agent 生成的文件</td></tr>
+            <tr><td><code>attachments/</code></td><td>输入框中附加的图片</td></tr>
+            <tr><td><code>audit.log</code></td><td>工具调用日志（JSONL 格式，自动轮转）</td></tr>
+          </tbody>
+        </table>
+        <p>备份 Devia 只需复制该文件夹。删除该文件夹将使应用恢复到初始状态。</p>
+      </section>
+
+      <section id="actualizaciones">
+        <h2>版本更新</h2>
+        <p>已发布的版本将在本站的公开更新清单中公告：<a href="../../updates/latest.json"><code>updates/latest.json</code></a>。清单包含最新可用版本号、发布日期、更新说明及各平台下载链接。</p>
+        <p>Devia Desktop 会自动检查该清单并在有新版本时通知您。您也可以手动查询或在脚本中集成：</p>
+        <pre><code>curl -s https://dherrero.github.io/devia/updates/latest.json | jq .version</code></pre>
+      </section>
+
+      <section id="faq">
+        <h2>常见问题</h2>
+
+        <h3>Devia 免费吗？</h3>
+        <p>是的。Devia Desktop 是 FreeWare，在所有平台上提供 100% 完整功能，永久免费。</p>
+
+        <h3>我需要注册账号或连接 Devia 的服务吗？</h3>
+        <p>不需要。Devia Desktop 完全在本地运行。唯一会使用的外部服务是您自己配置的 CLI Agent 所属的服务。</p>
+
+        <h3>Devia 包含 AI Agent 吗？</h3>
+        <p>不包含：Devia 是指挥 Agent 的界面。您需要至少安装一个 CLI Agent（Claude Code、Codex、Gemini CLI、OpenCode……）并配置相应的凭证。Devia 会自动检测并处理其余一切。</p>
+
+        <h3>我的数据会上传到云端吗？</h3>
+        <p>不会。会话、记忆、看板和配置均保存在 <code>~/.devia-app/</code>。Whisper 语音转录也在本地执行。唯一会传输的数据是您所使用的 CLI Agent 发送给其自身服务提供商的内容。</p>
+
+        <h3>支持哪些语言？</h3>
+        <p>西班牙语、英语、瓦伦西亚语、法语、德语、意大利语、葡萄牙语、俄语、中文、印地语和阿拉伯语。</p>
+
+        <h3>如何反馈问题？</h3>
+        <p>请在 Devia 的 GitHub 仓库中提交 Issue，并附上复现步骤及您的操作系统（Windows/macOS/Linux）。</p>
+      </section>
+
+    </article>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <strong>Devia Desktop</strong>
+        <p>您的 AI 软件开发指挥中心。</p>
+      </div>
+      <nav class="footer-links">
+        <a href="../../zh/docs/">文档</a>
+        <a href="../../zh/descargas/">下载</a>
+        <a href="../../updates/latest.json">更新订阅</a>
+      </nav>
+    </div>
+    <div class="container copyright">
+      <p>© 2026 Dani Herrero · Devia</p>
+    </div>
+  </footer>
+
+</body>
+</html>

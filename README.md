@@ -61,15 +61,19 @@ oficial.** Al reportar un error, incluye si es posible:
 
 ```
 .
-├── index.html            # Landing
-├── docs/                 # Documentación
-├── descargas/            # Página de descargas (se rellena desde updates/latest.json)
-├── updates/              # Manifiesto de actualizaciones (+ feeds opcionales por plataforma)
-└── assets/               # CSS, JS y logo
+├── index.html  docs/  descargas/   # Páginas en español (idioma por defecto, en la raíz)
+├── en/  fr/  de/  …                 # Una carpeta por idioma (11 en total) con las mismas páginas
+├── 404.html                        # Página de error
+├── updates/                        # Manifiesto de actualizaciones (+ feeds por plataforma)
+├── assets/                         # CSS, JS y logo
+└── build/                          # Generador i18n: build.mjs + i18n/<idioma>.json (fuente)
 ```
 
-Sitio estático puro (HTML/CSS/JS, sin build), servido con GitHub Pages.
-El proceso de publicación de versiones está documentado en [`PUBLISHING.md`](PUBLISHING.md).
+Sitio estático multilingüe (11 idiomas), servido con GitHub Pages. Las páginas
+`*.html` **se generan** desde `build/i18n/<idioma>.json` con `npm run build`
+(Node, sin dependencias) y se commitean. La arquitectura i18n está documentada
+en [`AGENTS.md`](AGENTS.md); el proceso de publicación de versiones, en
+[`PUBLISHING.md`](PUBLISHING.md).
 
 ---
 

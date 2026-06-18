@@ -1,0 +1,291 @@
+{
+  "common": {
+    "brand": "Devia",
+    "menuLabel": "मेनू खोलें",
+    "langLabel": "भाषा",
+    "heroVersionLabel": "नवीनतम संस्करण: v",
+    "publishedOn": " · प्रकाशित ",
+    "nav": {
+      "features": "विशेषताएँ",
+      "docs": "दस्तावेज़ीकरण",
+      "download": "डाउनलोड"
+    },
+    "footer": {
+      "tagline": "AI के साथ सॉफ़्टवेयर विकास के लिए आपका कमांड सेंटर।",
+      "docs": "दस्तावेज़ीकरण",
+      "downloads": "डाउनलोड",
+      "updates": "अपडेट फ़ीड",
+      "copyright": "© 2026 Dani Herrero · Devia"
+    }
+  },
+
+  "home": {
+    "meta": {
+      "title": "Devia Desktop — AI के साथ सॉफ़्टवेयर विकास के लिए आपका कमांड सेंटर",
+      "description": "Devia Desktop एक मुफ़्त डेस्कटॉप ऐप (Windows, macOS और Linux) है जो CLI coding agents — Claude Code, Codex, Gemini CLI, OpenCode और अन्य — को एक ही विंडो से संचालित करने की सुविधा देता है।"
+    },
+    "heroLogoAlt": "Devia का लोगो",
+    "heroTitle": "AI के साथ सॉफ़्टवेयर विकास के लिए<br>आपका कमांड सेंटर",
+    "heroLead": "Devia Desktop कई agentic CLI tools — Claude Code, Codex, Gemini CLI, OpenCode और अन्य — पर एक सहज और एकीकृत इंटरफ़ेस है, जो terminal में agents के साथ काम करने को एक visual, व्यवस्थित और multi-project अनुभव में बदल देता है।",
+    "heroQuote": "«अगर Claude Code इंजन है, तो Devia उसकी बॉडी और स्टीयरिंग व्हील है।»",
+    "badges": [
+      "FreeWare — 100% सुविधाएँ, बिल्कुल मुफ़्त",
+      "Windows · macOS · Linux"
+    ],
+    "ctaDownload": "Devia Desktop डाउनलोड करें",
+    "ctaDocs": "दस्तावेज़ीकरण पढ़ें",
+    "featuresTitle": "Devia Desktop क्या करता है?",
+    "features": [
+      { "title": "🤖 Multi-agent", "body": "Claude Code, OpenAI Codex, Gemini CLI, OpenCode, Cursor Agent, GitHub Copilot CLI, Qwen, DeepSeek या Qoder के साथ काम करें और tool बदले बिना agent बदलें। Devia इंस्टॉल किए गए CLIs को detect करता है और हर project को बिना manual सेटअप के काम करने के लिए configure करता है।" },
+      { "title": "💬 Agent पर Visual Chat", "body": "Streaming responses, markdown, collapsible tool calls, diff viewer और multimodal models के लिए image attachments।" },
+      { "title": "🪟 Multi-project और Multi-session", "body": "Project-wise session history, instruction queue और 4 panels (2×2) तक का split view — हर panel में अपना session और git worktree — एक ही window में कई agents समानांतर में काम करते हैं।" },
+      { "title": "📋 Integrated SDD के साथ Kanban", "body": "Project-wise board जिसे agent खुद MCP (<code>devia-kanban</code>) के ज़रिए पढ़ता और अपडेट करता है, specs, tasks, dependencies और spec-driven development flow के साथ।" },
+      { "title": "🧠 Persistent Memory", "body": "Devia में sessions के बीच अपनी memory (<code>devia-memory</code>) है — personal और project-level scope के साथ — जिसे agent स्वतः query और update करता है।" },
+      { "title": "🌿 Integrated Git", "body": "Live repository status, inline comments के साथ diff viewer जिससे agent से review माँगा जा सके, और worktrees का support।" },
+      { "title": "🔌 MCP Server Manager", "body": "MCP servers install, activate और agents के बीच share करें; Devia हर CLI के native format में configuration inject करता है।" },
+      { "title": "✨ Skills और Prompt Packs", "body": "Skills discover और install करें (locally या GitHub से) और हर project के लिए system prompt packages define करें।" },
+      { "title": "📱 Telegram से Remote Control", "body": "Telegram से runs launch करें, status check करें और agent से बात करें — desktop conversation का optional mirror भी।" },
+      { "title": "🖥️ Terminal और Shell", "body": "Project-wise integrated terminal (real PTY), अपने पसंदीदा IDE में खोलने का विकल्प और Docker Compose orchestration।" },
+      { "title": "🎙️ Voice", "body": "Whisper के साथ local transcription — audio किसी भी API को नहीं भेजा जाता।" },
+      { "title": "🛡️ Snapshots और Auditing", "body": "Destructive operations से पहले snapshots और rollback, और हर tool-call का audit log जिसमें automatic rotation और retention हो।" }
+    ],
+    "localTitle": "Local में काम करने के लिए बनाया गया",
+    "localLead": "Devia Desktop आपके projects और CLIs के साथ, आपकी machine पर काम करता है। आपके sessions, memory, kanban और configuration आपकी disk पर रहते हैं (<code>~/.devia-app/</code>)। कोई account नहीं, कोई cloud नहीं, कोई telemetry नहीं: install करें, अपना work folder चुनें और agents को direct करना शुरू करें।",
+    "steps": [
+      { "title": "1 · Install करें", "body": "अपने platform का installer डाउनलोड करें और खोलें। किसी prior configuration की ज़रूरत नहीं।" },
+      { "title": "2 · Agents कनेक्ट करें", "body": "Devia आपके पहले से इंस्टॉल किए गए coding CLIs (Claude Code, Codex, Gemini CLI…) को detect करता है और उन्हें use के लिए तैयार कर देता है।" },
+      { "title": "3 · Direct करें", "body": "अपने workspace का कोई project खोलें और बात करें: agent code करता है, आप diffs review करते हैं, approve करते हैं और अगली instructions queue में डालते हैं।" }
+    ],
+    "downloadTitle": "Devia Desktop डाउनलोड करें",
+    "downloadLead": "मुफ़्त, 100% सुविधाओं के साथ। Windows, macOS और Linux के लिए उपलब्ध।",
+    "downloadCta": "Downloads पर जाएँ"
+  },
+
+  "docs": {
+    "meta": {
+      "title": "दस्तावेज़ीकरण — Devia Desktop",
+      "description": "Devia Desktop का दस्तावेज़ीकरण: installation, getting started, features, configuration और updates।"
+    },
+    "pageTitle": "Devia Desktop दस्तावेज़ीकरण",
+    "tocTitle": "सामग्री",
+    "toc": [
+      { "id": "que-es", "label": "Devia Desktop क्या है?" },
+      { "id": "instalacion", "label": "Installation" },
+      { "id": "primeros-pasos", "label": "शुरुआत कैसे करें" },
+      { "id": "agentes", "label": "समर्थित Agents" },
+      { "id": "funcionalidades", "label": "विशेषताएँ" },
+      { "id": "configuracion", "label": "Configuration और Data" },
+      { "id": "actualizaciones", "label": "Updates" },
+      { "id": "faq", "label": "अक्सर पूछे जाने वाले प्रश्न" }
+    ],
+    "sections": {
+      "queEs": {
+        "paras": [
+          "Devia Desktop एक desktop application है जो AI agents के साथ software development के लिए बनाई गई है। यह कई agentic CLI tools (Claude Code, Codex, Gemini CLI और अन्य) पर एक सहज और एकीकृत interface है जो terminal में agents के साथ काम करने को एक visual, व्यवस्थित और multi-project अनुभव में बदल देता है।",
+          "यह <strong>FreeWare</strong> है: 100% सुविधाओं के साथ मुफ़्त, Windows, macOS और Linux के लिए उपलब्ध। सब कुछ local में, आपके projects और CLIs पर काम करता है; किसी account या service connection की ज़रूरत नहीं।"
+        ]
+      },
+      "instalacion": {
+        "win": {
+          "title": "Windows",
+          "steps": [
+            "<a href=\"{{descargas}}\">Downloads page</a> से <code>.exe</code> installer डाउनलोड करें।",
+            "इसे चलाएँ और installation directory चुनें (user-level installation, administrator permissions की ज़रूरत नहीं)।",
+            "अगर SmartScreen कोई warning दिखाए, तो «More info → Run anyway» पर क्लिक करें।"
+          ]
+        },
+        "mac": {
+          "title": "macOS",
+          "steps": [
+            "अपनी architecture (Apple Silicon या Intel) का <code>.dmg</code> डाउनलोड करें।",
+            "इसे खोलें और <strong>Devia</strong> को <strong>Applications</strong> folder में drag करें।",
+            "App Apple द्वारा signed और notarized है: बिना किसी extra step के खुल जाती है।"
+          ]
+        },
+        "linux": {
+          "title": "Linux",
+          "steps": [
+            "<strong>AppImage</strong>: डाउनलोड करें, <code>chmod +x Devia-*.AppImage</code> से permissions दें और चलाएँ।",
+            "<strong>Debian/Ubuntu</strong>: <code>sudo dpkg -i devia_*_amd64.deb</code> से package install करें।"
+          ]
+        }
+      },
+      "primerosPasos": {
+        "steps": [
+          "<strong>अपना workspace चुनें।</strong> जब आप पहली बार Devia खोलते हैं, तो एक modal आपसे वह root folder माँगता है जहाँ आपके projects रहते हैं (जैसे <code>~/repos</code>)। Devia उसमें मौजूद projects list करता है और उनकी technology detect करता है।",
+          "<strong>Agent connect करें।</strong> Devia आपकी machine पर install किए गए agentic CLIs detect करता है और Settings में active agent चुनने देता है। हर project configure हो जाता है ताकि agent बिना manual adjustments के काम करे।",
+          "<strong>बात करें।</strong> कोई project खोलें और composer में अपनी पहली instruction लिखें। Execution mode चुनें — <em>plan</em> (सिर्फ़ plan करे), <em>apply</em> (permissions के साथ apply करे) या <em>apply-yolo</em> (बिना confirmation के) — जितनी autonomy देना चाहें।",
+          "<strong>Review करें।</strong> हर response markdown के साथ streaming में आती है, tool calls cards में expand होते हैं और agent के changes inline diffs के रूप में दिखते हैं।"
+        ]
+      },
+      "agentes": {
+        "intro": "Devia निम्नलिखित coding CLIs के साथ काम करता है, और आप app से बाहर निकले बिना एक से दूसरे में switch कर सकते हैं:",
+        "tableHead": { "agent": "Agent", "notes": "Notes" },
+        "rows": [
+          { "agent": "Claude Code", "notes": "पूर्ण integration, per-run MCP servers सहित" },
+          { "agent": "OpenAI Codex", "notes": "JSON event streaming" },
+          { "agent": "Gemini CLI", "notes": "JSON event streaming" },
+          { "agent": "OpenCode", "notes": "JSON event streaming" },
+          { "agent": "Cursor Agent", "notes": "JSON event streaming" },
+          { "agent": "GitHub Copilot CLI", "notes": "JSON event streaming" },
+          { "agent": "Qwen · DeepSeek · Qoder", "notes": "Plain text output" }
+        ],
+        "handoff": "किसी session को उस agent से अलग agent के साथ continue करने पर, Devia <strong>automatic context handoff</strong> करता है: नए agent के पहले turn में काम का summary (लक्ष्य, touched files और recent exchanges) inject करता है और chat में एक divider छोड़ता है।"
+      },
+      "funcionalidades": {
+        "groups": [
+          {
+            "title": "Multi-project और Sessions",
+            "items": [
+              "Projects की listing, creation (blank या template से) और cloning; sidebar में favorites pin करना।",
+              "Project-wise session history जो restarts के बाद भी बनी रहती है; एक click से session continue या restart करें।",
+              "Instruction queue: agent व्यस्त होने पर prompts queue करें, drag-and-drop से reorder करें, pause और resume करें।"
+            ]
+          },
+          {
+            "title": "Multi-session Split View",
+            "items": [
+              "एक ही window में 4 panels (2×2) तक, हर एक अपने session और agent के साथ parallel में काम करता है।",
+              "हर additional panel <strong>अपने git worktree में isolated</strong> काम करता है (main branch से नई branch) ताकि दो agents एक ही files को न छुएँ।",
+              "Split और उसके worktrees app restart के बाद भी बने रहते हैं, हर session की files recover होती हैं।"
+            ]
+          },
+          {
+            "title": "Integrated SDD के साथ Kanban",
+            "items": [
+              "Project-wise Kanban board जिसमें specs, tasks और dependencies हों।",
+              "Agent खुद MCP (<code>devia-kanban</code>) के ज़रिए board read और update करता है: शुरू से अंत तक spec-driven development flow।",
+              "State repository के बाहर, Devia के data folder में रहती है।"
+            ]
+          },
+          {
+            "title": "Persistent Memory",
+            "items": [
+              "Sessions के बीच अपनी memory (<code>devia-memory</code>) — personal और project-level scope के साथ।",
+              "Agent इसे automatically query और update करता है: decisions, resolved bugs और discoveries record होते हैं।",
+              "Settings में management panel: observations search, pin, forget या clear करें।"
+            ]
+          },
+          {
+            "title": "Integrated Git",
+            "items": [
+              "Sidebar में live repository status।",
+              "Inline comments के साथ diff viewer: diff की lines annotate करें और agent को review request के रूप में भेजें।",
+              "Worktrees और snapshots का support — destructive operations से पहले rollback।"
+            ]
+          },
+          {
+            "title": "MCP Servers, Skills और Prompts",
+            "items": [
+              "Model Context Protocol server manager: servers install, activate, test और agents के बीच share करें; Devia हर CLI के native format में configuration inject करता है।",
+              "Local या GitHub से skills discover और install करें।",
+              "Prompt packs: project-wise system prompt packages।",
+              "Projects के बीच reusable multi-CLI sub-agent manager।"
+            ]
+          },
+          {
+            "title": "Telegram से Remote Control",
+            "items": [
+              "Telegram से runs launch करें, status (branch, used context, cost) check करें और agent से बात करें।",
+              "Desktop conversation का optional mirror और agent को attachments (photos, documents) भेजना।"
+            ]
+          },
+          {
+            "title": "Terminal, Voice और अन्य",
+            "items": [
+              "Real PTY के साथ project-wise integrated terminal, और अपने पसंदीदा IDE में project खोलें।",
+              "Docker Compose orchestration: project-wise deploy, down और logs।",
+              "Whisper के साथ local voice transcription — audio आपकी machine से बाहर नहीं जाता।",
+              "Multimodal models के लिए drag-and-drop image attachments।",
+              "Right rail में project file browser और agent द्वारा generated files का archive (outbox)।",
+              "हर tool-call का audit log जिसमें 30-day rotation और retention हो।",
+              "11 भाषाएँ (es, en, ca, fr, de, it, pt, ru, zh, hi, ar), 8 Material 3 accent palettes और adjustable font size।"
+            ]
+          }
+        ]
+      },
+      "configuracion": {
+        "intro": "Devia की सारी information आपकी disk पर <code>~/.devia-app/</code> के अंतर्गत रहती है (Windows पर, <code>C:\\Users\\&lt;tu-usuario&gt;\\.devia-app\\</code>):",
+        "tableHead": { "path": "Path", "content": "Content" },
+        "rows": [
+          { "path": "<code>devia-app.config.json</code>", "content": "Configuration: workspace, active agent, theme, language…" },
+          { "path": "<code>sessions/&lt;proyecto&gt;/</code>", "content": "Project-wise chat history" },
+          { "path": "<code>projects/&lt;clave&gt;/kanban.json</code>", "content": "Project का Kanban board" },
+          { "path": "<code>memory-global.json</code> · <code>projects/&lt;clave&gt;/memory.json</code>", "content": "Persistent memory (personal · project-wise)" },
+          { "path": "<code>mcp-servers.json</code>", "content": "Configured MCP servers" },
+          { "path": "<code>outbox-archive/</code>", "content": "Agent द्वारा generated files" },
+          { "path": "<code>attachments/</code>", "content": "Input में attach की गई images" },
+          { "path": "<code>audit.log</code>", "content": "Tool-calls का log (rotation के साथ JSONL)" }
+        ],
+        "outro": "अपने Devia का backup लेने के लिए बस वह folder copy करें। उसे delete करने से app अपनी initial state पर वापस आ जाती है।"
+      },
+      "actualizaciones": {
+        "paras": [
+          "Published versions इस site के public manifest पर announce होती हैं: <a href=\"{{updates}}\"><code>updates/latest.json</code></a>। इसमें latest available version, publication date, notes और platform-wise download links होते हैं।",
+          "Devia Desktop उस manifest को check करके आपको नए version की सूचना देता है। आप इसे manually या अपने scripts से भी check कर सकते हैं:"
+        ],
+        "code": "curl -s https://dherrero.github.io/devia/updates/latest.json | jq .version"
+      },
+      "faq": {
+        "items": [
+          { "q": "क्या Devia मुफ़्त है?", "a": "हाँ। Devia Desktop 100% सुविधाओं के साथ FreeWare है, सभी platforms पर।" },
+          { "q": "क्या मुझे Devia के किसी service का account या connection चाहिए?", "a": "नहीं। Devia Desktop पूरी तरह local में काम करता है। केवल वे external services उपयोग होती हैं जो आपके configure किए गए CLI agents की अपनी हैं।" },
+          { "q": "क्या Devia में AI agents शामिल हैं?", "a": "नहीं: Devia वह interface है जो उन्हें direct करती है। आपको कम से कम एक agentic CLI (Claude Code, Codex, Gemini CLI, OpenCode…) अपनी credentials के साथ install करना होगा। Devia उन्हें detect करता है और बाकी सब handle करता है।" },
+          { "q": "क्या मेरा data मेरी machine से बाहर जाता है?", "a": "नहीं। Sessions, memory, kanban और configuration <code>~/.devia-app/</code> में रहते हैं। Whisper के साथ voice transcription भी local में होती है। केवल वही data travel करता है जो आपका CLI agent अपने provider को भेजता है।" },
+          { "q": "कौन-कौन सी भाषाओं में उपलब्ध है?", "a": "स्पेनिश, अंग्रेज़ी, वैलेंशियन, फ्रेंच, जर्मन, इतालवी, पुर्तगाली, रूसी, चीनी, हिंदी और अरबी।" },
+          { "q": "मैं कोई समस्या कैसे report करूँ?", "a": "Devia के GitHub repository पर समस्या को reproduce करने के steps और अपना platform (Windows/macOS/Linux) बताते हुए एक issue खोलें।" }
+        ]
+      }
+    }
+  },
+
+  "descargas": {
+    "meta": {
+      "title": "डाउनलोड — Devia Desktop",
+      "description": "Windows, macOS और Linux के लिए Devia Desktop डाउनलोड करें। मुफ़्त, 100% सुविधाओं के साथ।"
+    },
+    "pageTitle": "डाउनलोड",
+    "lastVersionLabel": "नवीनतम संस्करण:",
+    "platforms": {
+      "windows": {
+        "title": "🪟 Windows",
+        "desc": "Windows 10/11 (x64) के लिए NSIS installer। Installation directory चुनने की सुविधा।",
+        "btn": ".exe डाउनलोड करें",
+        "soon": "जल्द आ रहा है",
+        "hint": "अगर SmartScreen कोई warning दिखाए, तो «More info → Run anyway» पर क्लिक करें।"
+      },
+      "macos": {
+        "title": "🍎 macOS",
+        "desc": "Signed और notarized <code>.dmg</code> disk image। Devia को Applications में drag करें।",
+        "btnArm": "Apple Silicon (.dmg)",
+        "btnIntel": "Intel (.dmg)",
+        "soon": "जल्द आ रहा है",
+        "hint": "macOS 11 Big Sur या उससे ऊपर के साथ compatible।"
+      },
+      "linux": {
+        "title": "🐧 Linux",
+        "desc": "Universal AppImage या Debian/Ubuntu (x64) के लिए <code>.deb</code> package।",
+        "btnAppimage": "AppImage",
+        "btnDeb": ".deb",
+        "soon": "जल्द आ रहा है",
+        "hint": "AppImage: <code>chmod +x</code> से execution permissions दें और चलाएँ।"
+      }
+    },
+    "notesTitle": "Release Notes",
+    "updatesTitle": "Updates",
+    "updatesBody": "Devia Desktop इस site के public manifest के विरुद्ध नए versions check करता है: <a href=\"{{updates}}\"><code>updates/latest.json</code></a>। आप इसे manually check कर सकते हैं या अपने scripts में integrate कर सकते हैं।",
+    "reqTitle": "ज़रूरतें",
+    "reqs": [
+      "कम से कम एक coding CLI agent install हो: Claude Code, OpenAI Codex, Gemini CLI, OpenCode, Cursor Agent, GitHub Copilot CLI, Qwen, DeepSeek या Qoder। Devia इन्हें automatically detect करता है।",
+      "Repository status, diffs और split view के worktrees के लिए Git install हो (recommended)।",
+      "Project-wise Docker Compose orchestration के लिए Docker (optional)।"
+    ]
+  },
+
+  "notFound": {
+    "title": "पृष्ठ नहीं मिला — Devia Desktop",
+    "message": "यह पृष्ठ मौजूद नहीं है।",
+    "back": "वापस जाएँ",
+    "home": "होम पर जाएँ"
+  }
+}
