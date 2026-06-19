@@ -5,6 +5,7 @@
   "description": "GitHub Pages site for Devia Desktop — multilingual static-site generator.",
   "type": "module",
   "scripts": {
-    "build": "node build/build.mjs"
+    "build": "node build/build.mjs",
+    "downloads": "node build/downloads.mjs"
   }
 }
