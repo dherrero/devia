@@ -1,35 +1,35 @@
 {
   "product": "Devia",
   "channel": "stable",
-  "version": "0.33.0",
-  "pubDate": "2026-07-31T09:11:34.671Z",
-  "notes": "Devia Desktop v0.33.0",
+  "version": "0.34.0",
+  "pubDate": "2026-10-17T19:24:52.976Z",
+  "notes": "Devia Desktop v0.34.0",
   "notesUrl": "https://dherrero.github.io/devia/descargas/",
   "platforms": {
     "win32-x64": {
-      "url": "https://github.com/dherrero/devia/releases/download/v0.33.0/Devia-Setup-0.33.0.exe",
+      "url": "https://github.com/dherrero/devia/releases/download/v0.34.0/Devia-Setup-0.34.0.exe",
       "sha512": "",
-      "size": 111369344
+      "size": 109186288
     },
     "darwin-x64": {
-      "url": "https://github.com/dherrero/devia/releases/download/v0.33.0/Devia-0.33.0.dmg",
+      "url": "https://github.com/dherrero/devia/releases/download/v0.34.0/Devia-0.34.0.dmg",
       "sha512": "",
-      "size": 133609314
+      "size": 138191919
     },
     "darwin-arm64": {
-      "url": "https://github.com/dherrero/devia/releases/download/v0.33.0/Devia-0.33.0-arm64.dmg",
+      "url": "https://github.com/dherrero/devia/releases/download/v0.34.0/Devia-0.34.0-arm64.dmg",
       "sha512": "",
-      "size": 125340234
+      "size": 131065327
     },
     "linux-x64-appimage": {
-      "url": "https://github.com/dherrero/devia/releases/download/v0.33.0/Devia-0.33.0.AppImage",
+      "url": "",
       "sha512": "",
-      "size": 128420654
+      "size": 0
     },
     "linux-x64-deb": {
-      "url": "https://github.com/dherrero/devia/releases/download/v0.33.0/devia-app_0.33.0_amd64.deb",
+      "url": "",
       "sha512": "",
-      "size": 101386128
+      "size": 0
     }
   }
 }
