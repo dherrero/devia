@@ -29,7 +29,7 @@
     "heroLead": "Devia Desktop est une interface unifiée et conviviale pour plusieurs outils CLI agentiques — Claude Code, Codex, Gemini CLI, OpenCode et plus encore — qui transforme le travail avec des agents en terminal en une expérience visuelle, organisée et multi-projets.",
     "heroQuote": "« Si Claude Code est le moteur, Devia en serait la carrosserie et le volant. »",
     "badges": [
-      "FreeWare — 100% des fonctionnalités, gratuitement",
+      "Open source (Apache-2.0) — 100% des fonctionnalités, gratuitement",
       "Windows · macOS · Linux"
     ],
     "ctaDownload": "Télécharger Devia Desktop",
@@ -82,7 +82,7 @@
       "queEs": {
         "paras": [
           "Devia Desktop est une application de bureau pour développer des logiciels avec des agents IA. C'est une interface unifiée et conviviale pour plusieurs outils CLI agentiques (Claude Code, Codex, Gemini CLI et plus encore) qui transforme le travail avec des agents en terminal en une expérience visuelle, organisée et multi-projets.",
-          "C'est un <strong>FreeWare</strong> : gratuit avec 100% des fonctionnalités, disponible pour Windows, macOS et Linux. Tout fonctionne en local, sur vos projets et vos CLI ; aucun compte ni connexion à un service externe n'est nécessaire."
+          "C'est un <strong>logiciel open source</strong> (Apache-2.0) : gratuit avec 100% des fonctionnalités, disponible pour Windows, macOS et Linux. Tout fonctionne en local, sur vos projets et vos CLI ; aucun compte ni connexion à un service externe n'est nécessaire."
         ]
       },
       "instalacion": {
@@ -228,7 +228,7 @@
       },
       "faq": {
         "items": [
-          { "q": "Devia est-il gratuit ?", "a": "Oui. Devia Desktop est FreeWare avec 100% des fonctionnalités, sur toutes les plateformes." },
+          { "q": "Devia est-il gratuit ?", "a": "Oui. Devia Desktop est un logiciel open source (Apache-2.0) avec 100% des fonctionnalités, sur toutes les plateformes." },
           { "q": "Ai-je besoin d'un compte ou d'une connexion à un service Devia ?", "a": "Non. Devia Desktop fonctionne entièrement en local. Les seuls services externes utilisés sont ceux des agents CLI que vous avez configurés." },
           { "q": "Devia inclut-il les agents IA ?", "a": "Non : Devia est l'interface qui les pilote. Vous devez avoir installé au moins un CLI agentique (Claude Code, Codex, Gemini CLI, OpenCode…) avec ses identifiants. Devia les détecte et s'occupe du reste." },
           { "q": "Mes données quittent-elles ma machine ?", "a": "Non. Sessions, mémoire, kanban et configuration résident dans <code>~/.devia-app/</code>. La transcription vocale avec Whisper s'exécute également en local. Seules les données que le CLI agent que vous utilisez envoie à son propre fournisseur transitent en dehors." },

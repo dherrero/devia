@@ -36,7 +36,7 @@
 
 Ce dépôt héberge le **site public de Devia Desktop** : la documentation, la page de téléchargements, les builds publiées (en tant que Releases) et le flux de mises à jour que l'application consulte.
 
-> **Le code source ne se trouve pas ici.** Devia Desktop est un **FreeWare** : gratuit et avec 100 % de ses fonctionnalités, mais à code fermé. Ce dépôt existe pour rendre son installation, sa documentation et le signalement de problèmes faciles et transparents.
+> **Le code source se trouve dans [dherrero/devia-app](https://github.com/dherrero/devia-app).** Devia Desktop est **open source** (Apache-2.0) : gratuit et avec 100 % de ses fonctionnalités. Ce dépôt existe pour rendre son installation, sa documentation et le signalement de problèmes faciles et transparents.
 
 ## Qu'est-ce que Devia Desktop ?
 
@@ -75,4 +75,4 @@ Site statique multilingue (11 langues), servi via GitHub Pages. Les pages `*.htm
 
 ---
 
-<p align="center">© 2026 Dani Herrero · Devia Desktop est un FreeWare</p>
+<p align="center">© 2026 Dani Herrero · Devia Desktop est open source (Apache-2.0)</p>

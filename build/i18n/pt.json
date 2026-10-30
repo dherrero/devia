@@ -29,7 +29,7 @@
     "heroLead": "Devia Desktop é uma interface amigável e unificada sobre múltiplas ferramentas CLI agênticas — Claude Code, Codex, Gemini CLI, OpenCode e mais — que transforma o trabalho com agentes em terminal numa experiência visual, organizada e multiprojeto.",
     "heroQuote": "«Se o Claude Code é o motor, o Devia é a carroçaria e o volante.»",
     "badges": [
-      "FreeWare — 100% das funcionalidades, grátis",
+      "Código aberto (Apache-2.0) — 100% das funcionalidades, grátis",
       "Windows · macOS · Linux"
     ],
     "ctaDownload": "Transferir Devia Desktop",
@@ -82,7 +82,7 @@
       "queEs": {
         "paras": [
           "O Devia Desktop é uma aplicação de secretária para desenvolver software com agentes de IA. É uma interface amigável e unificada sobre múltiplas ferramentas CLI agênticas (Claude Code, Codex, Gemini CLI e mais) que transforma o trabalho com agentes em terminal numa experiência visual, organizada e multiprojeto.",
-          "É <strong>FreeWare</strong>: grátis com 100% das funcionalidades, disponível para Windows, macOS e Linux. Tudo funciona em local, sobre os teus projetos e os teus CLIs; não necessita de conta nem de ligação a qualquer serviço."
+          "É <strong>código aberto</strong> (Apache-2.0): grátis com 100% das funcionalidades, disponível para Windows, macOS e Linux. Tudo funciona em local, sobre os teus projetos e os teus CLIs; não necessita de conta nem de ligação a qualquer serviço."
         ]
       },
       "instalacion": {
@@ -228,7 +228,7 @@
       },
       "faq": {
         "items": [
-          { "q": "O Devia é gratuito?", "a": "Sim. O Devia Desktop é FreeWare com 100% das funcionalidades, em todas as plataformas." },
+          { "q": "O Devia é gratuito?", "a": "Sim. O Devia Desktop é de código aberto (Apache-2.0), com 100% das funcionalidades, em todas as plataformas." },
           { "q": "Preciso de conta ou ligação a algum serviço do Devia?", "a": "Não. O Devia Desktop funciona completamente em local. Os únicos serviços externos utilizados são os dos próprios agentes CLI que tens configurados." },
           { "q": "O Devia inclui os agentes de IA?", "a": "Não: o Devia é a interface que os dirige. Precisas de ter instalado pelo menos um CLI agêntico (Claude Code, Codex, Gemini CLI, OpenCode…) com as suas credenciais. O Devia deteta-os e trata do resto." },
           { "q": "Os meus dados saem da minha máquina?", "a": "Não. Sessões, memória, kanban e configuração vivem em <code>~/.devia-app/</code>. A transcrição de voz com Whisper também é executada em local. O único tráfego gerado é o que o agente CLI que usas envia ao seu próprio fornecedor." },

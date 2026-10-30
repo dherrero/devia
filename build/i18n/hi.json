@@ -29,7 +29,7 @@
     "heroLead": "Devia Desktop कई agentic CLI tools — Claude Code, Codex, Gemini CLI, OpenCode और अन्य — पर एक सहज और एकीकृत इंटरफ़ेस है, जो terminal में agents के साथ काम करने को एक visual, व्यवस्थित और multi-project अनुभव में बदल देता है।",
     "heroQuote": "«अगर Claude Code इंजन है, तो Devia उसकी बॉडी और स्टीयरिंग व्हील है।»",
     "badges": [
-      "FreeWare — 100% सुविधाएँ, बिल्कुल मुफ़्त",
+      "ओपन सोर्स (Apache-2.0) — 100% सुविधाएँ, बिल्कुल मुफ़्त",
       "Windows · macOS · Linux"
     ],
     "ctaDownload": "Devia Desktop डाउनलोड करें",
@@ -82,7 +82,7 @@
       "queEs": {
         "paras": [
           "Devia Desktop एक desktop application है जो AI agents के साथ software development के लिए बनाई गई है। यह कई agentic CLI tools (Claude Code, Codex, Gemini CLI और अन्य) पर एक सहज और एकीकृत interface है जो terminal में agents के साथ काम करने को एक visual, व्यवस्थित और multi-project अनुभव में बदल देता है।",
-          "यह <strong>FreeWare</strong> है: 100% सुविधाओं के साथ मुफ़्त, Windows, macOS और Linux के लिए उपलब्ध। सब कुछ local में, आपके projects और CLIs पर काम करता है; किसी account या service connection की ज़रूरत नहीं।"
+          "यह <strong>ओपन सोर्स</strong> (Apache-2.0) है: 100% सुविधाओं के साथ मुफ़्त, Windows, macOS और Linux के लिए उपलब्ध। सब कुछ local में, आपके projects और CLIs पर काम करता है; किसी account या service connection की ज़रूरत नहीं।"
         ]
       },
       "instalacion": {
@@ -228,7 +228,7 @@
       },
       "faq": {
         "items": [
-          { "q": "क्या Devia मुफ़्त है?", "a": "हाँ। Devia Desktop 100% सुविधाओं के साथ FreeWare है, सभी platforms पर।" },
+          { "q": "क्या Devia मुफ़्त है?", "a": "हाँ। Devia Desktop 100% सुविधाओं के साथ ओपन सोर्स (Apache-2.0) है, सभी platforms पर।" },
           { "q": "क्या मुझे Devia के किसी service का account या connection चाहिए?", "a": "नहीं। Devia Desktop पूरी तरह local में काम करता है। केवल वे external services उपयोग होती हैं जो आपके configure किए गए CLI agents की अपनी हैं।" },
           { "q": "क्या Devia में AI agents शामिल हैं?", "a": "नहीं: Devia वह interface है जो उन्हें direct करती है। आपको कम से कम एक agentic CLI (Claude Code, Codex, Gemini CLI, OpenCode…) अपनी credentials के साथ install करना होगा। Devia उन्हें detect करता है और बाकी सब handle करता है।" },
           { "q": "क्या मेरा data मेरी machine से बाहर जाता है?", "a": "नहीं। Sessions, memory, kanban और configuration <code>~/.devia-app/</code> में रहते हैं। Whisper के साथ voice transcription भी local में होती है। केवल वही data travel करता है जो आपका CLI agent अपने provider को भेजता है।" },

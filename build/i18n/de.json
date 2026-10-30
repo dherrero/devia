@@ -29,7 +29,7 @@
     "heroLead": "Devia Desktop ist eine einheitliche, benutzerfreundliche Oberfläche für mehrere agentische CLI-Tools — Claude Code, Codex, Gemini CLI, OpenCode und mehr — die die Arbeit mit Terminal-Agenten in ein visuelles, strukturiertes und multiprojektfähiges Erlebnis verwandelt.",
     "heroQuote": "„Wenn Claude Code der Motor ist, dann ist Devia die Karosserie und das Lenkrad.“",
     "badges": [
-      "FreeWare — 100% der Funktionen, kostenlos",
+      "Open Source (Apache-2.0) — 100% der Funktionen, kostenlos",
       "Windows · macOS · Linux"
     ],
     "ctaDownload": "Devia Desktop herunterladen",
@@ -82,7 +82,7 @@
       "queEs": {
         "paras": [
           "Devia Desktop ist eine Desktop-App zur Softwareentwicklung mit KI-Agenten. Sie bietet eine einheitliche, benutzerfreundliche Oberfläche für mehrere agentische CLI-Tools (Claude Code, Codex, Gemini CLI und mehr) und verwandelt die Arbeit mit Terminal-Agenten in ein visuelles, strukturiertes und multiprojektfähiges Erlebnis.",
-          "Es ist <strong>FreeWare</strong>: kostenlos mit 100% der Funktionen, verfügbar für Windows, macOS und Linux. Alles läuft lokal, auf deinen Projekten und deinen CLIs — kein Konto und keine Verbindung zu einem externen Dienst erforderlich."
+          "Es ist <strong>Open Source</strong> (Apache-2.0): kostenlos mit 100% der Funktionen, verfügbar für Windows, macOS und Linux. Alles läuft lokal, auf deinen Projekten und deinen CLIs — kein Konto und keine Verbindung zu einem externen Dienst erforderlich."
         ]
       },
       "instalacion": {
@@ -228,7 +228,7 @@
       },
       "faq": {
         "items": [
-          { "q": "Ist Devia kostenlos?", "a": "Ja. Devia Desktop ist FreeWare mit 100% der Funktionen, auf allen Plattformen." },
+          { "q": "Ist Devia kostenlos?", "a": "Ja. Devia Desktop ist Open Source (Apache-2.0) mit 100% der Funktionen, auf allen Plattformen." },
           { "q": "Benötige ich ein Konto oder eine Verbindung zu einem Devia-Dienst?", "a": "Nein. Devia Desktop funktioniert vollständig lokal. Die einzigen externen Dienste, die genutzt werden, sind die der CLI-Agenten, die du selbst konfiguriert hast." },
           { "q": "Enthält Devia die KI-Agenten?", "a": "Nein: Devia ist die Oberfläche, die sie steuert. Du benötigst mindestens einen installierten agentischen CLI (Claude Code, Codex, Gemini CLI, OpenCode …) mit deinen Zugangsdaten. Devia erkennt sie und kümmert sich um den Rest." },
           { "q": "Verlassen meine Daten mein Gerät?", "a": "Nein. Sitzungen, Gedächtnis, Kanban und Konfiguration liegen unter <code>~/.devia-app/</code>. Die Sprachtranskription mit Whisper läuft ebenfalls lokal. Das Einzige, was übertragen wird, ist das, was der von dir verwendete CLI-Agent an seinen eigenen Anbieter sendet." },

@@ -36,7 +36,7 @@
 
 Este repositori allotja el **lloc públic de Devia Desktop**: la documentació, la pàgina de descàrregues, les builds publicades (com a Releases) i el feed d'actualitzacions que consulta l'aplicació.
 
-> **Ací no està el codi font.** Devia Desktop és **FreeWare**: gratis i amb el 100% de les funcionalitats, però de codi tancat. Este repositori existix per a fer que instal·lar-la, documentar-se i informar de problemes siga fàcil i transparent.
+> **El codi font és a [dherrero/devia-app](https://github.com/dherrero/devia-app).** Devia Desktop és **codi obert** (Apache-2.0): gratis i amb el 100% de les funcionalitats. Este repositori existix per a fer que instal·lar-la, documentar-se i informar de problemes siga fàcil i transparent.
 
 ## Què és Devia Desktop?
 
@@ -75,4 +75,4 @@ Lloc estàtic multilingüe (11 idiomes), servit amb GitHub Pages. Les pàgines `
 
 ---
 
-<p align="center">© 2026 Dani Herrero · Devia Desktop és FreeWare</p>
+<p align="center">© 2026 Dani Herrero · Devia Desktop és codi obert (Apache-2.0)</p>

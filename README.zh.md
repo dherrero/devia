@@ -36,7 +36,7 @@
 
 本仓库托管 **Devia Desktop 的公开站点**：文档、下载页、已发布的构建（以 Releases 形式）以及应用查询的更新源。
 
-> **源代码不在这里。** Devia Desktop 是 **FreeWare**（免费软件）：免费且具备 100% 的功能，但闭源。本仓库的存在是为了让安装、查阅文档和反馈问题变得简单透明。
+> **源代码位于 [dherrero/devia-app](https://github.com/dherrero/devia-app)。** Devia Desktop 是**开源软件**（Apache-2.0）：免费且具备 100% 的功能。本仓库的存在是为了让安装、查阅文档和反馈问题变得简单透明。
 
 ## Devia Desktop 是什么？
 
@@ -75,4 +75,4 @@
 
 ---
 
-<p align="center">© 2026 Dani Herrero · Devia Desktop 是 FreeWare</p>
+<p align="center">© 2026 Dani Herrero · Devia Desktop 是开源软件（Apache-2.0）</p>

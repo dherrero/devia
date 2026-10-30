@@ -29,7 +29,7 @@
     "heroLead": "Devia Desktop 是多款 CLI Agent 工具的友好统一界面——支持 Claude Code、Codex、Gemini CLI、OpenCode 等——将终端 Agent 工作流转化为可视化、有序的多项目开发体验。",
     "heroQuote": "「如果 Claude Code 是引擎，Devia 就是车身和方向盘。」",
     "badges": [
-      "FreeWare — 全功能免费",
+      "开源（Apache-2.0）— 全功能免费",
       "Windows · macOS · Linux"
     ],
     "ctaDownload": "下载 Devia Desktop",
@@ -82,7 +82,7 @@
       "queEs": {
         "paras": [
           "Devia Desktop 是一款专为 AI Agent 辅助软件开发打造的桌面应用。它是多款 CLI Agent 工具（Claude Code、Codex、Gemini CLI 等）的友好统一界面，将终端 Agent 工作流转化为可视化、有序的多项目开发体验。",
-          "它是 <strong>FreeWare</strong>：全功能免费，支持 Windows、macOS 和 Linux。一切均在本地运行，基于您自己的项目和 CLI；无需账号，无需连接任何外部服务。"
+          "它是<strong>开源软件</strong>（Apache-2.0）：全功能免费，支持 Windows、macOS 和 Linux。一切均在本地运行，基于您自己的项目和 CLI；无需账号，无需连接任何外部服务。"
         ]
       },
       "instalacion": {
@@ -228,7 +228,7 @@
       },
       "faq": {
         "items": [
-          { "q": "Devia 免费吗？", "a": "是的。Devia Desktop 是 FreeWare，在所有平台上提供 100% 完整功能，永久免费。" },
+          { "q": "Devia 免费吗？", "a": "是的。Devia Desktop 是开源软件（Apache-2.0），在所有平台上提供 100% 完整功能，永久免费。" },
           { "q": "我需要注册账号或连接 Devia 的服务吗？", "a": "不需要。Devia Desktop 完全在本地运行。唯一会使用的外部服务是您自己配置的 CLI Agent 所属的服务。" },
           { "q": "Devia 包含 AI Agent 吗？", "a": "不包含：Devia 是指挥 Agent 的界面。您需要至少安装一个 CLI Agent（Claude Code、Codex、Gemini CLI、OpenCode……）并配置相应的凭证。Devia 会自动检测并处理其余一切。" },
           { "q": "我的数据会上传到云端吗？", "a": "不会。会话、记忆、看板和配置均保存在 <code>~/.devia-app/</code>。Whisper 语音转录也在本地执行。唯一会传输的数据是您所使用的 CLI Agent 发送给其自身服务提供商的内容。" },
