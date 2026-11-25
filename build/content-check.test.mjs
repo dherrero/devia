@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { checkContent, countWords } from './content-check.mjs';
+import { checkContent, countWords, schemaErrors } from './content-check.mjs';
 
 const ref = {
   common: { brand: 'Devia' },
@@ -68,4 +68,13 @@ test('"Material 3" anywhere fails', () => {
 test('countWords ignores html tags and counts CJK by pairs of characters', () => {
   assert.equal(countWords('uno <strong>dos</strong> tres'), 3);
   assert.equal(countWords('一二三四'), 2);
+});
+
+test('schemaErrors reports only missing and extra keys, not content limits', () => {
+  const l = clone(ref);
+  l.home.hero.title = 'uno dos tres cuatro cinco seis siete ocho nueve';
+  delete l.home.hero.cta;
+  l.home.hero.extra = 'x';
+  const errors = schemaErrors(l, ref);
+  assert.deepEqual(errors.sort(), ['extra key home.hero.extra', 'missing key home.hero.cta']);
 });

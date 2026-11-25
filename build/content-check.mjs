@@ -29,14 +29,20 @@ function flatten(value, path = '', out = {}) {
   return out;
 }
 
-/** Returns the list of problems of `lang` against the reference `ref` (es.json). */
-export function checkContent(lang, ref) {
+/** Missing and extra keys of `lang` against the reference `ref` (es.json). */
+export function schemaErrors(lang, ref) {
   const errors = [];
   const a = flatten(lang);
   const r = flatten(ref);
-
   for (const key of Object.keys(r)) if (!(key in a)) errors.push(`missing key ${key}`);
   for (const key of Object.keys(a)) if (!(key in r)) errors.push(`extra key ${key}`);
+  return errors;
+}
+
+/** Returns the list of problems of `lang` against the reference `ref` (es.json). */
+export function checkContent(lang, ref) {
+  const errors = schemaErrors(lang, ref);
+  const a = flatten(lang);
 
   const title = a['home.hero.title'];
   if (title !== undefined) {

@@ -18,11 +18,10 @@
       "copyright": "© 2026 Dani Herrero · Devia"
     }
   },
-
   "home": {
     "meta": {
-      "title": "Devia Desktop — Tu centro de mando para el desarrollo de software con IA",
-      "description": "Devia Desktop es una aplicación de escritorio gratuita y de código abierto (Windows, macOS y Linux) para dirigir agentes de codificación CLI — Claude Code, Codex, Gemini CLI, OpenCode y más — desde una sola ventana."
+      "title": "Devia Desktop: tu centro de mando para el desarrollo de software con IA",
+      "description": "Devia Desktop es una aplicación de escritorio gratuita y de código abierto (Windows, macOS y Linux) para dirigir agentes de codificación CLI, como Claude Code, Codex, Gemini CLI y OpenCode, desde una sola ventana."
     },
     "hero": {
       "title": "Tus agentes de código en una ventana",
@@ -60,7 +59,11 @@
     ],
     "local": {
       "title": "Todo en tu máquina",
-      "lead": "Tus sesiones, memoria, kanban y configuración viven en tu disco (<code>~/.devia-app/</code>). Sin cuentas: lo único que sale de tu máquina es lo que envía el CLI de cada agente a su proveedor."
+      "items": [
+        "Tus sesiones, memoria, kanban y configuración viven en tu disco (<code>~/.devia-app/</code>).",
+        "Sin cuentas ni nube de Devia.",
+        "Lo único que sale de tu máquina es lo que envía el CLI de cada agente a su proveedor."
+      ]
     },
     "download": {
       "title": "Descarga Devia Desktop",
@@ -69,24 +72,50 @@
       "platforms": "Para Windows, macOS y Linux."
     }
   },
-
   "docs": {
     "meta": {
-      "title": "Documentación — Devia Desktop",
+      "title": "Documentación de Devia Desktop",
       "description": "Documentación de Devia Desktop: instalación, primeros pasos, agentes compatibles, funcionalidades, capacidades y límites, configuración y actualizaciones."
     },
     "pageTitle": "Documentación de Devia Desktop",
     "tocTitle": "Índice",
     "toc": [
-      { "id": "que-es", "label": "¿Qué es Devia Desktop?" },
-      { "id": "instalacion", "label": "Instalación" },
-      { "id": "primeros-pasos", "label": "Primeros pasos" },
-      { "id": "agentes", "label": "Agentes compatibles" },
-      { "id": "funcionalidades", "label": "Funcionalidades" },
-      { "id": "capacidades", "label": "Capacidades y límites" },
-      { "id": "configuracion", "label": "Configuración y datos" },
-      { "id": "actualizaciones", "label": "Actualizaciones" },
-      { "id": "faq", "label": "Preguntas frecuentes" }
+      {
+        "id": "que-es",
+        "label": "¿Qué es Devia Desktop?"
+      },
+      {
+        "id": "instalacion",
+        "label": "Instalación"
+      },
+      {
+        "id": "primeros-pasos",
+        "label": "Primeros pasos"
+      },
+      {
+        "id": "agentes",
+        "label": "Agentes compatibles"
+      },
+      {
+        "id": "funcionalidades",
+        "label": "Funcionalidades"
+      },
+      {
+        "id": "capacidades",
+        "label": "Capacidades y límites"
+      },
+      {
+        "id": "configuracion",
+        "label": "Configuración y datos"
+      },
+      {
+        "id": "actualizaciones",
+        "label": "Actualizaciones"
+      },
+      {
+        "id": "faq",
+        "label": "Preguntas frecuentes"
+      }
     ],
     "sections": {
       "queEs": {
@@ -124,20 +153,41 @@
         "steps": [
           "<strong>Elige tu workspace.</strong> La primera vez que abres Devia, un modal te pide la carpeta raíz donde viven tus proyectos (por ejemplo <code>~/repos</code>). Devia lista los proyectos que contiene y detecta su tecnología.",
           "<strong>Conecta un agente.</strong> Devia detecta los CLIs agénticos instalados en tu máquina y te deja elegir el agente activo en Configuración. Cada proyecto queda configurado para que el agente funcione sin ajustes manuales.",
-          "<strong>Conversa.</strong> Abre un proyecto y escribe tu primera instrucción en el compositor. Elige el modo de ejecución — <em>plan</em> (solo planifica), <em>apply</em> (aplica con permisos) o <em>apply-yolo</em> (sin confirmaciones) — según cuánta autonomía quieras dar.",
+          "<strong>Conversa.</strong> Abre un proyecto y escribe tu primera instrucción en el compositor. Elige el modo de ejecución: <em>plan</em> (solo planifica), <em>apply</em> (aplica con permisos) o <em>apply-yolo</em> (sin confirmaciones), según cuánta autonomía quieras dar.",
           "<strong>Revisa.</strong> Cada respuesta llega en streaming con markdown, las llamadas a herramientas se despliegan en tarjetas y los cambios del agente se ven como diffs en línea."
         ]
       },
       "agentes": {
         "intro": "Devia dirige los siguientes CLIs de codificación y puedes cambiar de uno a otro sin salir de la app. El nivel de integración varía según el agente:",
-        "tableHead": { "agent": "Agente", "notes": "Integración" },
+        "tableHead": {
+          "agent": "Agente",
+          "notes": "Integración"
+        },
         "rows": [
-          { "agent": "Claude Code", "notes": "La más completa: servidores MCP por ejecución, tarjetas de sub-agentes en el chat y reanudación automática tras un límite de uso." },
-          { "agent": "OpenCode", "notes": "Integración dedicada." },
-          { "agent": "Pi", "notes": "Integración dedicada." },
-          { "agent": "Kimi y Hermes", "notes": "Mediante Agent Client Protocol (ACP). El perfil de Kimi aún no está verificado contra el CLI real." },
-          { "agent": "Codex, Gemini CLI, Cursor Agent, GitHub Copilot CLI, Grok, Qwen, Qoder y DeepSeek", "notes": "Integración genérica sobre el streaming de cada CLI." },
-          { "agent": "Tu propio agente", "notes": "Cualquier CLI que hable ACP se puede definir en <code>agent-defs.json</code>." }
+          {
+            "agent": "Claude Code",
+            "notes": "La más completa: servidores MCP por ejecución, tarjetas de sub-agentes en el chat y reanudación automática tras un límite de uso."
+          },
+          {
+            "agent": "OpenCode",
+            "notes": "Integración dedicada."
+          },
+          {
+            "agent": "Pi",
+            "notes": "Integración dedicada."
+          },
+          {
+            "agent": "Kimi y Hermes",
+            "notes": "Mediante Agent Client Protocol (ACP). El perfil de Kimi aún no está verificado contra el CLI real."
+          },
+          {
+            "agent": "Codex, Gemini CLI, Cursor Agent, GitHub Copilot CLI, Grok, Qwen, Qoder y DeepSeek",
+            "notes": "Integración genérica sobre el streaming de cada CLI."
+          },
+          {
+            "agent": "Tu propio agente",
+            "notes": "Cualquier CLI que hable ACP se puede definir en <code>agent-defs.json</code>."
+          }
         ],
         "handoff": "Al continuar una sesión con un agente distinto del que la inició, Devia hace un <strong>traspaso de contexto</strong>: inyecta un resumen del trabajo (objetivo, ficheros tocados y últimos intercambios) en el primer turno del nuevo agente y deja un divisor en el chat. El resumen generado por IA requiere Claude y <code>ANTHROPIC_API_KEY</code>."
       },
@@ -256,17 +306,47 @@
       },
       "configuracion": {
         "intro": "Casi toda la información de Devia vive en tu disco, bajo <code>~/.devia-app/</code> (en Windows, <code>C:\\Users\\&lt;tu-usuario&gt;\\.devia-app\\</code>):",
-        "tableHead": { "path": "Ruta", "content": "Contenido" },
+        "tableHead": {
+          "path": "Ruta",
+          "content": "Contenido"
+        },
         "rows": [
-          { "path": "<code>devia-app.config.json</code>", "content": "Configuración: workspace, agente activo, idioma… (los secretos, como el token de Telegram, se guardan cifrados)" },
-          { "path": "<code>sessions/&lt;proyecto&gt;/</code>", "content": "Historial de chat por proyecto" },
-          { "path": "<code>projects/&lt;clave&gt;/</code>", "content": "Datos por proyecto: tablero Kanban (<code>kanban.json</code>) y memoria (<code>memory.json</code>)" },
-          { "path": "<code>memory-global.json</code>", "content": "Memoria personal" },
-          { "path": "<code>mcp-servers.json</code>", "content": "Servidores MCP configurados" },
-          { "path": "<code>snapshots/</code>", "content": "Instantáneas de la configuración antes de modificarla" },
-          { "path": "<code>worktrees/</code>", "content": "Git worktrees de los paneles adicionales de la vista dividida" },
-          { "path": "<code>attachments/</code>", "content": "Ficheros adjuntados en el compositor o por Telegram" },
-          { "path": "<code>outbox-archive/</code>", "content": "Ficheros generados por el agente" }
+          {
+            "path": "<code>devia-app.config.json</code>",
+            "content": "Configuración: workspace, agente activo, idioma… (los secretos, como el token de Telegram, se guardan cifrados)"
+          },
+          {
+            "path": "<code>sessions/&lt;proyecto&gt;/</code>",
+            "content": "Historial de chat por proyecto"
+          },
+          {
+            "path": "<code>projects/&lt;clave&gt;/</code>",
+            "content": "Datos por proyecto: tablero Kanban (<code>kanban.json</code>) y memoria (<code>memory.json</code>)"
+          },
+          {
+            "path": "<code>memory-global.json</code>",
+            "content": "Memoria personal"
+          },
+          {
+            "path": "<code>mcp-servers.json</code>",
+            "content": "Servidores MCP configurados"
+          },
+          {
+            "path": "<code>snapshots/</code>",
+            "content": "Instantáneas de la configuración antes de modificarla"
+          },
+          {
+            "path": "<code>worktrees/</code>",
+            "content": "Git worktrees de los paneles adicionales de la vista dividida"
+          },
+          {
+            "path": "<code>attachments/</code>",
+            "content": "Ficheros adjuntados en el compositor o por Telegram"
+          },
+          {
+            "path": "<code>outbox-archive/</code>",
+            "content": "Ficheros generados por el agente"
+          }
         ],
         "outro": "Para hacer copia de seguridad de tu Devia basta con copiar esa carpeta. Borrarla devuelve la app a su estado inicial. El registro de auditoría de las tool-calls se guarda aparte, en la carpeta de datos de usuario de la aplicación."
       },
@@ -279,21 +359,41 @@
       },
       "faq": {
         "items": [
-          { "q": "¿Devia es gratis?", "a": "Sí. Devia Desktop es de código abierto (Apache-2.0), con todas las funciones, en todas las plataformas." },
-          { "q": "¿Necesito cuenta o conexión a algún servicio de Devia?", "a": "No. Devia Desktop funciona en local. Los únicos servicios externos que se usan son los de los propios agentes CLI que tú tengas configurados." },
-          { "q": "¿Devia incluye los agentes de IA?", "a": "No: Devia es la interfaz que los dirige. Necesitas tener instalado al menos un CLI agéntico (Claude Code, Codex, Gemini CLI, OpenCode…) con sus credenciales. Devia los detecta y se encarga del resto." },
-          { "q": "¿Mis datos salen de mi máquina?", "a": "Sesiones, memoria, kanban y configuración viven en <code>~/.devia-app/</code>. El dictado por voz también se ejecuta en local. Lo único que viaja es lo que envíe el CLI del agente que uses a su propio proveedor." },
-          { "q": "¿En qué idiomas está disponible?", "a": "Esta web está en español, inglés, valenciano, francés, alemán, italiano, portugués, ruso, chino, hindi y árabe. La app tiene los mismos 11 idiomas, pero solo español e inglés están completos: en los demás pueden aparecer textos sin traducir." },
-          { "q": "¿Puedo controlarlo desde el móvil?", "a": "Sí, a través de Telegram, siempre que Devia esté abierto en tu ordenador. No hay una app móvil nativa." },
-          { "q": "¿Cómo reporto un problema?", "a": "Abre una incidencia en el <a href=\"https://github.com/dherrero/devia/issues\" target=\"_blank\" rel=\"noopener\">repositorio de GitHub de Devia</a> con los pasos para reproducirlo y tu plataforma (Windows/macOS/Linux)." }
+          {
+            "q": "¿Devia es gratis?",
+            "a": "Sí. Devia Desktop es de código abierto (Apache-2.0), con todas las funciones, en todas las plataformas."
+          },
+          {
+            "q": "¿Necesito cuenta o conexión a algún servicio de Devia?",
+            "a": "No. Devia Desktop funciona en local. Los únicos servicios externos que se usan son los de los propios agentes CLI que tú tengas configurados."
+          },
+          {
+            "q": "¿Devia incluye los agentes de IA?",
+            "a": "No: Devia es la interfaz que los dirige. Necesitas tener instalado al menos un CLI agéntico (Claude Code, Codex, Gemini CLI, OpenCode…) con sus credenciales. Devia los detecta y se encarga del resto."
+          },
+          {
+            "q": "¿Mis datos salen de mi máquina?",
+            "a": "Sesiones, memoria, kanban y configuración viven en <code>~/.devia-app/</code>. El dictado por voz también se ejecuta en local. Lo único que viaja es lo que envíe el CLI del agente que uses a su propio proveedor."
+          },
+          {
+            "q": "¿En qué idiomas está disponible?",
+            "a": "Esta web está en español, inglés, valenciano, francés, alemán, italiano, portugués, ruso, chino, hindi y árabe. La app tiene los mismos 11 idiomas, pero solo español e inglés están completos: en los demás pueden aparecer textos sin traducir."
+          },
+          {
+            "q": "¿Puedo controlarlo desde el móvil?",
+            "a": "Sí, a través de Telegram, siempre que Devia esté abierto en tu ordenador. No hay una app móvil nativa."
+          },
+          {
+            "q": "¿Cómo reporto un problema?",
+            "a": "Abre una incidencia en el <a href=\"https://github.com/dherrero/devia/issues\" target=\"_blank\" rel=\"noopener\">repositorio de GitHub de Devia</a> con los pasos para reproducirlo y tu plataforma (Windows/macOS/Linux)."
+          }
         ]
       }
     }
   },
-
   "descargas": {
     "meta": {
-      "title": "Descargas — Devia Desktop",
+      "title": "Descargas de Devia Desktop",
       "description": "Descarga Devia Desktop para Windows, macOS y Linux. Gratis y de código abierto."
     },
     "pageTitle": "Descargas",
@@ -333,9 +433,8 @@
       "Docker (opcional) para la orquestación de Docker Compose por proyecto."
     ]
   },
-
   "notFound": {
-    "title": "Página no encontrada — Devia Desktop",
+    "title": "Página no encontrada en Devia Desktop",
     "message": "Esta página no existe.",
     "back": "Volver atrás",
     "home": "Ir al inicio"

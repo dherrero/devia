@@ -1,0 +1,51 @@
+:root {
+  color-scheme: light dark;
+  --space-3xs: 2px; --space-2xs: 4px; --space-xs: 8px; --space-sm: 12px; --space-md: 16px; --space-lg: 24px; --space-xl: 40px; --space-2xl: 64px; --space-3xl: 96px; --space-4xl: 144px;
+  --text-xs: 0.8125rem; --text-sm: 0.875rem; --text-md: 1rem; --text-lg: 1.25rem; --text-xl: 1.5625rem; --text-2xl: 1.953rem; --text-3xl: 2.441rem;
+  --text-display-s: clamp(2.25rem, 4vw + 0.5rem, 3.75rem); --text-display: clamp(2.75rem, 5vw + 1rem, 5.25rem);
+  --text-section: clamp(2rem, 2.5vw + 1rem, 3.5rem); --text-title: clamp(1.25rem, 0.75vw + 0.875rem, 1.625rem); --text-lead: clamp(1.125rem, 0.35vw + 1rem, 1.375rem);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1); --ease-in: cubic-bezier(0.7, 0, 0.84, 0); --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-micro: 120ms; --dur-short: 220ms; --dur-long: 420ms;
+  --container: 1440px; --gutter: 64px; --gap-columns: 32px; --section-gap-s: 120px; --section-gap: 144px; --section-gap-l: 176px;
+  --nav-h: 72px;
+  --z-base: 1; --z-raised: 10; --z-dropdown: 100; --z-sticky: 200; --z-sticky-nav: 300; --z-modal: 400; --z-toast: 500; --z-tooltip: 600;
+
+  /* Devia light sheet (violet family): values from the app's own tokens. */
+  --color-paper: oklch(98.5% 0.003 270); --color-paper-2: oklch(96.5% 0.005 270); --color-paper-3: oklch(94% 0.007 270);
+  --color-ink: oklch(12% 0.015 270); --color-ink-2: oklch(30% 0.015 270); --color-muted: oklch(48% 0.014 270);
+  --color-rule: oklch(88% 0.008 270); --color-rule-2: oklch(80% 0.01 270);
+  --color-graphite: oklch(14% 0.016 270); --color-graphite-2: oklch(19% 0.022 270); --color-graphite-ink: oklch(96% 0.004 270); --color-graphite-muted: oklch(72% 0.012 270);
+  --color-accent: oklch(55% 0.24 280); --color-accent-2: oklch(77% 0.18 295); --color-accent-wash: oklch(95% 0.03 285); --color-accent-ink: oklch(98.5% 0.006 285); --color-focus: oklch(55% 0.24 280);
+  --color-accent-deep: oklch(45% 0.24 282); --color-accent-edge: oklch(38% 0.2 282);
+  --color-add: oklch(72% 0.18 145); --color-add-wash: oklch(72% 0.18 145 / 0.14); --color-del: oklch(70% 0.18 25); --color-del-wash: oklch(70% 0.18 25 / 0.14);
+  --color-error: oklch(52% 0.19 27); --color-success: oklch(50% 0.12 150);
+  --color-key-face: oklch(99.5% 0.003 270); --color-key-edge: oklch(80% 0.01 270);
+
+  --font-display: "Familjen Grotesk", system-ui, sans-serif; --font-body: "IBM Plex Sans", system-ui, sans-serif;
+  --font-outlier: "JetBrains Mono", ui-monospace, monospace;
+  --radius-card: 8px; --radius-input: 6px; --radius-pill: 999px;
+  --cut: 8px; --cut-l: 16px;
+  --rule-hair: 1px; --shadow-card: 0 1px 2px oklch(12% 0.015 270 / 0.06);
+  --shadow-key: 0 3px 0 0 var(--color-key-edge), 0 6px 8px -4px oklch(12% 0.015 270 / 0.28), inset 0 1px 0 oklch(100% 0 0 / 0.9);
+  --shadow-key-accent: 0 3px 0 0 var(--color-accent-edge), 0 6px 8px -4px oklch(30% 0.16 282 / 0.45), inset 0 1px 0 oklch(100% 0 0 / 0.22);
+  --shadow-key-press: inset 0 1px 2px oklch(12% 0.015 270 / 0.14);
+  --tracking-display: -0.028em; --display-weight: 600;
+}
+
+/* Devia dark sheet: follows the system preference. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-paper: oklch(9% 0.012 270); --color-paper-2: oklch(14% 0.016 270); --color-paper-3: oklch(19% 0.022 270);
+    --color-ink: oklch(96% 0.004 270); --color-ink-2: oklch(82% 0.008 270); --color-muted: oklch(68% 0.012 270);
+    --color-rule: oklch(22% 0.016 270); --color-rule-2: oklch(30% 0.018 270);
+    --color-graphite: oklch(14% 0.016 270); --color-graphite-2: oklch(21% 0.024 270);
+    --color-accent: oklch(68% 0.3 295); --color-accent-wash: oklch(22% 0.06 295); --color-accent-ink: oklch(9% 0.012 270); --color-focus: oklch(72% 0.26 295);
+    --color-accent-deep: oklch(78% 0.2 295); --color-accent-edge: oklch(50% 0.26 295);
+    --color-error: oklch(66% 0.18 25); --color-success: oklch(72% 0.18 145);
+    --color-key-face: oklch(19% 0.022 270); --color-key-edge: oklch(7% 0.01 270);
+    --shadow-card: 0 1px 2px oklch(0% 0 0 / 0.4);
+    --shadow-key: 0 3px 0 0 var(--color-key-edge), 0 6px 8px -4px oklch(0% 0 0 / 0.5), inset 0 1px 0 oklch(100% 0 0 / 0.06);
+    --shadow-key-accent: 0 3px 0 0 var(--color-accent-edge), 0 6px 8px -4px oklch(0% 0 0 / 0.5), inset 0 1px 0 oklch(100% 0 0 / 0.22);
+    --shadow-key-press: inset 0 1px 2px oklch(0% 0 0 / 0.5);
+  }
+}

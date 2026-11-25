@@ -25,6 +25,7 @@
 import { readFileSync, writeFileSync, mkdirSync, rmSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
+import { schemaErrors } from './content-check.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
@@ -96,6 +97,7 @@ function absUrl(langCode, pageKey) {
   return `${SITE_BASE}${langSeg}${page.seg}`;
 }
 
+
 // ---------------------------------------------------------------------------
 // shared chrome (head, header/nav + language switcher, footer)
 // ---------------------------------------------------------------------------
@@ -116,6 +118,7 @@ function head(t, ctx, { title, description, pageKey }) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
   <title>${text(title)}</title>
   <meta name="description" content="${attr(description)}">
   <link rel="canonical" href="${attr(absUrl(ctx.lang, pageKey))}">
@@ -135,10 +138,10 @@ function langSwitcher(t, ctx, pageKey) {
     return `          <option value="${attr(url)}" data-lang="${l.code}"${selected}>${text(l.label)}</option>`;
   }).join('\n');
   return `        <label class="lang-switch">
-          <span class="sr-only">${text(t.common.langLabel)}</span>
+          <span class="visually-hidden">${text(t.common.langLabel)}</span>
           <select class="lang-select" aria-label="${attr(t.common.langLabel)}">
 ${options}
-        </select>
+          </select>
         </label>`;
 }
 
@@ -150,12 +153,12 @@ function header(t, ctx, pageKey) {
         <img src="${ctx.asset('img/devia.png')}" alt="" width="32" height="32">
         <span>${text(t.common.brand)}</span>
       </a>
-      <button class="nav-toggle" type="button" aria-label="${attr(t.common.menuLabel)}" aria-expanded="false" aria-controls="nav-menu">☰</button>
+      <button class="nav-toggle key key-sm" type="button" aria-label="${attr(t.common.menuLabel)}" aria-expanded="false" aria-controls="nav-menu"><span aria-hidden="true">≡</span></button>
       <div class="nav-links" id="nav-menu">
         <a href="${pagePath(ctx.prefix, ctx.lang, 'home')}#funcionalidades">${text(t.common.nav.features)}</a>
         <a href="${pagePath(ctx.prefix, ctx.lang, 'docs')}"${cur('docs')}>${text(t.common.nav.docs)}</a>
-        <a href="${pagePath(ctx.prefix, ctx.lang, 'descargas')}" class="btn btn-sm"${cur('descargas')}>${text(t.common.nav.download)}</a>
 ${langSwitcher(t, ctx, pageKey)}
+        <a href="${pagePath(ctx.prefix, ctx.lang, 'descargas')}" class="key key-sm key-primary"${cur('descargas')}>${text(t.common.nav.download)}</a>
       </div>
     </nav>
   </header>`;
@@ -163,24 +166,22 @@ ${langSwitcher(t, ctx, pageKey)}
 
 function footer(t, ctx) {
   return `  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <strong>${text(t.common.brand)} Desktop</strong>
-        <p>${text(t.common.footer.tagline)}</p>
-      </div>
+    <div class="container footer-mast">
+      <p class="footer-word">${text(t.common.brand)} Desktop</p>
       <nav class="footer-links">
         <a href="${pagePath(ctx.prefix, ctx.lang, 'docs')}">${text(t.common.footer.docs)}</a>
         <a href="${pagePath(ctx.prefix, ctx.lang, 'descargas')}">${text(t.common.footer.downloads)}</a>
         <a href="${ctx.updates}">${text(t.common.footer.updates)}</a>
       </nav>
     </div>
-    <div class="container copyright">
+    <div class="container footer-line">
+      <p>${text(t.common.footer.tagline)}</p>
       <p>${text(t.common.footer.copyright)}</p>
     </div>
   </footer>`;
 }
 
-function page(t, ctx, pageKey, meta, body) {
+function page(t, ctx, pageKey, meta, body, extraScript = '') {
   return `${head(t, ctx, { ...meta, pageKey })}
 <body>
 
@@ -189,7 +190,7 @@ ${header(t, ctx, pageKey)}
 ${body}
 
 ${footer(t, ctx)}
-
+${extraScript}
 </body>
 </html>
 `;
@@ -199,81 +200,139 @@ ${footer(t, ctx)}
 // page bodies
 // ---------------------------------------------------------------------------
 
+/** Language-independent product terms shown as the object of each home stage
+ *  (mode names, MCP servers, kanban columns, Telegram commands): the same
+ *  literals the app itself uses, so they are never translated. */
+const STAGE_OBJECTS = {
+  agentes: () => `<ul class="chips" aria-label="plan, apply, apply-yolo">
+              <li><code>plan</code></li>
+              <li><code>apply</code></li>
+              <li><code>apply-yolo</code></li>
+            </ul>`,
+  contexto: () => `<ul class="chips" aria-label="MCP">
+              <li><code>devia-memory</code></li>
+              <li><code>devia-code-graph</code></li>
+              <li><code>devia-code-mode</code></li>
+            </ul>`,
+  metodo: () => `<ul class="columns-strip" aria-label="kanban">
+              <li><code>backlog</code></li>
+              <li><code>todo</code></li>
+              <li><code>in_progress</code></li>
+              <li><code>done</code></li>
+            </ul>`,
+  git: () => `<ul class="panes" aria-label="git worktree">
+              <li><code>worktree 1</code></li>
+              <li><code>worktree 2</code></li>
+              <li><code>worktree 3</code></li>
+              <li><code>worktree 4</code></li>
+            </ul>`,
+  remoto: () => `<ul class="chips" aria-label="Telegram">
+              <li><code>/status</code></li>
+              <li><code>/mode</code></li>
+              <li><code>/agent</code></li>
+              <li><code>/stop</code></li>
+            </ul>`,
+};
+
+/** The hero visual: the diff viewer built from real markup inside a slot, so
+ *  a real capture of the app can replace it (assets/img/devia-app.png). */
+function heroShot(alt) {
+  return `<figure class="shot" data-slot="devia-app" data-alt="${attr(alt)}" role="img" aria-label="${attr(alt)}">
+        <div class="shot-bar">
+          <code class="shot-file">total.ts</code>
+          <ul class="shot-modes" aria-hidden="true">
+            <li><code>plan</code></li>
+            <li class="is-on"><code>apply</code></li>
+            <li><code>apply-yolo</code></li>
+          </ul>
+        </div>
+        <pre class="shot-code" aria-hidden="true"><code><span class="ln">1</span><span class="row">export function total(items: number[]): number {</span>
+<span class="ln">2</span><span class="row del">  let sum = 0;</span>
+<span class="ln">3</span><span class="row del">  for (let i = 0; i &lt;= items.length; i++) sum += items[i];</span>
+<span class="ln">2</span><span class="row add">  return items.reduce((sum, n) =&gt; sum + n, 0);</span>
+<span class="ln">3</span><span class="row">}</span></code></pre>
+        <div class="shot-bar shot-bar-2">
+          <code class="shot-file">total.test.ts</code>
+        </div>
+        <pre class="shot-code" aria-hidden="true"><code><span class="ln">1</span><span class="row add">test("sums every item", () =&gt; {</span>
+<span class="ln">2</span><span class="row add">  expect(total([1, 2, 3])).toBe(6);</span>
+<span class="ln">3</span><span class="row add">});</span></code></pre>
+      </figure>`;
+}
+
 function renderHome(t, ctx) {
   const h = t.home;
-  const cards = h.features
-    .map((f) => `          <article class="card">
-            <h3>${f.title}</h3>
-            <p>${f.body}</p>
-          </article>`)
-    .join('\n\n');
-  const badges = h.badges
-    .map((b) => `          <span class="badge">${b}</span>`)
-    .join('\n');
-  const steps = h.steps
-    .map((s) => `          <div>
-            <h3>${s.title}</h3>
+  const hero = h.hero;
+  const stages = h.sections
+    .map((s) => {
+      const object = STAGE_OBJECTS[s.id] ? STAGE_OBJECTS[s.id]() : '';
+      return `        <li class="stage" id="${attr(s.id)}">
+          <div class="stage-text">
+            <h2>${text(s.title)}</h2>
             <p>${s.body}</p>
-          </div>`)
+          </div>
+          <div class="stage-object">
+            ${object}
+          </div>
+        </li>`;
+    })
     .join('\n');
 
   const body = `  <main>
 
     <section class="hero">
-      <div class="container">
-        <img class="hero-logo" src="${ctx.asset('img/devia.png')}" alt="${attr(h.heroLogoAlt)}" width="96" height="96">
-        <h1>${h.heroTitle}</h1>
-        <p class="lead">
-          ${h.heroLead} <br>
-          ${h.heroQuote}
-        </p>
-        <p class="hero-badges">
-${badges}
-          <span class="badge" id="hero-version" hidden></span>
-        </p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="${pagePath(ctx.prefix, ctx.lang, 'descargas')}">${text(h.ctaDownload)}</a>
-          <a class="btn" href="${pagePath(ctx.prefix, ctx.lang, 'docs')}">${text(h.ctaDocs)}</a>
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <h1>${hero.title}</h1>
+          <p class="lead">${hero.lead}</p>
+          <div class="actions">
+            <a class="key key-primary" href="${pagePath(ctx.prefix, ctx.lang, 'descargas')}">${text(hero.cta)}</a>
+            <a class="key" href="${pagePath(ctx.prefix, ctx.lang, 'docs')}">${text(hero.ctaSecondary)}</a>
+          </div>
         </div>
+        ${heroShot(hero.mediaAlt)}
       </div>
     </section>
 
-    <section id="funcionalidades" class="section">
+    <section id="funcionalidades" class="stages-section">
       <div class="container">
-        <h2>${text(h.featuresTitle)}</h2>
-        <div class="grid">
-
-${cards}
-
-        </div>
+        <ol class="stages">
+${stages}
+        </ol>
       </div>
     </section>
 
-    <section class="section section-alt">
-      <div class="container">
-        <h2>${text(h.localTitle)}</h2>
-        <p class="lead-sm">
-          ${h.localLead}
-        </p>
-        <div class="cols-3">
-${steps}
-        </div>
+    <section class="band">
+      <div class="container band-grid">
+        <h2>${text(h.local.title)}</h2>
+        <ul class="facts">
+${h.local.items.map((i) => `          <li>${i}</li>`).join('\n')}
+        </ul>
       </div>
     </section>
 
-    <section class="section">
-      <div class="container center">
-        <h2>${text(h.downloadTitle)}</h2>
-        <p class="lead-sm">${h.downloadLead}</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="${pagePath(ctx.prefix, ctx.lang, 'descargas')}">${text(h.downloadCta)}</a>
+    <section class="close">
+      <div class="container close-grid">
+        <div>
+          <h2>${text(h.download.title)}</h2>
+          <p class="lead">${text(h.download.lead)}</p>
+          <p class="close-meta">${text(h.download.platforms)} <span id="home-version" hidden></span></p>
+        </div>
+        <div class="actions">
+          <a class="key key-primary" href="${pagePath(ctx.prefix, ctx.lang, 'descargas')}">${text(h.download.cta)}</a>
         </div>
       </div>
     </section>
 
   </main>`;
 
-  return page(t, ctx, 'home', { title: h.meta.title, description: h.meta.description }, body);
+  const slotScript = `
+  <script>window.hallmarkSlots = (m) => { for (const [k, v] of Object.entries(m)) { const s = document.querySelector('[data-slot="' + k + '"]'); if (!s) continue; const im = new Image(); im.src = typeof v === 'string' ? v : v.src; im.alt = (typeof v === 'object' && v.alt) || s.dataset.alt || ''; s.querySelectorAll(':scope > img').forEach((o) => o.remove()); s.prepend(im); } };
+  // To show a real capture of the app instead of the built sample, put it at
+  // assets/img/devia-app.png and call: hallmarkSlots({ 'devia-app': '${ctx.asset('img/devia-app.png')}' })
+  </script>`;
+
+  return page(t, ctx, 'home', { title: h.meta.title, description: h.meta.description }, body, slotScript);
 }
 
 function renderDocs(t, ctx) {
@@ -285,7 +344,7 @@ function renderDocs(t, ctx) {
 
   const s = d.sections;
   const list = (items) => items.map((i) => `          <li>${i}</li>`).join('\n');
-  const olist = (items) => items.map((i) => `          <li>${i}</li>`).join('\n');
+  const olist = list;
 
   const agentRows = s.agentes.rows
     .map((r) => `            <tr><td>${r.agent}</td><td>${r.notes}</td></tr>`)
@@ -297,6 +356,14 @@ function renderDocs(t, ctx) {
 ${list(g.items)}
         </ul>`)
     .join('\n\n');
+
+  const cap = s.capacidades;
+  const capColumn = (title, items) => `          <div class="cap">
+            <h3>${text(title)}</h3>
+            <ul>
+${list(items)}
+            </ul>
+          </div>`;
 
   const configRows = s.configuracion.rows
     .map((r) => `            <tr><td>${r.path}</td><td>${r.content}</td></tr>`)
@@ -354,12 +421,14 @@ ${olist(s.primerosPasos.steps)}
       <section id="agentes">
         <h2>${text(tocLabel('agentes'))}</h2>
         <p>${s.agentes.intro}</p>
-        <table>
-          <thead><tr><th>${text(s.agentes.tableHead.agent)}</th><th>${text(s.agentes.tableHead.notes)}</th></tr></thead>
-          <tbody>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th scope="col">${text(s.agentes.tableHead.agent)}</th><th scope="col">${text(s.agentes.tableHead.notes)}</th></tr></thead>
+            <tbody>
 ${agentRows}
-          </tbody>
-        </table>
+            </tbody>
+          </table>
+        </div>
         <p>${s.agentes.handoff}</p>
       </section>
 
@@ -369,15 +438,27 @@ ${agentRows}
 ${featureGroups}
       </section>
 
+      <section id="capacidades">
+        <h2>${text(tocLabel('capacidades'))}</h2>
+        <p>${cap.intro}</p>
+        <div class="caps">
+${capColumn(cap.doneTitle, cap.done)}
+${capColumn(cap.partialTitle, cap.partial)}
+${capColumn(cap.missingTitle, cap.missing)}
+        </div>
+      </section>
+
       <section id="configuracion">
         <h2>${text(tocLabel('configuracion'))}</h2>
         <p>${s.configuracion.intro}</p>
-        <table>
-          <thead><tr><th>${text(s.configuracion.tableHead.path)}</th><th>${text(s.configuracion.tableHead.content)}</th></tr></thead>
-          <tbody>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th scope="col">${text(s.configuracion.tableHead.path)}</th><th scope="col">${text(s.configuracion.tableHead.content)}</th></tr></thead>
+            <tbody>
 ${configRows}
-          </tbody>
-        </table>
+            </tbody>
+          </table>
+        </div>
         <p>${s.configuracion.outro}</p>
       </section>
 
@@ -406,61 +487,65 @@ function renderDescargas(t, ctx) {
   const reqs = x.reqs.map((r) => `            <li>${r}</li>`).join('\n');
 
   const body = `  <main>
-    <section class="section">
+    <section class="downloads">
       <div class="container">
         <h1>${text(x.pageTitle)}</h1>
-        <p class="lead-sm">
-          ${text(x.lastVersionLabel)} <strong id="dl-version">—</strong>
+        <p class="lead">
+          ${text(x.lastVersionLabel)} <strong id="dl-version"></strong>
           <span id="dl-date"></span>
         </p>
 
-        <div class="grid grid-platforms">
+        <div class="platforms">
 
-          <article class="card platform" data-platform="win32-x64">
-            <h2>${p.windows.title}</h2>
+          <article class="platform cut" data-platform="win32-x64">
+            <h2>${text(p.windows.title)}</h2>
             <p>${p.windows.desc}</p>
-            <a class="btn btn-primary dl-btn" data-key="win32-x64" href="#" hidden>${text(p.windows.btn)}</a>
+            <a class="key dl-btn" data-key="win32-x64" href="#" hidden>${text(p.windows.btn)}</a>
             <p class="dl-fallback" data-key="win32-x64">${text(p.windows.soon)}</p>
             <p class="hint">${p.windows.hint}</p>
           </article>
 
-          <article class="card platform" data-platform="darwin">
-            <h2>${p.macos.title}</h2>
+          <article class="platform cut" data-platform="darwin">
+            <h2>${text(p.macos.title)}</h2>
             <p>${p.macos.desc}</p>
-            <a class="btn btn-primary dl-btn" data-key="darwin-arm64" href="#" hidden>${text(p.macos.btnArm)}</a>
-            <a class="btn btn-primary dl-btn" data-key="darwin-x64" href="#" hidden>${text(p.macos.btnIntel)}</a>
+            <a class="key dl-btn" data-key="darwin-arm64" href="#" hidden>${text(p.macos.btnArm)}</a>
+            <a class="key dl-btn" data-key="darwin-x64" href="#" hidden>${text(p.macos.btnIntel)}</a>
             <p class="dl-fallback" data-key="darwin-arm64">${text(p.macos.soon)}</p>
             <p class="hint">${p.macos.hint}</p>
           </article>
 
-          <article class="card platform" data-platform="linux">
-            <h2>${p.linux.title}</h2>
+          <article class="platform cut" data-platform="linux">
+            <h2>${text(p.linux.title)}</h2>
             <p>${p.linux.desc}</p>
-            <a class="btn btn-primary dl-btn" data-key="linux-x64-appimage" href="#" hidden>${text(p.linux.btnAppimage)}</a>
-            <a class="btn btn-primary dl-btn" data-key="linux-x64-deb" href="#" hidden>${text(p.linux.btnDeb)}</a>
+            <a class="key dl-btn" data-key="linux-x64-appimage" href="#" hidden>${text(p.linux.btnAppimage)}</a>
+            <a class="key dl-btn" data-key="linux-x64-deb" href="#" hidden>${text(p.linux.btnDeb)}</a>
             <p class="dl-fallback" data-key="linux-x64-appimage">${text(p.linux.soon)}</p>
             <p class="hint">${p.linux.hint}</p>
           </article>
 
         </div>
 
-        <section class="section-inner">
-          <h2>${text(x.notesTitle)}</h2>
-          <p id="dl-notes">—</p>
-        </section>
+      </div>
+    </section>
 
-        <section class="section-inner">
-          <h2>${text(x.updatesTitle)}</h2>
-          <p>${x.updatesBody}</p>
-        </section>
+    <section class="downloads-more">
+      <div class="container downloads-info">
+          <section>
+            <h2>${text(x.notesTitle)}</h2>
+            <p id="dl-notes"></p>
+          </section>
 
-        <section class="section-inner">
-          <h2>${text(x.reqTitle)}</h2>
-          <ul>
+          <section>
+            <h2>${text(x.updatesTitle)}</h2>
+            <p>${x.updatesBody}</p>
+          </section>
+
+          <section>
+            <h2>${text(x.reqTitle)}</h2>
+            <ul>
 ${reqs}
-          </ul>
-        </section>
-
+            </ul>
+          </section>
       </div>
     </section>
   </main>`;
@@ -478,24 +563,35 @@ function render404(catalogue) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
   <title>${text(n.title)}</title>
   <style>
-    body {
-      margin: 0; min-height: 100vh; display: grid; place-items: center;
-      background: #121212; color: #e6e6eb;
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-      text-align: center;
+    :root {
+      color-scheme: light dark;
+      --color-paper: oklch(98.5% 0.003 270); --color-ink: oklch(12% 0.015 270); --color-muted: oklch(48% 0.014 270); --color-accent: oklch(55% 0.24 280);
+      --font-body: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      --space-sm: 12px; --space-xl: 40px;
     }
-    h1 { font-size: 3rem; margin: 0 0 0.5rem; }
-    p { color: #a6a6b3; }
-    a { color: #8ab4f8; }
+    @media (prefers-color-scheme: dark) {
+      :root { --color-paper: oklch(9% 0.012 270); --color-ink: oklch(96% 0.004 270); --color-muted: oklch(68% 0.012 270); --color-accent: oklch(72% 0.26 295); }
+    }
+    html, body { overflow-x: clip; }
+    body {
+      margin: 0; min-height: 100svh; display: grid; place-items: center;
+      background: var(--color-paper); color: var(--color-ink);
+      font-family: var(--font-body); text-align: center; padding-inline: var(--space-xl);
+    }
+    h1 { font-size: 3rem; margin: 0 0 var(--space-sm); overflow-wrap: break-word; min-width: 0; }
+    p { color: var(--color-muted); }
+    a { color: var(--color-accent); }
+    a:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
   </style>
 </head>
 <body>
   <main>
     <h1>404</h1>
     <p>${text(n.message)}</p>
-    <p><a href="javascript:history.back()">${text(n.back)}</a> · <a href="/" id="home-link">${text(n.home)}</a></p>
+    <p><a href="javascript:history.back()">${text(n.back)}</a><br><a href="/" id="home-link">${text(n.home)}</a></p>
   </main>
   <script>
     // En una project page el sitio cuelga del primer segmento de la ruta
@@ -514,14 +610,30 @@ function render404(catalogue) {
 // driver
 // ---------------------------------------------------------------------------
 
+/** `--langs es,en` builds only those languages (useful while a new content
+ *  schema is still being translated); without it every language builds. */
+function requestedLangs() {
+  const i = process.argv.indexOf('--langs');
+  return i === -1 ? null : String(process.argv[i + 1] || '').split(',').filter(Boolean);
+}
+
 function loadCatalogue() {
-  LANGS = LANGS.filter(({ code }) => existsSync(join(I18N_DIR, `${code}.json`)));
+  const wanted = requestedLangs();
+  LANGS = LANGS.filter(({ code }) => existsSync(join(I18N_DIR, `${code}.json`)) && (!wanted || wanted.includes(code)));
   if (!LANGS.some((l) => l.code === DEFAULT_LANG)) {
     throw new Error(`Missing default translation file: build/i18n/${DEFAULT_LANG}.json`);
   }
   const catalogue = {};
   for (const { code } of LANGS) {
     catalogue[code] = JSON.parse(readFileSync(join(I18N_DIR, `${code}.json`), 'utf8'));
+  }
+  // es.json is the reference: every other language must have exactly its keys.
+  for (const { code } of LANGS) {
+    if (code === DEFAULT_LANG) continue;
+    const errors = schemaErrors(catalogue[code], catalogue[DEFAULT_LANG]);
+    if (errors.length) {
+      throw new Error(`${code}.json does not match es.json:\n  ${errors.slice(0, 10).join('\n  ')}${errors.length > 10 ? `\n  … and ${errors.length - 10} more` : ''}`);
+    }
   }
   return catalogue;
 }
@@ -544,8 +656,8 @@ function outPathFor(lang, page) {
   return join(ROOT, `${langSeg}${page.seg}index.html`);
 }
 
-/** Remove generated language folders + root pages from a previous run so that
- *  removing a language or page never leaves stale files behind. */
+/** Remove generated language folders from a previous run so that removing a
+ *  language or page never leaves stale files behind. */
 function clean() {
   for (const { code } of LANGS) {
     if (code === DEFAULT_LANG) continue;
