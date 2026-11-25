@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Devia Desktop — Il tuo centro di comando per lo sviluppo software con IA</title>
-  <meta name="description" content="Devia Desktop è un'applicazione desktop gratuita (Windows, macOS e Linux) per orchestrare agenti CLI di codifica — Claude Code, Codex, Gemini CLI, OpenCode e altri — da un'unica finestra.">
+  <meta name="color-scheme" content="light dark">
+  <title>Devia Desktop: il tuo centro di comando per lo sviluppo software con IA</title>
+  <meta name="description" content="Devia Desktop è un'applicazione desktop gratuita e open source (Windows, macOS e Linux) per guidare agenti di codifica CLI, come Claude Code, Codex, Gemini CLI e OpenCode, da un'unica finestra.">
   <link rel="canonical" href="https://dherrero.github.io/devia/it/">
   <link rel="alternate" hreflang="es" href="https://dherrero.github.io/devia/">
   <link rel="alternate" hreflang="en" href="https://dherrero.github.io/devia/en/">
@@ -32,13 +33,12 @@
         <img src="../assets/img/devia.png" alt="" width="32" height="32">
         <span>Devia</span>
       </a>
-      <button class="nav-toggle" type="button" aria-label="Apri menu" aria-expanded="false" aria-controls="nav-menu">☰</button>
+      <button class="nav-toggle key key-sm" type="button" aria-label="Apri il menu" aria-expanded="false" aria-controls="nav-menu"><span aria-hidden="true">≡</span></button>
       <div class="nav-links" id="nav-menu">
         <a href="../it/#funcionalidades">Funzionalità</a>
         <a href="../it/docs/">Documentazione</a>
-        <a href="../it/descargas/" class="btn btn-sm">Scarica</a>
         <label class="lang-switch">
-          <span class="sr-only">Lingua</span>
+          <span class="visually-hidden">Lingua</span>
           <select class="lang-select" aria-label="Lingua">
           <option value="../" data-lang="es">Español</option>
           <option value="../en/" data-lang="en">English</option>
@@ -51,8 +51,9 @@
           <option value="../zh/" data-lang="zh">简体中文</option>
           <option value="../hi/" data-lang="hi">हिन्दी</option>
           <option value="../ar/" data-lang="ar">العربية</option>
-        </select>
+          </select>
         </label>
+        <a href="../it/descargas/" class="key key-sm key-primary">Scarica</a>
       </div>
     </nav>
   </header>
@@ -60,123 +61,134 @@
   <main>
 
     <section class="hero">
-      <div class="container">
-        <img class="hero-logo" src="../assets/img/devia.png" alt="Logo di Devia" width="96" height="96">
-        <h1>Il tuo centro di comando per lo<br>sviluppo software con IA</h1>
-        <p class="lead">
-          Devia Desktop è un'interfaccia unificata e intuitiva per molteplici strumenti CLI agentici — Claude Code, Codex, Gemini CLI, OpenCode e altri — che trasforma il lavoro con gli agenti da terminale in un'esperienza visiva, organizzata e multi-progetto. <br>
-          «Se Claude Code è il motore, Devia è la carrozzeria e il volante.»
-        </p>
-        <p class="hero-badges">
-          <span class="badge">Open source (Apache-2.0) — 100% delle funzionalità, gratis</span>
-          <span class="badge">Windows · macOS · Linux</span>
-          <span class="badge" id="hero-version" hidden></span>
-        </p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="../it/descargas/">Scarica Devia Desktop</a>
-          <a class="btn" href="../it/docs/">Leggi la documentazione</a>
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <h1>Agenti di codice in una sola finestra</h1>
+          <p class="lead">App desktop per guidare Claude Code, Codex, Gemini e altri.</p>
+          <div class="actions">
+            <a class="key key-primary" href="../it/descargas/">Scarica Devia Desktop</a>
+            <a class="key" href="../it/docs/">Leggi la documentazione</a>
+          </div>
         </div>
+        <figure class="shot" data-slot="devia-app" data-alt="Schermata di Devia Desktop con la chat di un agente e il diff delle sue modifiche" role="img" aria-label="Schermata di Devia Desktop con la chat di un agente e il diff delle sue modifiche">
+        <div class="shot-bar">
+          <code class="shot-file">total.ts</code>
+          <ul class="shot-modes" aria-hidden="true">
+            <li><code>plan</code></li>
+            <li class="is-on"><code>apply</code></li>
+            <li><code>apply-yolo</code></li>
+          </ul>
+        </div>
+        <pre class="shot-code" aria-hidden="true"><code><span class="ln">1</span><span class="row">export function total(items: number[]): number {</span>
+<span class="ln">2</span><span class="row del">  let sum = 0;</span>
+<span class="ln">3</span><span class="row del">  for (let i = 0; i &lt;= items.length; i++) sum += items[i];</span>
+<span class="ln">2</span><span class="row add">  return items.reduce((sum, n) =&gt; sum + n, 0);</span>
+<span class="ln">3</span><span class="row">}</span></code></pre>
+        <div class="shot-bar shot-bar-2">
+          <code class="shot-file">total.test.ts</code>
+        </div>
+        <pre class="shot-code" aria-hidden="true"><code><span class="ln">1</span><span class="row add">test("sums every item", () =&gt; {</span>
+<span class="ln">2</span><span class="row add">  expect(total([1, 2, 3])).toBe(6);</span>
+<span class="ln">3</span><span class="row add">});</span></code></pre>
+      </figure>
       </div>
     </section>
 
-    <section id="funcionalidades" class="section">
+    <section id="funcionalidades" class="stages-section">
       <div class="container">
-        <h2>Cosa fa Devia Desktop?</h2>
-        <div class="grid">
-
-          <article class="card">
-            <h3>🤖 Multi-agente</h3>
-            <p>Lavora con Claude Code, OpenAI Codex, Gemini CLI, OpenCode, Cursor Agent, GitHub Copilot CLI, Qwen, DeepSeek o Qoder, e cambia agente senza cambiare strumento. Devia rileva i CLI installati e configura ogni progetto in modo che funzionino senza interventi manuali.</p>
-          </article>
-
-          <article class="card">
-            <h3>💬 Chat visiva sull'agente</h3>
-            <p>Streaming delle risposte, markdown, chiamate agli strumenti espandibili, visualizzatore di diff e allegati di immagini per i modelli multimodali.</p>
-          </article>
-
-          <article class="card">
-            <h3>🪟 Multi-progetto e multi-sessione</h3>
-            <p>Cronologia delle sessioni per progetto, coda di istruzioni e vista divisa con fino a 4 pannelli, ciascuno con la propria sessione e git worktree indipendenti — più agenti che lavorano in parallelo in un'unica finestra.</p>
-          </article>
-
-          <article class="card">
-            <h3>📋 Kanban con SDD integrato</h3>
-            <p>Bacheca per progetto che l'agente stesso legge e aggiorna tramite MCP (<code>devia-kanban</code>), con spec, task, dipendenze e flusso spec-driven development.</p>
-          </article>
-
-          <article class="card">
-            <h3>🧠 Memoria persistente</h3>
-            <p>Devia include la propria memoria tra le sessioni (<code>devia-memory</code>), con ambito personale e per progetto, che l'agente consulta e alimenta automaticamente.</p>
-          </article>
-
-          <article class="card">
-            <h3>🌿 Git integrato</h3>
-            <p>Stato del repository in tempo reale, visualizzatore di modifiche con commenti inline per richiedere revisioni all'agente, e supporto ai worktree.</p>
-          </article>
-
-          <article class="card">
-            <h3>🔌 Gestore di server MCP</h3>
-            <p>Installa, attiva e condividi server MCP tra gli agenti; Devia inietta la configurazione nel formato nativo di ogni CLI.</p>
-          </article>
-
-          <article class="card">
-            <h3>✨ Skills e prompt packs</h3>
-            <p>Scopri e installa skills (locali o da GitHub) e definisci pacchetti di prompt di sistema per ogni progetto.</p>
-          </article>
-
-          <article class="card">
-            <h3>📱 Controllo remoto via Telegram</h3>
-            <p>Avvia esecuzioni, controlla lo stato e conversa con l'agente da Telegram, con mirroring opzionale della conversazione desktop.</p>
-          </article>
-
-          <article class="card">
-            <h3>🖥️ Terminale e shell</h3>
-            <p>Terminale integrato per progetto (PTY reale), apertura nel tuo IDE preferito e orchestrazione di Docker Compose.</p>
-          </article>
-
-          <article class="card">
-            <h3>🎙️ Voce</h3>
-            <p>Trascrizione locale con Whisper, senza inviare audio a nessuna API.</p>
-          </article>
-
-          <article class="card">
-            <h3>🛡️ Snapshot e audit</h3>
-            <p>Istantanee e rollback prima di operazioni distruttive, e registro di audit di ogni tool-call con rotazione e conservazione automatica.</p>
-          </article>
-
-        </div>
+        <ol class="stages">
+        <li class="stage" id="agentes">
+          <div class="stage-text">
+            <h2>Agenti ed esecuzione</h2>
+            <p>Lavora con Claude Code, Codex, Gemini CLI, OpenCode, Cursor Agent, Copilot, Grok, Pi, Kimi, Hermes, Qwen, Qoder e DeepSeek, oppure aggiungi il tuo se parla ACP. Cambia agente a metà sessione e scegli tra plan, apply e apply-yolo.</p>
+          </div>
+          <div class="stage-object">
+            <ul class="chips" aria-label="plan, apply, apply-yolo">
+              <li><code>plan</code></li>
+              <li><code>apply</code></li>
+              <li><code>apply-yolo</code></li>
+            </ul>
+          </div>
+        </li>
+        <li class="stage" id="contexto">
+          <div class="stage-text">
+            <h2>Contesto e memoria</h2>
+            <p>Memoria persistente tra le sessioni, cronologia per progetto, e contesto, costo e token sempre visibili. Un grafo del codice proprio dà all'agente la struttura del progetto, e code mode esegue script di sola lettura sui tuoi server MCP.</p>
+          </div>
+          <div class="stage-object">
+            <ul class="chips" aria-label="MCP">
+              <li><code>devia-memory</code></li>
+              <li><code>devia-code-graph</code></li>
+              <li><code>devia-code-mode</code></li>
+            </ul>
+          </div>
+        </li>
+        <li class="stage" id="metodo">
+          <div class="stage-text">
+            <h2>Metodo e pianificazione</h2>
+            <p>Un kanban per progetto che l'agente stesso legge e aggiorna, con spec, task e dipendenze. Devia Method guida il lavoro, e le schede interattive ti fanno domande, chiedono di approvare piani o rivedere modifiche, con qualsiasi agente.</p>
+          </div>
+          <div class="stage-object">
+            <ul class="columns-strip" aria-label="kanban">
+              <li><code>backlog</code></li>
+              <li><code>todo</code></li>
+              <li><code>in_progress</code></li>
+              <li><code>done</code></li>
+            </ul>
+          </div>
+        </li>
+        <li class="stage" id="git">
+          <div class="stage-text">
+            <h2>Git e revisione</h2>
+            <p>Stato del repository, diff inline e cambio di branch. Commenta le righe del diff e le invii all'agente come revisione. Fino a quattro agenti in parallelo, ciascuno isolato nel proprio git worktree.</p>
+          </div>
+          <div class="stage-object">
+            <ul class="panes" aria-label="git worktree">
+              <li><code>worktree 1</code></li>
+              <li><code>worktree 2</code></li>
+              <li><code>worktree 3</code></li>
+              <li><code>worktree 4</code></li>
+            </ul>
+          </div>
+        </li>
+        <li class="stage" id="remoto">
+          <div class="stage-text">
+            <h2>Remoto e piattaforma</h2>
+            <p>Guida i tuoi agenti da Telegram, con invio di file, finché Devia è aperto. Terminale integrato, Docker Compose e apertura nel tuo IDE, su Windows, macOS e Linux.</p>
+          </div>
+          <div class="stage-object">
+            <ul class="chips" aria-label="Telegram">
+              <li><code>/status</code></li>
+              <li><code>/mode</code></li>
+              <li><code>/agent</code></li>
+              <li><code>/stop</code></li>
+            </ul>
+          </div>
+        </li>
+        </ol>
       </div>
     </section>
 
-    <section class="section section-alt">
-      <div class="container">
-        <h2>Progettato per lavorare in locale</h2>
-        <p class="lead-sm">
-          Devia Desktop opera sui tuoi progetti e i tuoi CLI, sulla tua macchina. Le tue sessioni, la tua memoria, il tuo kanban e la tua configurazione risiedono sul tuo disco (<code>~/.devia-app/</code>). Nessun account, nessun cloud, nessuna telemetria: installi, scegli la tua cartella di lavoro e inizi a orchestrare gli agenti.
-        </p>
-        <div class="cols-3">
-          <div>
-            <h3>1 · Installa</h3>
-            <p>Scarica il programma di installazione per la tua piattaforma e avvialo. Non è richiesta alcuna configurazione preliminare.</p>
-          </div>
-          <div>
-            <h3>2 · Connetti i tuoi agenti</h3>
-            <p>Devia rileva i CLI di codifica già installati (Claude Code, Codex, Gemini CLI…) e li rende immediatamente disponibili.</p>
-          </div>
-          <div>
-            <h3>3 · Orchestra</h3>
-            <p>Apri un progetto del tuo workspace e conversa: l'agente scrive codice, tu rivedi i diff, approvi e metti in coda le istruzioni successive.</p>
-          </div>
-        </div>
+    <section class="band">
+      <div class="container band-grid">
+        <h2>Tutto sulla tua macchina</h2>
+        <ul class="facts">
+          <li>Le tue sessioni, la memoria, il kanban e la configurazione risiedono sul tuo disco (<code>~/.devia-app/</code>).</li>
+          <li>Nessun account né cloud di Devia.</li>
+          <li>L'unica cosa che esce dalla tua macchina è ciò che la CLI di ciascun agente invia al proprio provider.</li>
+        </ul>
       </div>
     </section>
 
-    <section class="section">
-      <div class="container center">
-        <h2>Scarica Devia Desktop</h2>
-        <p class="lead-sm">Gratuito, con il 100% delle funzionalità. Disponibile per Windows, macOS e Linux.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="../it/descargas/">Vai ai download</a>
+    <section class="close">
+      <div class="container close-grid">
+        <div>
+          <h2>Scarica Devia Desktop</h2>
+          <p class="lead">Gratuito e open source (Apache-2.0), con tutte le funzioni.</p>
+          <p class="close-meta">Per Windows, macOS e Linux. <span id="home-version" hidden></span></p>
+        </div>
+        <div class="actions">
+          <a class="key key-primary" href="../it/descargas/">Vai ai download</a>
         </div>
       </div>
     </section>
@@ -184,21 +196,23 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <strong>Devia Desktop</strong>
-        <p>Il tuo centro di comando per lo sviluppo software con IA.</p>
-      </div>
+    <div class="container footer-mast">
+      <p class="footer-word">Devia Desktop</p>
       <nav class="footer-links">
         <a href="../it/docs/">Documentazione</a>
         <a href="../it/descargas/">Download</a>
         <a href="../updates/latest.json">Feed degli aggiornamenti</a>
       </nav>
     </div>
-    <div class="container copyright">
+    <div class="container footer-line">
+      <p>Il tuo centro di comando per lo sviluppo software con IA.</p>
       <p>© 2026 Dani Herrero · Devia</p>
     </div>
   </footer>
 
+  <script>window.hallmarkSlots = (m) => { for (const [k, v] of Object.entries(m)) { const s = document.querySelector('[data-slot="' + k + '"]'); if (!s) continue; const im = new Image(); im.src = typeof v === 'string' ? v : v.src; im.alt = (typeof v === 'object' && v.alt) || s.dataset.alt || ''; s.querySelectorAll(':scope > img').forEach((o) => o.remove()); s.prepend(im); } };
+  // To show a real capture of the app instead of the built sample, put it at
+  // assets/img/devia-app.png and call: hallmarkSlots({ 'devia-app': '../assets/img/devia-app.png' })
+  </script>
 </body>
 </html>

@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Devia Desktop — AI के साथ सॉफ़्टवेयर विकास के लिए आपका कमांड सेंटर</title>
-  <meta name="description" content="Devia Desktop एक मुफ़्त डेस्कटॉप ऐप (Windows, macOS और Linux) है जो CLI coding agents — Claude Code, Codex, Gemini CLI, OpenCode और अन्य — को एक ही विंडो से संचालित करने की सुविधा देता है।">
+  <meta name="color-scheme" content="light dark">
+  <title>Devia Desktop: AI के साथ सॉफ़्टवेयर विकास के लिए आपका कमांड सेंटर</title>
+  <meta name="description" content="Devia Desktop एक मुफ़्त और ओपन सोर्स डेस्कटॉप ऐप (Windows, macOS और Linux) है, जो Claude Code, Codex, Gemini CLI और OpenCode जैसे CLI coding agents को एक ही विंडो से चलाने देता है।">
   <link rel="canonical" href="https://dherrero.github.io/devia/hi/">
   <link rel="alternate" hreflang="es" href="https://dherrero.github.io/devia/">
   <link rel="alternate" hreflang="en" href="https://dherrero.github.io/devia/en/">
@@ -32,13 +33,12 @@
         <img src="../assets/img/devia.png" alt="" width="32" height="32">
         <span>Devia</span>
       </a>
-      <button class="nav-toggle" type="button" aria-label="मेनू खोलें" aria-expanded="false" aria-controls="nav-menu">☰</button>
+      <button class="nav-toggle key key-sm" type="button" aria-label="मेनू खोलें" aria-expanded="false" aria-controls="nav-menu"><span aria-hidden="true">≡</span></button>
       <div class="nav-links" id="nav-menu">
         <a href="../hi/#funcionalidades">विशेषताएँ</a>
         <a href="../hi/docs/">दस्तावेज़ीकरण</a>
-        <a href="../hi/descargas/" class="btn btn-sm">डाउनलोड</a>
         <label class="lang-switch">
-          <span class="sr-only">भाषा</span>
+          <span class="visually-hidden">भाषा</span>
           <select class="lang-select" aria-label="भाषा">
           <option value="../" data-lang="es">Español</option>
           <option value="../en/" data-lang="en">English</option>
@@ -51,8 +51,9 @@
           <option value="../zh/" data-lang="zh">简体中文</option>
           <option value="../hi/" data-lang="hi" selected>हिन्दी</option>
           <option value="../ar/" data-lang="ar">العربية</option>
-        </select>
+          </select>
         </label>
+        <a href="../hi/descargas/" class="key key-sm key-primary">डाउनलोड</a>
       </div>
     </nav>
   </header>
@@ -60,123 +61,134 @@
   <main>
 
     <section class="hero">
-      <div class="container">
-        <img class="hero-logo" src="../assets/img/devia.png" alt="Devia का लोगो" width="96" height="96">
-        <h1>AI के साथ सॉफ़्टवेयर विकास के लिए<br>आपका कमांड सेंटर</h1>
-        <p class="lead">
-          Devia Desktop कई agentic CLI tools — Claude Code, Codex, Gemini CLI, OpenCode और अन्य — पर एक सहज और एकीकृत इंटरफ़ेस है, जो terminal में agents के साथ काम करने को एक visual, व्यवस्थित और multi-project अनुभव में बदल देता है। <br>
-          «अगर Claude Code इंजन है, तो Devia उसकी बॉडी और स्टीयरिंग व्हील है।»
-        </p>
-        <p class="hero-badges">
-          <span class="badge">ओपन सोर्स (Apache-2.0) — 100% सुविधाएँ, बिल्कुल मुफ़्त</span>
-          <span class="badge">Windows · macOS · Linux</span>
-          <span class="badge" id="hero-version" hidden></span>
-        </p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="../hi/descargas/">Devia Desktop डाउनलोड करें</a>
-          <a class="btn" href="../hi/docs/">दस्तावेज़ीकरण पढ़ें</a>
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <h1>आपके coding agents, एक ही विंडो में</h1>
+          <p class="lead">Claude Code, Codex, Gemini और अन्य को चलाने वाला desktop ऐप।</p>
+          <div class="actions">
+            <a class="key key-primary" href="../hi/descargas/">Devia Desktop डाउनलोड करें</a>
+            <a class="key" href="../hi/docs/">दस्तावेज़ीकरण पढ़ें</a>
+          </div>
         </div>
+        <figure class="shot" data-slot="devia-app" data-alt="Devia Desktop का स्क्रीनशॉट: एक agent की चैट और उसके बदलावों का diff" role="img" aria-label="Devia Desktop का स्क्रीनशॉट: एक agent की चैट और उसके बदलावों का diff">
+        <div class="shot-bar">
+          <code class="shot-file">total.ts</code>
+          <ul class="shot-modes" aria-hidden="true">
+            <li><code>plan</code></li>
+            <li class="is-on"><code>apply</code></li>
+            <li><code>apply-yolo</code></li>
+          </ul>
+        </div>
+        <pre class="shot-code" aria-hidden="true"><code><span class="ln">1</span><span class="row">export function total(items: number[]): number {</span>
+<span class="ln">2</span><span class="row del">  let sum = 0;</span>
+<span class="ln">3</span><span class="row del">  for (let i = 0; i &lt;= items.length; i++) sum += items[i];</span>
+<span class="ln">2</span><span class="row add">  return items.reduce((sum, n) =&gt; sum + n, 0);</span>
+<span class="ln">3</span><span class="row">}</span></code></pre>
+        <div class="shot-bar shot-bar-2">
+          <code class="shot-file">total.test.ts</code>
+        </div>
+        <pre class="shot-code" aria-hidden="true"><code><span class="ln">1</span><span class="row add">test("sums every item", () =&gt; {</span>
+<span class="ln">2</span><span class="row add">  expect(total([1, 2, 3])).toBe(6);</span>
+<span class="ln">3</span><span class="row add">});</span></code></pre>
+      </figure>
       </div>
     </section>
 
-    <section id="funcionalidades" class="section">
+    <section id="funcionalidades" class="stages-section">
       <div class="container">
-        <h2>Devia Desktop क्या करता है?</h2>
-        <div class="grid">
-
-          <article class="card">
-            <h3>🤖 Multi-agent</h3>
-            <p>Claude Code, OpenAI Codex, Gemini CLI, OpenCode, Cursor Agent, GitHub Copilot CLI, Qwen, DeepSeek या Qoder के साथ काम करें और tool बदले बिना agent बदलें। Devia इंस्टॉल किए गए CLIs को detect करता है और हर project को बिना manual सेटअप के काम करने के लिए configure करता है।</p>
-          </article>
-
-          <article class="card">
-            <h3>💬 Agent पर Visual Chat</h3>
-            <p>Streaming responses, markdown, collapsible tool calls, diff viewer और multimodal models के लिए image attachments।</p>
-          </article>
-
-          <article class="card">
-            <h3>🪟 Multi-project और Multi-session</h3>
-            <p>Project-wise session history, instruction queue और 4 panels (2×2) तक का split view — हर panel में अपना session और git worktree — एक ही window में कई agents समानांतर में काम करते हैं।</p>
-          </article>
-
-          <article class="card">
-            <h3>📋 Integrated SDD के साथ Kanban</h3>
-            <p>Project-wise board जिसे agent खुद MCP (<code>devia-kanban</code>) के ज़रिए पढ़ता और अपडेट करता है, specs, tasks, dependencies और spec-driven development flow के साथ।</p>
-          </article>
-
-          <article class="card">
-            <h3>🧠 Persistent Memory</h3>
-            <p>Devia में sessions के बीच अपनी memory (<code>devia-memory</code>) है — personal और project-level scope के साथ — जिसे agent स्वतः query और update करता है।</p>
-          </article>
-
-          <article class="card">
-            <h3>🌿 Integrated Git</h3>
-            <p>Live repository status, inline comments के साथ diff viewer जिससे agent से review माँगा जा सके, और worktrees का support।</p>
-          </article>
-
-          <article class="card">
-            <h3>🔌 MCP Server Manager</h3>
-            <p>MCP servers install, activate और agents के बीच share करें; Devia हर CLI के native format में configuration inject करता है।</p>
-          </article>
-
-          <article class="card">
-            <h3>✨ Skills और Prompt Packs</h3>
-            <p>Skills discover और install करें (locally या GitHub से) और हर project के लिए system prompt packages define करें।</p>
-          </article>
-
-          <article class="card">
-            <h3>📱 Telegram से Remote Control</h3>
-            <p>Telegram से runs launch करें, status check करें और agent से बात करें — desktop conversation का optional mirror भी।</p>
-          </article>
-
-          <article class="card">
-            <h3>🖥️ Terminal और Shell</h3>
-            <p>Project-wise integrated terminal (real PTY), अपने पसंदीदा IDE में खोलने का विकल्प और Docker Compose orchestration।</p>
-          </article>
-
-          <article class="card">
-            <h3>🎙️ Voice</h3>
-            <p>Whisper के साथ local transcription — audio किसी भी API को नहीं भेजा जाता।</p>
-          </article>
-
-          <article class="card">
-            <h3>🛡️ Snapshots और Auditing</h3>
-            <p>Destructive operations से पहले snapshots और rollback, और हर tool-call का audit log जिसमें automatic rotation और retention हो।</p>
-          </article>
-
-        </div>
+        <ol class="stages">
+        <li class="stage" id="agentes">
+          <div class="stage-text">
+            <h2>Agents और निष्पादन</h2>
+            <p>Claude Code, Codex, Gemini CLI, OpenCode, Cursor Agent, Copilot, Grok, Pi, Kimi, Hermes, Qwen, Qoder और DeepSeek के साथ काम करें, या ACP बोलने वाला अपना agent जोड़ें। सत्र के बीच में agent बदलें और plan, apply या apply-yolo चुनें।</p>
+          </div>
+          <div class="stage-object">
+            <ul class="chips" aria-label="plan, apply, apply-yolo">
+              <li><code>plan</code></li>
+              <li><code>apply</code></li>
+              <li><code>apply-yolo</code></li>
+            </ul>
+          </div>
+        </li>
+        <li class="stage" id="contexto">
+          <div class="stage-text">
+            <h2>Context और memory</h2>
+            <p>सत्रों के बीच स्थायी memory, प्रोजेक्ट-वार इतिहास, और context, लागत व tokens एक नज़र में। अपना code graph agent को प्रोजेक्ट की संरचना देता है, और code mode आपके MCP servers पर केवल पढ़ने वाली scripts चलाता है।</p>
+          </div>
+          <div class="stage-object">
+            <ul class="chips" aria-label="MCP">
+              <li><code>devia-memory</code></li>
+              <li><code>devia-code-graph</code></li>
+              <li><code>devia-code-mode</code></li>
+            </ul>
+          </div>
+        </li>
+        <li class="stage" id="metodo">
+          <div class="stage-text">
+            <h2>Method और योजना</h2>
+            <p>हर प्रोजेक्ट का एक kanban, जिसे agent खुद पढ़ता और अपडेट करता है, specs, tasks और dependencies के साथ। Devia Method काम को दिशा देता है, और इंटरैक्टिव कार्ड किसी भी agent के साथ सवाल पूछते हैं, plans की मंज़ूरी माँगते हैं या बदलावों की समीक्षा कराते हैं।</p>
+          </div>
+          <div class="stage-object">
+            <ul class="columns-strip" aria-label="kanban">
+              <li><code>backlog</code></li>
+              <li><code>todo</code></li>
+              <li><code>in_progress</code></li>
+              <li><code>done</code></li>
+            </ul>
+          </div>
+        </li>
+        <li class="stage" id="git">
+          <div class="stage-text">
+            <h2>Git और समीक्षा</h2>
+            <p>रिपॉज़िटरी की स्थिति, inline diffs और branch बदलना। diff की पंक्तियों पर टिप्पणी करें और उन्हें समीक्षा के रूप में agent को भेजें। चार तक agents समानांतर, हर एक अपने git worktree में अलग।</p>
+          </div>
+          <div class="stage-object">
+            <ul class="panes" aria-label="git worktree">
+              <li><code>worktree 1</code></li>
+              <li><code>worktree 2</code></li>
+              <li><code>worktree 3</code></li>
+              <li><code>worktree 4</code></li>
+            </ul>
+          </div>
+        </li>
+        <li class="stage" id="remoto">
+          <div class="stage-text">
+            <h2>Remote और प्लेटफ़ॉर्म</h2>
+            <p>Devia खुला रहने तक Telegram से अपने agents चलाएँ, फ़ाइलें भेजने के साथ। Windows, macOS और Linux पर इंटीग्रेटेड terminal, Docker Compose और अपने IDE में खोलने की सुविधा।</p>
+          </div>
+          <div class="stage-object">
+            <ul class="chips" aria-label="Telegram">
+              <li><code>/status</code></li>
+              <li><code>/mode</code></li>
+              <li><code>/agent</code></li>
+              <li><code>/stop</code></li>
+            </ul>
+          </div>
+        </li>
+        </ol>
       </div>
     </section>
 
-    <section class="section section-alt">
-      <div class="container">
-        <h2>Local में काम करने के लिए बनाया गया</h2>
-        <p class="lead-sm">
-          Devia Desktop आपके projects और CLIs के साथ, आपकी machine पर काम करता है। आपके sessions, memory, kanban और configuration आपकी disk पर रहते हैं (<code>~/.devia-app/</code>)। कोई account नहीं, कोई cloud नहीं, कोई telemetry नहीं: install करें, अपना work folder चुनें और agents को direct करना शुरू करें।
-        </p>
-        <div class="cols-3">
-          <div>
-            <h3>1 · Install करें</h3>
-            <p>अपने platform का installer डाउनलोड करें और खोलें। किसी prior configuration की ज़रूरत नहीं।</p>
-          </div>
-          <div>
-            <h3>2 · Agents कनेक्ट करें</h3>
-            <p>Devia आपके पहले से इंस्टॉल किए गए coding CLIs (Claude Code, Codex, Gemini CLI…) को detect करता है और उन्हें use के लिए तैयार कर देता है।</p>
-          </div>
-          <div>
-            <h3>3 · Direct करें</h3>
-            <p>अपने workspace का कोई project खोलें और बात करें: agent code करता है, आप diffs review करते हैं, approve करते हैं और अगली instructions queue में डालते हैं।</p>
-          </div>
-        </div>
+    <section class="band">
+      <div class="container band-grid">
+        <h2>सब कुछ आपकी मशीन पर</h2>
+        <ul class="facts">
+          <li>आपके सत्र, memory, kanban और कॉन्फ़िगरेशन आपकी डिस्क (<code>~/.devia-app/</code>) में रहते हैं।</li>
+          <li>न कोई खाता, न Devia का कोई क्लाउड।</li>
+          <li>आपकी मशीन से केवल वही बाहर जाता है जो हर agent का CLI अपने प्रदाता को भेजता है।</li>
+        </ul>
       </div>
     </section>
 
-    <section class="section">
-      <div class="container center">
-        <h2>Devia Desktop डाउनलोड करें</h2>
-        <p class="lead-sm">मुफ़्त, 100% सुविधाओं के साथ। Windows, macOS और Linux के लिए उपलब्ध।</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="../hi/descargas/">Downloads पर जाएँ</a>
+    <section class="close">
+      <div class="container close-grid">
+        <div>
+          <h2>Devia Desktop डाउनलोड करें</h2>
+          <p class="lead">मुफ़्त और ओपन सोर्स (Apache-2.0), सभी सुविधाओं के साथ।</p>
+          <p class="close-meta">Windows, macOS और Linux के लिए। <span id="home-version" hidden></span></p>
+        </div>
+        <div class="actions">
+          <a class="key key-primary" href="../hi/descargas/">डाउनलोड पर जाएँ</a>
         </div>
       </div>
     </section>
@@ -184,21 +196,23 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <strong>Devia Desktop</strong>
-        <p>AI के साथ सॉफ़्टवेयर विकास के लिए आपका कमांड सेंटर।</p>
-      </div>
+    <div class="container footer-mast">
+      <p class="footer-word">Devia Desktop</p>
       <nav class="footer-links">
         <a href="../hi/docs/">दस्तावेज़ीकरण</a>
         <a href="../hi/descargas/">डाउनलोड</a>
         <a href="../updates/latest.json">अपडेट फ़ीड</a>
       </nav>
     </div>
-    <div class="container copyright">
+    <div class="container footer-line">
+      <p>AI के साथ सॉफ़्टवेयर विकास के लिए आपका कमांड सेंटर।</p>
       <p>© 2026 Dani Herrero · Devia</p>
     </div>
   </footer>
 
+  <script>window.hallmarkSlots = (m) => { for (const [k, v] of Object.entries(m)) { const s = document.querySelector('[data-slot="' + k + '"]'); if (!s) continue; const im = new Image(); im.src = typeof v === 'string' ? v : v.src; im.alt = (typeof v === 'object' && v.alt) || s.dataset.alt || ''; s.querySelectorAll(':scope > img').forEach((o) => o.remove()); s.prepend(im); } };
+  // To show a real capture of the app instead of the built sample, put it at
+  // assets/img/devia-app.png and call: hallmarkSlots({ 'devia-app': '../assets/img/devia-app.png' })
+  </script>
 </body>
 </html>

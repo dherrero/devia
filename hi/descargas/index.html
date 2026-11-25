@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>डाउनलोड — Devia Desktop</title>
-  <meta name="description" content="Windows, macOS और Linux के लिए Devia Desktop डाउनलोड करें। मुफ़्त, 100% सुविधाओं के साथ।">
+  <meta name="color-scheme" content="light dark">
+  <title>Devia Desktop डाउनलोड</title>
+  <meta name="description" content="Windows, macOS और Linux के लिए Devia Desktop डाउनलोड करें। मुफ़्त और ओपन सोर्स।">
   <link rel="canonical" href="https://dherrero.github.io/devia/hi/descargas/">
   <link rel="alternate" hreflang="es" href="https://dherrero.github.io/devia/descargas/">
   <link rel="alternate" hreflang="en" href="https://dherrero.github.io/devia/en/descargas/">
@@ -32,13 +33,12 @@
         <img src="../../assets/img/devia.png" alt="" width="32" height="32">
         <span>Devia</span>
       </a>
-      <button class="nav-toggle" type="button" aria-label="मेनू खोलें" aria-expanded="false" aria-controls="nav-menu">☰</button>
+      <button class="nav-toggle key key-sm" type="button" aria-label="मेनू खोलें" aria-expanded="false" aria-controls="nav-menu"><span aria-hidden="true">≡</span></button>
       <div class="nav-links" id="nav-menu">
         <a href="../../hi/#funcionalidades">विशेषताएँ</a>
         <a href="../../hi/docs/">दस्तावेज़ीकरण</a>
-        <a href="../../hi/descargas/" class="btn btn-sm" aria-current="page">डाउनलोड</a>
         <label class="lang-switch">
-          <span class="sr-only">भाषा</span>
+          <span class="visually-hidden">भाषा</span>
           <select class="lang-select" aria-label="भाषा">
           <option value="../../descargas/" data-lang="es">Español</option>
           <option value="../../en/descargas/" data-lang="en">English</option>
@@ -51,87 +51,90 @@
           <option value="../../zh/descargas/" data-lang="zh">简体中文</option>
           <option value="../../hi/descargas/" data-lang="hi" selected>हिन्दी</option>
           <option value="../../ar/descargas/" data-lang="ar">العربية</option>
-        </select>
+          </select>
         </label>
+        <a href="../../hi/descargas/" class="key key-sm key-primary" aria-current="page">डाउनलोड</a>
       </div>
     </nav>
   </header>
 
   <main>
-    <section class="section">
+    <section class="downloads">
       <div class="container">
         <h1>डाउनलोड</h1>
-        <p class="lead-sm">
-          नवीनतम संस्करण: <strong id="dl-version">—</strong>
+        <p class="lead">
+          नवीनतम संस्करण: <strong id="dl-version"></strong>
           <span id="dl-date"></span>
         </p>
 
-        <div class="grid grid-platforms">
+        <div class="platforms">
 
-          <article class="card platform" data-platform="win32-x64">
-            <h2>🪟 Windows</h2>
-            <p>Windows 10/11 (x64) के लिए NSIS installer। Installation directory चुनने की सुविधा।</p>
-            <a class="btn btn-primary dl-btn" data-key="win32-x64" href="#" hidden>.exe डाउनलोड करें</a>
+          <article class="platform cut" data-platform="win32-x64">
+            <h2>Windows</h2>
+            <p>Windows 10/11 (x64) के लिए NSIS इंस्टॉलर। इंस्टॉलेशन डायरेक्टरी चुनने देता है।</p>
+            <a class="key dl-btn" data-key="win32-x64" href="#" hidden>.exe डाउनलोड करें</a>
             <p class="dl-fallback" data-key="win32-x64">जल्द आ रहा है</p>
-            <p class="hint">अगर SmartScreen कोई warning दिखाए, तो «More info → Run anyway» पर क्लिक करें।</p>
+            <p class="hint">अगर SmartScreen चेतावनी दिखाए, तो “More info → Run anyway” दबाएँ।</p>
           </article>
 
-          <article class="card platform" data-platform="darwin">
-            <h2>🍎 macOS</h2>
-            <p>Signed और notarized <code>.dmg</code> disk image। Devia को Applications में drag करें।</p>
-            <a class="btn btn-primary dl-btn" data-key="darwin-arm64" href="#" hidden>Apple Silicon (.dmg)</a>
-            <a class="btn btn-primary dl-btn" data-key="darwin-x64" href="#" hidden>Intel (.dmg)</a>
+          <article class="platform cut" data-platform="darwin">
+            <h2>macOS</h2>
+            <p>साइन और notarize की गई <code>.dmg</code> डिस्क इमेज। Devia को Applications में खींचें।</p>
+            <a class="key dl-btn" data-key="darwin-arm64" href="#" hidden>Apple Silicon (.dmg)</a>
+            <a class="key dl-btn" data-key="darwin-x64" href="#" hidden>Intel (.dmg)</a>
             <p class="dl-fallback" data-key="darwin-arm64">जल्द आ रहा है</p>
-            <p class="hint">macOS 11 Big Sur या उससे ऊपर के साथ compatible।</p>
+            <p class="hint">macOS 11 Big Sur या उससे नए के साथ संगत।</p>
           </article>
 
-          <article class="card platform" data-platform="linux">
-            <h2>🐧 Linux</h2>
-            <p>Universal AppImage या Debian/Ubuntu (x64) के लिए <code>.deb</code> package।</p>
-            <a class="btn btn-primary dl-btn" data-key="linux-x64-appimage" href="#" hidden>AppImage</a>
-            <a class="btn btn-primary dl-btn" data-key="linux-x64-deb" href="#" hidden>.deb</a>
+          <article class="platform cut" data-platform="linux">
+            <h2>Linux</h2>
+            <p>यूनिवर्सल AppImage या Debian/Ubuntu (x64) के लिए <code>.deb</code> पैकेज।</p>
+            <a class="key dl-btn" data-key="linux-x64-appimage" href="#" hidden>AppImage</a>
+            <a class="key dl-btn" data-key="linux-x64-deb" href="#" hidden>.deb</a>
             <p class="dl-fallback" data-key="linux-x64-appimage">जल्द आ रहा है</p>
-            <p class="hint">AppImage: <code>chmod +x</code> से execution permissions दें और चलाएँ।</p>
+            <p class="hint">AppImage: <code>chmod +x</code> से चलाने की अनुमति दें और उसे लॉन्च करें। केवल AppImage अपने आप अपडेट होता है।</p>
           </article>
 
         </div>
 
-        <section class="section-inner">
-          <h2>Release Notes</h2>
-          <p id="dl-notes">—</p>
-        </section>
+      </div>
+    </section>
 
-        <section class="section-inner">
-          <h2>Updates</h2>
-          <p>Devia Desktop इस site के public manifest के विरुद्ध नए versions check करता है: <a href="../../updates/latest.json"><code>updates/latest.json</code></a>। आप इसे manually check कर सकते हैं या अपने scripts में integrate कर सकते हैं।</p>
-        </section>
+    <section class="downloads-more">
+      <div class="container downloads-info">
+          <section>
+            <h2>रिलीज़ नोट्स</h2>
+            <p id="dl-notes"></p>
+          </section>
 
-        <section class="section-inner">
-          <h2>ज़रूरतें</h2>
-          <ul>
-            <li>कम से कम एक coding CLI agent install हो: Claude Code, OpenAI Codex, Gemini CLI, OpenCode, Cursor Agent, GitHub Copilot CLI, Qwen, DeepSeek या Qoder। Devia इन्हें automatically detect करता है।</li>
-            <li>Repository status, diffs और split view के worktrees के लिए Git install हो (recommended)।</li>
-            <li>Project-wise Docker Compose orchestration के लिए Docker (optional)।</li>
-          </ul>
-        </section>
+          <section>
+            <h2>अपडेट</h2>
+            <p>Devia Desktop नए संस्करणों की जाँच इस साइट के सार्वजनिक manifest से करता है: <a href="../../updates/latest.json"><code>updates/latest.json</code></a>। आप उसे हाथ से देख सकते हैं या अपनी scripts में जोड़ सकते हैं।</p>
+          </section>
 
+          <section>
+            <h2>आवश्यकताएँ</h2>
+            <ul>
+            <li>कम से कम एक CLI coding agent इंस्टॉल हो: Claude Code, OpenAI Codex, Gemini CLI, OpenCode, Cursor Agent, GitHub Copilot CLI, Grok, Pi, Kimi, Hermes, Qwen, Qoder या DeepSeek। Devia उन्हें अपने आप पहचानता है।</li>
+            <li>Git इंस्टॉल हो (अनुशंसित), रिपॉज़िटरी की स्थिति, diffs और split view के worktrees के लिए।</li>
+            <li>Docker (वैकल्पिक), प्रोजेक्ट-वार Docker Compose ऑर्केस्ट्रेशन के लिए।</li>
+            </ul>
+          </section>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <strong>Devia Desktop</strong>
-        <p>AI के साथ सॉफ़्टवेयर विकास के लिए आपका कमांड सेंटर।</p>
-      </div>
+    <div class="container footer-mast">
+      <p class="footer-word">Devia Desktop</p>
       <nav class="footer-links">
         <a href="../../hi/docs/">दस्तावेज़ीकरण</a>
         <a href="../../hi/descargas/">डाउनलोड</a>
         <a href="../../updates/latest.json">अपडेट फ़ीड</a>
       </nav>
     </div>
-    <div class="container copyright">
+    <div class="container footer-line">
+      <p>AI के साथ सॉफ़्टवेयर विकास के लिए आपका कमांड सेंटर।</p>
       <p>© 2026 Dani Herrero · Devia</p>
     </div>
   </footer>

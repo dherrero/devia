@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>التنزيلات — Devia Desktop</title>
-  <meta name="description" content="نزّل Devia Desktop لـ Windows وmacOS وLinux. مجاني بالكامل مع 100% من الميزات.">
+  <meta name="color-scheme" content="light dark">
+  <title>تنزيلات Devia Desktop</title>
+  <meta name="description" content="نزّل Devia Desktop لأنظمة Windows وmacOS وLinux. مجاني ومفتوح المصدر.">
   <link rel="canonical" href="https://dherrero.github.io/devia/ar/descargas/">
   <link rel="alternate" hreflang="es" href="https://dherrero.github.io/devia/descargas/">
   <link rel="alternate" hreflang="en" href="https://dherrero.github.io/devia/en/descargas/">
@@ -32,13 +33,12 @@
         <img src="../../assets/img/devia.png" alt="" width="32" height="32">
         <span>Devia</span>
       </a>
-      <button class="nav-toggle" type="button" aria-label="فتح القائمة" aria-expanded="false" aria-controls="nav-menu">☰</button>
+      <button class="nav-toggle key key-sm" type="button" aria-label="فتح القائمة" aria-expanded="false" aria-controls="nav-menu"><span aria-hidden="true">≡</span></button>
       <div class="nav-links" id="nav-menu">
         <a href="../../ar/#funcionalidades">المميزات</a>
         <a href="../../ar/docs/">التوثيق</a>
-        <a href="../../ar/descargas/" class="btn btn-sm" aria-current="page">تنزيل</a>
         <label class="lang-switch">
-          <span class="sr-only">اللغة</span>
+          <span class="visually-hidden">اللغة</span>
           <select class="lang-select" aria-label="اللغة">
           <option value="../../descargas/" data-lang="es">Español</option>
           <option value="../../en/descargas/" data-lang="en">English</option>
@@ -51,87 +51,90 @@
           <option value="../../zh/descargas/" data-lang="zh">简体中文</option>
           <option value="../../hi/descargas/" data-lang="hi">हिन्दी</option>
           <option value="../../ar/descargas/" data-lang="ar" selected>العربية</option>
-        </select>
+          </select>
         </label>
+        <a href="../../ar/descargas/" class="key key-sm key-primary" aria-current="page">تنزيل</a>
       </div>
     </nav>
   </header>
 
   <main>
-    <section class="section">
+    <section class="downloads">
       <div class="container">
         <h1>التنزيلات</h1>
-        <p class="lead-sm">
-          أحدث إصدار: <strong id="dl-version">—</strong>
+        <p class="lead">
+          أحدث إصدار: <strong id="dl-version"></strong>
           <span id="dl-date"></span>
         </p>
 
-        <div class="grid grid-platforms">
+        <div class="platforms">
 
-          <article class="card platform" data-platform="win32-x64">
-            <h2>🪟 Windows</h2>
-            <p>مثبّت NSIS لـ Windows 10/11 (x64). يتيح اختيار مجلد التثبيت.</p>
-            <a class="btn btn-primary dl-btn" data-key="win32-x64" href="#" hidden>تنزيل .exe</a>
+          <article class="platform cut" data-platform="win32-x64">
+            <h2>Windows</h2>
+            <p>مثبّت NSIS لنظام Windows 10/11 (x64). يتيح اختيار مجلد التثبيت.</p>
+            <a class="key dl-btn" data-key="win32-x64" href="#" hidden>تنزيل .exe</a>
             <p class="dl-fallback" data-key="win32-x64">قريبًا</p>
-            <p class="hint">إذا أظهر SmartScreen تنبيهًا، انقر «مزيد من المعلومات ← تشغيل على أي حال».</p>
+            <p class="hint">إذا ظهر تحذير من SmartScreen، فاضغط «مزيد من المعلومات ← تشغيل على أي حال».</p>
           </article>
 
-          <article class="card platform" data-platform="darwin">
-            <h2>🍎 macOS</h2>
-            <p>صورة قرص <code>.dmg</code> موقّعة ومعتمدة. اسحب Devia إلى التطبيقات.</p>
-            <a class="btn btn-primary dl-btn" data-key="darwin-arm64" href="#" hidden>Apple Silicon (.dmg)</a>
-            <a class="btn btn-primary dl-btn" data-key="darwin-x64" href="#" hidden>Intel (.dmg)</a>
+          <article class="platform cut" data-platform="darwin">
+            <h2>macOS</h2>
+            <p>صورة قرص <code>.dmg</code> موقّعة وموثّقة. اسحب Devia إلى التطبيقات.</p>
+            <a class="key dl-btn" data-key="darwin-arm64" href="#" hidden>Apple Silicon (.dmg)</a>
+            <a class="key dl-btn" data-key="darwin-x64" href="#" hidden>Intel (.dmg)</a>
             <p class="dl-fallback" data-key="darwin-arm64">قريبًا</p>
             <p class="hint">متوافق مع macOS 11 Big Sur أو أحدث.</p>
           </article>
 
-          <article class="card platform" data-platform="linux">
-            <h2>🐧 Linux</h2>
-            <p>AppImage عام أو حزمة <code>.deb</code> لـ Debian/Ubuntu (x64).</p>
-            <a class="btn btn-primary dl-btn" data-key="linux-x64-appimage" href="#" hidden>AppImage</a>
-            <a class="btn btn-primary dl-btn" data-key="linux-x64-deb" href="#" hidden>.deb</a>
+          <article class="platform cut" data-platform="linux">
+            <h2>Linux</h2>
+            <p>AppImage شامل أو حزمة <code>.deb</code> لنظام Debian/Ubuntu (x64).</p>
+            <a class="key dl-btn" data-key="linux-x64-appimage" href="#" hidden>AppImage</a>
+            <a class="key dl-btn" data-key="linux-x64-deb" href="#" hidden>.deb</a>
             <p class="dl-fallback" data-key="linux-x64-appimage">قريبًا</p>
-            <p class="hint">AppImage: امنحه صلاحيات التشغيل بـ <code>chmod +x</code> ثم شغّله.</p>
+            <p class="hint">AppImage: امنحه صلاحية التنفيذ بالأمر <code>chmod +x</code> ثم شغّله. يُحدَّث تلقائيًا AppImage فقط.</p>
           </article>
 
         </div>
 
-        <section class="section-inner">
-          <h2>ملاحظات الإصدار</h2>
-          <p id="dl-notes">—</p>
-        </section>
+      </div>
+    </section>
 
-        <section class="section-inner">
-          <h2>التحديثات</h2>
-          <p>تتحقق Devia Desktop من الإصدارات الجديدة عبر المانيفست العام لهذا الموقع: <a href="../../updates/latest.json"><code>updates/latest.json</code></a>. يمكنك الاطلاع عليه يدويًا أو دمجه في سكريبتاتك الخاصة.</p>
-        </section>
+    <section class="downloads-more">
+      <div class="container downloads-info">
+          <section>
+            <h2>ملاحظات الإصدار</h2>
+            <p id="dl-notes"></p>
+          </section>
 
-        <section class="section-inner">
-          <h2>المتطلبات</h2>
-          <ul>
-            <li>واجهة CLI وكيلة واحدة على الأقل مثبّتة: Claude Code أو OpenAI Codex أو Gemini CLI أو OpenCode أو Cursor Agent أو GitHub Copilot CLI أو Qwen أو DeepSeek أو Qoder. تكتشفها Devia تلقائيًا.</li>
-            <li>Git مثبّت (موصى به) لعرض حالة المستودع والفروق والـ worktrees في العرض المقسّم.</li>
-            <li>Docker (اختياري) لتنسيق Docker Compose لكل مشروع.</li>
-          </ul>
-        </section>
+          <section>
+            <h2>التحديثات</h2>
+            <p>يتحقق Devia Desktop من الإصدارات الجديدة مقابل البيان العام لهذا الموقع: <a href="../../updates/latest.json"><code>updates/latest.json</code></a>. يمكنك الاطلاع عليه يدويًا أو دمجه في سكربتاتك الخاصة.</p>
+          </section>
 
+          <section>
+            <h2>المتطلبات</h2>
+            <ul>
+            <li>أداة CLI برمجية وكيلة واحدة على الأقل مثبّتة: Claude Code أو OpenAI Codex أو Gemini CLI أو OpenCode أو Cursor Agent أو GitHub Copilot CLI أو Grok أو Pi أو Kimi أو Hermes أو Qwen أو Qoder أو DeepSeek. يكتشفها Devia تلقائيًا.</li>
+            <li>Git مثبّت (موصى به) لحالة المستودع والفروق وworktrees العرض المقسّم.</li>
+            <li>Docker (اختياري) لإدارة Docker Compose لكل مشروع.</li>
+            </ul>
+          </section>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <strong>Devia Desktop</strong>
-        <p>مركز القيادة لتطوير البرمجيات بالذكاء الاصطناعي.</p>
-      </div>
+    <div class="container footer-mast">
+      <p class="footer-word">Devia Desktop</p>
       <nav class="footer-links">
         <a href="../../ar/docs/">التوثيق</a>
         <a href="../../ar/descargas/">التنزيلات</a>
         <a href="../../updates/latest.json">تغذية التحديثات</a>
       </nav>
     </div>
-    <div class="container copyright">
+    <div class="container footer-line">
+      <p>مركز قيادتك لتطوير البرمجيات بالذكاء الاصطناعي.</p>
       <p>© 2026 Dani Herrero · Devia</p>
     </div>
   </footer>
