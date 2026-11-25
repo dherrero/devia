@@ -22,51 +22,60 @@
   "home": {
     "meta": {
       "title": "Devia Desktop — Your command center for AI-powered software development",
-      "description": "Devia Desktop is a free desktop app (Windows, macOS, and Linux) for directing CLI coding agents — Claude Code, Codex, Gemini CLI, OpenCode, and more — from a single window."
+      "description": "Devia Desktop is a free, open-source desktop app (Windows, macOS, and Linux) for directing CLI coding agents — Claude Code, Codex, Gemini CLI, OpenCode, and more — from a single window."
     },
-    "heroLogoAlt": "Devia logo",
-    "heroTitle": "Your command center for<br>AI-powered software development",
-    "heroLead": "Devia Desktop is a friendly, unified interface over multiple agentic CLI tools — Claude Code, Codex, Gemini CLI, OpenCode, and more — that turns working with terminal agents into a visual, organized, multi-project experience.",
-    "heroQuote": "“If Claude Code is the engine, Devia is the body and the steering wheel.”",
-    "badges": [
-      "Open source (Apache-2.0) — 100% of features, free",
-      "Windows · macOS · Linux"
+    "hero": {
+      "title": "Your coding agents in one window",
+      "lead": "A desktop app to run Claude Code, Codex, Gemini, and more.",
+      "cta": "Download Devia Desktop",
+      "ctaSecondary": "Read the documentation",
+      "mediaAlt": "Screenshot of Devia Desktop showing an agent's chat and the diff of its changes"
+    },
+    "sections": [
+      {
+        "id": "agentes",
+        "title": "Agents and execution",
+        "body": "Work with Claude Code, Codex, Gemini CLI, OpenCode, Cursor Agent, Copilot, Grok, Pi, Kimi, Hermes, Qwen, Qoder, and DeepSeek, or add your own if it speaks ACP. Switch agents mid-session and choose between plan, apply, and apply-yolo."
+      },
+      {
+        "id": "contexto",
+        "title": "Context and memory",
+        "body": "Persistent memory across sessions, per-project history, and context, cost, and tokens in view. Devia's own code graph gives the agent the project's structure, and code mode runs read-only scripts over your MCP servers."
+      },
+      {
+        "id": "metodo",
+        "title": "Method and planning",
+        "body": "A kanban per project that the agent itself reads and updates, with specs, tasks, and dependencies. Devia Method guides the work, and interactive cards ask you questions, request plan approval, or ask for a review, with any agent."
+      },
+      {
+        "id": "git",
+        "title": "Git and review",
+        "body": "Repository status, inline diffs, and a branch switcher. Comment on diff lines and send them to the agent as a review. Up to four agents in parallel, each isolated in its own git worktree."
+      },
+      {
+        "id": "remoto",
+        "title": "Remote and platform",
+        "body": "Direct your agents from Telegram, with file delivery, while Devia is open. Integrated terminal, Docker Compose, and opening in your IDE, on Windows, macOS, and Linux."
+      }
     ],
-    "ctaDownload": "Download Devia Desktop",
-    "ctaDocs": "Read the documentation",
-    "featuresTitle": "What does Devia Desktop do?",
-    "features": [
-      { "title": "🤖 Multi-agent", "body": "Work with Claude Code, OpenAI Codex, Gemini CLI, OpenCode, Cursor Agent, GitHub Copilot CLI, Qwen, DeepSeek, or Qoder, and switch agents without switching tools. Devia detects your installed CLIs and configures each project so they just work — no manual setup needed." },
-      { "title": "💬 Visual chat over the agent", "body": "Streaming responses, markdown, expandable tool-call cards, a diff viewer, and image attachments for multimodal models." },
-      { "title": "🪟 Multi-project and multi-session", "body": "Per-project session history, an instruction queue, and a split view with up to 4 panels — each with its own independent session and git worktree — letting multiple agents work in parallel in a single window." },
-      { "title": "📋 Kanban with built-in SDD", "body": "A per-project board that the agent itself reads and updates via MCP (<code>devia-kanban</code>), with specs, tasks, dependencies, and a full spec-driven development workflow." },
-      { "title": "🧠 Persistent memory", "body": "Devia ships with its own cross-session memory (<code>devia-memory</code>), scoped personally and per project, which the agent queries and feeds automatically." },
-      { "title": "🌿 Built-in Git", "body": "Live repository status, a change viewer with inline comments for requesting agent reviews, and worktree support." },
-      { "title": "🔌 MCP server manager", "body": "Install, enable, and share MCP servers across agents; Devia injects the configuration in each CLI's native format." },
-      { "title": "✨ Skills and prompt packs", "body": "Discover and install skills (local or from GitHub) and define per-project system prompt packages." },
-      { "title": "📱 Remote control via Telegram", "body": "Launch runs, check status, and chat with the agent from Telegram, with optional mirroring of the desktop conversation." },
-      { "title": "🖥️ Terminal and shell", "body": "A per-project integrated terminal (real PTY), open-in-your-favorite-IDE support, and Docker Compose orchestration." },
-      { "title": "🎙️ Voice", "body": "Local transcription with Whisper — no audio is ever sent to any API." },
-      { "title": "🛡️ Snapshots and audit", "body": "Snapshots and rollback before destructive operations, plus an audit log of every tool-call with automatic rotation and retention." }
-    ],
-    "localTitle": "Built to work locally",
-    "localLead": "Devia Desktop runs on top of your projects and your CLIs, on your machine. Your sessions, memory, Kanban board, and configuration all live on your disk (<code>~/.devia-app/</code>). No accounts, no cloud, no telemetry: just install, choose your working folder, and start directing agents.",
-    "steps": [
-      { "title": "1 · Install", "body": "Download the installer for your platform and open it. No prior configuration required." },
-      { "title": "2 · Connect your agents", "body": "Devia detects the coding CLIs you already have installed (Claude Code, Codex, Gemini CLI…) and makes them ready to use." },
-      { "title": "3 · Direct", "body": "Open a project from your workspace and start chatting: the agent codes, you review diffs, approve changes, and queue up the next instructions." }
-    ],
-    "downloadTitle": "Download Devia Desktop",
-    "downloadLead": "Free, with 100% of features included. Available for Windows, macOS, and Linux.",
-    "downloadCta": "Go to downloads"
+    "local": {
+      "title": "Everything on your machine",
+      "lead": "Your sessions, memory, kanban, and settings live on your disk (<code>~/.devia-app/</code>). No accounts: the only thing that leaves your machine is what each agent's CLI sends to its own provider."
+    },
+    "download": {
+      "title": "Download Devia Desktop",
+      "lead": "Free and open source (Apache-2.0), with every feature.",
+      "cta": "Go to downloads",
+      "platforms": "For Windows, macOS, and Linux."
+    }
   },
 
   "docs": {
     "meta": {
       "title": "Documentation — Devia Desktop",
-      "description": "Devia Desktop documentation: installation, getting started, features, configuration, and updates."
+      "description": "Devia Desktop documentation: installation, getting started, supported agents, features, capabilities and limits, configuration, and updates."
     },
-    "pageTitle": "Devia Desktop Documentation",
+    "pageTitle": "Devia Desktop documentation",
     "tocTitle": "Contents",
     "toc": [
       { "id": "que-es", "label": "What is Devia Desktop?" },
@@ -74,6 +83,7 @@
       { "id": "primeros-pasos", "label": "Getting started" },
       { "id": "agentes", "label": "Supported agents" },
       { "id": "funcionalidades", "label": "Features" },
+      { "id": "capacidades", "label": "Capabilities and limits" },
       { "id": "configuracion", "label": "Configuration and data" },
       { "id": "actualizaciones", "label": "Updates" },
       { "id": "faq", "label": "FAQ" }
@@ -81,8 +91,8 @@
     "sections": {
       "queEs": {
         "paras": [
-          "Devia Desktop is a desktop application for developing software with AI agents. It is a friendly, unified interface over multiple agentic CLI tools (Claude Code, Codex, Gemini CLI, and more) that turns working with terminal agents into a visual, organized, multi-project experience.",
-          "It is <strong>open source</strong> (Apache-2.0): free with 100% of features included, available for Windows, macOS, and Linux. Everything runs locally, on top of your projects and your CLIs — no account or connection to any external service required."
+          "Devia Desktop is a desktop app for building software with AI agents. It is a unified interface over several agentic CLIs (Claude Code, Codex, Gemini CLI, and more) that turns working with terminal agents into a visual, organized, multi-project experience.",
+          "It is <strong>open source</strong> (Apache-2.0): free and with every feature, available for Windows, macOS, and Linux. Everything runs locally, on your projects and your CLIs; it needs no account and no connection to any Devia service."
         ]
       },
       "instalacion": {
@@ -90,16 +100,16 @@
           "title": "Windows",
           "steps": [
             "Download the <code>.exe</code> installer from the <a href=\"{{descargas}}\">downloads page</a>.",
-            "Run it and choose the installation directory (per-user installation, no administrator privileges needed).",
-            "If SmartScreen shows a warning, click \"More info → Run anyway\"."
+            "Run it and choose the install directory (per-user install, no administrator rights needed).",
+            "If SmartScreen shows a warning, click “More info → Run anyway”."
           ]
         },
         "mac": {
           "title": "macOS",
           "steps": [
             "Download the <code>.dmg</code> for your architecture (Apple Silicon or Intel).",
-            "Open it and drag <strong>Devia</strong> into the <strong>Applications</strong> folder.",
-            "The app is signed and notarized by Apple: it opens with no additional steps."
+            "Open it and drag <strong>Devia</strong> to the <strong>Applications</strong> folder.",
+            "The app is signed and notarized by Apple: it opens with no extra steps."
           ]
         },
         "linux": {
@@ -112,128 +122,170 @@
       },
       "primerosPasos": {
         "steps": [
-          "<strong>Choose your workspace.</strong> The first time you open Devia, a modal asks for the root folder where your projects live (for example, <code>~/repos</code>). Devia lists the projects it finds and detects their technology stack.",
-          "<strong>Connect an agent.</strong> Devia detects the agentic CLIs installed on your machine and lets you choose the active agent in Settings. Each project is configured so the agent works with no manual adjustments.",
-          "<strong>Chat.</strong> Open a project and type your first instruction in the composer. Choose the execution mode — <em>plan</em> (plan only), <em>apply</em> (apply with permissions), or <em>apply-yolo</em> (no confirmations) — depending on how much autonomy you want to grant.",
-          "<strong>Review.</strong> Each response streams in with markdown, tool calls expand into cards, and the agent's changes appear as inline diffs."
+          "<strong>Pick your workspace.</strong> The first time you open Devia, a modal asks for the root folder where your projects live (for example <code>~/repos</code>). Devia lists the projects inside it and detects their stack.",
+          "<strong>Connect an agent.</strong> Devia detects the agentic CLIs installed on your machine and lets you choose the active agent in Settings. Each project is configured so the agent works with no manual setup.",
+          "<strong>Chat.</strong> Open a project and type your first instruction in the composer. Choose the run mode — <em>plan</em> (plans only), <em>apply</em> (applies with permissions), or <em>apply-yolo</em> (no confirmations) — depending on how much autonomy you want to give.",
+          "<strong>Review.</strong> Each response streams in with markdown, tool calls unfold into cards, and the agent's changes appear as inline diffs."
         ]
       },
       "agentes": {
-        "intro": "Devia works with the following coding CLIs, and you can switch between them without leaving the app:",
-        "tableHead": { "agent": "Agent", "notes": "Notes" },
+        "intro": "Devia drives the following coding CLIs, and you can switch between them without leaving the app. The level of integration varies by agent:",
+        "tableHead": { "agent": "Agent", "notes": "Integration" },
         "rows": [
-          { "agent": "Claude Code", "notes": "Full integration, including per-run MCP servers" },
-          { "agent": "OpenAI Codex", "notes": "JSON event streaming" },
-          { "agent": "Gemini CLI", "notes": "JSON event streaming" },
-          { "agent": "OpenCode", "notes": "JSON event streaming" },
-          { "agent": "Cursor Agent", "notes": "JSON event streaming" },
-          { "agent": "GitHub Copilot CLI", "notes": "JSON event streaming" },
-          { "agent": "Qwen · DeepSeek · Qoder", "notes": "Plain-text output" }
+          { "agent": "Claude Code", "notes": "The most complete: per-run MCP servers, sub-agent cards in the chat, and automatic resume after a usage limit." },
+          { "agent": "OpenCode", "notes": "Dedicated integration." },
+          { "agent": "Pi", "notes": "Dedicated integration." },
+          { "agent": "Kimi and Hermes", "notes": "Through the Agent Client Protocol (ACP). The Kimi profile is not yet verified against the real CLI." },
+          { "agent": "Codex, Gemini CLI, Cursor Agent, GitHub Copilot CLI, Grok, Qwen, Qoder, and DeepSeek", "notes": "Generic integration over each CLI's stream." },
+          { "agent": "Your own agent", "notes": "Any CLI that speaks ACP can be defined in <code>agent-defs.json</code>." }
         ],
-        "handoff": "When continuing a session with a different agent than the one that started it, Devia performs an <strong>automatic context handoff</strong>: it injects a summary of the work (goal, files touched, and recent exchanges) into the new agent's first turn and places a divider in the chat."
+        "handoff": "When you continue a session with a different agent than the one that started it, Devia performs a <strong>context handoff</strong>: it injects a summary of the work (goal, files touched, and the latest exchanges) into the new agent's first turn and leaves a divider in the chat. The AI-generated summary requires Claude and <code>ANTHROPIC_API_KEY</code>."
       },
       "funcionalidades": {
         "groups": [
           {
-            "title": "Multi-project and sessions",
+            "title": "Agents and execution",
             "items": [
-              "List, create (blank or from a template), and clone projects; pin favorites to the sidebar.",
-              "Per-project session history that survives restarts; resume or restart a session with one click.",
-              "Instruction queue: queue prompts while the agent is busy, reorder with drag and drop, pause and resume."
+              "<em>plan</em>, <em>apply</em>, and <em>apply-yolo</em> modes saved per session. How they are enforced depends on the agent: in Codex, for example, plan mode relies on the prompt's instructions.",
+              "Import existing sessions from Claude Code, Codex, and Grok and continue them in Devia.",
+              "With Claude Code, Devia resumes the session on its own after a usage limit, as long as the app stays open.",
+              "Context used, cost, tokens, and compactions for each session, computed locally.",
+              "Per-project instruction queue: queue prompts while the agent works, reorder them with drag and drop, pause and resume.",
+              "Claude Code sub-agent calls appear nested in the chat."
             ]
           },
           {
-            "title": "Multi-session split view",
+            "title": "Multi-project and split view",
             "items": [
-              "Up to 4 panels (2×2) in the same window, each with its own session and its agent working in parallel.",
-              "Each additional panel works <strong>isolated in its own git worktree</strong> (a new branch from the main branch) so two agents never step on the same files.",
-              "The split and its worktrees survive app restarts, restoring each session's files."
+              "List, create (empty or from a template), and clone projects; favorites pinned in the sidebar.",
+              "Per-project session history that survives restarts.",
+              "Up to 4 panes (2×2) in the same window, each with its own session and its own agent working in parallel.",
+              "Each additional pane works <strong>isolated in its own git worktree</strong>, so two agents never touch the same files."
             ]
           },
           {
-            "title": "Kanban with built-in SDD",
+            "title": "Context and memory",
             "items": [
-              "Per-project Kanban board with specs, tasks, and dependencies.",
-              "The agent itself reads and updates the board via MCP (<code>devia-kanban</code>): end-to-end spec-driven development workflow.",
-              "Board state lives outside the repository, in Devia's data folder."
+              "Persistent memory across sessions (<code>devia-memory</code>), personal and per project, with optional semantic re-ranking. The agent queries and feeds it; you manage it in Settings.",
+              "A code graph of its own (6 languages) that agents query over MCP, with a <code>/graph</code> view to explore it.",
+              "Code mode: the agent writes a TypeScript script that runs in a sandbox over the MCP servers you choose and returns only the result. In this version scripts can only read."
             ]
           },
           {
-            "title": "Persistent memory",
+            "title": "Method and planning",
             "items": [
-              "Cross-session memory (<code>devia-memory</code>) scoped personally and per project.",
-              "The agent queries and feeds it automatically: decisions, resolved bugs, and discoveries are all recorded.",
-              "Management panel in Settings: search, pin, forget, or clear observations."
+              "Per-project kanban with specs, tasks, and dependencies that the agent reads and updates over MCP (<code>devia-kanban</code>). The state lives outside the repository.",
+              "Devia Method: a development method of its own (skills and a bootstrap prompt) that Devia delivers to every agent, switchable per project.",
+              "Interactive cards for any agent: questions, plan approval, change review, confirmations, and selection. Desktop only.",
+              "A manager for skills, local or from GitHub, and for reusable sub-agents that Devia syncs with each CLI."
             ]
           },
           {
-            "title": "Built-in Git",
+            "title": "Git and review",
             "items": [
-              "Live repository status in the sidebar.",
-              "Change viewer with inline comments: annotate diff lines and send them to the agent as a review request.",
-              "Worktree support and snapshots with rollback before destructive operations."
+              "Live repository status, inline diff viewer, branch switcher, and fast-forward-only pull.",
+              "Per-line comments on the diff that are sent to the agent as a review request.",
+              "Snapshots with restore of your MCP, skills, and sub-agents configuration before it is modified.",
+              "Commits, pushes, and pull requests are made by the agent with its own tools: Devia does not create them itself."
             ]
           },
           {
-            "title": "MCP servers, skills, and prompts",
+            "title": "MCP servers",
             "items": [
-              "Model Context Protocol server manager: install, enable, test, and share servers across agents; Devia injects the configuration in each CLI's native format.",
-              "Discover and install local or GitHub-hosted skills.",
-              "Prompt packs: per-project system prompt packages.",
-              "Reusable multi-CLI sub-agent manager, shared across projects."
+              "Model Context Protocol server manager with a starter catalog: install, enable, and test servers. Devia writes the configuration in the native format of 9 agents.",
+              "Each server can be offered to the agent directly or through code mode."
             ]
           },
           {
-            "title": "Remote control via Telegram",
+            "title": "Remote control over Telegram",
             "items": [
-              "Launch runs, check status (branch, context used, cost), and chat with the agent from Telegram.",
-              "Optional mirroring of the desktop conversation and forwarding of attachments (photos, documents) to the agent."
+              "Start runs, switch mode or agent, check status (branch, context used, cost), and chat with the agent from Telegram.",
+              "Send attachments to the agent and receive the files it generates. Optional mirror of the desktop conversation.",
+              "It only works while Devia is open and serves a single authorized chat. Interactive cards are not shown on Telegram: the agent asks in plain text."
             ]
           },
           {
             "title": "Terminal, voice, and more",
             "items": [
-              "Per-project integrated terminal with a real PTY, and open-in-your-favorite-IDE support.",
+              "Integrated per-project terminal with a real PTY, and opening the project in 10 IDEs.",
               "Docker Compose orchestration: deploy, down, and logs per project.",
-              "Local voice transcription with Whisper — audio never leaves your machine.",
-              "Drag-and-drop image attachments for multimodal models.",
-              "Project file browser in the right rail and an archive of files generated by the agent (outbox).",
-              "Audit log of every tool-call with rotation and a 30-day retention policy.",
-              "11 languages (es, en, ca, fr, de, it, pt, ru, zh, hi, ar), 8 Material 3 accent palettes, and adjustable font size."
+              "Attachments of any type (up to 50 MB per file) and an archive of the files the agent generates.",
+              "Local voice dictation; today in Spanish only.",
+              "Audit log of every tool call.",
+              "Automatic updates of installed builds (on Linux, AppImage only)."
             ]
           }
         ]
       },
+      "capacidades": {
+        "intro": "An honest summary of what Devia does today and what it does not do yet, so you know what to expect.",
+        "doneTitle": "What it does",
+        "partialTitle": "What it does in part",
+        "missingTitle": "What it does not do yet",
+        "done": [
+          "Drive 13 agentic CLIs from one window, with plan, apply, and apply-yolo modes.",
+          "Split view of up to 4 panes with isolated git worktrees.",
+          "Kanban, memory, code graph, and code mode available to the agent over MCP.",
+          "MCP, skills, and sub-agents managers.",
+          "Interactive cards to ask questions, approve plans, and review changes.",
+          "Per-line review comments sent to the agent.",
+          "Remote control over Telegram, with file delivery.",
+          "Terminal, Docker Compose, and opening in IDEs."
+        ],
+        "partial": [
+          "Session import: only from Claude Code, Codex, and Grok.",
+          "Resume after a usage limit: Claude Code only, and only while the app stays open.",
+          "Sub-agent cards in the chat: Claude Code only.",
+          "Re-injecting memory when the agent compacts its context: Claude and Pi only.",
+          "Your own agents: only those that speak ACP.",
+          "Voice dictation: Spanish only, and how it behaves in the packaged build is still to be verified.",
+          "Interface in 11 languages: Spanish and English are complete; the rest may show untranslated text.",
+          "Telegram: only while Devia is open, with a single authorized chat, and without interactive cards."
+        ],
+        "missing": [
+          "Creating commits, pushing, or opening pull requests from the interface.",
+          "Using GitHub, GitLab, Linear, or Jira as a task source.",
+          "A built-in file editor: the project tree is read-only and files open in your IDE.",
+          "A coordinator that launches and supervises several worker agents. Today parallelism is the split view, driven by you.",
+          "Scheduled or event-triggered automations.",
+          "Running on remote servers over SSH, in the cloud, or headless.",
+          "A native mobile app: the phone is used through Telegram.",
+          "A plugin system for third-party panels or themes.",
+          "Computer control, mobile emulators, or an embedded browser."
+        ]
+      },
       "configuracion": {
-        "intro": "All Devia data lives on your disk, under <code>~/.devia-app/</code> (on Windows, <code>C:\\Users\\&lt;tu-usuario&gt;\\.devia-app\\</code>):",
+        "intro": "Almost all of Devia's data lives on your disk, under <code>~/.devia-app/</code> (on Windows, <code>C:\\Users\\&lt;your-user&gt;\\.devia-app\\</code>):",
         "tableHead": { "path": "Path", "content": "Contents" },
         "rows": [
-          { "path": "<code>devia-app.config.json</code>", "content": "Settings: workspace, active agent, theme, language…" },
-          { "path": "<code>sessions/&lt;proyecto&gt;/</code>", "content": "Per-project chat history" },
-          { "path": "<code>projects/&lt;clave&gt;/kanban.json</code>", "content": "Project Kanban board" },
-          { "path": "<code>memory-global.json</code> · <code>projects/&lt;clave&gt;/memory.json</code>", "content": "Persistent memory (personal · per project)" },
+          { "path": "<code>devia-app.config.json</code>", "content": "Settings: workspace, active agent, language… (secrets such as the Telegram token are stored encrypted)" },
+          { "path": "<code>sessions/&lt;project&gt;/</code>", "content": "Chat history per project" },
+          { "path": "<code>projects/&lt;key&gt;/</code>", "content": "Per-project data: kanban board (<code>kanban.json</code>) and memory (<code>memory.json</code>)" },
+          { "path": "<code>memory-global.json</code>", "content": "Personal memory" },
           { "path": "<code>mcp-servers.json</code>", "content": "Configured MCP servers" },
-          { "path": "<code>outbox-archive/</code>", "content": "Files generated by the agent" },
-          { "path": "<code>attachments/</code>", "content": "Images attached in the input" },
-          { "path": "<code>audit.log</code>", "content": "Tool-call log (JSONL with rotation)" }
+          { "path": "<code>snapshots/</code>", "content": "Snapshots of the configuration before it is modified" },
+          { "path": "<code>worktrees/</code>", "content": "Git worktrees of the extra split-view panes" },
+          { "path": "<code>attachments/</code>", "content": "Files attached in the composer or over Telegram" },
+          { "path": "<code>outbox-archive/</code>", "content": "Files generated by the agent" }
         ],
-        "outro": "To back up your Devia data, simply copy that folder. Deleting it resets the app to its initial state."
+        "outro": "To back up your Devia, just copy that folder. Deleting it returns the app to its initial state. The audit log of tool calls is kept separately, in the application's user data folder."
       },
       "actualizaciones": {
         "paras": [
-          "Published versions are announced in this site's public manifest: <a href=\"{{updates}}\"><code>updates/latest.json</code></a>. It contains the latest available version, the release date, release notes, and download links per platform.",
-          "Devia Desktop checks that manifest to notify you when a new version is available. You can also check it manually or from your own scripts:"
+          "Published versions are announced in this site's public manifest: <a href=\"{{updates}}\"><code>updates/latest.json</code></a>. It contains the latest available version, the release date, the notes, and per-platform download links.",
+          "Installed copies of Devia Desktop update themselves from the repository's Releases (on Linux, AppImage only). You can also check the latest version by hand or from your scripts:"
         ],
         "code": "curl -s https://dherrero.github.io/devia/updates/latest.json | jq .version"
       },
       "faq": {
         "items": [
-          { "q": "Is Devia free?", "a": "Yes. Devia Desktop is open source (Apache-2.0) with 100% of features included, on all platforms." },
-          { "q": "Do I need an account or a connection to any Devia service?", "a": "No. Devia Desktop works entirely locally. The only external services used are those of the CLI agents you have configured yourself." },
-          { "q": "Does Devia include the AI agents?", "a": "No — Devia is the interface that directs them. You need at least one agentic CLI installed (Claude Code, Codex, Gemini CLI, OpenCode…) with its credentials. Devia detects them and takes care of the rest." },
-          { "q": "Does my data leave my machine?", "a": "No. Sessions, memory, Kanban boards, and configuration all live in <code>~/.devia-app/</code>. Voice transcription with Whisper also runs locally. The only thing that travels is what the CLI agent you use sends to its own provider." },
-          { "q": "What languages are available?", "a": "Spanish, English, Valencian, French, German, Italian, Portuguese, Russian, Chinese, Hindi, and Arabic." },
-          { "q": "How do I report an issue?", "a": "Open an issue in the <a href=\"https://github.com/dherrero/devia/issues\" target=\"_blank\" rel=\"noopener\">Devia GitHub repository</a> with the steps to reproduce it and your platform (Windows/macOS/Linux)." }
+          { "q": "Is Devia free?", "a": "Yes. Devia Desktop is open source (Apache-2.0), with every feature, on all platforms." },
+          { "q": "Do I need an account or a connection to any Devia service?", "a": "No. Devia Desktop works locally. The only external services used are those of the agent CLIs you have configured yourself." },
+          { "q": "Does Devia include the AI agents?", "a": "No: Devia is the interface that drives them. You need at least one agentic CLI installed (Claude Code, Codex, Gemini CLI, OpenCode…) with its credentials. Devia detects them and handles the rest." },
+          { "q": "Does my data leave my machine?", "a": "Sessions, memory, kanban, and settings live in <code>~/.devia-app/</code>. Voice dictation also runs locally. The only thing that travels is what the agent CLI you use sends to its own provider." },
+          { "q": "Which languages is it available in?", "a": "This site is in Spanish, English, Valencian, French, German, Italian, Portuguese, Russian, Chinese, Hindi, and Arabic. The app has the same 11 languages, but only Spanish and English are complete: in the others, untranslated text may appear." },
+          { "q": "Can I control it from my phone?", "a": "Yes, through Telegram, as long as Devia is open on your computer. There is no native mobile app." },
+          { "q": "How do I report a problem?", "a": "Open an issue in the <a href=\"https://github.com/dherrero/devia/issues\" target=\"_blank\" rel=\"noopener\">Devia GitHub repository</a> with the steps to reproduce it and your platform (Windows/macOS/Linux)." }
         ]
       }
     }
@@ -242,20 +294,20 @@
   "descargas": {
     "meta": {
       "title": "Downloads — Devia Desktop",
-      "description": "Download Devia Desktop for Windows, macOS, and Linux. Free, with 100% of features included."
+      "description": "Download Devia Desktop for Windows, macOS, and Linux. Free and open source."
     },
     "pageTitle": "Downloads",
     "lastVersionLabel": "Latest version:",
     "platforms": {
       "windows": {
-        "title": "🪟 Windows",
-        "desc": "NSIS installer for Windows 10/11 (x64). Lets you choose the installation directory.",
+        "title": "Windows",
+        "desc": "NSIS installer for Windows 10/11 (x64). Lets you choose the install directory.",
         "btn": "Download .exe",
         "soon": "Coming soon",
-        "hint": "If SmartScreen shows a warning, click \"More info → Run anyway\"."
+        "hint": "If SmartScreen shows a warning, click “More info → Run anyway”."
       },
       "macos": {
-        "title": "🍎 macOS",
+        "title": "macOS",
         "desc": "Signed and notarized <code>.dmg</code> disk image. Drag Devia to Applications.",
         "btnArm": "Apple Silicon (.dmg)",
         "btnIntel": "Intel (.dmg)",
@@ -263,21 +315,21 @@
         "hint": "Compatible with macOS 11 Big Sur or later."
       },
       "linux": {
-        "title": "🐧 Linux",
+        "title": "Linux",
         "desc": "Universal AppImage or <code>.deb</code> package for Debian/Ubuntu (x64).",
         "btnAppimage": "AppImage",
         "btnDeb": ".deb",
         "soon": "Coming soon",
-        "hint": "AppImage: grant execute permissions with <code>chmod +x</code> and run it."
+        "hint": "AppImage: make it executable with <code>chmod +x</code> and launch it. Only the AppImage updates automatically."
       }
     },
     "notesTitle": "Release notes",
     "updatesTitle": "Updates",
-    "updatesBody": "Devia Desktop checks for new versions against this site's public manifest: <a href=\"{{updates}}\"><code>updates/latest.json</code></a>. You can check it manually or integrate it into your own scripts.",
+    "updatesBody": "Devia Desktop checks for new versions against this site's public manifest: <a href=\"{{updates}}\"><code>updates/latest.json</code></a>. You can query it manually or plug it into your own scripts.",
     "reqTitle": "Requirements",
     "reqs": [
-      "At least one coding CLI agent installed: Claude Code, OpenAI Codex, Gemini CLI, OpenCode, Cursor Agent, GitHub Copilot CLI, Qwen, DeepSeek, or Qoder. Devia detects them automatically.",
-      "Git installed (recommended) for repository status, diffs, and worktrees in the split view.",
+      "At least one coding CLI agent installed: Claude Code, OpenAI Codex, Gemini CLI, OpenCode, Cursor Agent, GitHub Copilot CLI, Grok, Pi, Kimi, Hermes, Qwen, Qoder, or DeepSeek. Devia detects them automatically.",
+      "Git installed (recommended) for repository status, diffs, and split-view worktrees.",
       "Docker (optional) for per-project Docker Compose orchestration."
     ]
   },
@@ -286,6 +338,6 @@
     "title": "Page not found — Devia Desktop",
     "message": "This page does not exist.",
     "back": "Go back",
-    "home": "Go to home"
+    "home": "Go to the home page"
   }
 }

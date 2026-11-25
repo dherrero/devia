@@ -6,6 +6,8 @@
   "type": "module",
   "scripts": {
     "build": "node build/build.mjs",
-    "downloads": "node build/downloads.mjs"
+    "downloads": "node build/downloads.mjs",
+    "check:content": "node build/content-check.mjs",
+    "test": "node --test build/content-check.test.mjs"
   }
 }
