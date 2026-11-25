@@ -40,7 +40,7 @@
 
 ## Devia Desktop क्या है?
 
-एक डेस्कटॉप ऐप (Windows, macOS और Linux) जो agentic CLI tools के साथ काम को एक visual, व्यवस्थित और multi-project अनुभव में बदल देती है: streaming chat और diff viewer, git worktrees में अलग-अलग चलने वाले 4 तक agents की split view, एकीकृत spec-driven kanban, persistent memory, MCP server manager, Telegram के ज़रिए remote control, local voice transcription और बहुत कुछ।
+एक मुफ़्त और ओपन सोर्स डेस्कटॉप ऐप (Windows, macOS और Linux) जो एक ही विंडो से CLI coding agents को चलाने देती है: Claude Code, Codex, Gemini CLI, OpenCode और कुल 13 agents। इसमें streaming chat और diff viewer, git worktrees में अलग-अलग चलने वाले 4 तक agents की split view, spec-driven kanban और agent द्वारा पढ़ी और अपडेट की जाने वाली persistent memory, अपना code graph, MCP server manager, interactive cards, Claude Code, Codex और Grok से sessions का import, Telegram से remote control और बहुत कुछ शामिल है। सब कुछ स्थानीय रूप से चलता है।
 
 सभी विवरण [दस्तावेज़](https://dherrero.github.io/devia/docs/) में।
 

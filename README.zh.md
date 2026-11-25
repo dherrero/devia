@@ -40,7 +40,7 @@
 
 ## Devia Desktop 是什么？
 
-一款桌面应用（Windows、macOS 和 Linux），将与 CLI Agent 工具的协作转化为可视化、有序的多项目体验：流式聊天与 diff 查看器、最多 4 个 Agent 并行的分屏视图（隔离在 git worktrees 中）、集成的 spec-driven 看板、持久化记忆、MCP 服务器管理器、通过 Telegram 的远程控制、本地语音转写等等。
+一款免费开源的桌面应用（Windows、macOS 和 Linux），可在一个窗口中驱动 CLI 编程 Agent：Claude Code、Codex、Gemini CLI、OpenCode，共支持 13 个 Agent。它提供流式聊天与 diff 查看器、最多 4 个 Agent 并行的分屏视图（隔离在 git worktrees 中）、spec-driven 看板和 Agent 可读写的持久化记忆、自有代码图谱、MCP 服务器管理器、交互式卡片、从 Claude Code、Codex 和 Grok 导入会话、通过 Telegram 远程控制等功能。一切都在本地运行。
 
 完整细节请见[文档](https://dherrero.github.io/devia/docs/)。
 

@@ -40,7 +40,7 @@ Este repositório aloja o **site público do Devia Desktop**: a documentação, 
 
 ## O que é o Devia Desktop?
 
-Uma aplicação de ambiente de trabalho (Windows, macOS e Linux) que transforma o trabalho com ferramentas CLI agênticas numa experiência visual, organizada e multiprojeto: chat com streaming e visualizador de diffs, vista dividida com até 4 agentes em paralelo isolados em git worktrees, kanban spec-driven integrado, memória persistente, gestor de servidores MCP, controlo remoto por Telegram, transcrição de voz local e mais.
+Uma aplicação de ambiente de trabalho (Windows, macOS e Linux), gratuita e de código aberto, para dirigir agentes de programação CLI a partir de uma única janela: Claude Code, Codex, Gemini CLI, OpenCode e 13 agentes no total. Inclui chat com streaming e visualizador de diffs, vista dividida com até 4 agentes em paralelo isolados em git worktrees, um kanban spec-driven e uma memória persistente que o agente lê e atualiza, um grafo de código próprio, gestor de servidores MCP, cartões interativos, importação de sessões do Claude Code, Codex e Grok, controlo remoto por Telegram e mais. Tudo funciona em local.
 
 Todos os detalhes na [documentação](https://dherrero.github.io/devia/docs/).
 
