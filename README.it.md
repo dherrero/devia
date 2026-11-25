@@ -64,7 +64,7 @@ Hai trovato un bug in Devia Desktop o hai un'idea? **Le [Issues](https://github.
 ```
 .
 ├── index.html  docs/  descargas/   # Pagine in spagnolo (lingua predefinita, nella radice)
-├── en/  fr/  de/  …                 # Una cartella per lingua (11 in totale) con le stesse pagine
+├── i18n/en/  i18n/fr/  …          # Una cartella per lingua (11 in totale) con le stesse pagine
 ├── 404.html                        # Pagina di errore
 ├── updates/                        # Manifest di aggiornamenti (+ feed per piattaforma)
 ├── assets/                         # CSS, JS e logo

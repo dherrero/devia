@@ -64,7 +64,7 @@ Vous avez trouvé un bug dans Devia Desktop ou vous avez une idée ? **Les [Issu
 ```
 .
 ├── index.html  docs/  descargas/   # Pages en espagnol (langue par défaut, à la racine)
-├── en/  fr/  de/  …                 # Un dossier par langue (11 au total) avec les mêmes pages
+├── i18n/en/  i18n/fr/  …          # Un dossier par langue (11 au total) avec les mêmes pages
 ├── 404.html                        # Page d'erreur
 ├── updates/                        # Manifeste de mises à jour (+ flux par plateforme)
 ├── assets/                         # CSS, JS et logo

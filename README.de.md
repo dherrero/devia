@@ -64,7 +64,7 @@ Hast du einen Fehler in Devia Desktop gefunden oder eine Idee? **Die [Issues](ht
 ```
 .
 ├── index.html  docs/  descargas/   # Seiten auf Spanisch (Standardsprache, im Wurzelverzeichnis)
-├── en/  fr/  de/  …                 # Ein Ordner pro Sprache (11 insgesamt) mit denselben Seiten
+├── i18n/en/  i18n/fr/  …          # Ein Ordner pro Sprache (11 insgesamt) mit denselben Seiten
 ├── 404.html                        # Fehlerseite
 ├── updates/                        # Update-Manifest (+ Feeds pro Plattform)
 ├── assets/                         # CSS, JS und Logo

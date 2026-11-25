@@ -64,7 +64,7 @@ Todo el detalle, en la [documentación](https://dherrero.github.io/devia/docs/).
 ```
 .
 ├── index.html  docs/  descargas/   # Páginas en español (idioma por defecto, en la raíz)
-├── en/  fr/  de/  …                 # Una carpeta por idioma (11 en total) con las mismas páginas
+├── i18n/en/  i18n/fr/  …          # Una carpeta por idioma (11 en total) con las mismas páginas
 ├── 404.html                        # Página de error
 ├── updates/                        # Manifiesto de actualizaciones (+ feeds por plataforma)
 ├── assets/                         # CSS, JS y logo

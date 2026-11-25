@@ -64,7 +64,7 @@ Found a bug in Devia Desktop or have an idea? **This repository's [Issues](https
 ```
 .
 ├── index.html  docs/  descargas/   # Pages in Spanish (default language, at the root)
-├── en/  fr/  de/  …                 # One folder per language (11 in total) with the same pages
+├── i18n/en/  i18n/fr/  …          # One folder per language (11 in total) with the same pages
 ├── 404.html                        # Error page
 ├── updates/                        # Update manifest (+ per-platform feeds)
 ├── assets/                         # CSS, JS and logo

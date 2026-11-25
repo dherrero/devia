@@ -25,14 +25,18 @@ una sola vez en `build/build.mjs` y cada idioma solo aporta sus textos en
 - **Salida (commiteada):** páginas `*.html` en la raíz y en una carpeta por idioma.
 
 ```
-/            /docs/        /descargas/        → es (idioma por defecto, en la raíz)
-/en/  /en/docs/  /en/descargas/               → en
-/fr/  /fr/docs/  /fr/descargas/               → fr
-…                                              (una carpeta por idioma)
-/404.html                                      → es, compartida
+/                  /docs/                 /descargas/                → es (idioma por defecto, en la raíz)
+/i18n/en/          /i18n/en/docs/         /i18n/en/descargas/        → en
+/i18n/fr/          /i18n/fr/docs/         /i18n/fr/descargas/        → fr
+…                                                                    (una carpeta por idioma, dentro de i18n/)
+/404.html                                                            → es, compartida
 ```
 
-El idioma va **reflejado en el path por carpeta** (`/en`, `/en/docs`, …). El
+El idioma va **reflejado en el path por carpeta** (`/i18n/en`, `/i18n/en/docs`, …); las
+carpetas de todos los idiomas distintos del español cuelgan de `i18n/` para no
+ensuciar la raíz del repo. (No confundir con `build/i18n/`, que guarda los
+textos fuente.) Las URLs antiguas `/en/…`, de cuando cada idioma vivía en la
+raíz, las redirige el script de `404.html` a `/i18n/en/…`. El
 slug de las páginas (`docs`, `descargas`) NO se localiza: es el mismo en todos
 los idiomas, para mantener simples los enlaces y la generación.
 
@@ -44,7 +48,8 @@ Tras editar cualquier `build/i18n/*.json` o `build/build.mjs`:
 npm run build        # = node build/build.mjs
 ```
 
-Genera 34 páginas (11 idiomas × 3 + `404.html`) y reescribe la salida. **Commitea
+Genera 34 páginas (11 idiomas × 3 + `404.html`) y reescribe la salida (el build borra
+antes `i18n/` y cualquier carpeta de idioma antigua de la raíz). **Commitea
 los `*.html` resultantes** junto al cambio de contenido (GitHub Pages los sirve
 tal cual). Si falta el JSON de un idioma, ese idioma simplemente se omite;
 `es.json` es obligatorio. Si un idioma tiene claves de más o de menos respecto a
@@ -156,8 +161,8 @@ node .claude/skills/hallmark/scripts/sloplint.mjs --url http://localhost:8765/ -
 node .claude/skills/hallmark/scripts/sloplint.mjs --url http://localhost:8765/docs/ --genre modern-minimal --render --scope app
 ```
 
-`main.js` redirige según `navigator.language`, así que para comprobar `/ar/`,
-`/de/`… hay que **forzar el idioma del navegador** (`--lang=ar` en un script
+`main.js` redirige según `navigator.language`, así que para comprobar `/i18n/ar/`,
+`/i18n/de/`… hay que **forzar el idioma del navegador** (`--lang=ar` en un script
 envoltorio que apunte `CHROME_PATH` a Chrome); si no, la página que se lintea es
 la española. `docs/` y `descargas/` son páginas de referencia: se lintean con
 `--scope app`. Los WARN de presupuesto de palabras (58) en la home de en, fr y de

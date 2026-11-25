@@ -64,7 +64,7 @@ Devia Desktop में कोई bug मिला या कोई विचा
 ```
 .
 ├── index.html  docs/  descargas/   # स्पैनिश में पेज (डिफ़ॉल्ट भाषा, रूट में)
-├── en/  fr/  de/  …                 # हर भाषा के लिए एक फ़ोल्डर (कुल 11) समान पेजों के साथ
+├── i18n/en/  i18n/fr/  …          # हर भाषा के लिए एक फ़ोल्डर (कुल 11) समान पेजों के साथ
 ├── 404.html                        # Error पेज
 ├── updates/                        # Update manifest (+ प्रति-प्लेटफ़ॉर्म feeds)
 ├── assets/                         # CSS, JS और logo

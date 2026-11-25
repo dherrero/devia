@@ -64,7 +64,7 @@ Encontraste um erro no Devia Desktop ou tens uma ideia? **As [Issues](https://gi
 ```
 .
 ├── index.html  docs/  descargas/   # Páginas em espanhol (idioma por omissão, na raiz)
-├── en/  fr/  de/  …                 # Uma pasta por idioma (11 no total) com as mesmas páginas
+├── i18n/en/  i18n/fr/  …          # Uma pasta por idioma (11 no total) com as mesmas páginas
 ├── 404.html                        # Página de erro
 ├── updates/                        # Manifesto de atualizações (+ feeds por plataforma)
 ├── assets/                         # CSS, JS e logótipo

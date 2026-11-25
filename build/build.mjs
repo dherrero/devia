@@ -8,11 +8,11 @@
  * supplies its strings — the structure can never drift between translations.
  *
  * Output layout (default language `es` lives at the site root; every other
- * language hangs off a folder segment, mirroring the URL in the path):
+ *   language hangs off `i18n/<code>/`, mirroring the URL in the path):
  *
  *   /                      /docs/                  /descargas/        (es)
- *   /en/   /en/docs/   /en/descargas/                                 (en)
- *   /fr/   /fr/docs/   /fr/descargas/                                 (fr)
+ *   /i18n/en/   /i18n/en/docs/   /i18n/en/descargas/                  (en)
+ *   /i18n/fr/   /i18n/fr/docs/   /i18n/fr/descargas/                  (fr)
  *   …
  *   /404.html                                                         (es, shared)
  *
@@ -36,6 +36,12 @@ const SITE_BASE = 'https://dherrero.github.io/devia/';
 
 /** Default language: rendered at the site root with no folder segment. */
 const DEFAULT_LANG = 'es';
+
+/** Folder that groups the generated folders of every other language. */
+const LANG_ROOT = 'i18n';
+
+/** URL / path segment of a language: '' for the default, `i18n/<code>/` otherwise. */
+const langSegment = (code) => (code === DEFAULT_LANG ? '' : `${LANG_ROOT}/${code}/`);
 
 /** UI languages, in the order shown in the language switcher (es first).
  *  Filtered at build time to those that actually have a translation file, so
@@ -78,23 +84,21 @@ function text(s) {
 /** Relative `../` prefix that climbs from an output dir back to the site root. */
 function prefixFor(lang, page) {
   let depth = 0;
-  if (lang !== DEFAULT_LANG) depth += 1; // language folder segment
+  if (lang !== DEFAULT_LANG) depth += 2; // i18n/<code>/ folder segments
   if (page.seg) depth += 1; // page folder segment
   return '../'.repeat(depth);
 }
 
 /** Site-root-relative path to a page in a given language (for nav/switcher). */
 function pagePath(prefix, langCode, pageKey) {
-  const langSeg = langCode === DEFAULT_LANG ? '' : `${langCode}/`;
   const page = PAGES.find((p) => p.key === pageKey);
-  return `${prefix}${langSeg}${page.seg}` || './';
+  return `${prefix}${langSegment(langCode)}${page.seg}` || './';
 }
 
 /** Absolute URL of a page (canonical + hreflang). */
 function absUrl(langCode, pageKey) {
-  const langSeg = langCode === DEFAULT_LANG ? '' : `${langCode}/`;
   const page = PAGES.find((p) => p.key === pageKey);
-  return `${SITE_BASE}${langSeg}${page.seg}`;
+  return `${SITE_BASE}${langSegment(langCode)}${page.seg}`;
 }
 
 
@@ -591,8 +595,15 @@ function render404(catalogue) {
     // En una project page el sitio cuelga del primer segmento de la ruta
     // (p. ej. /devia/ o /devia.github.io/); en una org page cuelga de la raíz.
     (function () {
-      var seg = location.pathname.split('/')[1];
+      var parts = location.pathname.split('/');
+      var seg = parts[1];
       if (seg) document.getElementById('home-link').href = '/' + seg + '/';
+      // Old URLs, from when each language folder lived at the site root
+      // (/devia/en/docs/): send them to /devia/i18n/en/docs/.
+      var LANGS = ['en', 'ca', 'fr', 'de', 'it', 'pt', 'ru', 'zh', 'hi', 'ar'];
+      if (parts.length > 2 && LANGS.indexOf(parts[2]) !== -1) {
+        location.replace('/' + seg + '/i18n/' + parts.slice(2).join('/') + location.search + location.hash);
+      }
     })();
   </script>
 </body>
@@ -646,18 +657,16 @@ function ctxFor(lang, page) {
 }
 
 function outPathFor(lang, page) {
-  const langSeg = lang === DEFAULT_LANG ? '' : `${lang}/`;
-  return join(ROOT, `${langSeg}${page.seg}index.html`);
+  return join(ROOT, `${langSegment(lang)}${page.seg}index.html`);
 }
 
-/** Remove generated language folders from a previous run so that removing a
- *  language or page never leaves stale files behind. */
+/** Remove the generated language folders of a previous run (the `i18n/` folder
+ *  and the old layout, where each language lived at the site root) so that
+ *  removing a language or page never leaves stale files behind. */
 function clean() {
-  for (const { code } of LANGS) {
-    if (code === DEFAULT_LANG) continue;
-    const dir = join(ROOT, code);
-    if (existsSync(dir)) rmSync(dir, { recursive: true, force: true });
-  }
+  const codes = ['es', 'en', 'ca', 'fr', 'de', 'it', 'pt', 'ru', 'zh', 'hi', 'ar'].filter((c) => c !== DEFAULT_LANG);
+  const dirs = [join(ROOT, LANG_ROOT), ...codes.map((c) => join(ROOT, c))];
+  for (const dir of dirs) if (existsSync(dir)) rmSync(dir, { recursive: true, force: true });
 }
 
 function build() {

@@ -46,8 +46,15 @@
     // En una project page el sitio cuelga del primer segmento de la ruta
     // (p. ej. /devia/ o /devia.github.io/); en una org page cuelga de la raíz.
     (function () {
-      var seg = location.pathname.split('/')[1];
+      var parts = location.pathname.split('/');
+      var seg = parts[1];
       if (seg) document.getElementById('home-link').href = '/' + seg + '/';
+      // Old URLs, from when each language folder lived at the site root
+      // (/devia/en/docs/): send them to /devia/i18n/en/docs/.
+      var LANGS = ['en', 'ca', 'fr', 'de', 'it', 'pt', 'ru', 'zh', 'hi', 'ar'];
+      if (parts.length > 2 && LANGS.indexOf(parts[2]) !== -1) {
+        location.replace('/' + seg + '/i18n/' + parts.slice(2).join('/') + location.search + location.hash);
+      }
     })();
   </script>
 </body>
