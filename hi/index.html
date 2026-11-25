@@ -70,27 +70,7 @@
             <a class="key" href="../hi/docs/">दस्तावेज़ीकरण पढ़ें</a>
           </div>
         </div>
-        <figure class="shot" data-slot="devia-app" data-alt="Devia Desktop का स्क्रीनशॉट: एक agent की चैट और उसके बदलावों का diff" role="img" aria-label="Devia Desktop का स्क्रीनशॉट: एक agent की चैट और उसके बदलावों का diff">
-        <div class="shot-bar">
-          <code class="shot-file">total.ts</code>
-          <ul class="shot-modes" aria-hidden="true">
-            <li><code>plan</code></li>
-            <li class="is-on"><code>apply</code></li>
-            <li><code>apply-yolo</code></li>
-          </ul>
-        </div>
-        <pre class="shot-code" aria-hidden="true"><code><span class="ln">1</span><span class="row">export function total(items: number[]): number {</span>
-<span class="ln">2</span><span class="row del">  let sum = 0;</span>
-<span class="ln">3</span><span class="row del">  for (let i = 0; i &lt;= items.length; i++) sum += items[i];</span>
-<span class="ln">2</span><span class="row add">  return items.reduce((sum, n) =&gt; sum + n, 0);</span>
-<span class="ln">3</span><span class="row">}</span></code></pre>
-        <div class="shot-bar shot-bar-2">
-          <code class="shot-file">total.test.ts</code>
-        </div>
-        <pre class="shot-code" aria-hidden="true"><code><span class="ln">1</span><span class="row add">test("sums every item", () =&gt; {</span>
-<span class="ln">2</span><span class="row add">  expect(total([1, 2, 3])).toBe(6);</span>
-<span class="ln">3</span><span class="row add">});</span></code></pre>
-      </figure>
+        <figure class="shot"><img src="../assets/img/captures/multi-sesion.webp" alt="Devia Desktop split view में दो agents समानांतर काम करते हुए, बाईं ओर प्रोजेक्ट सूची के साथ" width="1653" height="1006" fetchpriority="high"></figure>
       </div>
     </section>
 
@@ -103,11 +83,7 @@
             <p>Claude Code, Codex, Gemini CLI, OpenCode, Cursor Agent, Copilot, Grok, Pi, Kimi, Hermes, Qwen, Qoder और DeepSeek के साथ काम करें, या ACP बोलने वाला अपना agent जोड़ें। सत्र के बीच में agent बदलें और plan, apply या apply-yolo चुनें।</p>
           </div>
           <div class="stage-object">
-            <ul class="chips" aria-label="plan, apply, apply-yolo">
-              <li><code>plan</code></li>
-              <li><code>apply</code></li>
-              <li><code>apply-yolo</code></li>
-            </ul>
+            <figure class="capture"><img src="../assets/img/captures/agentes-cli.webp" alt="पहचाने गए agent CLIs और हर एक की सेटिंग्स" width="1653" height="1006" loading="lazy" decoding="async"></figure>
           </div>
         </li>
         <li class="stage" id="contexto">
@@ -116,11 +92,7 @@
             <p>सत्रों के बीच स्थायी memory, प्रोजेक्ट-वार इतिहास, और context, लागत व tokens एक नज़र में। अपना code graph agent को प्रोजेक्ट की संरचना देता है, और code mode आपके MCP servers पर केवल पढ़ने वाली scripts चलाता है।</p>
           </div>
           <div class="stage-object">
-            <ul class="chips" aria-label="MCP">
-              <li><code>devia-memory</code></li>
-              <li><code>devia-code-graph</code></li>
-              <li><code>devia-code-mode</code></li>
-            </ul>
+            <figure class="capture"><img src="../assets/img/captures/grafo.webp" alt="प्रोजेक्ट का code graph" width="1653" height="1006" loading="lazy" decoding="async"></figure>
           </div>
         </li>
         <li class="stage" id="metodo">
@@ -129,12 +101,7 @@
             <p>हर प्रोजेक्ट का एक kanban, जिसे agent खुद पढ़ता और अपडेट करता है, specs, tasks और dependencies के साथ। Devia Method काम को दिशा देता है, और इंटरैक्टिव कार्ड किसी भी agent के साथ सवाल पूछते हैं, plans की मंज़ूरी माँगते हैं या बदलावों की समीक्षा कराते हैं।</p>
           </div>
           <div class="stage-object">
-            <ul class="columns-strip" aria-label="kanban">
-              <li><code>backlog</code></li>
-              <li><code>todo</code></li>
-              <li><code>in_progress</code></li>
-              <li><code>done</code></li>
-            </ul>
+            <figure class="capture"><img src="../assets/img/captures/kanban.webp" alt="specs और tasks के साथ प्रोजेक्ट का kanban" width="1644" height="1037" loading="lazy" decoding="async"></figure>
           </div>
         </li>
         <li class="stage" id="git">
@@ -157,12 +124,7 @@
             <p>Devia खुला रहने तक Telegram से अपने agents चलाएँ, फ़ाइलें भेजने के साथ। Windows, macOS और Linux पर इंटीग्रेटेड terminal, Docker Compose और अपने IDE में खोलने की सुविधा।</p>
           </div>
           <div class="stage-object">
-            <ul class="chips" aria-label="Telegram">
-              <li><code>/status</code></li>
-              <li><code>/mode</code></li>
-              <li><code>/agent</code></li>
-              <li><code>/stop</code></li>
-            </ul>
+            <figure class="capture"><img src="../assets/img/captures/control-remoto.webp" alt="सेटिंग्स में Telegram से रिमोट कंट्रोल" width="1653" height="1006" loading="lazy" decoding="async"></figure>
           </div>
         </li>
         </ol>
@@ -210,9 +172,5 @@
     </div>
   </footer>
 
-  <script>window.hallmarkSlots = (m) => { for (const [k, v] of Object.entries(m)) { const s = document.querySelector('[data-slot="' + k + '"]'); if (!s) continue; const im = new Image(); im.src = typeof v === 'string' ? v : v.src; im.alt = (typeof v === 'object' && v.alt) || s.dataset.alt || ''; s.querySelectorAll(':scope > img').forEach((o) => o.remove()); s.prepend(im); } };
-  // To show a real capture of the app instead of the built sample, put it at
-  // assets/img/devia-app.png and call: hallmarkSlots({ 'devia-app': '../assets/img/devia-app.png' })
-  </script>
 </body>
 </html>

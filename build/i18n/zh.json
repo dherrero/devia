@@ -28,7 +28,7 @@
       "lead": "桌面应用，指挥 Claude Code、Codex、Gemini 等。",
       "cta": "下载 Devia Desktop",
       "ctaSecondary": "阅读文档",
-      "mediaAlt": "Devia Desktop 截图，显示 Agent 的对话及其变更的差异"
+      "mediaAlt": "Devia Desktop 在分屏视图中让两个 Agent 并行工作，左侧为项目列表"
     },
     "sections": [
       {
@@ -389,6 +389,17 @@
           }
         ]
       }
+    },
+    "figures": {
+      "agentes": "检测到的 Agent CLI 及各自的设置",
+      "multisesion": "两个 Agent 并行工作的分屏视图",
+      "memoria": "持久化记忆，按项目和个人",
+      "grafo": "项目的代码图谱",
+      "kanban": "包含 spec 和任务的项目 kanban",
+      "metodologia": "按项目启用的 Devia Method",
+      "herramientas": "Devia 提供给 Agent 的工具",
+      "subagentes": "与各个 CLI 同步的项目子 Agent",
+      "remoto": "设置中的 Telegram 远程控制"
     }
   },
   "descargas": {

@@ -70,27 +70,7 @@
             <a class="key" href="../ar/docs/">قراءة التوثيق</a>
           </div>
         </div>
-        <figure class="shot" data-slot="devia-app" data-alt="لقطة شاشة من Devia Desktop تعرض محادثة مع وكيل وفروق (diff) تغييراته" role="img" aria-label="لقطة شاشة من Devia Desktop تعرض محادثة مع وكيل وفروق (diff) تغييراته">
-        <div class="shot-bar">
-          <code class="shot-file">total.ts</code>
-          <ul class="shot-modes" aria-hidden="true">
-            <li><code>plan</code></li>
-            <li class="is-on"><code>apply</code></li>
-            <li><code>apply-yolo</code></li>
-          </ul>
-        </div>
-        <pre class="shot-code" aria-hidden="true"><code><span class="ln">1</span><span class="row">export function total(items: number[]): number {</span>
-<span class="ln">2</span><span class="row del">  let sum = 0;</span>
-<span class="ln">3</span><span class="row del">  for (let i = 0; i &lt;= items.length; i++) sum += items[i];</span>
-<span class="ln">2</span><span class="row add">  return items.reduce((sum, n) =&gt; sum + n, 0);</span>
-<span class="ln">3</span><span class="row">}</span></code></pre>
-        <div class="shot-bar shot-bar-2">
-          <code class="shot-file">total.test.ts</code>
-        </div>
-        <pre class="shot-code" aria-hidden="true"><code><span class="ln">1</span><span class="row add">test("sums every item", () =&gt; {</span>
-<span class="ln">2</span><span class="row add">  expect(total([1, 2, 3])).toBe(6);</span>
-<span class="ln">3</span><span class="row add">});</span></code></pre>
-      </figure>
+        <figure class="shot"><img src="../assets/img/captures/multi-sesion.webp" alt="Devia Desktop مع وكيلين يعملان بالتوازي في العرض المقسّم، وقائمة المشاريع على اليسار" width="1653" height="1006" fetchpriority="high"></figure>
       </div>
     </section>
 
@@ -103,11 +83,7 @@
             <p>اعمل مع Claude Code وCodex وGemini CLI وOpenCode وCursor Agent وCopilot وGrok وPi وKimi وHermes وQwen وQoder وDeepSeek، أو أضف وكيلك الخاص إن كان يدعم ACP. بدّل الوكيل في منتصف الجلسة، واختر بين plan وapply وapply-yolo.</p>
           </div>
           <div class="stage-object">
-            <ul class="chips" aria-label="plan, apply, apply-yolo">
-              <li><code>plan</code></li>
-              <li><code>apply</code></li>
-              <li><code>apply-yolo</code></li>
-            </ul>
+            <figure class="capture"><img src="../assets/img/captures/agentes-cli.webp" alt="واجهات CLI للوكلاء المكتشفة وإعدادات كل منها" width="1653" height="1006" loading="lazy" decoding="async"></figure>
           </div>
         </li>
         <li class="stage" id="contexto">
@@ -116,11 +92,7 @@
             <p>ذاكرة دائمة بين الجلسات، وسجل لكل مشروع، مع السياق والتكلفة والرموز (tokens) أمامك دائمًا. يمنح رسم بياني للشيفرة الوكيلَ بنية المشروع، وينفّذ code mode سكربتات للقراءة فقط على خوادم MCP لديك.</p>
           </div>
           <div class="stage-object">
-            <ul class="chips" aria-label="MCP">
-              <li><code>devia-memory</code></li>
-              <li><code>devia-code-graph</code></li>
-              <li><code>devia-code-mode</code></li>
-            </ul>
+            <figure class="capture"><img src="../assets/img/captures/grafo.webp" alt="الرسم البياني للشيفرة في المشروع" width="1653" height="1006" loading="lazy" decoding="async"></figure>
           </div>
         </li>
         <li class="stage" id="metodo">
@@ -129,12 +101,7 @@
             <p>لوحة kanban لكل مشروع يقرؤها الوكيل نفسه ويحدّثها، مع مواصفات ومهام وتبعيات. يوجّه Devia Method العمل، وتسألك البطاقات التفاعلية وتطلب الموافقة على الخطط أو مراجعة التغييرات، مع أي وكيل.</p>
           </div>
           <div class="stage-object">
-            <ul class="columns-strip" aria-label="kanban">
-              <li><code>backlog</code></li>
-              <li><code>todo</code></li>
-              <li><code>in_progress</code></li>
-              <li><code>done</code></li>
-            </ul>
+            <figure class="capture"><img src="../assets/img/captures/kanban.webp" alt="لوحة kanban للمشروع مع المواصفات والمهام" width="1644" height="1037" loading="lazy" decoding="async"></figure>
           </div>
         </li>
         <li class="stage" id="git">
@@ -157,12 +124,7 @@
             <p>وجّه وكلاءك من Telegram مع إرسال الملفات، ما دام Devia مفتوحًا. طرفية مدمجة وDocker Compose وفتح المشروع في بيئة التطوير لديك، على Windows وmacOS وLinux.</p>
           </div>
           <div class="stage-object">
-            <ul class="chips" aria-label="Telegram">
-              <li><code>/status</code></li>
-              <li><code>/mode</code></li>
-              <li><code>/agent</code></li>
-              <li><code>/stop</code></li>
-            </ul>
+            <figure class="capture"><img src="../assets/img/captures/control-remoto.webp" alt="التحكم عن بُعد عبر Telegram في الإعدادات" width="1653" height="1006" loading="lazy" decoding="async"></figure>
           </div>
         </li>
         </ol>
@@ -210,9 +172,5 @@
     </div>
   </footer>
 
-  <script>window.hallmarkSlots = (m) => { for (const [k, v] of Object.entries(m)) { const s = document.querySelector('[data-slot="' + k + '"]'); if (!s) continue; const im = new Image(); im.src = typeof v === 'string' ? v : v.src; im.alt = (typeof v === 'object' && v.alt) || s.dataset.alt || ''; s.querySelectorAll(':scope > img').forEach((o) => o.remove()); s.prepend(im); } };
-  // To show a real capture of the app instead of the built sample, put it at
-  // assets/img/devia-app.png and call: hallmarkSlots({ 'devia-app': '../assets/img/devia-app.png' })
-  </script>
 </body>
 </html>

@@ -150,6 +150,10 @@
           <li>प्रोजेक्ट-वार निर्देशों की कतार: agent के काम करते समय prompts कतार में रखें, drag and drop से क्रम बदलें, रोकें और फिर शुरू करें।</li>
           <li>Claude Code के sub-agents की calls चैट में नेस्टेड दिखती हैं।</li>
         </ul>
+        <figure class="doc-figure">
+          <img src="../../assets/img/captures/agentes-cli.webp" alt="पहचाने गए agent CLIs और हर एक की सेटिंग्स" width="1653" height="1006" loading="lazy" decoding="async">
+          <figcaption>पहचाने गए agent CLIs और हर एक की सेटिंग्स</figcaption>
+        </figure>
 
         <h3>Multi-project और split view</h3>
         <ul>
@@ -158,6 +162,10 @@
           <li>एक ही विंडो में 4 तक panels (2×2), हर एक का अपना सत्र और अपना agent, समानांतर काम करते हुए।</li>
           <li>हर अतिरिक्त panel <strong>अपने git worktree में अलग</strong> काम करता है, ताकि दो agents कभी एक ही फ़ाइलों को न छुएँ।</li>
         </ul>
+        <figure class="doc-figure">
+          <img src="../../assets/img/captures/multi-sesion.webp" alt="split view में समानांतर काम करते दो agents" width="1653" height="1006" loading="lazy" decoding="async">
+          <figcaption>split view में समानांतर काम करते दो agents</figcaption>
+        </figure>
 
         <h3>Context और memory</h3>
         <ul>
@@ -165,6 +173,14 @@
           <li>अपना code graph (6 भाषाएँ) जिसे agents MCP से query करते हैं, और उसे देखने के लिए एक <code>/graph</code> view।</li>
           <li>Code mode: agent एक TypeScript script लिखता है जो आपके चुने MCP servers पर sandbox में चलती है और केवल परिणाम लौटाती है। इस संस्करण में scripts केवल पढ़ती हैं।</li>
         </ul>
+        <figure class="doc-figure">
+          <img src="../../assets/img/captures/memoria.webp" alt="स्थायी memory, प्रोजेक्ट-वार और निजी" width="1653" height="1006" loading="lazy" decoding="async">
+          <figcaption>स्थायी memory, प्रोजेक्ट-वार और निजी</figcaption>
+        </figure>
+        <figure class="doc-figure">
+          <img src="../../assets/img/captures/grafo.webp" alt="प्रोजेक्ट का code graph" width="1653" height="1006" loading="lazy" decoding="async">
+          <figcaption>प्रोजेक्ट का code graph</figcaption>
+        </figure>
 
         <h3>Method और योजना</h3>
         <ul>
@@ -173,6 +189,22 @@
           <li>किसी भी agent के लिए इंटरैक्टिव कार्ड: सवाल, plans की मंज़ूरी, बदलावों की समीक्षा, पुष्टियाँ और चयन। केवल desktop पर।</li>
           <li>skills का प्रबंधक (स्थानीय या GitHub से) और दोबारा इस्तेमाल होने वाले sub-agents का प्रबंधक, जिन्हें Devia हर CLI के साथ sync करता है।</li>
         </ul>
+        <figure class="doc-figure">
+          <img src="../../assets/img/captures/kanban.webp" alt="specs और tasks के साथ प्रोजेक्ट का kanban" width="1644" height="1037" loading="lazy" decoding="async">
+          <figcaption>specs और tasks के साथ प्रोजेक्ट का kanban</figcaption>
+        </figure>
+        <figure class="doc-figure">
+          <img src="../../assets/img/captures/metodologia.webp" alt="प्रोजेक्ट-वार चालू किया गया Devia Method" width="1653" height="1006" loading="lazy" decoding="async">
+          <figcaption>प्रोजेक्ट-वार चालू किया गया Devia Method</figcaption>
+        </figure>
+        <figure class="doc-figure">
+          <img src="../../assets/img/captures/herramientas.webp" alt="Devia द्वारा agent को दिए जाने वाले tools" width="1653" height="1006" loading="lazy" decoding="async">
+          <figcaption>Devia द्वारा agent को दिए जाने वाले tools</figcaption>
+        </figure>
+        <figure class="doc-figure">
+          <img src="../../assets/img/captures/subagentes.webp" alt="हर CLI के साथ sync किए गए प्रोजेक्ट के sub-agents" width="1644" height="1037" loading="lazy" decoding="async">
+          <figcaption>हर CLI के साथ sync किए गए प्रोजेक्ट के sub-agents</figcaption>
+        </figure>
 
         <h3>Git और समीक्षा</h3>
         <ul>
@@ -182,11 +214,13 @@
           <li>commits, push और pull requests agent अपने औज़ारों से करता है: Devia उन्हें खुद नहीं बनाता।</li>
         </ul>
 
+
         <h3>MCP servers</h3>
         <ul>
           <li>Model Context Protocol servers का प्रबंधक, शुरुआती catalog के साथ: servers इंस्टॉल करें, सक्रिय करें और जाँचें। Devia कॉन्फ़िगरेशन 9 agents के native format में लिखता है।</li>
           <li>हर server को agent को सीधे या code mode के ज़रिए दिया जा सकता है।</li>
         </ul>
+
 
         <h3>Telegram से रिमोट कंट्रोल</h3>
         <ul>
@@ -194,6 +228,10 @@
           <li>agent को अटैचमेंट भेजें और उसकी बनाई फ़ाइलें पाएँ। desktop बातचीत का वैकल्पिक mirror।</li>
           <li>यह केवल तब चलता है जब Devia खुला हो और एक ही अधिकृत चैट को सेवा देता है। इंटरैक्टिव कार्ड Telegram में नहीं दिखते: agent टेक्स्ट में पूछता है।</li>
         </ul>
+        <figure class="doc-figure">
+          <img src="../../assets/img/captures/control-remoto.webp" alt="सेटिंग्स में Telegram से रिमोट कंट्रोल" width="1653" height="1006" loading="lazy" decoding="async">
+          <figcaption>सेटिंग्स में Telegram से रिमोट कंट्रोल</figcaption>
+        </figure>
 
         <h3>Terminal, आवाज़ और बहुत कुछ</h3>
         <ul>
@@ -204,6 +242,7 @@
           <li>हर tool-call का audit log।</li>
           <li>इंस्टॉलेशन का स्वचालित अपडेट (Linux पर केवल AppImage के साथ)।</li>
         </ul>
+
       </section>
 
       <section id="capacidades">

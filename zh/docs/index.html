@@ -150,6 +150,10 @@
           <li>按项目的指令队列：Agent 工作时可排队输入 prompt，通过拖放重新排序，也可暂停和恢复。</li>
           <li>Claude Code 子 Agent 的调用会嵌套显示在聊天中。</li>
         </ul>
+        <figure class="doc-figure">
+          <img src="../../assets/img/captures/agentes-cli.webp" alt="检测到的 Agent CLI 及各自的设置" width="1653" height="1006" loading="lazy" decoding="async">
+          <figcaption>检测到的 Agent CLI 及各自的设置</figcaption>
+        </figure>
 
         <h3>多项目与分屏视图</h3>
         <ul>
@@ -158,6 +162,10 @@
           <li>同一窗口最多 4 个面板（2×2），每个面板拥有自己的会话，Agent 并行工作。</li>
           <li>每个附加面板都<strong>隔离运行在自己的 git worktree 中</strong>，因此两个 Agent 永远不会修改同一批文件。</li>
         </ul>
+        <figure class="doc-figure">
+          <img src="../../assets/img/captures/multi-sesion.webp" alt="两个 Agent 并行工作的分屏视图" width="1653" height="1006" loading="lazy" decoding="async">
+          <figcaption>两个 Agent 并行工作的分屏视图</figcaption>
+        </figure>
 
         <h3>上下文与记忆</h3>
         <ul>
@@ -165,6 +173,14 @@
           <li>自有的代码图谱（6 种语言），Agent 通过 MCP 查询，并提供 <code>/graph</code> 视图用于浏览。</li>
           <li>Code mode：Agent 编写一个 TypeScript 脚本，在沙箱中针对您选择的 MCP 服务器运行，只返回结果。当前版本中脚本只能读取。</li>
         </ul>
+        <figure class="doc-figure">
+          <img src="../../assets/img/captures/memoria.webp" alt="持久化记忆，按项目和个人" width="1653" height="1006" loading="lazy" decoding="async">
+          <figcaption>持久化记忆，按项目和个人</figcaption>
+        </figure>
+        <figure class="doc-figure">
+          <img src="../../assets/img/captures/grafo.webp" alt="项目的代码图谱" width="1653" height="1006" loading="lazy" decoding="async">
+          <figcaption>项目的代码图谱</figcaption>
+        </figure>
 
         <h3>方法与规划</h3>
         <ul>
@@ -173,6 +189,22 @@
           <li>适用于任何 Agent 的交互卡片：提问、批准计划、审查变更、确认和选择。仅限桌面端。</li>
           <li>skills 管理器（本地或来自 GitHub）和可复用子 Agent 管理器，Devia 会将它们同步到各个 CLI。</li>
         </ul>
+        <figure class="doc-figure">
+          <img src="../../assets/img/captures/kanban.webp" alt="包含 spec 和任务的项目 kanban" width="1644" height="1037" loading="lazy" decoding="async">
+          <figcaption>包含 spec 和任务的项目 kanban</figcaption>
+        </figure>
+        <figure class="doc-figure">
+          <img src="../../assets/img/captures/metodologia.webp" alt="按项目启用的 Devia Method" width="1653" height="1006" loading="lazy" decoding="async">
+          <figcaption>按项目启用的 Devia Method</figcaption>
+        </figure>
+        <figure class="doc-figure">
+          <img src="../../assets/img/captures/herramientas.webp" alt="Devia 提供给 Agent 的工具" width="1653" height="1006" loading="lazy" decoding="async">
+          <figcaption>Devia 提供给 Agent 的工具</figcaption>
+        </figure>
+        <figure class="doc-figure">
+          <img src="../../assets/img/captures/subagentes.webp" alt="与各个 CLI 同步的项目子 Agent" width="1644" height="1037" loading="lazy" decoding="async">
+          <figcaption>与各个 CLI 同步的项目子 Agent</figcaption>
+        </figure>
 
         <h3>Git 与审查</h3>
         <ul>
@@ -182,11 +214,13 @@
           <li>commit、push 和 pull request 由 Agent 使用其自身工具完成：Devia 本身不会创建它们。</li>
         </ul>
 
+
         <h3>MCP 服务器</h3>
         <ul>
           <li>Model Context Protocol 服务器管理器，附带初始目录：安装、启用并测试服务器。Devia 会以 9 种 Agent 的原生格式写入配置。</li>
           <li>每个服务器既可以直接提供给 Agent，也可以通过 code mode 提供。</li>
         </ul>
+
 
         <h3>Telegram 远程控制</h3>
         <ul>
@@ -194,6 +228,10 @@
           <li>可向 Agent 发送附件并接收其生成的文件。可选开启桌面对话镜像。</li>
           <li>仅在 Devia 保持打开时可用，且只服务一个已授权的聊天。交互卡片不会在 Telegram 中显示：Agent 会以文字提问。</li>
         </ul>
+        <figure class="doc-figure">
+          <img src="../../assets/img/captures/control-remoto.webp" alt="设置中的 Telegram 远程控制" width="1653" height="1006" loading="lazy" decoding="async">
+          <figcaption>设置中的 Telegram 远程控制</figcaption>
+        </figure>
 
         <h3>终端、语音及更多</h3>
         <ul>
@@ -204,6 +242,7 @@
           <li>每次 tool-call 的审计日志。</li>
           <li>安装版本自动更新（在 Linux 上仅限 AppImage）。</li>
         </ul>
+
       </section>
 
       <section id="capacidades">

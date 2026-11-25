@@ -70,27 +70,7 @@
             <a class="key" href="../zh/docs/">阅读文档</a>
           </div>
         </div>
-        <figure class="shot" data-slot="devia-app" data-alt="Devia Desktop 截图，显示 Agent 的对话及其变更的差异" role="img" aria-label="Devia Desktop 截图，显示 Agent 的对话及其变更的差异">
-        <div class="shot-bar">
-          <code class="shot-file">total.ts</code>
-          <ul class="shot-modes" aria-hidden="true">
-            <li><code>plan</code></li>
-            <li class="is-on"><code>apply</code></li>
-            <li><code>apply-yolo</code></li>
-          </ul>
-        </div>
-        <pre class="shot-code" aria-hidden="true"><code><span class="ln">1</span><span class="row">export function total(items: number[]): number {</span>
-<span class="ln">2</span><span class="row del">  let sum = 0;</span>
-<span class="ln">3</span><span class="row del">  for (let i = 0; i &lt;= items.length; i++) sum += items[i];</span>
-<span class="ln">2</span><span class="row add">  return items.reduce((sum, n) =&gt; sum + n, 0);</span>
-<span class="ln">3</span><span class="row">}</span></code></pre>
-        <div class="shot-bar shot-bar-2">
-          <code class="shot-file">total.test.ts</code>
-        </div>
-        <pre class="shot-code" aria-hidden="true"><code><span class="ln">1</span><span class="row add">test("sums every item", () =&gt; {</span>
-<span class="ln">2</span><span class="row add">  expect(total([1, 2, 3])).toBe(6);</span>
-<span class="ln">3</span><span class="row add">});</span></code></pre>
-      </figure>
+        <figure class="shot"><img src="../assets/img/captures/multi-sesion.webp" alt="Devia Desktop 在分屏视图中让两个 Agent 并行工作，左侧为项目列表" width="1653" height="1006" fetchpriority="high"></figure>
       </div>
     </section>
 
@@ -103,11 +83,7 @@
             <p>可使用 Claude Code、Codex、Gemini CLI、OpenCode、Cursor Agent、Copilot、Grok、Pi、Kimi、Hermes、Qwen、Qoder 和 DeepSeek，也可添加支持 ACP 的自有 Agent。会话中途可切换 Agent，并在 plan、apply 和 apply-yolo 之间选择。</p>
           </div>
           <div class="stage-object">
-            <ul class="chips" aria-label="plan, apply, apply-yolo">
-              <li><code>plan</code></li>
-              <li><code>apply</code></li>
-              <li><code>apply-yolo</code></li>
-            </ul>
+            <figure class="capture"><img src="../assets/img/captures/agentes-cli.webp" alt="检测到的 Agent CLI 及各自的设置" width="1653" height="1006" loading="lazy" decoding="async"></figure>
           </div>
         </li>
         <li class="stage" id="contexto">
@@ -116,11 +92,7 @@
             <p>跨会话的持久化记忆、按项目保存的历史，上下文、费用和 token 一目了然。自有的代码图谱让 Agent 了解项目结构，code mode 则在您的 MCP 服务器上运行只读脚本。</p>
           </div>
           <div class="stage-object">
-            <ul class="chips" aria-label="MCP">
-              <li><code>devia-memory</code></li>
-              <li><code>devia-code-graph</code></li>
-              <li><code>devia-code-mode</code></li>
-            </ul>
+            <figure class="capture"><img src="../assets/img/captures/grafo.webp" alt="项目的代码图谱" width="1653" height="1006" loading="lazy" decoding="async"></figure>
           </div>
         </li>
         <li class="stage" id="metodo">
@@ -129,12 +101,7 @@
             <p>每个项目一个 kanban，由 Agent 自行读取并更新，包含 spec、任务和依赖关系。Devia Method 指引工作流程，交互卡片会向您提问、请您批准计划或审查变更，适用于任何 Agent。</p>
           </div>
           <div class="stage-object">
-            <ul class="columns-strip" aria-label="kanban">
-              <li><code>backlog</code></li>
-              <li><code>todo</code></li>
-              <li><code>in_progress</code></li>
-              <li><code>done</code></li>
-            </ul>
+            <figure class="capture"><img src="../assets/img/captures/kanban.webp" alt="包含 spec 和任务的项目 kanban" width="1644" height="1037" loading="lazy" decoding="async"></figure>
           </div>
         </li>
         <li class="stage" id="git">
@@ -157,12 +124,7 @@
             <p>通过 Telegram 指挥 Agent 并发送文件，前提是 Devia 保持打开。内置终端、Docker Compose，以及在 IDE 中打开项目，支持 Windows、macOS 和 Linux。</p>
           </div>
           <div class="stage-object">
-            <ul class="chips" aria-label="Telegram">
-              <li><code>/status</code></li>
-              <li><code>/mode</code></li>
-              <li><code>/agent</code></li>
-              <li><code>/stop</code></li>
-            </ul>
+            <figure class="capture"><img src="../assets/img/captures/control-remoto.webp" alt="设置中的 Telegram 远程控制" width="1653" height="1006" loading="lazy" decoding="async"></figure>
           </div>
         </li>
         </ol>
@@ -210,9 +172,5 @@
     </div>
   </footer>
 
-  <script>window.hallmarkSlots = (m) => { for (const [k, v] of Object.entries(m)) { const s = document.querySelector('[data-slot="' + k + '"]'); if (!s) continue; const im = new Image(); im.src = typeof v === 'string' ? v : v.src; im.alt = (typeof v === 'object' && v.alt) || s.dataset.alt || ''; s.querySelectorAll(':scope > img').forEach((o) => o.remove()); s.prepend(im); } };
-  // To show a real capture of the app instead of the built sample, put it at
-  // assets/img/devia-app.png and call: hallmarkSlots({ 'devia-app': '../assets/img/devia-app.png' })
-  </script>
 </body>
 </html>

@@ -150,6 +150,10 @@
           <li>طابور تعليمات لكل مشروع: ضع prompts في الطابور بينما يعمل الوكيل، وأعد ترتيبها بالسحب والإفلات، وأوقفها مؤقتًا واستأنفها.</li>
           <li>تظهر استدعاءات الوكلاء الفرعيين في Claude Code متداخلة في المحادثة.</li>
         </ul>
+        <figure class="doc-figure">
+          <img src="../../assets/img/captures/agentes-cli.webp" alt="واجهات CLI للوكلاء المكتشفة وإعدادات كل منها" width="1653" height="1006" loading="lazy" decoding="async">
+          <figcaption>واجهات CLI للوكلاء المكتشفة وإعدادات كل منها</figcaption>
+        </figure>
 
         <h3>مشاريع متعددة وعرض مقسّم</h3>
         <ul>
@@ -158,6 +162,10 @@
           <li>حتى 4 لوحات (2×2) في النافذة نفسها، لكلٍّ منها جلستها ووكيلها يعملان بالتوازي.</li>
           <li>تعمل كل لوحة إضافية <strong>معزولة في git worktree خاص بها</strong>، حتى لا يكتب وكيلان فوق الملفات نفسها أبدًا.</li>
         </ul>
+        <figure class="doc-figure">
+          <img src="../../assets/img/captures/multi-sesion.webp" alt="عرض مقسّم مع وكيلين يعملان بالتوازي" width="1653" height="1006" loading="lazy" decoding="async">
+          <figcaption>عرض مقسّم مع وكيلين يعملان بالتوازي</figcaption>
+        </figure>
 
         <h3>السياق والذاكرة</h3>
         <ul>
@@ -165,6 +173,14 @@
           <li>رسم بياني للشيفرة (6 لغات) يستعلم عنه الوكلاء عبر MCP، مع واجهة <code>/graph</code> لاستكشافه.</li>
           <li>Code mode: يكتب الوكيل سكربت TypeScript يُنفَّذ في بيئة معزولة (sandbox) على خوادم MCP التي تختارها، ولا يعيد إلا النتيجة. في هذا الإصدار تقتصر السكربتات على القراءة.</li>
         </ul>
+        <figure class="doc-figure">
+          <img src="../../assets/img/captures/memoria.webp" alt="ذاكرة دائمة، لكل مشروع وشخصية" width="1653" height="1006" loading="lazy" decoding="async">
+          <figcaption>ذاكرة دائمة، لكل مشروع وشخصية</figcaption>
+        </figure>
+        <figure class="doc-figure">
+          <img src="../../assets/img/captures/grafo.webp" alt="الرسم البياني للشيفرة في المشروع" width="1653" height="1006" loading="lazy" decoding="async">
+          <figcaption>الرسم البياني للشيفرة في المشروع</figcaption>
+        </figure>
 
         <h3>المنهجية والتخطيط</h3>
         <ul>
@@ -173,6 +189,22 @@
           <li>بطاقات تفاعلية لأي وكيل: أسئلة، وموافقة على الخطط، ومراجعة التغييرات، وتأكيدات، واختيارات. على سطح المكتب فقط.</li>
           <li>مدير skills، محلية أو من GitHub، ومدير للوكلاء الفرعيين القابلين لإعادة الاستخدام، يزامنهما Devia مع كل أداة CLI.</li>
         </ul>
+        <figure class="doc-figure">
+          <img src="../../assets/img/captures/kanban.webp" alt="لوحة kanban للمشروع مع المواصفات والمهام" width="1644" height="1037" loading="lazy" decoding="async">
+          <figcaption>لوحة kanban للمشروع مع المواصفات والمهام</figcaption>
+        </figure>
+        <figure class="doc-figure">
+          <img src="../../assets/img/captures/metodologia.webp" alt="Devia Method مفعّل لكل مشروع" width="1653" height="1006" loading="lazy" decoding="async">
+          <figcaption>Devia Method مفعّل لكل مشروع</figcaption>
+        </figure>
+        <figure class="doc-figure">
+          <img src="../../assets/img/captures/herramientas.webp" alt="الأدوات التي يوفرها Devia للوكيل" width="1653" height="1006" loading="lazy" decoding="async">
+          <figcaption>الأدوات التي يوفرها Devia للوكيل</figcaption>
+        </figure>
+        <figure class="doc-figure">
+          <img src="../../assets/img/captures/subagentes.webp" alt="الوكلاء الفرعيون للمشروع متزامنون مع كل CLI" width="1644" height="1037" loading="lazy" decoding="async">
+          <figcaption>الوكلاء الفرعيون للمشروع متزامنون مع كل CLI</figcaption>
+        </figure>
 
         <h3>Git والمراجعة</h3>
         <ul>
@@ -182,11 +214,13 @@
           <li>الـ commits والـ push وطلبات الدمج (pull requests) ينفّذها الوكيل بأدواته الخاصة: Devia لا ينشئها بنفسه.</li>
         </ul>
 
+
         <h3>خوادم MCP</h3>
         <ul>
           <li>مدير لخوادم Model Context Protocol مع كتالوج أولي: ثبّت الخوادم وفعّلها واختبرها. يكتب Devia الإعداد بالصيغة الأصلية لـ 9 وكلاء.</li>
           <li>يمكن إتاحة كل خادم للوكيل مباشرة أو عبر code mode.</li>
         </ul>
+
 
         <h3>التحكم عن بُعد عبر Telegram</h3>
         <ul>
@@ -194,6 +228,10 @@
           <li>إرسال مرفقات إلى الوكيل واستلام الملفات التي يولّدها. مرآة اختيارية لمحادثة سطح المكتب.</li>
           <li>يعمل فقط ما دام Devia مفتوحًا، ويخدم محادثة واحدة مصرّحًا بها. لا تظهر البطاقات التفاعلية في Telegram: يسأل الوكيل بنص.</li>
         </ul>
+        <figure class="doc-figure">
+          <img src="../../assets/img/captures/control-remoto.webp" alt="التحكم عن بُعد عبر Telegram في الإعدادات" width="1653" height="1006" loading="lazy" decoding="async">
+          <figcaption>التحكم عن بُعد عبر Telegram في الإعدادات</figcaption>
+        </figure>
 
         <h3>الطرفية والصوت والمزيد</h3>
         <ul>
@@ -204,6 +242,7 @@
           <li>سجل تدقيق لكل tool-call.</li>
           <li>تحديث تلقائي لعمليات التثبيت (على Linux، مع AppImage فقط).</li>
         </ul>
+
       </section>
 
       <section id="capacidades">

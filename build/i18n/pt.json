@@ -28,7 +28,7 @@
       "lead": "Uma app de secretária para dirigir Claude Code, Codex, Gemini e mais.",
       "cta": "Transferir Devia Desktop",
       "ctaSecondary": "Ler a documentação",
-      "mediaAlt": "Captura de ecrã do Devia Desktop com o chat de um agente e o diff das suas alterações"
+      "mediaAlt": "Devia Desktop com dois agentes a trabalhar em paralelo na vista dividida, com a lista de projetos à esquerda"
     },
     "sections": [
       {
@@ -389,6 +389,17 @@
           }
         ]
       }
+    },
+    "figures": {
+      "agentes": "CLI de agentes detetadas e definições de cada uma",
+      "multisesion": "Vista dividida com dois agentes a trabalhar em paralelo",
+      "memoria": "Memória persistente, por projeto e pessoal",
+      "grafo": "Grafo de código do projeto",
+      "kanban": "Kanban do projeto com specs e tarefas",
+      "metodologia": "Devia Method ativado por projeto",
+      "herramientas": "Ferramentas que o Devia oferece ao agente",
+      "subagentes": "Subagentes do projeto sincronizados com cada CLI",
+      "remoto": "Controlo remoto por Telegram nas Definições"
     }
   },
   "descargas": {

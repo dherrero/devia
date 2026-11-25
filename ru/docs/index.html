@@ -150,6 +150,10 @@
           <li>Очередь инструкций для каждого проекта: добавляйте промпты, пока агент работает, переупорядочивайте перетаскиванием, ставьте на паузу и возобновляйте.</li>
           <li>Вызовы суб-агентов Claude Code отображаются в чате вложенными.</li>
         </ul>
+        <figure class="doc-figure">
+          <img src="../../assets/img/captures/agentes-cli.webp" alt="Обнаруженные CLI агентов и настройки каждого из них" width="1653" height="1006" loading="lazy" decoding="async">
+          <figcaption>Обнаруженные CLI агентов и настройки каждого из них</figcaption>
+        </figure>
 
         <h3>Мультипроект и разделённый вид</h3>
         <ul>
@@ -158,6 +162,10 @@
           <li>До 4 панелей (2×2) в одном окне, каждая со своей сессией и агентом, работающим параллельно.</li>
           <li>Каждая дополнительная панель работает <strong>изолированно в собственном git worktree</strong>, чтобы два агента никогда не меняли одни и те же файлы.</li>
         </ul>
+        <figure class="doc-figure">
+          <img src="../../assets/img/captures/multi-sesion.webp" alt="Разделённый вид с двумя агентами, работающими параллельно" width="1653" height="1006" loading="lazy" decoding="async">
+          <figcaption>Разделённый вид с двумя агентами, работающими параллельно</figcaption>
+        </figure>
 
         <h3>Контекст и память</h3>
         <ul>
@@ -165,6 +173,14 @@
           <li>Собственный граф кода (6 языков), к которому агенты обращаются через MCP, с представлением <code>/graph</code> для его изучения.</li>
           <li>Code mode: агент пишет скрипт на TypeScript, который выполняется в песочнице поверх выбранных вами MCP-серверов и возвращает только результат. В этой версии скрипты только читают.</li>
         </ul>
+        <figure class="doc-figure">
+          <img src="../../assets/img/captures/memoria.webp" alt="Постоянная память, для проекта и личная" width="1653" height="1006" loading="lazy" decoding="async">
+          <figcaption>Постоянная память, для проекта и личная</figcaption>
+        </figure>
+        <figure class="doc-figure">
+          <img src="../../assets/img/captures/grafo.webp" alt="Граф кода проекта" width="1653" height="1006" loading="lazy" decoding="async">
+          <figcaption>Граф кода проекта</figcaption>
+        </figure>
 
         <h3>Метод и планирование</h3>
         <ul>
@@ -173,6 +189,22 @@
           <li>Интерактивные карточки для любого агента: вопросы, утверждение планов, проверка изменений, подтверждения и выбор. Только на десктопе.</li>
           <li>Менеджер skills, локальных или из GitHub, и повторно используемых суб-агентов, которые Devia синхронизирует с каждым CLI.</li>
         </ul>
+        <figure class="doc-figure">
+          <img src="../../assets/img/captures/kanban.webp" alt="Kanban проекта со спецификациями и задачами" width="1644" height="1037" loading="lazy" decoding="async">
+          <figcaption>Kanban проекта со спецификациями и задачами</figcaption>
+        </figure>
+        <figure class="doc-figure">
+          <img src="../../assets/img/captures/metodologia.webp" alt="Devia Method, включённый для проекта" width="1653" height="1006" loading="lazy" decoding="async">
+          <figcaption>Devia Method, включённый для проекта</figcaption>
+        </figure>
+        <figure class="doc-figure">
+          <img src="../../assets/img/captures/herramientas.webp" alt="Инструменты, которые Devia предоставляет агенту" width="1653" height="1006" loading="lazy" decoding="async">
+          <figcaption>Инструменты, которые Devia предоставляет агенту</figcaption>
+        </figure>
+        <figure class="doc-figure">
+          <img src="../../assets/img/captures/subagentes.webp" alt="Субагенты проекта, синхронизированные с каждым CLI" width="1644" height="1037" loading="lazy" decoding="async">
+          <figcaption>Субагенты проекта, синхронизированные с каждым CLI</figcaption>
+        </figure>
 
         <h3>Git и ревью</h3>
         <ul>
@@ -182,11 +214,13 @@
           <li>Коммиты, push и pull request делает агент своими инструментами: сам Devia их не создаёт.</li>
         </ul>
 
+
         <h3>MCP-серверы</h3>
         <ul>
           <li>Менеджер серверов Model Context Protocol с начальным каталогом: устанавливайте, включайте и тестируйте серверы. Devia записывает конфигурацию в нативном формате 9 агентов.</li>
           <li>Каждый сервер можно предоставить агенту напрямую или через code mode.</li>
         </ul>
+
 
         <h3>Удалённое управление через Telegram</h3>
         <ul>
@@ -194,6 +228,10 @@
           <li>Отправка вложений агенту и получение файлов, которые он создаёт. Опциональное зеркалирование десктопного разговора.</li>
           <li>Работает только пока Devia открыт и обслуживает один авторизованный чат. Интерактивные карточки в Telegram не отображаются: агент спрашивает текстом.</li>
         </ul>
+        <figure class="doc-figure">
+          <img src="../../assets/img/captures/control-remoto.webp" alt="Удалённое управление через Telegram в Настройках" width="1653" height="1006" loading="lazy" decoding="async">
+          <figcaption>Удалённое управление через Telegram в Настройках</figcaption>
+        </figure>
 
         <h3>Терминал, голос и многое другое</h3>
         <ul>
@@ -204,6 +242,7 @@
           <li>Журнал аудита каждого tool-call.</li>
           <li>Автоматическое обновление установок (на Linux только для AppImage).</li>
         </ul>
+
       </section>
 
       <section id="capacidades">

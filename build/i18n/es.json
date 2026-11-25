@@ -28,7 +28,7 @@
       "lead": "Una app de escritorio para dirigir Claude Code, Codex, Gemini y más.",
       "cta": "Descargar Devia Desktop",
       "ctaSecondary": "Leer la documentación",
-      "mediaAlt": "Captura de Devia Desktop con el chat de un agente y el diff de sus cambios"
+      "mediaAlt": "Devia Desktop con dos agentes trabajando en paralelo en la vista dividida, con la lista de proyectos a la izquierda"
     },
     "sections": [
       {
@@ -389,6 +389,17 @@
           }
         ]
       }
+    },
+    "figures": {
+      "agentes": "Agentes CLI detectados y ajustes de cada uno",
+      "multisesion": "Vista dividida con dos agentes trabajando en paralelo",
+      "memoria": "Memoria persistente por proyecto y personal",
+      "grafo": "Grafo de código del proyecto",
+      "kanban": "Kanban del proyecto con specs y tareas",
+      "metodologia": "Devia Method activado por proyecto",
+      "herramientas": "Herramientas que Devia ofrece al agente",
+      "subagentes": "Sub-agentes del proyecto sincronizados con cada CLI",
+      "remoto": "Control remoto por Telegram en Configuración"
     }
   },
   "descargas": {

@@ -28,7 +28,7 @@
       "lead": "Claude Code, Codex, Gemini और अन्य को चलाने वाला desktop ऐप।",
       "cta": "Devia Desktop डाउनलोड करें",
       "ctaSecondary": "दस्तावेज़ीकरण पढ़ें",
-      "mediaAlt": "Devia Desktop का स्क्रीनशॉट: एक agent की चैट और उसके बदलावों का diff"
+      "mediaAlt": "Devia Desktop split view में दो agents समानांतर काम करते हुए, बाईं ओर प्रोजेक्ट सूची के साथ"
     },
     "sections": [
       {
@@ -389,6 +389,17 @@
           }
         ]
       }
+    },
+    "figures": {
+      "agentes": "पहचाने गए agent CLIs और हर एक की सेटिंग्स",
+      "multisesion": "split view में समानांतर काम करते दो agents",
+      "memoria": "स्थायी memory, प्रोजेक्ट-वार और निजी",
+      "grafo": "प्रोजेक्ट का code graph",
+      "kanban": "specs और tasks के साथ प्रोजेक्ट का kanban",
+      "metodologia": "प्रोजेक्ट-वार चालू किया गया Devia Method",
+      "herramientas": "Devia द्वारा agent को दिए जाने वाले tools",
+      "subagentes": "हर CLI के साथ sync किए गए प्रोजेक्ट के sub-agents",
+      "remoto": "सेटिंग्स में Telegram से रिमोट कंट्रोल"
     }
   },
   "descargas": {

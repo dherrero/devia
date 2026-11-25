@@ -28,7 +28,7 @@
       "lead": "App desktop per guidare Claude Code, Codex, Gemini e altri.",
       "cta": "Scarica Devia Desktop",
       "ctaSecondary": "Leggi la documentazione",
-      "mediaAlt": "Schermata di Devia Desktop con la chat di un agente e il diff delle sue modifiche"
+      "mediaAlt": "Devia Desktop con due agenti che lavorano in parallelo nella vista divisa, con l'elenco dei progetti a sinistra"
     },
     "sections": [
       {
@@ -389,6 +389,17 @@
           }
         ]
       }
+    },
+    "figures": {
+      "agentes": "CLI di agenti rilevate e impostazioni di ciascuna",
+      "multisesion": "Vista divisa con due agenti che lavorano in parallelo",
+      "memoria": "Memoria persistente, per progetto e personale",
+      "grafo": "Grafo del codice del progetto",
+      "kanban": "Kanban del progetto con spec e task",
+      "metodologia": "Devia Method attivato per progetto",
+      "herramientas": "Strumenti che Devia offre all'agente",
+      "subagentes": "Sub-agenti del progetto sincronizzati con ogni CLI",
+      "remoto": "Controllo remoto via Telegram nelle Impostazioni"
     }
   },
   "descargas": {

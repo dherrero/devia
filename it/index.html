@@ -70,27 +70,7 @@
             <a class="key" href="../it/docs/">Leggi la documentazione</a>
           </div>
         </div>
-        <figure class="shot" data-slot="devia-app" data-alt="Schermata di Devia Desktop con la chat di un agente e il diff delle sue modifiche" role="img" aria-label="Schermata di Devia Desktop con la chat di un agente e il diff delle sue modifiche">
-        <div class="shot-bar">
-          <code class="shot-file">total.ts</code>
-          <ul class="shot-modes" aria-hidden="true">
-            <li><code>plan</code></li>
-            <li class="is-on"><code>apply</code></li>
-            <li><code>apply-yolo</code></li>
-          </ul>
-        </div>
-        <pre class="shot-code" aria-hidden="true"><code><span class="ln">1</span><span class="row">export function total(items: number[]): number {</span>
-<span class="ln">2</span><span class="row del">  let sum = 0;</span>
-<span class="ln">3</span><span class="row del">  for (let i = 0; i &lt;= items.length; i++) sum += items[i];</span>
-<span class="ln">2</span><span class="row add">  return items.reduce((sum, n) =&gt; sum + n, 0);</span>
-<span class="ln">3</span><span class="row">}</span></code></pre>
-        <div class="shot-bar shot-bar-2">
-          <code class="shot-file">total.test.ts</code>
-        </div>
-        <pre class="shot-code" aria-hidden="true"><code><span class="ln">1</span><span class="row add">test("sums every item", () =&gt; {</span>
-<span class="ln">2</span><span class="row add">  expect(total([1, 2, 3])).toBe(6);</span>
-<span class="ln">3</span><span class="row add">});</span></code></pre>
-      </figure>
+        <figure class="shot"><img src="../assets/img/captures/multi-sesion.webp" alt="Devia Desktop con due agenti che lavorano in parallelo nella vista divisa, con l'elenco dei progetti a sinistra" width="1653" height="1006" fetchpriority="high"></figure>
       </div>
     </section>
 
@@ -103,11 +83,7 @@
             <p>Lavora con Claude Code, Codex, Gemini CLI, OpenCode, Cursor Agent, Copilot, Grok, Pi, Kimi, Hermes, Qwen, Qoder e DeepSeek, oppure aggiungi il tuo se parla ACP. Cambia agente a metà sessione e scegli tra plan, apply e apply-yolo.</p>
           </div>
           <div class="stage-object">
-            <ul class="chips" aria-label="plan, apply, apply-yolo">
-              <li><code>plan</code></li>
-              <li><code>apply</code></li>
-              <li><code>apply-yolo</code></li>
-            </ul>
+            <figure class="capture"><img src="../assets/img/captures/agentes-cli.webp" alt="CLI di agenti rilevate e impostazioni di ciascuna" width="1653" height="1006" loading="lazy" decoding="async"></figure>
           </div>
         </li>
         <li class="stage" id="contexto">
@@ -116,11 +92,7 @@
             <p>Memoria persistente tra le sessioni, cronologia per progetto, e contesto, costo e token sempre visibili. Un grafo del codice proprio dà all'agente la struttura del progetto, e code mode esegue script di sola lettura sui tuoi server MCP.</p>
           </div>
           <div class="stage-object">
-            <ul class="chips" aria-label="MCP">
-              <li><code>devia-memory</code></li>
-              <li><code>devia-code-graph</code></li>
-              <li><code>devia-code-mode</code></li>
-            </ul>
+            <figure class="capture"><img src="../assets/img/captures/grafo.webp" alt="Grafo del codice del progetto" width="1653" height="1006" loading="lazy" decoding="async"></figure>
           </div>
         </li>
         <li class="stage" id="metodo">
@@ -129,12 +101,7 @@
             <p>Un kanban per progetto che l'agente stesso legge e aggiorna, con spec, task e dipendenze. Devia Method guida il lavoro, e le schede interattive ti fanno domande, chiedono di approvare piani o rivedere modifiche, con qualsiasi agente.</p>
           </div>
           <div class="stage-object">
-            <ul class="columns-strip" aria-label="kanban">
-              <li><code>backlog</code></li>
-              <li><code>todo</code></li>
-              <li><code>in_progress</code></li>
-              <li><code>done</code></li>
-            </ul>
+            <figure class="capture"><img src="../assets/img/captures/kanban.webp" alt="Kanban del progetto con spec e task" width="1644" height="1037" loading="lazy" decoding="async"></figure>
           </div>
         </li>
         <li class="stage" id="git">
@@ -157,12 +124,7 @@
             <p>Guida i tuoi agenti da Telegram, con invio di file, finché Devia è aperto. Terminale integrato, Docker Compose e apertura nel tuo IDE, su Windows, macOS e Linux.</p>
           </div>
           <div class="stage-object">
-            <ul class="chips" aria-label="Telegram">
-              <li><code>/status</code></li>
-              <li><code>/mode</code></li>
-              <li><code>/agent</code></li>
-              <li><code>/stop</code></li>
-            </ul>
+            <figure class="capture"><img src="../assets/img/captures/control-remoto.webp" alt="Controllo remoto via Telegram nelle Impostazioni" width="1653" height="1006" loading="lazy" decoding="async"></figure>
           </div>
         </li>
         </ol>
@@ -210,9 +172,5 @@
     </div>
   </footer>
 
-  <script>window.hallmarkSlots = (m) => { for (const [k, v] of Object.entries(m)) { const s = document.querySelector('[data-slot="' + k + '"]'); if (!s) continue; const im = new Image(); im.src = typeof v === 'string' ? v : v.src; im.alt = (typeof v === 'object' && v.alt) || s.dataset.alt || ''; s.querySelectorAll(':scope > img').forEach((o) => o.remove()); s.prepend(im); } };
-  // To show a real capture of the app instead of the built sample, put it at
-  // assets/img/devia-app.png and call: hallmarkSlots({ 'devia-app': '../assets/img/devia-app.png' })
-  </script>
 </body>
 </html>

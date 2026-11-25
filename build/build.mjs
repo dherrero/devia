@@ -200,64 +200,48 @@ ${extraScript}
 // page bodies
 // ---------------------------------------------------------------------------
 
-/** Language-independent product terms shown as the object of each home stage
- *  (mode names, MCP servers, kanban columns, Telegram commands): the same
- *  literals the app itself uses, so they are never translated. */
-const STAGE_OBJECTS = {
-  agentes: () => `<ul class="chips" aria-label="plan, apply, apply-yolo">
-              <li><code>plan</code></li>
-              <li><code>apply</code></li>
-              <li><code>apply-yolo</code></li>
-            </ul>`,
-  contexto: () => `<ul class="chips" aria-label="MCP">
-              <li><code>devia-memory</code></li>
-              <li><code>devia-code-graph</code></li>
-              <li><code>devia-code-mode</code></li>
-            </ul>`,
-  metodo: () => `<ul class="columns-strip" aria-label="kanban">
-              <li><code>backlog</code></li>
-              <li><code>todo</code></li>
-              <li><code>in_progress</code></li>
-              <li><code>done</code></li>
-            </ul>`,
-  git: () => `<ul class="panes" aria-label="git worktree">
+/** Real captures of the app (assets/img/captures/*.webp), with their size. */
+const CAPTURES = {
+  agentes: { file: 'agentes-cli', w: 1653, h: 1006 },
+  multisesion: { file: 'multi-sesion', w: 1653, h: 1006 },
+  memoria: { file: 'memoria', w: 1653, h: 1006 },
+  grafo: { file: 'grafo', w: 1653, h: 1006 },
+  kanban: { file: 'kanban', w: 1644, h: 1037 },
+  metodologia: { file: 'metodologia', w: 1653, h: 1006 },
+  herramientas: { file: 'herramientas', w: 1653, h: 1006 },
+  subagentes: { file: 'subagentes', w: 1644, h: 1037 },
+  remoto: { file: 'control-remoto', w: 1653, h: 1006 },
+};
+
+/** An <img> of a capture; `alt` is its translated caption. */
+function captureImg(ctx, key, alt, { eager = false } = {}) {
+  const c = CAPTURES[key];
+  return `<img src="${ctx.asset(`img/captures/${c.file}.webp`)}" alt="${attr(alt)}" width="${c.w}" height="${c.h}"${eager ? ' fetchpriority="high"' : ' loading="lazy" decoding="async"'}>`;
+}
+
+/** The object of each home stage: a real capture of the app, except the git
+ *  stage, which shows the four split-view panes as language-independent terms
+ *  (the app's own `worktree` literal, never translated). */
+const STAGE_CAPTURE = { agentes: 'agentes', contexto: 'grafo', metodo: 'kanban', remoto: 'remoto' };
+function stageObject(ctx, t, id) {
+  if (STAGE_CAPTURE[id]) {
+    const key = STAGE_CAPTURE[id];
+    return `<figure class="capture">${captureImg(ctx, key, t.docs.figures[key])}</figure>`;
+  }
+  if (id === 'git') {
+    return `<ul class="panes" aria-label="git worktree">
               <li><code>worktree 1</code></li>
               <li><code>worktree 2</code></li>
               <li><code>worktree 3</code></li>
               <li><code>worktree 4</code></li>
-            </ul>`,
-  remoto: () => `<ul class="chips" aria-label="Telegram">
-              <li><code>/status</code></li>
-              <li><code>/mode</code></li>
-              <li><code>/agent</code></li>
-              <li><code>/stop</code></li>
-            </ul>`,
-};
+            </ul>`;
+  }
+  return '';
+}
 
-/** The hero visual: the diff viewer built from real markup inside a slot, so
- *  a real capture of the app can replace it (assets/img/devia-app.png). */
-function heroShot(alt) {
-  return `<figure class="shot" data-slot="devia-app" data-alt="${attr(alt)}" role="img" aria-label="${attr(alt)}">
-        <div class="shot-bar">
-          <code class="shot-file">total.ts</code>
-          <ul class="shot-modes" aria-hidden="true">
-            <li><code>plan</code></li>
-            <li class="is-on"><code>apply</code></li>
-            <li><code>apply-yolo</code></li>
-          </ul>
-        </div>
-        <pre class="shot-code" aria-hidden="true"><code><span class="ln">1</span><span class="row">export function total(items: number[]): number {</span>
-<span class="ln">2</span><span class="row del">  let sum = 0;</span>
-<span class="ln">3</span><span class="row del">  for (let i = 0; i &lt;= items.length; i++) sum += items[i];</span>
-<span class="ln">2</span><span class="row add">  return items.reduce((sum, n) =&gt; sum + n, 0);</span>
-<span class="ln">3</span><span class="row">}</span></code></pre>
-        <div class="shot-bar shot-bar-2">
-          <code class="shot-file">total.test.ts</code>
-        </div>
-        <pre class="shot-code" aria-hidden="true"><code><span class="ln">1</span><span class="row add">test("sums every item", () =&gt; {</span>
-<span class="ln">2</span><span class="row add">  expect(total([1, 2, 3])).toBe(6);</span>
-<span class="ln">3</span><span class="row add">});</span></code></pre>
-      </figure>`;
+/** The hero visual: the user's own capture of the split view. */
+function heroShot(ctx, alt) {
+  return `<figure class="shot">${captureImg(ctx, 'multisesion', alt, { eager: true })}</figure>`;
 }
 
 function renderHome(t, ctx) {
@@ -265,7 +249,7 @@ function renderHome(t, ctx) {
   const hero = h.hero;
   const stages = h.sections
     .map((s) => {
-      const object = STAGE_OBJECTS[s.id] ? STAGE_OBJECTS[s.id]() : '';
+      const object = stageObject(ctx, t, s.id);
       return `        <li class="stage" id="${attr(s.id)}">
           <div class="stage-text">
             <h2>${text(s.title)}</h2>
@@ -290,7 +274,7 @@ function renderHome(t, ctx) {
             <a class="key" href="${pagePath(ctx.prefix, ctx.lang, 'docs')}">${text(hero.ctaSecondary)}</a>
           </div>
         </div>
-        ${heroShot(hero.mediaAlt)}
+        ${heroShot(ctx, hero.mediaAlt)}
       </div>
     </section>
 
@@ -326,13 +310,7 @@ ${h.local.items.map((i) => `          <li>${i}</li>`).join('\n')}
 
   </main>`;
 
-  const slotScript = `
-  <script>window.hallmarkSlots = (m) => { for (const [k, v] of Object.entries(m)) { const s = document.querySelector('[data-slot="' + k + '"]'); if (!s) continue; const im = new Image(); im.src = typeof v === 'string' ? v : v.src; im.alt = (typeof v === 'object' && v.alt) || s.dataset.alt || ''; s.querySelectorAll(':scope > img').forEach((o) => o.remove()); s.prepend(im); } };
-  // To show a real capture of the app instead of the built sample, put it at
-  // assets/img/devia-app.png and call: hallmarkSlots({ 'devia-app': '${ctx.asset('img/devia-app.png')}' })
-  </script>`;
-
-  return page(t, ctx, 'home', { title: h.meta.title, description: h.meta.description }, body, slotScript);
+  return page(t, ctx, 'home', { title: h.meta.title, description: h.meta.description }, body);
 }
 
 function renderDocs(t, ctx) {
@@ -350,11 +328,18 @@ function renderDocs(t, ctx) {
     .map((r) => `            <tr><td>${r.agent}</td><td>${r.notes}</td></tr>`)
     .join('\n');
 
+  // Captures shown after a feature group (index in `groups`).
+  const GROUP_FIGURES = { 0: ['agentes'], 1: ['multisesion'], 2: ['memoria', 'grafo'], 3: ['kanban', 'metodologia', 'herramientas', 'subagentes'], 6: ['remoto'] };
+  const figure = (key) => `        <figure class="doc-figure">
+          ${captureImg(ctx, key, d.figures[key])}
+          <figcaption>${text(d.figures[key])}</figcaption>
+        </figure>`;
   const featureGroups = s.funcionalidades.groups
-    .map((g) => `        <h3>${text(g.title)}</h3>
+    .map((g, i) => `        <h3>${text(g.title)}</h3>
         <ul>
 ${list(g.items)}
-        </ul>`)
+        </ul>
+${(GROUP_FIGURES[i] || []).map(figure).join('\n')}`)
     .join('\n\n');
 
   const cap = s.capacidades;

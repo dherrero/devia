@@ -132,10 +132,15 @@ Grotesk, IBM Plex Sans, JetBrains Mono, OFL).
 - Reglas que no se pueden saltar: sin emojis como iconos, sin eyebrows ni
   etiquetas en mayúsculas, sin cadenas con `·`, sin rayas largas en el texto,
   sin métricas, testimonios ni logos inventados, sin tarjetas dentro de tarjetas.
-- El hero es un visor de diff construido en un `data-slot="devia-app"`. Para
-  mostrar una captura real de la app: guarda `assets/img/devia-app.png` y llama
-  a `hallmarkSlots({ 'devia-app': 'assets/img/devia-app.png' })` (ver el
-  comentario del HTML de la home).
+- Las imágenes son **capturas reales de la app** hechas por el autor
+  (originales en `~/Documents/Capturas Devia Docs`), convertidas a WebP en
+  `assets/img/captures/` (`cwebp -q 86`). El hero usa `multi-sesion`; las etapas
+  de la home usan `agentes-cli`, `grafo`, `kanban` y `control-remoto`; `docs/`
+  las muestra por grupo de funcionalidades (`GROUP_FIGURES` y `CAPTURES` en
+  `build.mjs`; el pie de cada una es `docs.figures.*` en los JSON, y también su
+  `alt`). **Antes de publicar una captura nueva, revisa que no muestre datos
+  privados**: en `control-remoto` el Chat ID de Telegram está tapado con puntos.
+  Para cambiar una captura, sustituye el `.webp` conservando el nombre.
 - La versión publicada se muestra en el cierre de la home (`#home-version`) y en
   descargas; `main.js` resalta la descarga de la plataforma del visitante.
 

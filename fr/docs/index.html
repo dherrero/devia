@@ -150,6 +150,10 @@
           <li>File d’instructions par projet : mettez des prompts en file pendant que l’agent travaille, réordonnez-les par glisser-déposer, mettez en pause et reprenez.</li>
           <li>Les appels des sous-agents de Claude Code apparaissent imbriqués dans le chat.</li>
         </ul>
+        <figure class="doc-figure">
+          <img src="../../assets/img/captures/agentes-cli.webp" alt="CLI d’agents détectés et réglages de chacun" width="1653" height="1006" loading="lazy" decoding="async">
+          <figcaption>CLI d’agents détectés et réglages de chacun</figcaption>
+        </figure>
 
         <h3>Multi-projets et vue fractionnée</h3>
         <ul>
@@ -158,6 +162,10 @@
           <li>Jusqu’à 4 panneaux (2×2) dans la même fenêtre, chacun avec sa propre session et son agent travaillant en parallèle.</li>
           <li>Chaque panneau supplémentaire travaille <strong>isolé dans son propre git worktree</strong>, pour que deux agents ne touchent jamais aux mêmes fichiers.</li>
         </ul>
+        <figure class="doc-figure">
+          <img src="../../assets/img/captures/multi-sesion.webp" alt="Vue fractionnée avec deux agents qui travaillent en parallèle" width="1653" height="1006" loading="lazy" decoding="async">
+          <figcaption>Vue fractionnée avec deux agents qui travaillent en parallèle</figcaption>
+        </figure>
 
         <h3>Contexte et mémoire</h3>
         <ul>
@@ -165,6 +173,14 @@
           <li>Graphe de code maison (6 langages) que les agents interrogent via MCP, avec une vue <code>/graph</code> pour l’explorer.</li>
           <li>Code mode : l’agent écrit un script TypeScript qui s’exécute dans un sandbox sur les serveurs MCP que vous choisissez et ne renvoie que le résultat. Dans cette version, les scripts ne font que lire.</li>
         </ul>
+        <figure class="doc-figure">
+          <img src="../../assets/img/captures/memoria.webp" alt="Mémoire persistante, par projet et personnelle" width="1653" height="1006" loading="lazy" decoding="async">
+          <figcaption>Mémoire persistante, par projet et personnelle</figcaption>
+        </figure>
+        <figure class="doc-figure">
+          <img src="../../assets/img/captures/grafo.webp" alt="Graphe de code du projet" width="1653" height="1006" loading="lazy" decoding="async">
+          <figcaption>Graphe de code du projet</figcaption>
+        </figure>
 
         <h3>Méthode et planification</h3>
         <ul>
@@ -173,6 +189,22 @@
           <li>Cartes interactives pour n’importe quel agent : questions, approbation de plans, relecture de modifications, confirmations et sélection. Uniquement sur le bureau.</li>
           <li>Gestionnaire de skills, locaux ou depuis GitHub, et de sous-agents réutilisables que Devia synchronise avec chaque CLI.</li>
         </ul>
+        <figure class="doc-figure">
+          <img src="../../assets/img/captures/kanban.webp" alt="Kanban du projet avec specs et tâches" width="1644" height="1037" loading="lazy" decoding="async">
+          <figcaption>Kanban du projet avec specs et tâches</figcaption>
+        </figure>
+        <figure class="doc-figure">
+          <img src="../../assets/img/captures/metodologia.webp" alt="Devia Method activé par projet" width="1653" height="1006" loading="lazy" decoding="async">
+          <figcaption>Devia Method activé par projet</figcaption>
+        </figure>
+        <figure class="doc-figure">
+          <img src="../../assets/img/captures/herramientas.webp" alt="Outils que Devia propose à l’agent" width="1653" height="1006" loading="lazy" decoding="async">
+          <figcaption>Outils que Devia propose à l’agent</figcaption>
+        </figure>
+        <figure class="doc-figure">
+          <img src="../../assets/img/captures/subagentes.webp" alt="Sous-agents du projet synchronisés avec chaque CLI" width="1644" height="1037" loading="lazy" decoding="async">
+          <figcaption>Sous-agents du projet synchronisés avec chaque CLI</figcaption>
+        </figure>
 
         <h3>Git et relecture</h3>
         <ul>
@@ -182,11 +214,13 @@
           <li>Les commits, les push et les pull requests sont faits par l’agent avec ses propres outils : Devia ne les crée pas lui-même.</li>
         </ul>
 
+
         <h3>Serveurs MCP</h3>
         <ul>
           <li>Gestionnaire de serveurs Model Context Protocol avec un catalogue initial : installez, activez et testez des serveurs. Devia écrit la configuration dans le format natif de 9 agents.</li>
           <li>Chaque serveur peut être proposé directement à l’agent ou via code mode.</li>
         </ul>
+
 
         <h3>Télécommande via Telegram</h3>
         <ul>
@@ -194,6 +228,10 @@
           <li>Envoi de pièces jointes à l’agent et réception des fichiers qu’il génère. Miroir optionnel de la conversation du bureau.</li>
           <li>Ne fonctionne que tant que Devia est ouvert et ne répond qu’à un seul chat autorisé. Les cartes interactives ne s’affichent pas dans Telegram : l’agent pose ses questions en texte.</li>
         </ul>
+        <figure class="doc-figure">
+          <img src="../../assets/img/captures/control-remoto.webp" alt="Télécommande via Telegram dans les Paramètres" width="1653" height="1006" loading="lazy" decoding="async">
+          <figcaption>Télécommande via Telegram dans les Paramètres</figcaption>
+        </figure>
 
         <h3>Terminal, voix et plus</h3>
         <ul>
@@ -204,6 +242,7 @@
           <li>Journal d’audit de chaque tool-call.</li>
           <li>Mise à jour automatique des installations (sous Linux, uniquement avec AppImage).</li>
         </ul>
+
       </section>
 
       <section id="capacidades">
