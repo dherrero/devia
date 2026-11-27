@@ -28,7 +28,7 @@
       "lead": "Una app d'escriptori per a dirigir Claude Code, Codex, Gemini i més.",
       "cta": "Descarregar Devia Desktop",
       "ctaSecondary": "Llegir la documentació",
-      "mediaAlt": "Devia Desktop amb dos agents treballant alhora en la vista dividida, amb la llista de projectes a l'esquerra"
+      "mediaAlt": "Devia Desktop amb una conversa amb l'agent, les seues crides a eines i el context i el cost al peu"
     },
     "sections": [
       {
@@ -233,8 +233,10 @@
           {
             "title": "Git i revisió",
             "items": [
-              "Estat del repositori en viu, visor de diffs en línia, selector de branques i pull només fast-forward.",
-              "Comentaris per línia sobre el diff que s'envien a l'agent com a petició de revisió.",
+              "Estat del repositori en viu al peu (branca, canvis sense commitejar, commits per darrere) i selector de branques amb cerca; el pull sempre és fast-forward.",
+              "La pestanya Canvis llista els fitxers modificats amb el seu diff en línia i el total d'addicions i esborrats.",
+              "Fes clic en qualsevol línia del diff per escriure un comentari; en pots deixar diversos, editar-los o esborrar-los.",
+              "Enviar a revisar converteix els comentaris en un prompt <code>revisa:</code> (fitxer, línia i comentari) que queda en el compositor perquè l'envies a l'agent.",
               "Instantànies amb restauració de la configuració de MCP, skills i sub-agents abans de modificar-la.",
               "Els commits, els push i els pull requests els fa l'agent amb les seues pròpies ferramentes: Devia no els crea per si mateix."
             ]
@@ -262,7 +264,9 @@
               "Adjunts de qualsevol tipus (fins a 50 MB per fitxer) i arxiu dels fitxers que genera l'agent.",
               "Dictat per veu local; hui només en espanyol.",
               "Registre d'auditoria de cada tool-call.",
-              "Actualització automàtica de les instal·lacions (en Linux, només amb AppImage)."
+              "Actualització automàtica de les instal·lacions (en Linux, només amb AppImage).",
+              "Tema clar o fosc, famílies Violet i Navy i vores quadrades opcionals.",
+              "Explorador de fitxers del projecte amb l'estat de git de cada fitxer."
             ]
           }
         ]
@@ -316,12 +320,8 @@
             "content": "Configuració: workspace, agent actiu, idioma… (els secrets, com el token de Telegram, es guarden xifrats)"
           },
           {
-            "path": "<code>sessions/&lt;proyecto&gt;/</code>",
-            "content": "Historial de xat per projecte"
-          },
-          {
-            "path": "<code>projects/&lt;clave&gt;/</code>",
-            "content": "Dades per projecte: tauler Kanban (<code>kanban.json</code>) i memòria (<code>memory.json</code>)"
+            "path": "<code>projects/&lt;clau&gt;/</code>",
+            "content": "Dades per projecte: tauler Kanban (<code>kanban.json</code>), memòria (<code>memory.json</code>) i l'historial de xat (<code>session-&lt;id&gt;.json</code>)"
           },
           {
             "path": "<code>memory-global.json</code>",
@@ -392,14 +392,21 @@
     },
     "figures": {
       "agentes": "CLI d'agents detectats i la configuració de cadascun",
-      "multisesion": "Vista dividida amb dos agents treballant alhora",
-      "memoria": "Memòria persistent, per projecte i personal",
+      "chat": "Conversa amb l'agent: crides a eines, context i cost al peu",
+      "dividida": "Vista dividida: dos xats en paral·lel en el mateix projecte",
       "grafo": "Graf de codi del projecte",
       "kanban": "Kanban del projecte amb specs i tasques",
       "metodologia": "Devia Method activat per projecte",
       "herramientas": "Eines que Devia ofereix a l'agent",
-      "subagentes": "Sub-agents del projecte sincronitzats amb cada CLI",
-      "remoto": "Control remot per Telegram en Configuració"
+      "cambios": "Canvis del projecte amb el diff en línia",
+      "comentarios": "Comentaris de revisió sobre les línies del diff",
+      "revisa": "El prompt revisa: a punt en el compositor",
+      "ramas": "Selector de branques des del peu de la finestra",
+      "mcp": "Catàleg de servidors MCP",
+      "remoto": "Control remot per Telegram en Configuració",
+      "arbol": "Explorador de fitxers del projecte amb l'estat de git",
+      "apariencia": "Temes: Violet i Navy, clar i fosc",
+      "tema": "L'app en tema fosc"
     }
   },
   "descargas": {

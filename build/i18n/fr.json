@@ -28,7 +28,7 @@
       "lead": "Une appli de bureau pour piloter Claude Code, Codex, Gemini et plus.",
       "cta": "Télécharger Devia Desktop",
       "ctaSecondary": "Lire la documentation",
-      "mediaAlt": "Devia Desktop avec deux agents qui travaillent en parallèle dans la vue fractionnée, avec la liste des projets à gauche"
+      "mediaAlt": "Devia Desktop avec une conversation avec l’agent, ses appels d’outils et le contexte et le coût dans le pied de page"
     },
     "sections": [
       {
@@ -233,10 +233,12 @@
           {
             "title": "Git et relecture",
             "items": [
-              "État du dépôt en direct, visionneuse de diffs en ligne, sélecteur de branches et pull en fast-forward uniquement.",
-              "Commentaires par ligne sur le diff, envoyés à l’agent comme demande de relecture.",
+              "État du dépôt en direct dans le pied de page (branche, modifications non commitées, commits en retard) et sélecteur de branches avec recherche ; le pull est toujours en fast-forward.",
+              "L’onglet Modifications liste les fichiers modifiés avec leur diff en ligne et le total des ajouts et suppressions.",
+              "Cliquez sur n’importe quelle ligne du diff pour écrire un commentaire ; vous pouvez en laisser plusieurs, les modifier ou les supprimer.",
+              "Envoyer à relire transforme les commentaires en un prompt <code>revisa:</code> (fichier, ligne et commentaire) qui reste dans le compositeur pour que vous l’envoyiez à l’agent.",
               "Instantanés avec restauration de la configuration des MCP, skills et sous-agents avant de la modifier.",
-              "Les commits, les push et les pull requests sont faits par l’agent avec ses propres outils : Devia ne les crée pas lui-même."
+              "Les commits, les push et les pull requests sont faits par l’agent avec ses propres outils : Devia ne les crée pas lui-même."
             ]
           },
           {
@@ -262,7 +264,9 @@
               "Pièces jointes de tout type (jusqu’à 50 Mo par fichier) et archive des fichiers générés par l’agent.",
               "Dictée vocale locale ; aujourd’hui uniquement en espagnol.",
               "Journal d’audit de chaque tool-call.",
-              "Mise à jour automatique des installations (sous Linux, uniquement avec AppImage)."
+              "Mise à jour automatique des installations (sous Linux, uniquement avec AppImage).",
+              "Thème clair ou sombre, familles Violet et Navy et bords carrés en option.",
+              "Explorateur de fichiers du projet avec l’état git de chaque fichier."
             ]
           }
         ]
@@ -316,12 +320,8 @@
             "content": "Configuration : workspace, agent actif, langue… (les secrets, comme le token Telegram, sont stockés chiffrés)"
           },
           {
-            "path": "<code>sessions/&lt;proyecto&gt;/</code>",
-            "content": "Historique de chat par projet"
-          },
-          {
-            "path": "<code>projects/&lt;clave&gt;/</code>",
-            "content": "Données par projet : tableau Kanban (<code>kanban.json</code>) et mémoire (<code>memory.json</code>)"
+            "path": "<code>projects/&lt;clé&gt;/</code>",
+            "content": "Données par projet : tableau Kanban (<code>kanban.json</code>), mémoire (<code>memory.json</code>) et historique de chat (<code>session-&lt;id&gt;.json</code>)"
           },
           {
             "path": "<code>memory-global.json</code>",
@@ -392,14 +392,21 @@
     },
     "figures": {
       "agentes": "CLI d’agents détectés et réglages de chacun",
-      "multisesion": "Vue fractionnée avec deux agents qui travaillent en parallèle",
-      "memoria": "Mémoire persistante, par projet et personnelle",
+      "chat": "Conversation avec l’agent : appels d’outils, contexte et coût dans le pied de page",
+      "dividida": "Vue fractionnée : deux chats en parallèle dans le même projet",
       "grafo": "Graphe de code du projet",
       "kanban": "Kanban du projet avec specs et tâches",
       "metodologia": "Devia Method activé par projet",
       "herramientas": "Outils que Devia propose à l’agent",
-      "subagentes": "Sous-agents du projet synchronisés avec chaque CLI",
-      "remoto": "Télécommande via Telegram dans les Paramètres"
+      "cambios": "Modifications du projet avec le diff en ligne",
+      "comentarios": "Commentaires de relecture sur les lignes du diff",
+      "revisa": "Le prompt revisa: prêt dans le compositeur",
+      "ramas": "Sélecteur de branches depuis le pied de la fenêtre",
+      "mcp": "Catalogue de serveurs MCP",
+      "remoto": "Télécommande via Telegram dans les Paramètres",
+      "arbol": "Explorateur de fichiers du projet avec l’état git",
+      "apariencia": "Thèmes : Violet et Navy, clair et sombre",
+      "tema": "L’app en thème sombre"
     }
   },
   "descargas": {

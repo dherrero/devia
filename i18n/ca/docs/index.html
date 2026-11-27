@@ -151,8 +151,12 @@
           <li>Les crides dels sub-agents de Claude Code apareixen aniuades en el xat.</li>
         </ul>
         <figure class="doc-figure">
-          <img src="../../../assets/img/captures/agentes-cli.webp" alt="CLI d'agents detectats i la configuració de cadascun" width="1653" height="1006" loading="lazy" decoding="async">
+          <img src="../../../assets/img/captures/agentes.webp" alt="CLI d'agents detectats i la configuració de cadascun" width="2880" height="1800" loading="lazy" decoding="async">
           <figcaption>CLI d'agents detectats i la configuració de cadascun</figcaption>
+        </figure>
+        <figure class="doc-figure">
+          <img src="../../../assets/img/captures/chat.webp" alt="Conversa amb l'agent: crides a eines, context i cost al peu" width="2880" height="1800" loading="lazy" decoding="async">
+          <figcaption>Conversa amb l'agent: crides a eines, context i cost al peu</figcaption>
         </figure>
 
         <h3>Multiprojecte i vista dividida</h3>
@@ -163,8 +167,8 @@
           <li>Cada panell addicional treballa <strong>aïllat en el seu propi git worktree</strong>, perquè dos agents mai trepitgen els mateixos fitxers.</li>
         </ul>
         <figure class="doc-figure">
-          <img src="../../../assets/img/captures/multi-sesion.webp" alt="Vista dividida amb dos agents treballant alhora" width="1653" height="1006" loading="lazy" decoding="async">
-          <figcaption>Vista dividida amb dos agents treballant alhora</figcaption>
+          <img src="../../../assets/img/captures/dividida.webp" alt="Vista dividida: dos xats en paral·lel en el mateix projecte" width="2880" height="1800" loading="lazy" decoding="async">
+          <figcaption>Vista dividida: dos xats en paral·lel en el mateix projecte</figcaption>
         </figure>
 
         <h3>Context i memòria</h3>
@@ -173,10 +177,6 @@
           <li>Graf de codi propi (6 llenguatges) que els agents consulten per MCP, amb una vista <code>/graph</code> per a explorar-lo.</li>
           <li>Code mode: l'agent escriu un script TypeScript que s'executa en un sandbox sobre els servidors MCP que tries i torna només el resultat. En esta versió els scripts només lligen.</li>
         </ul>
-        <figure class="doc-figure">
-          <img src="../../../assets/img/captures/memoria.webp" alt="Memòria persistent, per projecte i personal" width="1653" height="1006" loading="lazy" decoding="async">
-          <figcaption>Memòria persistent, per projecte i personal</figcaption>
-        </figure>
         <figure class="doc-figure">
           <img src="../../../assets/img/captures/grafo.webp" alt="Graf de codi del projecte" width="1653" height="1006" loading="lazy" decoding="async">
           <figcaption>Graf de codi del projecte</figcaption>
@@ -190,37 +190,53 @@
           <li>Gestor de skills, locals o des de GitHub, i de sub-agents reutilitzables que Devia sincronitza amb cada CLI.</li>
         </ul>
         <figure class="doc-figure">
-          <img src="../../../assets/img/captures/kanban.webp" alt="Kanban del projecte amb specs i tasques" width="1644" height="1037" loading="lazy" decoding="async">
+          <img src="../../../assets/img/captures/kanban.webp" alt="Kanban del projecte amb specs i tasques" width="2880" height="1800" loading="lazy" decoding="async">
           <figcaption>Kanban del projecte amb specs i tasques</figcaption>
         </figure>
         <figure class="doc-figure">
-          <img src="../../../assets/img/captures/metodologia.webp" alt="Devia Method activat per projecte" width="1653" height="1006" loading="lazy" decoding="async">
+          <img src="../../../assets/img/captures/metodologia.webp" alt="Devia Method activat per projecte" width="2880" height="1800" loading="lazy" decoding="async">
           <figcaption>Devia Method activat per projecte</figcaption>
         </figure>
         <figure class="doc-figure">
-          <img src="../../../assets/img/captures/herramientas.webp" alt="Eines que Devia ofereix a l'agent" width="1653" height="1006" loading="lazy" decoding="async">
+          <img src="../../../assets/img/captures/herramientas.webp" alt="Eines que Devia ofereix a l'agent" width="2880" height="1800" loading="lazy" decoding="async">
           <figcaption>Eines que Devia ofereix a l'agent</figcaption>
-        </figure>
-        <figure class="doc-figure">
-          <img src="../../../assets/img/captures/subagentes.webp" alt="Sub-agents del projecte sincronitzats amb cada CLI" width="1644" height="1037" loading="lazy" decoding="async">
-          <figcaption>Sub-agents del projecte sincronitzats amb cada CLI</figcaption>
         </figure>
 
         <h3>Git i revisió</h3>
         <ul>
-          <li>Estat del repositori en viu, visor de diffs en línia, selector de branques i pull només fast-forward.</li>
-          <li>Comentaris per línia sobre el diff que s'envien a l'agent com a petició de revisió.</li>
+          <li>Estat del repositori en viu al peu (branca, canvis sense commitejar, commits per darrere) i selector de branques amb cerca; el pull sempre és fast-forward.</li>
+          <li>La pestanya Canvis llista els fitxers modificats amb el seu diff en línia i el total d'addicions i esborrats.</li>
+          <li>Fes clic en qualsevol línia del diff per escriure un comentari; en pots deixar diversos, editar-los o esborrar-los.</li>
+          <li>Enviar a revisar converteix els comentaris en un prompt <code>revisa:</code> (fitxer, línia i comentari) que queda en el compositor perquè l'envies a l'agent.</li>
           <li>Instantànies amb restauració de la configuració de MCP, skills i sub-agents abans de modificar-la.</li>
           <li>Els commits, els push i els pull requests els fa l'agent amb les seues pròpies ferramentes: Devia no els crea per si mateix.</li>
         </ul>
-
+        <figure class="doc-figure">
+          <img src="../../../assets/img/captures/cambios.webp" alt="Canvis del projecte amb el diff en línia" width="2880" height="1800" loading="lazy" decoding="async">
+          <figcaption>Canvis del projecte amb el diff en línia</figcaption>
+        </figure>
+        <figure class="doc-figure">
+          <img src="../../../assets/img/captures/comentarios.webp" alt="Comentaris de revisió sobre les línies del diff" width="2880" height="1800" loading="lazy" decoding="async">
+          <figcaption>Comentaris de revisió sobre les línies del diff</figcaption>
+        </figure>
+        <figure class="doc-figure">
+          <img src="../../../assets/img/captures/revisa.webp" alt="El prompt revisa: a punt en el compositor" width="2880" height="1800" loading="lazy" decoding="async">
+          <figcaption>El prompt revisa: a punt en el compositor</figcaption>
+        </figure>
+        <figure class="doc-figure">
+          <img src="../../../assets/img/captures/ramas.webp" alt="Selector de branques des del peu de la finestra" width="2880" height="1800" loading="lazy" decoding="async">
+          <figcaption>Selector de branques des del peu de la finestra</figcaption>
+        </figure>
 
         <h3>Servidors MCP</h3>
         <ul>
           <li>Gestor de servidors Model Context Protocol amb un catàleg inicial: instal·la, activa i prova servidors. Devia escriu la configuració en el format natiu de 9 agents.</li>
           <li>Cada servidor es pot oferir directe a l'agent o a través de code mode.</li>
         </ul>
-
+        <figure class="doc-figure">
+          <img src="../../../assets/img/captures/mcp.webp" alt="Catàleg de servidors MCP" width="2880" height="1800" loading="lazy" decoding="async">
+          <figcaption>Catàleg de servidors MCP</figcaption>
+        </figure>
 
         <h3>Control remot per Telegram</h3>
         <ul>
@@ -229,7 +245,7 @@
           <li>Només funciona mentre Devia està obert i atén un únic xat autoritzat. Les targetes interactives no es mostren en Telegram: l'agent pregunta en text.</li>
         </ul>
         <figure class="doc-figure">
-          <img src="../../../assets/img/captures/control-remoto.webp" alt="Control remot per Telegram en Configuració" width="1653" height="1006" loading="lazy" decoding="async">
+          <img src="../../../assets/img/captures/remoto.webp" alt="Control remot per Telegram en Configuració" width="2880" height="1800" loading="lazy" decoding="async">
           <figcaption>Control remot per Telegram en Configuració</figcaption>
         </figure>
 
@@ -241,8 +257,21 @@
           <li>Dictat per veu local; hui només en espanyol.</li>
           <li>Registre d'auditoria de cada tool-call.</li>
           <li>Actualització automàtica de les instal·lacions (en Linux, només amb AppImage).</li>
+          <li>Tema clar o fosc, famílies Violet i Navy i vores quadrades opcionals.</li>
+          <li>Explorador de fitxers del projecte amb l'estat de git de cada fitxer.</li>
         </ul>
-
+        <figure class="doc-figure">
+          <img src="../../../assets/img/captures/arbol.webp" alt="Explorador de fitxers del projecte amb l'estat de git" width="2880" height="1800" loading="lazy" decoding="async">
+          <figcaption>Explorador de fitxers del projecte amb l'estat de git</figcaption>
+        </figure>
+        <figure class="doc-figure">
+          <img src="../../../assets/img/captures/apariencia.webp" alt="Temes: Violet i Navy, clar i fosc" width="2880" height="1800" loading="lazy" decoding="async">
+          <figcaption>Temes: Violet i Navy, clar i fosc</figcaption>
+        </figure>
+        <figure class="doc-figure">
+          <img src="../../../assets/img/captures/tema.webp" alt="L'app en tema fosc" width="2880" height="1800" loading="lazy" decoding="async">
+          <figcaption>L'app en tema fosc</figcaption>
+        </figure>
       </section>
 
       <section id="capacidades">
@@ -300,8 +329,7 @@
             <thead><tr><th scope="col">Ruta</th><th scope="col">Contingut</th></tr></thead>
             <tbody>
             <tr><td><code>devia-app.config.json</code></td><td>Configuració: workspace, agent actiu, idioma… (els secrets, com el token de Telegram, es guarden xifrats)</td></tr>
-            <tr><td><code>sessions/&lt;proyecto&gt;/</code></td><td>Historial de xat per projecte</td></tr>
-            <tr><td><code>projects/&lt;clave&gt;/</code></td><td>Dades per projecte: tauler Kanban (<code>kanban.json</code>) i memòria (<code>memory.json</code>)</td></tr>
+            <tr><td><code>projects/&lt;clau&gt;/</code></td><td>Dades per projecte: tauler Kanban (<code>kanban.json</code>), memòria (<code>memory.json</code>) i l'historial de xat (<code>session-&lt;id&gt;.json</code>)</td></tr>
             <tr><td><code>memory-global.json</code></td><td>Memòria personal</td></tr>
             <tr><td><code>mcp-servers.json</code></td><td>Servidors MCP configurats</td></tr>
             <tr><td><code>snapshots/</code></td><td>Instantànies de la configuració abans de modificar-la</td></tr>

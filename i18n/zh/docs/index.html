@@ -151,8 +151,12 @@
           <li>Claude Code 子 Agent 的调用会嵌套显示在聊天中。</li>
         </ul>
         <figure class="doc-figure">
-          <img src="../../../assets/img/captures/agentes-cli.webp" alt="检测到的 Agent CLI 及各自的设置" width="1653" height="1006" loading="lazy" decoding="async">
+          <img src="../../../assets/img/captures/agentes.webp" alt="检测到的 Agent CLI 及各自的设置" width="2880" height="1800" loading="lazy" decoding="async">
           <figcaption>检测到的 Agent CLI 及各自的设置</figcaption>
+        </figure>
+        <figure class="doc-figure">
+          <img src="../../../assets/img/captures/chat.webp" alt="与 Agent 的对话：工具调用，以及页脚中的上下文和费用" width="2880" height="1800" loading="lazy" decoding="async">
+          <figcaption>与 Agent 的对话：工具调用，以及页脚中的上下文和费用</figcaption>
         </figure>
 
         <h3>多项目与分屏视图</h3>
@@ -163,8 +167,8 @@
           <li>每个附加面板都<strong>隔离运行在自己的 git worktree 中</strong>，因此两个 Agent 永远不会修改同一批文件。</li>
         </ul>
         <figure class="doc-figure">
-          <img src="../../../assets/img/captures/multi-sesion.webp" alt="两个 Agent 并行工作的分屏视图" width="1653" height="1006" loading="lazy" decoding="async">
-          <figcaption>两个 Agent 并行工作的分屏视图</figcaption>
+          <img src="../../../assets/img/captures/dividida.webp" alt="分屏视图：同一项目中并行的两个聊天" width="2880" height="1800" loading="lazy" decoding="async">
+          <figcaption>分屏视图：同一项目中并行的两个聊天</figcaption>
         </figure>
 
         <h3>上下文与记忆</h3>
@@ -173,10 +177,6 @@
           <li>自有的代码图谱（6 种语言），Agent 通过 MCP 查询，并提供 <code>/graph</code> 视图用于浏览。</li>
           <li>Code mode：Agent 编写一个 TypeScript 脚本，在沙箱中针对您选择的 MCP 服务器运行，只返回结果。当前版本中脚本只能读取。</li>
         </ul>
-        <figure class="doc-figure">
-          <img src="../../../assets/img/captures/memoria.webp" alt="持久化记忆，按项目和个人" width="1653" height="1006" loading="lazy" decoding="async">
-          <figcaption>持久化记忆，按项目和个人</figcaption>
-        </figure>
         <figure class="doc-figure">
           <img src="../../../assets/img/captures/grafo.webp" alt="项目的代码图谱" width="1653" height="1006" loading="lazy" decoding="async">
           <figcaption>项目的代码图谱</figcaption>
@@ -190,37 +190,53 @@
           <li>skills 管理器（本地或来自 GitHub）和可复用子 Agent 管理器，Devia 会将它们同步到各个 CLI。</li>
         </ul>
         <figure class="doc-figure">
-          <img src="../../../assets/img/captures/kanban.webp" alt="包含 spec 和任务的项目 kanban" width="1644" height="1037" loading="lazy" decoding="async">
+          <img src="../../../assets/img/captures/kanban.webp" alt="包含 spec 和任务的项目 kanban" width="2880" height="1800" loading="lazy" decoding="async">
           <figcaption>包含 spec 和任务的项目 kanban</figcaption>
         </figure>
         <figure class="doc-figure">
-          <img src="../../../assets/img/captures/metodologia.webp" alt="按项目启用的 Devia Method" width="1653" height="1006" loading="lazy" decoding="async">
+          <img src="../../../assets/img/captures/metodologia.webp" alt="按项目启用的 Devia Method" width="2880" height="1800" loading="lazy" decoding="async">
           <figcaption>按项目启用的 Devia Method</figcaption>
         </figure>
         <figure class="doc-figure">
-          <img src="../../../assets/img/captures/herramientas.webp" alt="Devia 提供给 Agent 的工具" width="1653" height="1006" loading="lazy" decoding="async">
+          <img src="../../../assets/img/captures/herramientas.webp" alt="Devia 提供给 Agent 的工具" width="2880" height="1800" loading="lazy" decoding="async">
           <figcaption>Devia 提供给 Agent 的工具</figcaption>
-        </figure>
-        <figure class="doc-figure">
-          <img src="../../../assets/img/captures/subagentes.webp" alt="与各个 CLI 同步的项目子 Agent" width="1644" height="1037" loading="lazy" decoding="async">
-          <figcaption>与各个 CLI 同步的项目子 Agent</figcaption>
         </figure>
 
         <h3>Git 与审查</h3>
         <ul>
-          <li>实时仓库状态、行内差异查看器、分支选择器，以及仅限 fast-forward 的 pull。</li>
-          <li>对差异按行添加评论，并作为审查请求发送给 Agent。</li>
+          <li>页脚实时显示仓库状态（分支、未提交的更改、落后的提交），并提供可搜索的分支选择器；pull 始终是 fast-forward。</li>
+          <li>“更改”标签页列出已修改的文件及其行内差异，并显示新增和删除的总数。</li>
+          <li>点击差异中的任意一行即可写评论；可以留下多条，也可以编辑或删除。</li>
+          <li>“发送审查”会把这些评论转换为 <code>revisa:</code> 提示（文件、行和评论），并保留在输入框中，供你发送给 Agent。</li>
           <li>在修改 MCP、skills 和子 Agent 配置之前创建快照，并支持恢复。</li>
           <li>commit、push 和 pull request 由 Agent 使用其自身工具完成：Devia 本身不会创建它们。</li>
         </ul>
-
+        <figure class="doc-figure">
+          <img src="../../../assets/img/captures/cambios.webp" alt="项目更改及其行内差异" width="2880" height="1800" loading="lazy" decoding="async">
+          <figcaption>项目更改及其行内差异</figcaption>
+        </figure>
+        <figure class="doc-figure">
+          <img src="../../../assets/img/captures/comentarios.webp" alt="针对差异各行的审查评论" width="2880" height="1800" loading="lazy" decoding="async">
+          <figcaption>针对差异各行的审查评论</figcaption>
+        </figure>
+        <figure class="doc-figure">
+          <img src="../../../assets/img/captures/revisa.webp" alt="输入框中已就绪的 revisa: 提示" width="2880" height="1800" loading="lazy" decoding="async">
+          <figcaption>输入框中已就绪的 revisa: 提示</figcaption>
+        </figure>
+        <figure class="doc-figure">
+          <img src="../../../assets/img/captures/ramas.webp" alt="窗口页脚中的分支选择器" width="2880" height="1800" loading="lazy" decoding="async">
+          <figcaption>窗口页脚中的分支选择器</figcaption>
+        </figure>
 
         <h3>MCP 服务器</h3>
         <ul>
           <li>Model Context Protocol 服务器管理器，附带初始目录：安装、启用并测试服务器。Devia 会以 9 种 Agent 的原生格式写入配置。</li>
           <li>每个服务器既可以直接提供给 Agent，也可以通过 code mode 提供。</li>
         </ul>
-
+        <figure class="doc-figure">
+          <img src="../../../assets/img/captures/mcp.webp" alt="MCP 服务器目录" width="2880" height="1800" loading="lazy" decoding="async">
+          <figcaption>MCP 服务器目录</figcaption>
+        </figure>
 
         <h3>Telegram 远程控制</h3>
         <ul>
@@ -229,7 +245,7 @@
           <li>仅在 Devia 保持打开时可用，且只服务一个已授权的聊天。交互卡片不会在 Telegram 中显示：Agent 会以文字提问。</li>
         </ul>
         <figure class="doc-figure">
-          <img src="../../../assets/img/captures/control-remoto.webp" alt="设置中的 Telegram 远程控制" width="1653" height="1006" loading="lazy" decoding="async">
+          <img src="../../../assets/img/captures/remoto.webp" alt="设置中的 Telegram 远程控制" width="2880" height="1800" loading="lazy" decoding="async">
           <figcaption>设置中的 Telegram 远程控制</figcaption>
         </figure>
 
@@ -241,8 +257,21 @@
           <li>本地语音听写；目前仅支持西班牙语。</li>
           <li>每次 tool-call 的审计日志。</li>
           <li>安装版本自动更新（在 Linux 上仅限 AppImage）。</li>
+          <li>浅色或深色主题，Violet 和 Navy 系列，以及可选的方形边框。</li>
+          <li>项目文件浏览器，显示每个文件的 git 状态。</li>
         </ul>
-
+        <figure class="doc-figure">
+          <img src="../../../assets/img/captures/arbol.webp" alt="显示 git 状态的项目文件浏览器" width="2880" height="1800" loading="lazy" decoding="async">
+          <figcaption>显示 git 状态的项目文件浏览器</figcaption>
+        </figure>
+        <figure class="doc-figure">
+          <img src="../../../assets/img/captures/apariencia.webp" alt="主题：Violet 和 Navy，浅色和深色" width="2880" height="1800" loading="lazy" decoding="async">
+          <figcaption>主题：Violet 和 Navy，浅色和深色</figcaption>
+        </figure>
+        <figure class="doc-figure">
+          <img src="../../../assets/img/captures/tema.webp" alt="深色主题下的应用" width="2880" height="1800" loading="lazy" decoding="async">
+          <figcaption>深色主题下的应用</figcaption>
+        </figure>
       </section>
 
       <section id="capacidades">
@@ -300,8 +329,7 @@
             <thead><tr><th scope="col">路径</th><th scope="col">内容</th></tr></thead>
             <tbody>
             <tr><td><code>devia-app.config.json</code></td><td>配置：工作区、当前 Agent、语言……（机密信息，如 Telegram 令牌，以加密方式保存）</td></tr>
-            <tr><td><code>sessions/&lt;proyecto&gt;/</code></td><td>按项目保存的聊天历史</td></tr>
-            <tr><td><code>projects/&lt;clave&gt;/</code></td><td>按项目的数据：Kanban 看板（<code>kanban.json</code>）和记忆（<code>memory.json</code>）</td></tr>
+            <tr><td><code>projects/&lt;键&gt;/</code></td><td>按项目的数据：kanban 看板（<code>kanban.json</code>）、记忆（<code>memory.json</code>）和聊天历史（<code>session-&lt;id&gt;.json</code>）</td></tr>
             <tr><td><code>memory-global.json</code></td><td>个人记忆</td></tr>
             <tr><td><code>mcp-servers.json</code></td><td>已配置的 MCP 服务器</td></tr>
             <tr><td><code>snapshots/</code></td><td>修改前的配置快照</td></tr>

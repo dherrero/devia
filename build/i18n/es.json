@@ -28,7 +28,7 @@
       "lead": "Una app de escritorio para dirigir Claude Code, Codex, Gemini y más.",
       "cta": "Descargar Devia Desktop",
       "ctaSecondary": "Leer la documentación",
-      "mediaAlt": "Devia Desktop con dos agentes trabajando en paralelo en la vista dividida, con la lista de proyectos a la izquierda"
+      "mediaAlt": "Devia Desktop con una conversación con el agente, sus llamadas a herramientas y el contexto y el coste en el pie"
     },
     "sections": [
       {
@@ -233,8 +233,10 @@
           {
             "title": "Git y revisión",
             "items": [
-              "Estado del repositorio en vivo, visor de diffs en línea, selector de ramas y pull solo fast-forward.",
-              "Comentarios por línea sobre el diff que se envían al agente como petición de revisión.",
+              "Estado del repositorio en vivo en el pie (rama, cambios sin commitear, commits por detrás) y selector de ramas con búsqueda; el pull es siempre fast-forward.",
+              "La pestaña Cambios lista los ficheros modificados con su diff en línea y el total de adiciones y borrados.",
+              "Haz clic en cualquier línea del diff para escribir un comentario; puedes dejar varios, editarlos o borrarlos.",
+              "Enviar a revisar convierte los comentarios en un prompt <code>revisa:</code> (fichero, línea y comentario) que queda en el compositor para que lo envíes al agente.",
               "Instantáneas con restauración de la configuración de MCP, skills y sub-agentes antes de modificarla.",
               "Los commits, los push y los pull requests los hace el agente con sus propias herramientas: Devia no los crea por sí mismo."
             ]
@@ -262,7 +264,9 @@
               "Adjuntos de cualquier tipo (hasta 50 MB por fichero) y archivo de los ficheros que genera el agente.",
               "Dictado por voz local; hoy solo en español.",
               "Registro de auditoría de cada tool-call.",
-              "Actualización automática de las instalaciones (en Linux, solo con AppImage)."
+              "Actualización automática de las instalaciones (en Linux, solo con AppImage).",
+              "Tema claro u oscuro, familias Violet y Navy y bordes cuadrados opcionales.",
+              "Explorador de archivos del proyecto con el estado de git de cada fichero."
             ]
           }
         ]
@@ -316,12 +320,8 @@
             "content": "Configuración: workspace, agente activo, idioma… (los secretos, como el token de Telegram, se guardan cifrados)"
           },
           {
-            "path": "<code>sessions/&lt;proyecto&gt;/</code>",
-            "content": "Historial de chat por proyecto"
-          },
-          {
             "path": "<code>projects/&lt;clave&gt;/</code>",
-            "content": "Datos por proyecto: tablero Kanban (<code>kanban.json</code>) y memoria (<code>memory.json</code>)"
+            "content": "Datos por proyecto: tablero Kanban (<code>kanban.json</code>), memoria (<code>memory.json</code>) y el historial de chat (<code>session-&lt;id&gt;.json</code>)"
           },
           {
             "path": "<code>memory-global.json</code>",
@@ -392,14 +392,21 @@
     },
     "figures": {
       "agentes": "Agentes CLI detectados y ajustes de cada uno",
-      "multisesion": "Vista dividida con dos agentes trabajando en paralelo",
-      "memoria": "Memoria persistente por proyecto y personal",
+      "chat": "Conversación con el agente: llamadas a herramientas, contexto y coste en el pie",
+      "dividida": "Vista dividida: dos chats en paralelo en el mismo proyecto",
       "grafo": "Grafo de código del proyecto",
       "kanban": "Kanban del proyecto con specs y tareas",
       "metodologia": "Devia Method activado por proyecto",
       "herramientas": "Herramientas que Devia ofrece al agente",
-      "subagentes": "Sub-agentes del proyecto sincronizados con cada CLI",
-      "remoto": "Control remoto por Telegram en Configuración"
+      "cambios": "Cambios del proyecto con el diff en línea",
+      "comentarios": "Comentarios de revisión sobre las líneas del diff",
+      "revisa": "El prompt revisa: listo en el compositor",
+      "ramas": "Selector de ramas desde el pie de la ventana",
+      "mcp": "Catálogo de servidores MCP",
+      "remoto": "Control remoto por Telegram en Configuración",
+      "arbol": "Explorador de archivos del proyecto con el estado de git",
+      "apariencia": "Temas: Violet y Navy, claro y oscuro",
+      "tema": "La app en tema oscuro"
     }
   },
   "descargas": {

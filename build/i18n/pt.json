@@ -28,7 +28,7 @@
       "lead": "Uma app de secretária para dirigir Claude Code, Codex, Gemini e mais.",
       "cta": "Transferir Devia Desktop",
       "ctaSecondary": "Ler a documentação",
-      "mediaAlt": "Devia Desktop com dois agentes a trabalhar em paralelo na vista dividida, com a lista de projetos à esquerda"
+      "mediaAlt": "Devia Desktop com uma conversa com o agente, as suas chamadas a ferramentas e o contexto e o custo no rodapé"
     },
     "sections": [
       {
@@ -233,8 +233,10 @@
           {
             "title": "Git e revisão",
             "items": [
-              "Estado do repositório em direto, visualizador de diffs em linha, seletor de ramos e pull apenas fast-forward.",
-              "Comentários por linha sobre o diff que são enviados ao agente como pedido de revisão.",
+              "Estado do repositório em direto no rodapé (ramo, alterações por commitar, commits em atraso) e seletor de ramos com pesquisa; o pull é sempre fast-forward.",
+              "O separador Alterações lista os ficheiros modificados com o seu diff em linha e o total de adições e remoções.",
+              "Clica em qualquer linha do diff para escrever um comentário; podes deixar vários, editá-los ou apagá-los.",
+              "Enviar para revisão converte os comentários num prompt <code>revisa:</code> (ficheiro, linha e comentário) que fica no compositor para o enviares ao agente.",
               "Instantâneos com restauro da configuração de MCP, skills e subagentes antes de a modificar.",
               "Os commits, os push e os pull requests são feitos pelo agente com as suas próprias ferramentas: o Devia não os cria por si."
             ]
@@ -262,7 +264,9 @@
               "Anexos de qualquer tipo (até 50 MB por ficheiro) e arquivo dos ficheiros que o agente gera.",
               "Ditado por voz local; hoje só em espanhol.",
               "Registo de auditoria de cada tool-call.",
-              "Atualização automática das instalações (em Linux, só com AppImage)."
+              "Atualização automática das instalações (em Linux, só com AppImage).",
+              "Tema claro ou escuro, famílias Violet e Navy e esquinas retas opcionais.",
+              "Explorador de ficheiros do projeto com o estado git de cada ficheiro."
             ]
           }
         ]
@@ -316,12 +320,8 @@
             "content": "Configuração: workspace, agente ativo, idioma… (os segredos, como o token do Telegram, são guardados cifrados)"
           },
           {
-            "path": "<code>sessions/&lt;projeto&gt;/</code>",
-            "content": "Histórico de chat por projeto"
-          },
-          {
             "path": "<code>projects/&lt;chave&gt;/</code>",
-            "content": "Dados por projeto: quadro Kanban (<code>kanban.json</code>) e memória (<code>memory.json</code>)"
+            "content": "Dados por projeto: quadro Kanban (<code>kanban.json</code>), memória (<code>memory.json</code>) e histórico de chat (<code>session-&lt;id&gt;.json</code>)"
           },
           {
             "path": "<code>memory-global.json</code>",
@@ -392,14 +392,21 @@
     },
     "figures": {
       "agentes": "CLI de agentes detetadas e definições de cada uma",
-      "multisesion": "Vista dividida com dois agentes a trabalhar em paralelo",
-      "memoria": "Memória persistente, por projeto e pessoal",
+      "chat": "Conversa com o agente: chamadas a ferramentas, contexto e custo no rodapé",
+      "dividida": "Vista dividida: dois chats em paralelo no mesmo projeto",
       "grafo": "Grafo de código do projeto",
       "kanban": "Kanban do projeto com specs e tarefas",
       "metodologia": "Devia Method ativado por projeto",
       "herramientas": "Ferramentas que o Devia oferece ao agente",
-      "subagentes": "Subagentes do projeto sincronizados com cada CLI",
-      "remoto": "Controlo remoto por Telegram nas Definições"
+      "cambios": "Alterações do projeto com o diff em linha",
+      "comentarios": "Comentários de revisão sobre as linhas do diff",
+      "revisa": "O prompt revisa: pronto no compositor",
+      "ramas": "Seletor de ramos a partir do rodapé da janela",
+      "mcp": "Catálogo de servidores MCP",
+      "remoto": "Controlo remoto por Telegram nas Definições",
+      "arbol": "Explorador de ficheiros do projeto com o estado git",
+      "apariencia": "Temas: Violet e Navy, claro e escuro",
+      "tema": "A app no tema escuro"
     }
   },
   "descargas": {

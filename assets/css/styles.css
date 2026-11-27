@@ -1,7 +1,7 @@
 /* Hallmark · shape: Narrative Workflow · genre: modern-minimal · theme: Cobalt, recoloured with Devia's own violet tokens (deal 2/3, seed web-devia-desktop-herramienta-d9b5·8fa42758·2026-11-25·r0) · redesign: full · draw: 9de24b
- * hero: Stage (home page), Banner (docs, downloads) · nav: edge-aligned wordmark and links with one keycap action · footer: mast, the wordmark over the links · imagery: the user's own captures of the app (WebP) · signature: the split view with two agents working in parallel · job: try
+ * hero: Stage (home page), Banner (docs, downloads) · nav: edge-aligned wordmark and links with one keycap action · footer: mast, the wordmark over the links · imagery: captures of a demo instance of the app, no private data (WebP) · signature: a conversation with the agent, its tool calls and the cost in the footer · job: try
  * axes: light/grotesk-sans/cool · posture: restrained · contrast: pass · fold: pass · v2.0.0 */
-/* Hallmark · pre-emit critique: P4 H4 E4 S4 R4 V4 · weakest: S, the stages share one composition; each carries a different capture of the app (agents, code graph, kanban, Telegram) and the git stage the four worktree panes */
+/* Hallmark · pre-emit critique: P4 H4 E4 S4 R4 V4 · weakest: S, the stages share one composition; each carries a different capture of the app (agents, code graph, kanban, review comments, Telegram) */
 /* Hallmark · answered F3 · the display heads are balanced with text-wrap in base.css */
 /* Hallmark · answered F4 · the platform keys are outlined keycaps, and only the visitor's own system gets the violet primary through script */
 @import url("./tokens.css");
@@ -118,25 +118,12 @@ a:hover { text-decoration-color: var(--color-accent); }
 
 .capture { margin: 0; }
 .capture img, .doc-figure img { width: 100%; height: auto; }
-.chips, .columns-strip, .panes { margin: 0; padding: 0; list-style: none; }
-.chips { display: flex; flex-wrap: wrap; gap: var(--space-sm); }
-.chips li, .columns-strip li, .panes li { border: var(--rule-hair) solid var(--color-rule-2); background: var(--color-paper); }
-.chips li { padding: var(--space-sm) var(--space-md); border-radius: var(--radius-input); font-size: var(--text-md); }
-.columns-strip { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-radius: var(--radius-card); overflow: hidden; }
-.columns-strip li { padding: var(--space-xl) var(--space-sm); border-width: 0 var(--rule-hair) 0 0; text-align: center; }
-.columns-strip li:last-child { border-right-width: 0; }
-.columns-strip li:last-child { background: var(--color-accent-wash); }
-.panes { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-sm); }
-.panes li { padding: var(--space-2xl) var(--space-md); border-radius: var(--radius-card); text-align: center; }
-.panes li:first-child { background: var(--color-accent-wash); }
 
 @media (max-width: 60rem) {
   .stages-section { padding-block: var(--section-gap-s); }
   .stage { grid-template-columns: minmax(0, 1fr); gap: var(--space-xl); padding-block: var(--space-2xl); }
   .stage h2, .stage p, .stage-object { grid-column: 1 / -1; }
-  .columns-strip code { font-size: var(--text-xs); }
-  .panes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
+  }
 
 /* -------------------------------------------------------------------- band */
 .band { background: var(--color-graphite); color: var(--color-graphite-ink); padding-block: var(--section-gap-s); }

@@ -151,8 +151,12 @@
           <li>As chamadas dos subagentes do Claude Code aparecem aninhadas no chat.</li>
         </ul>
         <figure class="doc-figure">
-          <img src="../../../assets/img/captures/agentes-cli.webp" alt="CLI de agentes detetadas e definições de cada uma" width="1653" height="1006" loading="lazy" decoding="async">
+          <img src="../../../assets/img/captures/agentes.webp" alt="CLI de agentes detetadas e definições de cada uma" width="2880" height="1800" loading="lazy" decoding="async">
           <figcaption>CLI de agentes detetadas e definições de cada uma</figcaption>
+        </figure>
+        <figure class="doc-figure">
+          <img src="../../../assets/img/captures/chat.webp" alt="Conversa com o agente: chamadas a ferramentas, contexto e custo no rodapé" width="2880" height="1800" loading="lazy" decoding="async">
+          <figcaption>Conversa com o agente: chamadas a ferramentas, contexto e custo no rodapé</figcaption>
         </figure>
 
         <h3>Multiprojeto e vista dividida</h3>
@@ -163,8 +167,8 @@
           <li>Cada painel adicional trabalha <strong>isolado no seu próprio git worktree</strong>, para que dois agentes nunca pisem os mesmos ficheiros.</li>
         </ul>
         <figure class="doc-figure">
-          <img src="../../../assets/img/captures/multi-sesion.webp" alt="Vista dividida com dois agentes a trabalhar em paralelo" width="1653" height="1006" loading="lazy" decoding="async">
-          <figcaption>Vista dividida com dois agentes a trabalhar em paralelo</figcaption>
+          <img src="../../../assets/img/captures/dividida.webp" alt="Vista dividida: dois chats em paralelo no mesmo projeto" width="2880" height="1800" loading="lazy" decoding="async">
+          <figcaption>Vista dividida: dois chats em paralelo no mesmo projeto</figcaption>
         </figure>
 
         <h3>Contexto e memória</h3>
@@ -173,10 +177,6 @@
           <li>Grafo de código próprio (6 linguagens) que os agentes consultam por MCP, com uma vista <code>/graph</code> para o explorar.</li>
           <li>Code mode: o agente escreve um script TypeScript que é executado numa sandbox sobre os servidores MCP que escolheres e devolve apenas o resultado. Nesta versão os scripts só leem.</li>
         </ul>
-        <figure class="doc-figure">
-          <img src="../../../assets/img/captures/memoria.webp" alt="Memória persistente, por projeto e pessoal" width="1653" height="1006" loading="lazy" decoding="async">
-          <figcaption>Memória persistente, por projeto e pessoal</figcaption>
-        </figure>
         <figure class="doc-figure">
           <img src="../../../assets/img/captures/grafo.webp" alt="Grafo de código do projeto" width="1653" height="1006" loading="lazy" decoding="async">
           <figcaption>Grafo de código do projeto</figcaption>
@@ -190,37 +190,53 @@
           <li>Gestor de skills, locais ou a partir do GitHub, e de subagentes reutilizáveis que o Devia sincroniza com cada CLI.</li>
         </ul>
         <figure class="doc-figure">
-          <img src="../../../assets/img/captures/kanban.webp" alt="Kanban do projeto com specs e tarefas" width="1644" height="1037" loading="lazy" decoding="async">
+          <img src="../../../assets/img/captures/kanban.webp" alt="Kanban do projeto com specs e tarefas" width="2880" height="1800" loading="lazy" decoding="async">
           <figcaption>Kanban do projeto com specs e tarefas</figcaption>
         </figure>
         <figure class="doc-figure">
-          <img src="../../../assets/img/captures/metodologia.webp" alt="Devia Method ativado por projeto" width="1653" height="1006" loading="lazy" decoding="async">
+          <img src="../../../assets/img/captures/metodologia.webp" alt="Devia Method ativado por projeto" width="2880" height="1800" loading="lazy" decoding="async">
           <figcaption>Devia Method ativado por projeto</figcaption>
         </figure>
         <figure class="doc-figure">
-          <img src="../../../assets/img/captures/herramientas.webp" alt="Ferramentas que o Devia oferece ao agente" width="1653" height="1006" loading="lazy" decoding="async">
+          <img src="../../../assets/img/captures/herramientas.webp" alt="Ferramentas que o Devia oferece ao agente" width="2880" height="1800" loading="lazy" decoding="async">
           <figcaption>Ferramentas que o Devia oferece ao agente</figcaption>
-        </figure>
-        <figure class="doc-figure">
-          <img src="../../../assets/img/captures/subagentes.webp" alt="Subagentes do projeto sincronizados com cada CLI" width="1644" height="1037" loading="lazy" decoding="async">
-          <figcaption>Subagentes do projeto sincronizados com cada CLI</figcaption>
         </figure>
 
         <h3>Git e revisão</h3>
         <ul>
-          <li>Estado do repositório em direto, visualizador de diffs em linha, seletor de ramos e pull apenas fast-forward.</li>
-          <li>Comentários por linha sobre o diff que são enviados ao agente como pedido de revisão.</li>
+          <li>Estado do repositório em direto no rodapé (ramo, alterações por commitar, commits em atraso) e seletor de ramos com pesquisa; o pull é sempre fast-forward.</li>
+          <li>O separador Alterações lista os ficheiros modificados com o seu diff em linha e o total de adições e remoções.</li>
+          <li>Clica em qualquer linha do diff para escrever um comentário; podes deixar vários, editá-los ou apagá-los.</li>
+          <li>Enviar para revisão converte os comentários num prompt <code>revisa:</code> (ficheiro, linha e comentário) que fica no compositor para o enviares ao agente.</li>
           <li>Instantâneos com restauro da configuração de MCP, skills e subagentes antes de a modificar.</li>
           <li>Os commits, os push e os pull requests são feitos pelo agente com as suas próprias ferramentas: o Devia não os cria por si.</li>
         </ul>
-
+        <figure class="doc-figure">
+          <img src="../../../assets/img/captures/cambios.webp" alt="Alterações do projeto com o diff em linha" width="2880" height="1800" loading="lazy" decoding="async">
+          <figcaption>Alterações do projeto com o diff em linha</figcaption>
+        </figure>
+        <figure class="doc-figure">
+          <img src="../../../assets/img/captures/comentarios.webp" alt="Comentários de revisão sobre as linhas do diff" width="2880" height="1800" loading="lazy" decoding="async">
+          <figcaption>Comentários de revisão sobre as linhas do diff</figcaption>
+        </figure>
+        <figure class="doc-figure">
+          <img src="../../../assets/img/captures/revisa.webp" alt="O prompt revisa: pronto no compositor" width="2880" height="1800" loading="lazy" decoding="async">
+          <figcaption>O prompt revisa: pronto no compositor</figcaption>
+        </figure>
+        <figure class="doc-figure">
+          <img src="../../../assets/img/captures/ramas.webp" alt="Seletor de ramos a partir do rodapé da janela" width="2880" height="1800" loading="lazy" decoding="async">
+          <figcaption>Seletor de ramos a partir do rodapé da janela</figcaption>
+        </figure>
 
         <h3>Servidores MCP</h3>
         <ul>
           <li>Gestor de servidores Model Context Protocol com um catálogo inicial: instala, ativa e testa servidores. O Devia escreve a configuração no formato nativo de 9 agentes.</li>
           <li>Cada servidor pode ser oferecido diretamente ao agente ou através do code mode.</li>
         </ul>
-
+        <figure class="doc-figure">
+          <img src="../../../assets/img/captures/mcp.webp" alt="Catálogo de servidores MCP" width="2880" height="1800" loading="lazy" decoding="async">
+          <figcaption>Catálogo de servidores MCP</figcaption>
+        </figure>
 
         <h3>Controlo remoto por Telegram</h3>
         <ul>
@@ -229,7 +245,7 @@
           <li>Só funciona enquanto o Devia está aberto e atende um único chat autorizado. Os cartões interativos não aparecem no Telegram: o agente pergunta em texto.</li>
         </ul>
         <figure class="doc-figure">
-          <img src="../../../assets/img/captures/control-remoto.webp" alt="Controlo remoto por Telegram nas Definições" width="1653" height="1006" loading="lazy" decoding="async">
+          <img src="../../../assets/img/captures/remoto.webp" alt="Controlo remoto por Telegram nas Definições" width="2880" height="1800" loading="lazy" decoding="async">
           <figcaption>Controlo remoto por Telegram nas Definições</figcaption>
         </figure>
 
@@ -241,8 +257,21 @@
           <li>Ditado por voz local; hoje só em espanhol.</li>
           <li>Registo de auditoria de cada tool-call.</li>
           <li>Atualização automática das instalações (em Linux, só com AppImage).</li>
+          <li>Tema claro ou escuro, famílias Violet e Navy e esquinas retas opcionais.</li>
+          <li>Explorador de ficheiros do projeto com o estado git de cada ficheiro.</li>
         </ul>
-
+        <figure class="doc-figure">
+          <img src="../../../assets/img/captures/arbol.webp" alt="Explorador de ficheiros do projeto com o estado git" width="2880" height="1800" loading="lazy" decoding="async">
+          <figcaption>Explorador de ficheiros do projeto com o estado git</figcaption>
+        </figure>
+        <figure class="doc-figure">
+          <img src="../../../assets/img/captures/apariencia.webp" alt="Temas: Violet e Navy, claro e escuro" width="2880" height="1800" loading="lazy" decoding="async">
+          <figcaption>Temas: Violet e Navy, claro e escuro</figcaption>
+        </figure>
+        <figure class="doc-figure">
+          <img src="../../../assets/img/captures/tema.webp" alt="A app no tema escuro" width="2880" height="1800" loading="lazy" decoding="async">
+          <figcaption>A app no tema escuro</figcaption>
+        </figure>
       </section>
 
       <section id="capacidades">
@@ -300,8 +329,7 @@
             <thead><tr><th scope="col">Caminho</th><th scope="col">Conteúdo</th></tr></thead>
             <tbody>
             <tr><td><code>devia-app.config.json</code></td><td>Configuração: workspace, agente ativo, idioma… (os segredos, como o token do Telegram, são guardados cifrados)</td></tr>
-            <tr><td><code>sessions/&lt;projeto&gt;/</code></td><td>Histórico de chat por projeto</td></tr>
-            <tr><td><code>projects/&lt;chave&gt;/</code></td><td>Dados por projeto: quadro Kanban (<code>kanban.json</code>) e memória (<code>memory.json</code>)</td></tr>
+            <tr><td><code>projects/&lt;chave&gt;/</code></td><td>Dados por projeto: quadro Kanban (<code>kanban.json</code>), memória (<code>memory.json</code>) e histórico de chat (<code>session-&lt;id&gt;.json</code>)</td></tr>
             <tr><td><code>memory-global.json</code></td><td>Memória pessoal</td></tr>
             <tr><td><code>mcp-servers.json</code></td><td>Servidores MCP configurados</td></tr>
             <tr><td><code>snapshots/</code></td><td>Instantâneos da configuração antes de a modificar</td></tr>

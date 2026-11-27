@@ -137,15 +137,21 @@ Grotesk, IBM Plex Sans, JetBrains Mono, OFL).
 - Reglas que no se pueden saltar: sin emojis como iconos, sin eyebrows ni
   etiquetas en mayúsculas, sin cadenas con `·`, sin rayas largas en el texto,
   sin métricas, testimonios ni logos inventados, sin tarjetas dentro de tarjetas.
-- Las imágenes son **capturas reales de la app** hechas por el autor
-  (originales en `~/Documents/Capturas Devia Docs`), convertidas a WebP en
-  `assets/img/captures/` (`cwebp -q 86`). El hero usa `multi-sesion`; las etapas
-  de la home usan `agentes-cli`, `grafo`, `kanban` y `control-remoto`; `docs/`
-  las muestra por grupo de funcionalidades (`GROUP_FIGURES` y `CAPTURES` en
-  `build.mjs`; el pie de cada una es `docs.figures.*` en los JSON, y también su
-  `alt`). **Antes de publicar una captura nueva, revisa que no muestre datos
-  privados**: en `control-remoto` el Chat ID de Telegram está tapado con puntos.
-  Para cambiar una captura, sustituye el `.webp` conservando el nombre.
+- Las imágenes son **capturas reales de la app**, en WebP (`cwebp -q 84`) en
+  `assets/img/captures/`. Salvo `grafo.webp` (una captura del propio repo de la
+  app, que es público), salen de una **instancia demo**: un worktree desacoplado
+  de `dev` de `dherrero/devia-app`, arrancado con un `HOME` temporal, un proyecto
+  de ejemplo con cambios sin commitear y una conversación y un kanban sembrados,
+  sin datos privados (vía puppeteer-core por CDP a 1440x900 @2x). Para repetirlas:
+  `HOME=/tmp/devia-demo/home electron --remote-debugging-port=9223 .` desde el
+  worktree, con `devia-app.config.json` apuntando `workspaceRoot` al proyecto de
+  ejemplo. Las sesiones de chat se guardan en `projects/<clave>/session-<id>.json`.
+  El hero usa `chat`; las etapas de la home, `agentes`, `grafo`, `kanban`,
+  `comentarios` y `remoto`; `docs/` muestra el resto por grupo de funcionalidades
+  (`GROUP_FIGURES` y `CAPTURES` en `build.mjs`; el pie de cada una, y su `alt`, es
+  `docs.figures.*` en los JSON). Las capturas están en español en todos los
+  idiomas. **Antes de publicar una captura nueva, revisa que no muestre datos
+  privados** (ids de chat, rutas, nombres de proyectos o tareas internas).
 - La versión publicada se muestra en el cierre de la home (`#home-version`) y en
   descargas; `main.js` resalta la descarga de la plataforma del visitante.
 

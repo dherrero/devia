@@ -28,7 +28,7 @@
       "lead": "A desktop app to run Claude Code, Codex, Gemini, and more.",
       "cta": "Download Devia Desktop",
       "ctaSecondary": "Read the documentation",
-      "mediaAlt": "Devia Desktop with two agents working in parallel in the split view, with the project list on the left"
+      "mediaAlt": "Devia Desktop showing a conversation with the agent, its tool calls, and the context and cost in the footer"
     },
     "sections": [
       {
@@ -233,8 +233,10 @@
           {
             "title": "Git and review",
             "items": [
-              "Live repository status, inline diff viewer, branch switcher, and fast-forward-only pull.",
-              "Per-line comments on the diff that are sent to the agent as a review request.",
+              "Live repository status in the footer (branch, uncommitted changes, commits behind) and a branch switcher with search; pull is always fast-forward.",
+              "The Changes tab lists the modified files with their inline diff and the total of additions and deletions.",
+              "Click any line of the diff to write a comment; you can leave several, edit them, or delete them.",
+              "Send for review turns the comments into a <code>revisa:</code> prompt (file, line, and comment) that stays in the composer for you to send to the agent.",
               "Snapshots with restore of your MCP, skills, and sub-agents configuration before it is modified.",
               "Commits, pushes, and pull requests are made by the agent with its own tools: Devia does not create them itself."
             ]
@@ -262,7 +264,9 @@
               "Attachments of any type (up to 50 MB per file) and an archive of the files the agent generates.",
               "Local voice dictation; today in Spanish only.",
               "Audit log of every tool call.",
-              "Automatic updates of installed builds (on Linux, AppImage only)."
+              "Automatic updates of installed builds (on Linux, AppImage only).",
+              "Light or dark theme, Violet and Navy families, and optional square borders.",
+              "Project file explorer with the git status of each file."
             ]
           }
         ]
@@ -316,12 +320,8 @@
             "content": "Settings: workspace, active agent, language… (secrets such as the Telegram token are stored encrypted)"
           },
           {
-            "path": "<code>sessions/&lt;project&gt;/</code>",
-            "content": "Chat history per project"
-          },
-          {
             "path": "<code>projects/&lt;key&gt;/</code>",
-            "content": "Per-project data: kanban board (<code>kanban.json</code>) and memory (<code>memory.json</code>)"
+            "content": "Per-project data: kanban board (<code>kanban.json</code>), memory (<code>memory.json</code>), and chat history (<code>session-&lt;id&gt;.json</code>)"
           },
           {
             "path": "<code>memory-global.json</code>",
@@ -392,14 +392,21 @@
     },
     "figures": {
       "agentes": "Detected agent CLIs and the settings of each one",
-      "multisesion": "Split view with two agents working in parallel",
-      "memoria": "Persistent memory, per project and personal",
+      "chat": "Conversation with the agent: tool calls, context, and cost in the footer",
+      "dividida": "Split view: two chats in parallel in the same project",
       "grafo": "Code graph of the project",
       "kanban": "Project kanban with specs and tasks",
       "metodologia": "Devia Method switched on per project",
       "herramientas": "Tools Devia offers to the agent",
-      "subagentes": "Project sub-agents synced with each CLI",
-      "remoto": "Remote control over Telegram in Settings"
+      "cambios": "Project changes with the inline diff",
+      "comentarios": "Review comments on the lines of the diff",
+      "revisa": "The revisa: prompt ready in the composer",
+      "ramas": "Branch switcher from the window footer",
+      "mcp": "MCP server catalog",
+      "remoto": "Remote control over Telegram in Settings",
+      "arbol": "Project file explorer with git status",
+      "apariencia": "Themes: Violet and Navy, light and dark",
+      "tema": "The app in dark theme"
     }
   },
   "descargas": {

@@ -151,8 +151,12 @@
           <li>تظهر استدعاءات الوكلاء الفرعيين في Claude Code متداخلة في المحادثة.</li>
         </ul>
         <figure class="doc-figure">
-          <img src="../../../assets/img/captures/agentes-cli.webp" alt="واجهات CLI للوكلاء المكتشفة وإعدادات كل منها" width="1653" height="1006" loading="lazy" decoding="async">
+          <img src="../../../assets/img/captures/agentes.webp" alt="واجهات CLI للوكلاء المكتشفة وإعدادات كل منها" width="2880" height="1800" loading="lazy" decoding="async">
           <figcaption>واجهات CLI للوكلاء المكتشفة وإعدادات كل منها</figcaption>
+        </figure>
+        <figure class="doc-figure">
+          <img src="../../../assets/img/captures/chat.webp" alt="محادثة مع الوكيل: استدعاءات الأدوات والسياق والتكلفة في التذييل" width="2880" height="1800" loading="lazy" decoding="async">
+          <figcaption>محادثة مع الوكيل: استدعاءات الأدوات والسياق والتكلفة في التذييل</figcaption>
         </figure>
 
         <h3>مشاريع متعددة وعرض مقسّم</h3>
@@ -163,8 +167,8 @@
           <li>تعمل كل لوحة إضافية <strong>معزولة في git worktree خاص بها</strong>، حتى لا يكتب وكيلان فوق الملفات نفسها أبدًا.</li>
         </ul>
         <figure class="doc-figure">
-          <img src="../../../assets/img/captures/multi-sesion.webp" alt="عرض مقسّم مع وكيلين يعملان بالتوازي" width="1653" height="1006" loading="lazy" decoding="async">
-          <figcaption>عرض مقسّم مع وكيلين يعملان بالتوازي</figcaption>
+          <img src="../../../assets/img/captures/dividida.webp" alt="العرض المقسّم: محادثتان بالتوازي في المشروع نفسه" width="2880" height="1800" loading="lazy" decoding="async">
+          <figcaption>العرض المقسّم: محادثتان بالتوازي في المشروع نفسه</figcaption>
         </figure>
 
         <h3>السياق والذاكرة</h3>
@@ -173,10 +177,6 @@
           <li>رسم بياني للشيفرة (6 لغات) يستعلم عنه الوكلاء عبر MCP، مع واجهة <code>/graph</code> لاستكشافه.</li>
           <li>Code mode: يكتب الوكيل سكربت TypeScript يُنفَّذ في بيئة معزولة (sandbox) على خوادم MCP التي تختارها، ولا يعيد إلا النتيجة. في هذا الإصدار تقتصر السكربتات على القراءة.</li>
         </ul>
-        <figure class="doc-figure">
-          <img src="../../../assets/img/captures/memoria.webp" alt="ذاكرة دائمة، لكل مشروع وشخصية" width="1653" height="1006" loading="lazy" decoding="async">
-          <figcaption>ذاكرة دائمة، لكل مشروع وشخصية</figcaption>
-        </figure>
         <figure class="doc-figure">
           <img src="../../../assets/img/captures/grafo.webp" alt="الرسم البياني للشيفرة في المشروع" width="1653" height="1006" loading="lazy" decoding="async">
           <figcaption>الرسم البياني للشيفرة في المشروع</figcaption>
@@ -190,37 +190,53 @@
           <li>مدير skills، محلية أو من GitHub، ومدير للوكلاء الفرعيين القابلين لإعادة الاستخدام، يزامنهما Devia مع كل أداة CLI.</li>
         </ul>
         <figure class="doc-figure">
-          <img src="../../../assets/img/captures/kanban.webp" alt="لوحة kanban للمشروع مع المواصفات والمهام" width="1644" height="1037" loading="lazy" decoding="async">
+          <img src="../../../assets/img/captures/kanban.webp" alt="لوحة kanban للمشروع مع المواصفات والمهام" width="2880" height="1800" loading="lazy" decoding="async">
           <figcaption>لوحة kanban للمشروع مع المواصفات والمهام</figcaption>
         </figure>
         <figure class="doc-figure">
-          <img src="../../../assets/img/captures/metodologia.webp" alt="Devia Method مفعّل لكل مشروع" width="1653" height="1006" loading="lazy" decoding="async">
+          <img src="../../../assets/img/captures/metodologia.webp" alt="Devia Method مفعّل لكل مشروع" width="2880" height="1800" loading="lazy" decoding="async">
           <figcaption>Devia Method مفعّل لكل مشروع</figcaption>
         </figure>
         <figure class="doc-figure">
-          <img src="../../../assets/img/captures/herramientas.webp" alt="الأدوات التي يوفرها Devia للوكيل" width="1653" height="1006" loading="lazy" decoding="async">
+          <img src="../../../assets/img/captures/herramientas.webp" alt="الأدوات التي يوفرها Devia للوكيل" width="2880" height="1800" loading="lazy" decoding="async">
           <figcaption>الأدوات التي يوفرها Devia للوكيل</figcaption>
-        </figure>
-        <figure class="doc-figure">
-          <img src="../../../assets/img/captures/subagentes.webp" alt="الوكلاء الفرعيون للمشروع متزامنون مع كل CLI" width="1644" height="1037" loading="lazy" decoding="async">
-          <figcaption>الوكلاء الفرعيون للمشروع متزامنون مع كل CLI</figcaption>
         </figure>
 
         <h3>Git والمراجعة</h3>
         <ul>
-          <li>حالة المستودع مباشرة، وعارض فروق مضمّنة، ومحدّد فروع، وpull بنمط fast-forward فقط.</li>
-          <li>تعليقات على أسطر الفروق تُرسل إلى الوكيل كطلب مراجعة.</li>
+          <li>حالة المستودع مباشرة في التذييل (الفرع، والتغييرات غير المُودَعة، والـ commits المتأخرة) ومحدّد فروع مع بحث؛ والـ pull دائمًا بنمط fast-forward.</li>
+          <li>يعرض تبويب التغييرات الملفات المعدّلة مع فروقها المضمّنة وإجمالي الإضافات والحذوف.</li>
+          <li>انقر على أي سطر في الفروق لكتابة تعليق؛ يمكنك ترك عدة تعليقات وتعديلها أو حذفها.</li>
+          <li>يحوّل زر «إرسال للمراجعة» التعليقات إلى طلب <code>revisa:</code> (الملف والسطر والتعليق) يبقى في منطقة الكتابة لترسله إلى الوكيل.</li>
           <li>لقطات (snapshots) مع استعادة لإعدادات MCP وskills والوكلاء الفرعيين قبل تعديلها.</li>
           <li>الـ commits والـ push وطلبات الدمج (pull requests) ينفّذها الوكيل بأدواته الخاصة: Devia لا ينشئها بنفسه.</li>
         </ul>
-
+        <figure class="doc-figure">
+          <img src="../../../assets/img/captures/cambios.webp" alt="تغييرات المشروع مع الفروق المضمّنة" width="2880" height="1800" loading="lazy" decoding="async">
+          <figcaption>تغييرات المشروع مع الفروق المضمّنة</figcaption>
+        </figure>
+        <figure class="doc-figure">
+          <img src="../../../assets/img/captures/comentarios.webp" alt="تعليقات المراجعة على أسطر الفروق" width="2880" height="1800" loading="lazy" decoding="async">
+          <figcaption>تعليقات المراجعة على أسطر الفروق</figcaption>
+        </figure>
+        <figure class="doc-figure">
+          <img src="../../../assets/img/captures/revisa.webp" alt="طلب revisa: جاهز في منطقة الكتابة" width="2880" height="1800" loading="lazy" decoding="async">
+          <figcaption>طلب revisa: جاهز في منطقة الكتابة</figcaption>
+        </figure>
+        <figure class="doc-figure">
+          <img src="../../../assets/img/captures/ramas.webp" alt="محدّد الفروع من تذييل النافذة" width="2880" height="1800" loading="lazy" decoding="async">
+          <figcaption>محدّد الفروع من تذييل النافذة</figcaption>
+        </figure>
 
         <h3>خوادم MCP</h3>
         <ul>
           <li>مدير لخوادم Model Context Protocol مع كتالوج أولي: ثبّت الخوادم وفعّلها واختبرها. يكتب Devia الإعداد بالصيغة الأصلية لـ 9 وكلاء.</li>
           <li>يمكن إتاحة كل خادم للوكيل مباشرة أو عبر code mode.</li>
         </ul>
-
+        <figure class="doc-figure">
+          <img src="../../../assets/img/captures/mcp.webp" alt="فهرس خوادم MCP" width="2880" height="1800" loading="lazy" decoding="async">
+          <figcaption>فهرس خوادم MCP</figcaption>
+        </figure>
 
         <h3>التحكم عن بُعد عبر Telegram</h3>
         <ul>
@@ -229,7 +245,7 @@
           <li>يعمل فقط ما دام Devia مفتوحًا، ويخدم محادثة واحدة مصرّحًا بها. لا تظهر البطاقات التفاعلية في Telegram: يسأل الوكيل بنص.</li>
         </ul>
         <figure class="doc-figure">
-          <img src="../../../assets/img/captures/control-remoto.webp" alt="التحكم عن بُعد عبر Telegram في الإعدادات" width="1653" height="1006" loading="lazy" decoding="async">
+          <img src="../../../assets/img/captures/remoto.webp" alt="التحكم عن بُعد عبر Telegram في الإعدادات" width="2880" height="1800" loading="lazy" decoding="async">
           <figcaption>التحكم عن بُعد عبر Telegram في الإعدادات</figcaption>
         </figure>
 
@@ -241,8 +257,21 @@
           <li>إملاء صوتي محلي؛ حاليًا بالإسبانية فقط.</li>
           <li>سجل تدقيق لكل tool-call.</li>
           <li>تحديث تلقائي لعمليات التثبيت (على Linux، مع AppImage فقط).</li>
+          <li>سمة فاتحة أو داكنة، وعائلتا Violet وNavy، وحواف مربعة اختيارية.</li>
+          <li>مستكشف ملفات المشروع مع حالة git لكل ملف.</li>
         </ul>
-
+        <figure class="doc-figure">
+          <img src="../../../assets/img/captures/arbol.webp" alt="مستكشف ملفات المشروع مع حالة git" width="2880" height="1800" loading="lazy" decoding="async">
+          <figcaption>مستكشف ملفات المشروع مع حالة git</figcaption>
+        </figure>
+        <figure class="doc-figure">
+          <img src="../../../assets/img/captures/apariencia.webp" alt="السمات: Violet وNavy، فاتحة وداكنة" width="2880" height="1800" loading="lazy" decoding="async">
+          <figcaption>السمات: Violet وNavy، فاتحة وداكنة</figcaption>
+        </figure>
+        <figure class="doc-figure">
+          <img src="../../../assets/img/captures/tema.webp" alt="التطبيق بالسمة الداكنة" width="2880" height="1800" loading="lazy" decoding="async">
+          <figcaption>التطبيق بالسمة الداكنة</figcaption>
+        </figure>
       </section>
 
       <section id="capacidades">
@@ -300,8 +329,7 @@
             <thead><tr><th scope="col">المسار</th><th scope="col">المحتوى</th></tr></thead>
             <tbody>
             <tr><td><code>devia-app.config.json</code></td><td>الإعدادات: workspace، والوكيل النشط، واللغة، وغيرها (الأسرار، مثل رمز Telegram، تُحفظ مشفّرة)</td></tr>
-            <tr><td><code>sessions/&lt;proyecto&gt;/</code></td><td>سجل المحادثات لكل مشروع</td></tr>
-            <tr><td><code>projects/&lt;clave&gt;/</code></td><td>بيانات كل مشروع: لوحة Kanban (<code>kanban.json</code>) والذاكرة (<code>memory.json</code>)</td></tr>
+            <tr><td><code>projects/&lt;المفتاح&gt;/</code></td><td>بيانات كل مشروع: لوحة kanban (<code>kanban.json</code>) والذاكرة (<code>memory.json</code>) وسجل المحادثات (<code>session-&lt;id&gt;.json</code>)</td></tr>
             <tr><td><code>memory-global.json</code></td><td>الذاكرة الشخصية</td></tr>
             <tr><td><code>mcp-servers.json</code></td><td>خوادم MCP المُعدّة</td></tr>
             <tr><td><code>snapshots/</code></td><td>لقطات من الإعدادات قبل تعديلها</td></tr>

@@ -151,8 +151,12 @@
           <li>Die Aufrufe der Sub-Agenten von Claude Code erscheinen verschachtelt im Chat.</li>
         </ul>
         <figure class="doc-figure">
-          <img src="../../../assets/img/captures/agentes-cli.webp" alt="Erkannte Agenten-CLIs und die Einstellungen jedes einzelnen" width="1653" height="1006" loading="lazy" decoding="async">
+          <img src="../../../assets/img/captures/agentes.webp" alt="Erkannte Agenten-CLIs und die Einstellungen jedes einzelnen" width="2880" height="1800" loading="lazy" decoding="async">
           <figcaption>Erkannte Agenten-CLIs und die Einstellungen jedes einzelnen</figcaption>
+        </figure>
+        <figure class="doc-figure">
+          <img src="../../../assets/img/captures/chat.webp" alt="Unterhaltung mit dem Agenten: Werkzeugaufrufe, Kontext und Kosten in der Fußzeile" width="2880" height="1800" loading="lazy" decoding="async">
+          <figcaption>Unterhaltung mit dem Agenten: Werkzeugaufrufe, Kontext und Kosten in der Fußzeile</figcaption>
         </figure>
 
         <h3>Multiprojekt und geteilte Ansicht</h3>
@@ -163,8 +167,8 @@
           <li>Jedes weitere Panel arbeitet <strong>isoliert in seinem eigenen git worktree</strong>, damit zwei Agenten nie dieselben Dateien bearbeiten.</li>
         </ul>
         <figure class="doc-figure">
-          <img src="../../../assets/img/captures/multi-sesion.webp" alt="Geteilte Ansicht mit zwei parallel arbeitenden Agenten" width="1653" height="1006" loading="lazy" decoding="async">
-          <figcaption>Geteilte Ansicht mit zwei parallel arbeitenden Agenten</figcaption>
+          <img src="../../../assets/img/captures/dividida.webp" alt="Geteilte Ansicht: zwei Chats parallel im selben Projekt" width="2880" height="1800" loading="lazy" decoding="async">
+          <figcaption>Geteilte Ansicht: zwei Chats parallel im selben Projekt</figcaption>
         </figure>
 
         <h3>Kontext und Gedächtnis</h3>
@@ -173,10 +177,6 @@
           <li>Eigener Code-Graph (6 Sprachen), den die Agenten per MCP abfragen, mit einer Ansicht <code>/graph</code> zum Erkunden.</li>
           <li>Code mode: Der Agent schreibt ein TypeScript-Skript, das in einer Sandbox über die von dir gewählten MCP-Server läuft und nur das Ergebnis zurückgibt. In dieser Version können die Skripte nur lesen.</li>
         </ul>
-        <figure class="doc-figure">
-          <img src="../../../assets/img/captures/memoria.webp" alt="Persistentes Gedächtnis, pro Projekt und persönlich" width="1653" height="1006" loading="lazy" decoding="async">
-          <figcaption>Persistentes Gedächtnis, pro Projekt und persönlich</figcaption>
-        </figure>
         <figure class="doc-figure">
           <img src="../../../assets/img/captures/grafo.webp" alt="Code-Graph des Projekts" width="1653" height="1006" loading="lazy" decoding="async">
           <figcaption>Code-Graph des Projekts</figcaption>
@@ -190,37 +190,53 @@
           <li>Verwaltung von Skills, lokal oder von GitHub, und von wiederverwendbaren Sub-Agenten, die Devia mit jedem CLI synchronisiert.</li>
         </ul>
         <figure class="doc-figure">
-          <img src="../../../assets/img/captures/kanban.webp" alt="Kanban des Projekts mit Specs und Aufgaben" width="1644" height="1037" loading="lazy" decoding="async">
+          <img src="../../../assets/img/captures/kanban.webp" alt="Kanban des Projekts mit Specs und Aufgaben" width="2880" height="1800" loading="lazy" decoding="async">
           <figcaption>Kanban des Projekts mit Specs und Aufgaben</figcaption>
         </figure>
         <figure class="doc-figure">
-          <img src="../../../assets/img/captures/metodologia.webp" alt="Devia Method, pro Projekt aktiviert" width="1653" height="1006" loading="lazy" decoding="async">
+          <img src="../../../assets/img/captures/metodologia.webp" alt="Devia Method, pro Projekt aktiviert" width="2880" height="1800" loading="lazy" decoding="async">
           <figcaption>Devia Method, pro Projekt aktiviert</figcaption>
         </figure>
         <figure class="doc-figure">
-          <img src="../../../assets/img/captures/herramientas.webp" alt="Werkzeuge, die Devia dem Agenten anbietet" width="1653" height="1006" loading="lazy" decoding="async">
+          <img src="../../../assets/img/captures/herramientas.webp" alt="Werkzeuge, die Devia dem Agenten anbietet" width="2880" height="1800" loading="lazy" decoding="async">
           <figcaption>Werkzeuge, die Devia dem Agenten anbietet</figcaption>
-        </figure>
-        <figure class="doc-figure">
-          <img src="../../../assets/img/captures/subagentes.webp" alt="Sub-Agenten des Projekts, mit jedem CLI synchronisiert" width="1644" height="1037" loading="lazy" decoding="async">
-          <figcaption>Sub-Agenten des Projekts, mit jedem CLI synchronisiert</figcaption>
         </figure>
 
         <h3>Git und Review</h3>
         <ul>
-          <li>Live-Repository-Status, Inline-Diff-Viewer, Branch-Auswahl und Pull nur als Fast-Forward.</li>
-          <li>Zeilenkommentare im Diff, die dem Agenten als Review-Anfrage gesendet werden.</li>
+          <li>Live-Repository-Status in der Fußzeile (Branch, nicht committete Änderungen, Commits im Rückstand) und Branch-Auswahl mit Suche; Pull erfolgt immer als Fast-Forward.</li>
+          <li>Der Tab Änderungen listet die geänderten Dateien mit ihrem Inline-Diff und der Gesamtzahl der Hinzufügungen und Löschungen auf.</li>
+          <li>Klicke auf eine beliebige Zeile des Diffs, um einen Kommentar zu schreiben; du kannst mehrere hinterlassen, bearbeiten oder löschen.</li>
+          <li>Zur Review senden macht aus den Kommentaren einen <code>revisa:</code>-Prompt (Datei, Zeile und Kommentar), der im Eingabefeld bleibt, damit du ihn an den Agenten sendest.</li>
           <li>Snapshots mit Wiederherstellung der MCP-, Skills- und Sub-Agenten-Konfiguration, bevor sie geändert wird.</li>
           <li>Commits, Pushes und Pull Requests erledigt der Agent mit seinen eigenen Werkzeugen: Devia erstellt sie nicht selbst.</li>
         </ul>
-
+        <figure class="doc-figure">
+          <img src="../../../assets/img/captures/cambios.webp" alt="Änderungen des Projekts mit dem Inline-Diff" width="2880" height="1800" loading="lazy" decoding="async">
+          <figcaption>Änderungen des Projekts mit dem Inline-Diff</figcaption>
+        </figure>
+        <figure class="doc-figure">
+          <img src="../../../assets/img/captures/comentarios.webp" alt="Review-Kommentare zu den Zeilen des Diffs" width="2880" height="1800" loading="lazy" decoding="async">
+          <figcaption>Review-Kommentare zu den Zeilen des Diffs</figcaption>
+        </figure>
+        <figure class="doc-figure">
+          <img src="../../../assets/img/captures/revisa.webp" alt="Der revisa:-Prompt bereit im Eingabefeld" width="2880" height="1800" loading="lazy" decoding="async">
+          <figcaption>Der revisa:-Prompt bereit im Eingabefeld</figcaption>
+        </figure>
+        <figure class="doc-figure">
+          <img src="../../../assets/img/captures/ramas.webp" alt="Branch-Auswahl über die Fußzeile des Fensters" width="2880" height="1800" loading="lazy" decoding="async">
+          <figcaption>Branch-Auswahl über die Fußzeile des Fensters</figcaption>
+        </figure>
 
         <h3>MCP-Server</h3>
         <ul>
           <li>Manager für Model-Context-Protocol-Server mit einem Start-Katalog: Server installieren, aktivieren und testen. Devia schreibt die Konfiguration im nativen Format von 9 Agenten.</li>
           <li>Jeder Server kann dem Agenten direkt oder über code mode angeboten werden.</li>
         </ul>
-
+        <figure class="doc-figure">
+          <img src="../../../assets/img/captures/mcp.webp" alt="Katalog der MCP-Server" width="2880" height="1800" loading="lazy" decoding="async">
+          <figcaption>Katalog der MCP-Server</figcaption>
+        </figure>
 
         <h3>Fernsteuerung per Telegram</h3>
         <ul>
@@ -229,7 +245,7 @@
           <li>Funktioniert nur, solange Devia geöffnet ist, und bedient einen einzigen autorisierten Chat. Interaktive Karten werden in Telegram nicht angezeigt: Der Agent fragt per Text.</li>
         </ul>
         <figure class="doc-figure">
-          <img src="../../../assets/img/captures/control-remoto.webp" alt="Fernsteuerung per Telegram in den Einstellungen" width="1653" height="1006" loading="lazy" decoding="async">
+          <img src="../../../assets/img/captures/remoto.webp" alt="Fernsteuerung per Telegram in den Einstellungen" width="2880" height="1800" loading="lazy" decoding="async">
           <figcaption>Fernsteuerung per Telegram in den Einstellungen</figcaption>
         </figure>
 
@@ -241,8 +257,21 @@
           <li>Lokales Diktat per Sprache; derzeit nur auf Spanisch.</li>
           <li>Audit-Log jedes Tool-Calls.</li>
           <li>Automatische Aktualisierung der Installationen (unter Linux nur mit AppImage).</li>
+          <li>Helles oder dunkles Theme, die Familien Violet und Navy und optional eckige Rahmen.</li>
+          <li>Datei-Explorer des Projekts mit dem Git-Status jeder Datei.</li>
         </ul>
-
+        <figure class="doc-figure">
+          <img src="../../../assets/img/captures/arbol.webp" alt="Datei-Explorer des Projekts mit dem Git-Status" width="2880" height="1800" loading="lazy" decoding="async">
+          <figcaption>Datei-Explorer des Projekts mit dem Git-Status</figcaption>
+        </figure>
+        <figure class="doc-figure">
+          <img src="../../../assets/img/captures/apariencia.webp" alt="Themes: Violet und Navy, hell und dunkel" width="2880" height="1800" loading="lazy" decoding="async">
+          <figcaption>Themes: Violet und Navy, hell und dunkel</figcaption>
+        </figure>
+        <figure class="doc-figure">
+          <img src="../../../assets/img/captures/tema.webp" alt="Die App im dunklen Theme" width="2880" height="1800" loading="lazy" decoding="async">
+          <figcaption>Die App im dunklen Theme</figcaption>
+        </figure>
       </section>
 
       <section id="capacidades">
@@ -300,8 +329,7 @@
             <thead><tr><th scope="col">Pfad</th><th scope="col">Inhalt</th></tr></thead>
             <tbody>
             <tr><td><code>devia-app.config.json</code></td><td>Konfiguration: Workspace, aktiver Agent, Sprache… (Geheimnisse wie das Telegram-Token werden verschlüsselt gespeichert)</td></tr>
-            <tr><td><code>sessions/&lt;projekt&gt;/</code></td><td>Chat-Verlauf pro Projekt</td></tr>
-            <tr><td><code>projects/&lt;schlüssel&gt;/</code></td><td>Daten pro Projekt: Kanban-Board (<code>kanban.json</code>) und Gedächtnis (<code>memory.json</code>)</td></tr>
+            <tr><td><code>projects/&lt;schlüssel&gt;/</code></td><td>Daten pro Projekt: Kanban-Board (<code>kanban.json</code>), Gedächtnis (<code>memory.json</code>) und Chat-Verlauf (<code>session-&lt;id&gt;.json</code>)</td></tr>
             <tr><td><code>memory-global.json</code></td><td>Persönliches Gedächtnis</td></tr>
             <tr><td><code>mcp-servers.json</code></td><td>Konfigurierte MCP-Server</td></tr>
             <tr><td><code>snapshots/</code></td><td>Snapshots der Konfiguration vor ihrer Änderung</td></tr>

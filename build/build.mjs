@@ -204,17 +204,27 @@ ${extraScript}
 // page bodies
 // ---------------------------------------------------------------------------
 
-/** Real captures of the app (assets/img/captures/*.webp), with their size. */
+/** Real captures of the app (assets/img/captures/*.webp), with their size.
+ *  Taken from a demo instance of the app (example project, no private data),
+ *  except `grafo`, a capture of the open-source repo itself. */
+const demo = (file) => ({ file, w: 2880, h: 1800 });
 const CAPTURES = {
-  agentes: { file: 'agentes-cli', w: 1653, h: 1006 },
-  multisesion: { file: 'multi-sesion', w: 1653, h: 1006 },
-  memoria: { file: 'memoria', w: 1653, h: 1006 },
+  agentes: demo('agentes'),
+  chat: demo('chat'),
+  dividida: demo('dividida'),
   grafo: { file: 'grafo', w: 1653, h: 1006 },
-  kanban: { file: 'kanban', w: 1644, h: 1037 },
-  metodologia: { file: 'metodologia', w: 1653, h: 1006 },
-  herramientas: { file: 'herramientas', w: 1653, h: 1006 },
-  subagentes: { file: 'subagentes', w: 1644, h: 1037 },
-  remoto: { file: 'control-remoto', w: 1653, h: 1006 },
+  kanban: demo('kanban'),
+  metodologia: demo('metodologia'),
+  herramientas: demo('herramientas'),
+  cambios: demo('cambios'),
+  comentarios: demo('comentarios'),
+  revisa: demo('revisa'),
+  ramas: demo('ramas'),
+  mcp: demo('mcp'),
+  remoto: demo('remoto'),
+  arbol: demo('arbol'),
+  apariencia: demo('apariencia'),
+  tema: demo('tema'),
 };
 
 /** An <img> of a capture; `alt` is its translated caption. */
@@ -223,29 +233,16 @@ function captureImg(ctx, key, alt, { eager = false } = {}) {
   return `<img src="${ctx.asset(`img/captures/${c.file}.webp`)}" alt="${attr(alt)}" width="${c.w}" height="${c.h}"${eager ? ' fetchpriority="high"' : ' loading="lazy" decoding="async"'}>`;
 }
 
-/** The object of each home stage: a real capture of the app, except the git
- *  stage, which shows the four split-view panes as language-independent terms
- *  (the app's own `worktree` literal, never translated). */
-const STAGE_CAPTURE = { agentes: 'agentes', contexto: 'grafo', metodo: 'kanban', remoto: 'remoto' };
+/** The capture shown as the object of each home stage (id of the stage -> key). */
+const STAGE_CAPTURE = { agentes: 'agentes', contexto: 'grafo', metodo: 'kanban', git: 'comentarios', remoto: 'remoto' };
 function stageObject(ctx, t, id) {
-  if (STAGE_CAPTURE[id]) {
-    const key = STAGE_CAPTURE[id];
-    return `<figure class="capture">${captureImg(ctx, key, t.docs.figures[key])}</figure>`;
-  }
-  if (id === 'git') {
-    return `<ul class="panes" aria-label="git worktree">
-              <li><code>worktree 1</code></li>
-              <li><code>worktree 2</code></li>
-              <li><code>worktree 3</code></li>
-              <li><code>worktree 4</code></li>
-            </ul>`;
-  }
-  return '';
+  const key = STAGE_CAPTURE[id];
+  return key ? `<figure class="capture">${captureImg(ctx, key, t.docs.figures[key])}</figure>` : '';
 }
 
-/** The hero visual: the user's own capture of the split view. */
+/** The hero visual: a capture of a conversation with the agent. */
 function heroShot(ctx, alt) {
-  return `<figure class="shot">${captureImg(ctx, 'multisesion', alt, { eager: true })}</figure>`;
+  return `<figure class="shot">${captureImg(ctx, 'chat', alt, { eager: true })}</figure>`;
 }
 
 function renderHome(t, ctx) {
@@ -333,7 +330,7 @@ function renderDocs(t, ctx) {
     .join('\n');
 
   // Captures shown after a feature group (index in `groups`).
-  const GROUP_FIGURES = { 0: ['agentes'], 1: ['multisesion'], 2: ['memoria', 'grafo'], 3: ['kanban', 'metodologia', 'herramientas', 'subagentes'], 6: ['remoto'] };
+  const GROUP_FIGURES = { 0: ['agentes', 'chat'], 1: ['dividida'], 2: ['grafo'], 3: ['kanban', 'metodologia', 'herramientas'], 4: ['cambios', 'comentarios', 'revisa', 'ramas'], 5: ['mcp'], 6: ['remoto'], 7: ['arbol', 'apariencia', 'tema'] };
   const figure = (key) => `        <figure class="doc-figure">
           ${captureImg(ctx, key, d.figures[key])}
           <figcaption>${text(d.figures[key])}</figcaption>

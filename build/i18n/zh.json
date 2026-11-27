@@ -28,7 +28,7 @@
       "lead": "桌面应用，指挥 Claude Code、Codex、Gemini 等。",
       "cta": "下载 Devia Desktop",
       "ctaSecondary": "阅读文档",
-      "mediaAlt": "Devia Desktop 在分屏视图中让两个 Agent 并行工作，左侧为项目列表"
+      "mediaAlt": "Devia Desktop 展示与 Agent 的对话、它的工具调用，以及页脚中的上下文和费用"
     },
     "sections": [
       {
@@ -233,8 +233,10 @@
           {
             "title": "Git 与审查",
             "items": [
-              "实时仓库状态、行内差异查看器、分支选择器，以及仅限 fast-forward 的 pull。",
-              "对差异按行添加评论，并作为审查请求发送给 Agent。",
+              "页脚实时显示仓库状态（分支、未提交的更改、落后的提交），并提供可搜索的分支选择器；pull 始终是 fast-forward。",
+              "“更改”标签页列出已修改的文件及其行内差异，并显示新增和删除的总数。",
+              "点击差异中的任意一行即可写评论；可以留下多条，也可以编辑或删除。",
+              "“发送审查”会把这些评论转换为 <code>revisa:</code> 提示（文件、行和评论），并保留在输入框中，供你发送给 Agent。",
               "在修改 MCP、skills 和子 Agent 配置之前创建快照，并支持恢复。",
               "commit、push 和 pull request 由 Agent 使用其自身工具完成：Devia 本身不会创建它们。"
             ]
@@ -262,7 +264,9 @@
               "支持任意类型的附件（每个文件最大 50 MB），并归档 Agent 生成的文件。",
               "本地语音听写；目前仅支持西班牙语。",
               "每次 tool-call 的审计日志。",
-              "安装版本自动更新（在 Linux 上仅限 AppImage）。"
+              "安装版本自动更新（在 Linux 上仅限 AppImage）。",
+              "浅色或深色主题，Violet 和 Navy 系列，以及可选的方形边框。",
+              "项目文件浏览器，显示每个文件的 git 状态。"
             ]
           }
         ]
@@ -316,12 +320,8 @@
             "content": "配置：工作区、当前 Agent、语言……（机密信息，如 Telegram 令牌，以加密方式保存）"
           },
           {
-            "path": "<code>sessions/&lt;proyecto&gt;/</code>",
-            "content": "按项目保存的聊天历史"
-          },
-          {
-            "path": "<code>projects/&lt;clave&gt;/</code>",
-            "content": "按项目的数据：Kanban 看板（<code>kanban.json</code>）和记忆（<code>memory.json</code>）"
+            "path": "<code>projects/&lt;键&gt;/</code>",
+            "content": "按项目的数据：kanban 看板（<code>kanban.json</code>）、记忆（<code>memory.json</code>）和聊天历史（<code>session-&lt;id&gt;.json</code>）"
           },
           {
             "path": "<code>memory-global.json</code>",
@@ -392,14 +392,21 @@
     },
     "figures": {
       "agentes": "检测到的 Agent CLI 及各自的设置",
-      "multisesion": "两个 Agent 并行工作的分屏视图",
-      "memoria": "持久化记忆，按项目和个人",
+      "chat": "与 Agent 的对话：工具调用，以及页脚中的上下文和费用",
+      "dividida": "分屏视图：同一项目中并行的两个聊天",
       "grafo": "项目的代码图谱",
       "kanban": "包含 spec 和任务的项目 kanban",
       "metodologia": "按项目启用的 Devia Method",
       "herramientas": "Devia 提供给 Agent 的工具",
-      "subagentes": "与各个 CLI 同步的项目子 Agent",
-      "remoto": "设置中的 Telegram 远程控制"
+      "cambios": "项目更改及其行内差异",
+      "comentarios": "针对差异各行的审查评论",
+      "revisa": "输入框中已就绪的 revisa: 提示",
+      "ramas": "窗口页脚中的分支选择器",
+      "mcp": "MCP 服务器目录",
+      "remoto": "设置中的 Telegram 远程控制",
+      "arbol": "显示 git 状态的项目文件浏览器",
+      "apariencia": "主题：Violet 和 Navy，浅色和深色",
+      "tema": "深色主题下的应用"
     }
   },
   "descargas": {

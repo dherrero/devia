@@ -151,8 +151,12 @@
           <li>Claude Code के sub-agents की calls चैट में नेस्टेड दिखती हैं।</li>
         </ul>
         <figure class="doc-figure">
-          <img src="../../../assets/img/captures/agentes-cli.webp" alt="पहचाने गए agent CLIs और हर एक की सेटिंग्स" width="1653" height="1006" loading="lazy" decoding="async">
+          <img src="../../../assets/img/captures/agentes.webp" alt="पहचाने गए agent CLIs और हर एक की सेटिंग्स" width="2880" height="1800" loading="lazy" decoding="async">
           <figcaption>पहचाने गए agent CLIs और हर एक की सेटिंग्स</figcaption>
+        </figure>
+        <figure class="doc-figure">
+          <img src="../../../assets/img/captures/chat.webp" alt="agent के साथ बातचीत: tool calls, और footer में context और लागत" width="2880" height="1800" loading="lazy" decoding="async">
+          <figcaption>agent के साथ बातचीत: tool calls, और footer में context और लागत</figcaption>
         </figure>
 
         <h3>Multi-project और split view</h3>
@@ -163,8 +167,8 @@
           <li>हर अतिरिक्त panel <strong>अपने git worktree में अलग</strong> काम करता है, ताकि दो agents कभी एक ही फ़ाइलों को न छुएँ।</li>
         </ul>
         <figure class="doc-figure">
-          <img src="../../../assets/img/captures/multi-sesion.webp" alt="split view में समानांतर काम करते दो agents" width="1653" height="1006" loading="lazy" decoding="async">
-          <figcaption>split view में समानांतर काम करते दो agents</figcaption>
+          <img src="../../../assets/img/captures/dividida.webp" alt="split view: एक ही प्रोजेक्ट में समानांतर दो चैट" width="2880" height="1800" loading="lazy" decoding="async">
+          <figcaption>split view: एक ही प्रोजेक्ट में समानांतर दो चैट</figcaption>
         </figure>
 
         <h3>Context और memory</h3>
@@ -173,10 +177,6 @@
           <li>अपना code graph (6 भाषाएँ) जिसे agents MCP से query करते हैं, और उसे देखने के लिए एक <code>/graph</code> view।</li>
           <li>Code mode: agent एक TypeScript script लिखता है जो आपके चुने MCP servers पर sandbox में चलती है और केवल परिणाम लौटाती है। इस संस्करण में scripts केवल पढ़ती हैं।</li>
         </ul>
-        <figure class="doc-figure">
-          <img src="../../../assets/img/captures/memoria.webp" alt="स्थायी memory, प्रोजेक्ट-वार और निजी" width="1653" height="1006" loading="lazy" decoding="async">
-          <figcaption>स्थायी memory, प्रोजेक्ट-वार और निजी</figcaption>
-        </figure>
         <figure class="doc-figure">
           <img src="../../../assets/img/captures/grafo.webp" alt="प्रोजेक्ट का code graph" width="1653" height="1006" loading="lazy" decoding="async">
           <figcaption>प्रोजेक्ट का code graph</figcaption>
@@ -190,37 +190,53 @@
           <li>skills का प्रबंधक (स्थानीय या GitHub से) और दोबारा इस्तेमाल होने वाले sub-agents का प्रबंधक, जिन्हें Devia हर CLI के साथ sync करता है।</li>
         </ul>
         <figure class="doc-figure">
-          <img src="../../../assets/img/captures/kanban.webp" alt="specs और tasks के साथ प्रोजेक्ट का kanban" width="1644" height="1037" loading="lazy" decoding="async">
+          <img src="../../../assets/img/captures/kanban.webp" alt="specs और tasks के साथ प्रोजेक्ट का kanban" width="2880" height="1800" loading="lazy" decoding="async">
           <figcaption>specs और tasks के साथ प्रोजेक्ट का kanban</figcaption>
         </figure>
         <figure class="doc-figure">
-          <img src="../../../assets/img/captures/metodologia.webp" alt="प्रोजेक्ट-वार चालू किया गया Devia Method" width="1653" height="1006" loading="lazy" decoding="async">
+          <img src="../../../assets/img/captures/metodologia.webp" alt="प्रोजेक्ट-वार चालू किया गया Devia Method" width="2880" height="1800" loading="lazy" decoding="async">
           <figcaption>प्रोजेक्ट-वार चालू किया गया Devia Method</figcaption>
         </figure>
         <figure class="doc-figure">
-          <img src="../../../assets/img/captures/herramientas.webp" alt="Devia द्वारा agent को दिए जाने वाले tools" width="1653" height="1006" loading="lazy" decoding="async">
+          <img src="../../../assets/img/captures/herramientas.webp" alt="Devia द्वारा agent को दिए जाने वाले tools" width="2880" height="1800" loading="lazy" decoding="async">
           <figcaption>Devia द्वारा agent को दिए जाने वाले tools</figcaption>
-        </figure>
-        <figure class="doc-figure">
-          <img src="../../../assets/img/captures/subagentes.webp" alt="हर CLI के साथ sync किए गए प्रोजेक्ट के sub-agents" width="1644" height="1037" loading="lazy" decoding="async">
-          <figcaption>हर CLI के साथ sync किए गए प्रोजेक्ट के sub-agents</figcaption>
         </figure>
 
         <h3>Git और समीक्षा</h3>
         <ul>
-          <li>रिपॉज़िटरी की live स्थिति, inline diff viewer, branch चयनकर्ता और केवल fast-forward pull।</li>
-          <li>diff पर पंक्ति-वार टिप्पणियाँ, जो समीक्षा के अनुरोध के रूप में agent को भेजी जाती हैं।</li>
+          <li>footer में रिपॉज़िटरी की live स्थिति (branch, बिना commit किए बदलाव, पीछे चल रहे commits) और खोज के साथ branch चयनकर्ता; pull हमेशा fast-forward होता है।</li>
+          <li>Changes टैब बदली गई फ़ाइलों को उनके inline diff और जुड़ी व घटाई गई पंक्तियों के कुल योग के साथ सूचीबद्ध करता है।</li>
+          <li>diff की किसी भी पंक्ति पर क्लिक करके टिप्पणी लिखें; आप कई टिप्पणियाँ छोड़ सकते हैं, उन्हें संपादित या हटा सकते हैं।</li>
+          <li>समीक्षा के लिए भेजें टिप्पणियों को <code>revisa:</code> prompt (फ़ाइल, पंक्ति और टिप्पणी) में बदल देता है, जो composer में रहता है ताकि आप उसे agent को भेज सकें।</li>
           <li>MCP, skills और sub-agents के कॉन्फ़िगरेशन को बदलने से पहले उसके snapshots, restore की सुविधा के साथ।</li>
           <li>commits, push और pull requests agent अपने औज़ारों से करता है: Devia उन्हें खुद नहीं बनाता।</li>
         </ul>
-
+        <figure class="doc-figure">
+          <img src="../../../assets/img/captures/cambios.webp" alt="inline diff के साथ प्रोजेक्ट के बदलाव" width="2880" height="1800" loading="lazy" decoding="async">
+          <figcaption>inline diff के साथ प्रोजेक्ट के बदलाव</figcaption>
+        </figure>
+        <figure class="doc-figure">
+          <img src="../../../assets/img/captures/comentarios.webp" alt="diff की पंक्तियों पर समीक्षा टिप्पणियाँ" width="2880" height="1800" loading="lazy" decoding="async">
+          <figcaption>diff की पंक्तियों पर समीक्षा टिप्पणियाँ</figcaption>
+        </figure>
+        <figure class="doc-figure">
+          <img src="../../../assets/img/captures/revisa.webp" alt="composer में तैयार revisa: prompt" width="2880" height="1800" loading="lazy" decoding="async">
+          <figcaption>composer में तैयार revisa: prompt</figcaption>
+        </figure>
+        <figure class="doc-figure">
+          <img src="../../../assets/img/captures/ramas.webp" alt="विंडो के footer से branch चयनकर्ता" width="2880" height="1800" loading="lazy" decoding="async">
+          <figcaption>विंडो के footer से branch चयनकर्ता</figcaption>
+        </figure>
 
         <h3>MCP servers</h3>
         <ul>
           <li>Model Context Protocol servers का प्रबंधक, शुरुआती catalog के साथ: servers इंस्टॉल करें, सक्रिय करें और जाँचें। Devia कॉन्फ़िगरेशन 9 agents के native format में लिखता है।</li>
           <li>हर server को agent को सीधे या code mode के ज़रिए दिया जा सकता है।</li>
         </ul>
-
+        <figure class="doc-figure">
+          <img src="../../../assets/img/captures/mcp.webp" alt="MCP servers की सूची" width="2880" height="1800" loading="lazy" decoding="async">
+          <figcaption>MCP servers की सूची</figcaption>
+        </figure>
 
         <h3>Telegram से रिमोट कंट्रोल</h3>
         <ul>
@@ -229,7 +245,7 @@
           <li>यह केवल तब चलता है जब Devia खुला हो और एक ही अधिकृत चैट को सेवा देता है। इंटरैक्टिव कार्ड Telegram में नहीं दिखते: agent टेक्स्ट में पूछता है।</li>
         </ul>
         <figure class="doc-figure">
-          <img src="../../../assets/img/captures/control-remoto.webp" alt="सेटिंग्स में Telegram से रिमोट कंट्रोल" width="1653" height="1006" loading="lazy" decoding="async">
+          <img src="../../../assets/img/captures/remoto.webp" alt="सेटिंग्स में Telegram से रिमोट कंट्रोल" width="2880" height="1800" loading="lazy" decoding="async">
           <figcaption>सेटिंग्स में Telegram से रिमोट कंट्रोल</figcaption>
         </figure>
 
@@ -241,8 +257,21 @@
           <li>स्थानीय voice dictation; आज केवल स्पेनिश में।</li>
           <li>हर tool-call का audit log।</li>
           <li>इंस्टॉलेशन का स्वचालित अपडेट (Linux पर केवल AppImage के साथ)।</li>
+          <li>हल्का या गहरा थीम, Violet और Navy परिवार, और वैकल्पिक चौकोर किनारे।</li>
+          <li>प्रोजेक्ट का फ़ाइल एक्सप्लोरर, हर फ़ाइल की git स्थिति के साथ।</li>
         </ul>
-
+        <figure class="doc-figure">
+          <img src="../../../assets/img/captures/arbol.webp" alt="git स्थिति के साथ प्रोजेक्ट का फ़ाइल एक्सप्लोरर" width="2880" height="1800" loading="lazy" decoding="async">
+          <figcaption>git स्थिति के साथ प्रोजेक्ट का फ़ाइल एक्सप्लोरर</figcaption>
+        </figure>
+        <figure class="doc-figure">
+          <img src="../../../assets/img/captures/apariencia.webp" alt="थीम: Violet और Navy, हल्का और गहरा" width="2880" height="1800" loading="lazy" decoding="async">
+          <figcaption>थीम: Violet और Navy, हल्का और गहरा</figcaption>
+        </figure>
+        <figure class="doc-figure">
+          <img src="../../../assets/img/captures/tema.webp" alt="गहरे थीम में ऐप" width="2880" height="1800" loading="lazy" decoding="async">
+          <figcaption>गहरे थीम में ऐप</figcaption>
+        </figure>
       </section>
 
       <section id="capacidades">
@@ -300,8 +329,7 @@
             <thead><tr><th scope="col">पथ</th><th scope="col">सामग्री</th></tr></thead>
             <tbody>
             <tr><td><code>devia-app.config.json</code></td><td>कॉन्फ़िगरेशन: workspace, सक्रिय agent, भाषा आदि (Telegram token जैसे secrets एन्क्रिप्टेड सहेजे जाते हैं)</td></tr>
-            <tr><td><code>sessions/&lt;proyecto&gt;/</code></td><td>प्रोजेक्ट-वार चैट इतिहास</td></tr>
-            <tr><td><code>projects/&lt;clave&gt;/</code></td><td>प्रोजेक्ट-वार डेटा: Kanban बोर्ड (<code>kanban.json</code>) और memory (<code>memory.json</code>)</td></tr>
+            <tr><td><code>projects/&lt;कुंजी&gt;/</code></td><td>प्रोजेक्ट-वार डेटा: kanban बोर्ड (<code>kanban.json</code>), memory (<code>memory.json</code>) और चैट इतिहास (<code>session-&lt;id&gt;.json</code>)</td></tr>
             <tr><td><code>memory-global.json</code></td><td>निजी memory</td></tr>
             <tr><td><code>mcp-servers.json</code></td><td>कॉन्फ़िगर किए गए MCP servers</td></tr>
             <tr><td><code>snapshots/</code></td><td>कॉन्फ़िगरेशन बदलने से पहले के snapshots</td></tr>

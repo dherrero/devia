@@ -28,7 +28,7 @@
       "lead": "Eine Desktop-App zur Steuerung von Claude Code, Codex, Gemini und mehr.",
       "cta": "Devia Desktop herunterladen",
       "ctaSecondary": "Dokumentation lesen",
-      "mediaAlt": "Devia Desktop mit zwei Agenten, die in der geteilten Ansicht parallel arbeiten, mit der Projektliste links"
+      "mediaAlt": "Devia Desktop mit einer Unterhaltung mit dem Agenten, seinen Werkzeugaufrufen sowie Kontext und Kosten in der Fußzeile"
     },
     "sections": [
       {
@@ -233,8 +233,10 @@
           {
             "title": "Git und Review",
             "items": [
-              "Live-Repository-Status, Inline-Diff-Viewer, Branch-Auswahl und Pull nur als Fast-Forward.",
-              "Zeilenkommentare im Diff, die dem Agenten als Review-Anfrage gesendet werden.",
+              "Live-Repository-Status in der Fußzeile (Branch, nicht committete Änderungen, Commits im Rückstand) und Branch-Auswahl mit Suche; Pull erfolgt immer als Fast-Forward.",
+              "Der Tab Änderungen listet die geänderten Dateien mit ihrem Inline-Diff und der Gesamtzahl der Hinzufügungen und Löschungen auf.",
+              "Klicke auf eine beliebige Zeile des Diffs, um einen Kommentar zu schreiben; du kannst mehrere hinterlassen, bearbeiten oder löschen.",
+              "Zur Review senden macht aus den Kommentaren einen <code>revisa:</code>-Prompt (Datei, Zeile und Kommentar), der im Eingabefeld bleibt, damit du ihn an den Agenten sendest.",
               "Snapshots mit Wiederherstellung der MCP-, Skills- und Sub-Agenten-Konfiguration, bevor sie geändert wird.",
               "Commits, Pushes und Pull Requests erledigt der Agent mit seinen eigenen Werkzeugen: Devia erstellt sie nicht selbst."
             ]
@@ -262,7 +264,9 @@
               "Anhänge beliebigen Typs (bis zu 50 MB pro Datei) und Archiv der vom Agenten erzeugten Dateien.",
               "Lokales Diktat per Sprache; derzeit nur auf Spanisch.",
               "Audit-Log jedes Tool-Calls.",
-              "Automatische Aktualisierung der Installationen (unter Linux nur mit AppImage)."
+              "Automatische Aktualisierung der Installationen (unter Linux nur mit AppImage).",
+              "Helles oder dunkles Theme, die Familien Violet und Navy und optional eckige Rahmen.",
+              "Datei-Explorer des Projekts mit dem Git-Status jeder Datei."
             ]
           }
         ]
@@ -316,12 +320,8 @@
             "content": "Konfiguration: Workspace, aktiver Agent, Sprache… (Geheimnisse wie das Telegram-Token werden verschlüsselt gespeichert)"
           },
           {
-            "path": "<code>sessions/&lt;projekt&gt;/</code>",
-            "content": "Chat-Verlauf pro Projekt"
-          },
-          {
             "path": "<code>projects/&lt;schlüssel&gt;/</code>",
-            "content": "Daten pro Projekt: Kanban-Board (<code>kanban.json</code>) und Gedächtnis (<code>memory.json</code>)"
+            "content": "Daten pro Projekt: Kanban-Board (<code>kanban.json</code>), Gedächtnis (<code>memory.json</code>) und Chat-Verlauf (<code>session-&lt;id&gt;.json</code>)"
           },
           {
             "path": "<code>memory-global.json</code>",
@@ -392,14 +392,21 @@
     },
     "figures": {
       "agentes": "Erkannte Agenten-CLIs und die Einstellungen jedes einzelnen",
-      "multisesion": "Geteilte Ansicht mit zwei parallel arbeitenden Agenten",
-      "memoria": "Persistentes Gedächtnis, pro Projekt und persönlich",
+      "chat": "Unterhaltung mit dem Agenten: Werkzeugaufrufe, Kontext und Kosten in der Fußzeile",
+      "dividida": "Geteilte Ansicht: zwei Chats parallel im selben Projekt",
       "grafo": "Code-Graph des Projekts",
       "kanban": "Kanban des Projekts mit Specs und Aufgaben",
       "metodologia": "Devia Method, pro Projekt aktiviert",
       "herramientas": "Werkzeuge, die Devia dem Agenten anbietet",
-      "subagentes": "Sub-Agenten des Projekts, mit jedem CLI synchronisiert",
-      "remoto": "Fernsteuerung per Telegram in den Einstellungen"
+      "cambios": "Änderungen des Projekts mit dem Inline-Diff",
+      "comentarios": "Review-Kommentare zu den Zeilen des Diffs",
+      "revisa": "Der revisa:-Prompt bereit im Eingabefeld",
+      "ramas": "Branch-Auswahl über die Fußzeile des Fensters",
+      "mcp": "Katalog der MCP-Server",
+      "remoto": "Fernsteuerung per Telegram in den Einstellungen",
+      "arbol": "Datei-Explorer des Projekts mit dem Git-Status",
+      "apariencia": "Themes: Violet und Navy, hell und dunkel",
+      "tema": "Die App im dunklen Theme"
     }
   },
   "descargas": {

@@ -28,7 +28,7 @@
       "lead": "Claude Code, Codex, Gemini और अन्य को चलाने वाला desktop ऐप।",
       "cta": "Devia Desktop डाउनलोड करें",
       "ctaSecondary": "दस्तावेज़ीकरण पढ़ें",
-      "mediaAlt": "Devia Desktop split view में दो agents समानांतर काम करते हुए, बाईं ओर प्रोजेक्ट सूची के साथ"
+      "mediaAlt": "Devia Desktop में agent के साथ बातचीत, उसके tool calls, और footer में context और लागत"
     },
     "sections": [
       {
@@ -233,8 +233,10 @@
           {
             "title": "Git और समीक्षा",
             "items": [
-              "रिपॉज़िटरी की live स्थिति, inline diff viewer, branch चयनकर्ता और केवल fast-forward pull।",
-              "diff पर पंक्ति-वार टिप्पणियाँ, जो समीक्षा के अनुरोध के रूप में agent को भेजी जाती हैं।",
+              "footer में रिपॉज़िटरी की live स्थिति (branch, बिना commit किए बदलाव, पीछे चल रहे commits) और खोज के साथ branch चयनकर्ता; pull हमेशा fast-forward होता है।",
+              "Changes टैब बदली गई फ़ाइलों को उनके inline diff और जुड़ी व घटाई गई पंक्तियों के कुल योग के साथ सूचीबद्ध करता है।",
+              "diff की किसी भी पंक्ति पर क्लिक करके टिप्पणी लिखें; आप कई टिप्पणियाँ छोड़ सकते हैं, उन्हें संपादित या हटा सकते हैं।",
+              "समीक्षा के लिए भेजें टिप्पणियों को <code>revisa:</code> prompt (फ़ाइल, पंक्ति और टिप्पणी) में बदल देता है, जो composer में रहता है ताकि आप उसे agent को भेज सकें।",
               "MCP, skills और sub-agents के कॉन्फ़िगरेशन को बदलने से पहले उसके snapshots, restore की सुविधा के साथ।",
               "commits, push और pull requests agent अपने औज़ारों से करता है: Devia उन्हें खुद नहीं बनाता।"
             ]
@@ -262,7 +264,9 @@
               "किसी भी प्रकार के अटैचमेंट (प्रति फ़ाइल 50 MB तक) और agent की बनाई फ़ाइलों का archive।",
               "स्थानीय voice dictation; आज केवल स्पेनिश में।",
               "हर tool-call का audit log।",
-              "इंस्टॉलेशन का स्वचालित अपडेट (Linux पर केवल AppImage के साथ)।"
+              "इंस्टॉलेशन का स्वचालित अपडेट (Linux पर केवल AppImage के साथ)।",
+              "हल्का या गहरा थीम, Violet और Navy परिवार, और वैकल्पिक चौकोर किनारे।",
+              "प्रोजेक्ट का फ़ाइल एक्सप्लोरर, हर फ़ाइल की git स्थिति के साथ।"
             ]
           }
         ]
@@ -316,12 +320,8 @@
             "content": "कॉन्फ़िगरेशन: workspace, सक्रिय agent, भाषा आदि (Telegram token जैसे secrets एन्क्रिप्टेड सहेजे जाते हैं)"
           },
           {
-            "path": "<code>sessions/&lt;proyecto&gt;/</code>",
-            "content": "प्रोजेक्ट-वार चैट इतिहास"
-          },
-          {
-            "path": "<code>projects/&lt;clave&gt;/</code>",
-            "content": "प्रोजेक्ट-वार डेटा: Kanban बोर्ड (<code>kanban.json</code>) और memory (<code>memory.json</code>)"
+            "path": "<code>projects/&lt;कुंजी&gt;/</code>",
+            "content": "प्रोजेक्ट-वार डेटा: kanban बोर्ड (<code>kanban.json</code>), memory (<code>memory.json</code>) और चैट इतिहास (<code>session-&lt;id&gt;.json</code>)"
           },
           {
             "path": "<code>memory-global.json</code>",
@@ -392,14 +392,21 @@
     },
     "figures": {
       "agentes": "पहचाने गए agent CLIs और हर एक की सेटिंग्स",
-      "multisesion": "split view में समानांतर काम करते दो agents",
-      "memoria": "स्थायी memory, प्रोजेक्ट-वार और निजी",
+      "chat": "agent के साथ बातचीत: tool calls, और footer में context और लागत",
+      "dividida": "split view: एक ही प्रोजेक्ट में समानांतर दो चैट",
       "grafo": "प्रोजेक्ट का code graph",
       "kanban": "specs और tasks के साथ प्रोजेक्ट का kanban",
       "metodologia": "प्रोजेक्ट-वार चालू किया गया Devia Method",
       "herramientas": "Devia द्वारा agent को दिए जाने वाले tools",
-      "subagentes": "हर CLI के साथ sync किए गए प्रोजेक्ट के sub-agents",
-      "remoto": "सेटिंग्स में Telegram से रिमोट कंट्रोल"
+      "cambios": "inline diff के साथ प्रोजेक्ट के बदलाव",
+      "comentarios": "diff की पंक्तियों पर समीक्षा टिप्पणियाँ",
+      "revisa": "composer में तैयार revisa: prompt",
+      "ramas": "विंडो के footer से branch चयनकर्ता",
+      "mcp": "MCP servers की सूची",
+      "remoto": "सेटिंग्स में Telegram से रिमोट कंट्रोल",
+      "arbol": "git स्थिति के साथ प्रोजेक्ट का फ़ाइल एक्सप्लोरर",
+      "apariencia": "थीम: Violet और Navy, हल्का और गहरा",
+      "tema": "गहरे थीम में ऐप"
     }
   },
   "descargas": {
