@@ -8,11 +8,11 @@
  * supplies its strings — the structure can never drift between translations.
  *
  * Output layout (default language `es` lives at the site root; every other
- * language hangs off a folder segment, mirroring the URL in the path):
+ *   language hangs off `i18n/<code>/`, mirroring the URL in the path):
  *
  *   /                      /docs/                  /descargas/        (es)
- *   /en/   /en/docs/   /en/descargas/                                 (en)
- *   /fr/   /fr/docs/   /fr/descargas/                                 (fr)
+ *   /i18n/en/   /i18n/en/docs/   /i18n/en/descargas/                  (en)
+ *   /i18n/fr/   /i18n/fr/docs/   /i18n/fr/descargas/                  (fr)
  *   …
  *   /404.html                                                         (es, shared)
  *
@@ -25,6 +25,7 @@
 import { readFileSync, writeFileSync, mkdirSync, rmSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
+import { schemaErrors } from './content-check.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
@@ -35,6 +36,12 @@ const SITE_BASE = 'https://dherrero.github.io/devia/';
 
 /** Default language: rendered at the site root with no folder segment. */
 const DEFAULT_LANG = 'es';
+
+/** Folder that groups the generated folders of every other language. */
+const LANG_ROOT = 'i18n';
+
+/** URL / path segment of a language: '' for the default, `i18n/<code>/` otherwise. */
+const langSegment = (code) => (code === DEFAULT_LANG ? '' : `${LANG_ROOT}/${code}/`);
 
 /** UI languages, in the order shown in the language switcher (es first).
  *  Filtered at build time to those that actually have a translation file, so
@@ -77,24 +84,23 @@ function text(s) {
 /** Relative `../` prefix that climbs from an output dir back to the site root. */
 function prefixFor(lang, page) {
   let depth = 0;
-  if (lang !== DEFAULT_LANG) depth += 1; // language folder segment
+  if (lang !== DEFAULT_LANG) depth += 2; // i18n/<code>/ folder segments
   if (page.seg) depth += 1; // page folder segment
   return '../'.repeat(depth);
 }
 
 /** Site-root-relative path to a page in a given language (for nav/switcher). */
 function pagePath(prefix, langCode, pageKey) {
-  const langSeg = langCode === DEFAULT_LANG ? '' : `${langCode}/`;
   const page = PAGES.find((p) => p.key === pageKey);
-  return `${prefix}${langSeg}${page.seg}` || './';
+  return `${prefix}${langSegment(langCode)}${page.seg}` || './';
 }
 
 /** Absolute URL of a page (canonical + hreflang). */
 function absUrl(langCode, pageKey) {
-  const langSeg = langCode === DEFAULT_LANG ? '' : `${langCode}/`;
   const page = PAGES.find((p) => p.key === pageKey);
-  return `${SITE_BASE}${langSeg}${page.seg}`;
+  return `${SITE_BASE}${langSegment(langCode)}${page.seg}`;
 }
+
 
 // ---------------------------------------------------------------------------
 // shared chrome (head, header/nav + language switcher, footer)
@@ -116,6 +122,7 @@ function head(t, ctx, { title, description, pageKey }) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
   <title>${text(title)}</title>
   <meta name="description" content="${attr(description)}">
   <link rel="canonical" href="${attr(absUrl(ctx.lang, pageKey))}">
@@ -135,10 +142,10 @@ function langSwitcher(t, ctx, pageKey) {
     return `          <option value="${attr(url)}" data-lang="${l.code}"${selected}>${text(l.label)}</option>`;
   }).join('\n');
   return `        <label class="lang-switch">
-          <span class="sr-only">${text(t.common.langLabel)}</span>
+          <span class="visually-hidden">${text(t.common.langLabel)}</span>
           <select class="lang-select" aria-label="${attr(t.common.langLabel)}">
 ${options}
-        </select>
+          </select>
         </label>`;
 }
 
@@ -150,12 +157,12 @@ function header(t, ctx, pageKey) {
         <img src="${ctx.asset('img/devia.png')}" alt="" width="32" height="32">
         <span>${text(t.common.brand)}</span>
       </a>
-      <button class="nav-toggle" type="button" aria-label="${attr(t.common.menuLabel)}" aria-expanded="false" aria-controls="nav-menu">☰</button>
+      <button class="nav-toggle key key-sm" type="button" aria-label="${attr(t.common.menuLabel)}" aria-expanded="false" aria-controls="nav-menu"><span aria-hidden="true">≡</span></button>
       <div class="nav-links" id="nav-menu">
         <a href="${pagePath(ctx.prefix, ctx.lang, 'home')}#funcionalidades">${text(t.common.nav.features)}</a>
         <a href="${pagePath(ctx.prefix, ctx.lang, 'docs')}"${cur('docs')}>${text(t.common.nav.docs)}</a>
-        <a href="${pagePath(ctx.prefix, ctx.lang, 'descargas')}" class="btn btn-sm"${cur('descargas')}>${text(t.common.nav.download)}</a>
 ${langSwitcher(t, ctx, pageKey)}
+        <a href="${pagePath(ctx.prefix, ctx.lang, 'descargas')}" class="key key-sm key-primary"${cur('descargas')}>${text(t.common.nav.download)}</a>
       </div>
     </nav>
   </header>`;
@@ -163,24 +170,22 @@ ${langSwitcher(t, ctx, pageKey)}
 
 function footer(t, ctx) {
   return `  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <strong>${text(t.common.brand)} Desktop</strong>
-        <p>${text(t.common.footer.tagline)}</p>
-      </div>
+    <div class="container footer-mast">
+      <p class="footer-word">${text(t.common.brand)} Desktop</p>
       <nav class="footer-links">
         <a href="${pagePath(ctx.prefix, ctx.lang, 'docs')}">${text(t.common.footer.docs)}</a>
         <a href="${pagePath(ctx.prefix, ctx.lang, 'descargas')}">${text(t.common.footer.downloads)}</a>
         <a href="${ctx.updates}">${text(t.common.footer.updates)}</a>
       </nav>
     </div>
-    <div class="container copyright">
+    <div class="container footer-line">
+      <p>${text(t.common.footer.tagline)}</p>
       <p>${text(t.common.footer.copyright)}</p>
     </div>
   </footer>`;
 }
 
-function page(t, ctx, pageKey, meta, body) {
+function page(t, ctx, pageKey, meta, body, extraScript = '') {
   return `${head(t, ctx, { ...meta, pageKey })}
 <body>
 
@@ -189,7 +194,7 @@ ${header(t, ctx, pageKey)}
 ${body}
 
 ${footer(t, ctx)}
-
+${extraScript}
 </body>
 </html>
 `;
@@ -199,74 +204,107 @@ ${footer(t, ctx)}
 // page bodies
 // ---------------------------------------------------------------------------
 
+/** Real captures of the app (assets/img/captures/*.webp), with their size.
+ *  Taken from a demo instance of the app (example project, no private data),
+ *  except `grafo`, a capture of the open-source repo itself. */
+const demo = (file) => ({ file, w: 2880, h: 1800 });
+const CAPTURES = {
+  agentes: demo('agentes'),
+  chat: demo('chat'),
+  dividida: demo('dividida'),
+  grafo: { file: 'grafo', w: 1653, h: 1006 },
+  kanban: demo('kanban'),
+  metodologia: demo('metodologia'),
+  herramientas: demo('herramientas'),
+  cambios: demo('cambios'),
+  comentarios: demo('comentarios'),
+  revisa: demo('revisa'),
+  ramas: demo('ramas'),
+  mcp: demo('mcp'),
+  remoto: demo('remoto'),
+  arbol: demo('arbol'),
+  apariencia: demo('apariencia'),
+  tema: demo('tema'),
+};
+
+/** An <img> of a capture; `alt` is its translated caption. */
+function captureImg(ctx, key, alt, { eager = false } = {}) {
+  const c = CAPTURES[key];
+  return `<img src="${ctx.asset(`img/captures/${c.file}.webp`)}" alt="${attr(alt)}" width="${c.w}" height="${c.h}"${eager ? ' fetchpriority="high"' : ' loading="lazy" decoding="async"'}>`;
+}
+
+/** The capture shown as the object of each home stage (id of the stage -> key). */
+const STAGE_CAPTURE = { agentes: 'agentes', contexto: 'grafo', metodo: 'kanban', git: 'comentarios', remoto: 'remoto' };
+function stageObject(ctx, t, id) {
+  const key = STAGE_CAPTURE[id];
+  return key ? `<figure class="capture">${captureImg(ctx, key, t.docs.figures[key])}</figure>` : '';
+}
+
+/** The hero visual: a capture of a conversation with the agent. */
+function heroShot(ctx, alt) {
+  return `<figure class="shot">${captureImg(ctx, 'chat', alt, { eager: true })}</figure>`;
+}
+
 function renderHome(t, ctx) {
   const h = t.home;
-  const cards = h.features
-    .map((f) => `          <article class="card">
-            <h3>${f.title}</h3>
-            <p>${f.body}</p>
-          </article>`)
-    .join('\n\n');
-  const badges = h.badges
-    .map((b) => `          <span class="badge">${b}</span>`)
-    .join('\n');
-  const steps = h.steps
-    .map((s) => `          <div>
-            <h3>${s.title}</h3>
+  const hero = h.hero;
+  const stages = h.sections
+    .map((s) => {
+      const object = stageObject(ctx, t, s.id);
+      return `        <li class="stage" id="${attr(s.id)}">
+          <div class="stage-text">
+            <h2>${text(s.title)}</h2>
             <p>${s.body}</p>
-          </div>`)
+          </div>
+          <div class="stage-object">
+            ${object}
+          </div>
+        </li>`;
+    })
     .join('\n');
 
   const body = `  <main>
 
     <section class="hero">
-      <div class="container">
-        <img class="hero-logo" src="${ctx.asset('img/devia.png')}" alt="${attr(h.heroLogoAlt)}" width="96" height="96">
-        <h1>${h.heroTitle}</h1>
-        <p class="lead">
-          ${h.heroLead} <br>
-          ${h.heroQuote}
-        </p>
-        <p class="hero-badges">
-${badges}
-          <span class="badge" id="hero-version" hidden></span>
-        </p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="${pagePath(ctx.prefix, ctx.lang, 'descargas')}">${text(h.ctaDownload)}</a>
-          <a class="btn" href="${pagePath(ctx.prefix, ctx.lang, 'docs')}">${text(h.ctaDocs)}</a>
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <h1>${hero.title}</h1>
+          <p class="lead">${hero.lead}</p>
+          <div class="actions">
+            <a class="key key-primary" href="${pagePath(ctx.prefix, ctx.lang, 'descargas')}">${text(hero.cta)}</a>
+            <a class="key" href="${pagePath(ctx.prefix, ctx.lang, 'docs')}">${text(hero.ctaSecondary)}</a>
+          </div>
         </div>
+        ${heroShot(ctx, hero.mediaAlt)}
       </div>
     </section>
 
-    <section id="funcionalidades" class="section">
+    <section id="funcionalidades" class="stages-section">
       <div class="container">
-        <h2>${text(h.featuresTitle)}</h2>
-        <div class="grid">
-
-${cards}
-
-        </div>
+        <ol class="stages">
+${stages}
+        </ol>
       </div>
     </section>
 
-    <section class="section section-alt">
-      <div class="container">
-        <h2>${text(h.localTitle)}</h2>
-        <p class="lead-sm">
-          ${h.localLead}
-        </p>
-        <div class="cols-3">
-${steps}
-        </div>
+    <section class="band">
+      <div class="container band-grid">
+        <h2>${text(h.local.title)}</h2>
+        <ul class="facts">
+${h.local.items.map((i) => `          <li>${i}</li>`).join('\n')}
+        </ul>
       </div>
     </section>
 
-    <section class="section">
-      <div class="container center">
-        <h2>${text(h.downloadTitle)}</h2>
-        <p class="lead-sm">${h.downloadLead}</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="${pagePath(ctx.prefix, ctx.lang, 'descargas')}">${text(h.downloadCta)}</a>
+    <section class="close">
+      <div class="container close-grid">
+        <div>
+          <h2>${text(h.download.title)}</h2>
+          <p class="lead">${text(h.download.lead)}</p>
+          <p class="close-meta">${text(h.download.platforms)} <span id="home-version" hidden></span></p>
+        </div>
+        <div class="actions">
+          <a class="key key-primary" href="${pagePath(ctx.prefix, ctx.lang, 'descargas')}">${text(h.download.cta)}</a>
         </div>
       </div>
     </section>
@@ -285,18 +323,33 @@ function renderDocs(t, ctx) {
 
   const s = d.sections;
   const list = (items) => items.map((i) => `          <li>${i}</li>`).join('\n');
-  const olist = (items) => items.map((i) => `          <li>${i}</li>`).join('\n');
+  const olist = list;
 
   const agentRows = s.agentes.rows
     .map((r) => `            <tr><td>${r.agent}</td><td>${r.notes}</td></tr>`)
     .join('\n');
 
+  // Captures shown after a feature group (index in `groups`).
+  const GROUP_FIGURES = { 0: ['agentes', 'chat'], 1: ['dividida'], 2: ['grafo'], 3: ['kanban', 'metodologia', 'herramientas'], 4: ['cambios', 'comentarios', 'revisa', 'ramas'], 5: ['mcp'], 6: ['remoto'], 7: ['arbol', 'apariencia', 'tema'] };
+  const figure = (key) => `        <figure class="doc-figure">
+          ${captureImg(ctx, key, d.figures[key])}
+          <figcaption>${text(d.figures[key])}</figcaption>
+        </figure>`;
   const featureGroups = s.funcionalidades.groups
-    .map((g) => `        <h3>${text(g.title)}</h3>
+    .map((g, i) => `        <h3>${text(g.title)}</h3>
         <ul>
 ${list(g.items)}
-        </ul>`)
+        </ul>
+${(GROUP_FIGURES[i] || []).map(figure).join('\n')}`)
     .join('\n\n');
+
+  const cap = s.capacidades;
+  const capColumn = (title, items) => `          <div class="cap">
+            <h3>${text(title)}</h3>
+            <ul>
+${list(items)}
+            </ul>
+          </div>`;
 
   const configRows = s.configuracion.rows
     .map((r) => `            <tr><td>${r.path}</td><td>${r.content}</td></tr>`)
@@ -354,12 +407,14 @@ ${olist(s.primerosPasos.steps)}
       <section id="agentes">
         <h2>${text(tocLabel('agentes'))}</h2>
         <p>${s.agentes.intro}</p>
-        <table>
-          <thead><tr><th>${text(s.agentes.tableHead.agent)}</th><th>${text(s.agentes.tableHead.notes)}</th></tr></thead>
-          <tbody>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th scope="col">${text(s.agentes.tableHead.agent)}</th><th scope="col">${text(s.agentes.tableHead.notes)}</th></tr></thead>
+            <tbody>
 ${agentRows}
-          </tbody>
-        </table>
+            </tbody>
+          </table>
+        </div>
         <p>${s.agentes.handoff}</p>
       </section>
 
@@ -369,15 +424,27 @@ ${agentRows}
 ${featureGroups}
       </section>
 
+      <section id="capacidades">
+        <h2>${text(tocLabel('capacidades'))}</h2>
+        <p>${cap.intro}</p>
+        <div class="caps">
+${capColumn(cap.doneTitle, cap.done)}
+${capColumn(cap.partialTitle, cap.partial)}
+${capColumn(cap.missingTitle, cap.missing)}
+        </div>
+      </section>
+
       <section id="configuracion">
         <h2>${text(tocLabel('configuracion'))}</h2>
         <p>${s.configuracion.intro}</p>
-        <table>
-          <thead><tr><th>${text(s.configuracion.tableHead.path)}</th><th>${text(s.configuracion.tableHead.content)}</th></tr></thead>
-          <tbody>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th scope="col">${text(s.configuracion.tableHead.path)}</th><th scope="col">${text(s.configuracion.tableHead.content)}</th></tr></thead>
+            <tbody>
 ${configRows}
-          </tbody>
-        </table>
+            </tbody>
+          </table>
+        </div>
         <p>${s.configuracion.outro}</p>
       </section>
 
@@ -406,61 +473,65 @@ function renderDescargas(t, ctx) {
   const reqs = x.reqs.map((r) => `            <li>${r}</li>`).join('\n');
 
   const body = `  <main>
-    <section class="section">
+    <section class="downloads">
       <div class="container">
         <h1>${text(x.pageTitle)}</h1>
-        <p class="lead-sm">
-          ${text(x.lastVersionLabel)} <strong id="dl-version">—</strong>
+        <p class="lead">
+          ${text(x.lastVersionLabel)} <strong id="dl-version"></strong>
           <span id="dl-date"></span>
         </p>
 
-        <div class="grid grid-platforms">
+        <div class="platforms">
 
-          <article class="card platform" data-platform="win32-x64">
-            <h2>${p.windows.title}</h2>
+          <article class="platform cut" data-platform="win32-x64">
+            <h2>${text(p.windows.title)}</h2>
             <p>${p.windows.desc}</p>
-            <a class="btn btn-primary dl-btn" data-key="win32-x64" href="#" hidden>${text(p.windows.btn)}</a>
+            <a class="key dl-btn" data-key="win32-x64" href="#" hidden>${text(p.windows.btn)}</a>
             <p class="dl-fallback" data-key="win32-x64">${text(p.windows.soon)}</p>
             <p class="hint">${p.windows.hint}</p>
           </article>
 
-          <article class="card platform" data-platform="darwin">
-            <h2>${p.macos.title}</h2>
+          <article class="platform cut" data-platform="darwin">
+            <h2>${text(p.macos.title)}</h2>
             <p>${p.macos.desc}</p>
-            <a class="btn btn-primary dl-btn" data-key="darwin-arm64" href="#" hidden>${text(p.macos.btnArm)}</a>
-            <a class="btn btn-primary dl-btn" data-key="darwin-x64" href="#" hidden>${text(p.macos.btnIntel)}</a>
+            <a class="key dl-btn" data-key="darwin-arm64" href="#" hidden>${text(p.macos.btnArm)}</a>
+            <a class="key dl-btn" data-key="darwin-x64" href="#" hidden>${text(p.macos.btnIntel)}</a>
             <p class="dl-fallback" data-key="darwin-arm64">${text(p.macos.soon)}</p>
             <p class="hint">${p.macos.hint}</p>
           </article>
 
-          <article class="card platform" data-platform="linux">
-            <h2>${p.linux.title}</h2>
+          <article class="platform cut" data-platform="linux">
+            <h2>${text(p.linux.title)}</h2>
             <p>${p.linux.desc}</p>
-            <a class="btn btn-primary dl-btn" data-key="linux-x64-appimage" href="#" hidden>${text(p.linux.btnAppimage)}</a>
-            <a class="btn btn-primary dl-btn" data-key="linux-x64-deb" href="#" hidden>${text(p.linux.btnDeb)}</a>
+            <a class="key dl-btn" data-key="linux-x64-appimage" href="#" hidden>${text(p.linux.btnAppimage)}</a>
+            <a class="key dl-btn" data-key="linux-x64-deb" href="#" hidden>${text(p.linux.btnDeb)}</a>
             <p class="dl-fallback" data-key="linux-x64-appimage">${text(p.linux.soon)}</p>
             <p class="hint">${p.linux.hint}</p>
           </article>
 
         </div>
 
-        <section class="section-inner">
-          <h2>${text(x.notesTitle)}</h2>
-          <p id="dl-notes">—</p>
-        </section>
+      </div>
+    </section>
 
-        <section class="section-inner">
-          <h2>${text(x.updatesTitle)}</h2>
-          <p>${x.updatesBody}</p>
-        </section>
+    <section class="downloads-more">
+      <div class="container downloads-info">
+          <section>
+            <h2>${text(x.notesTitle)}</h2>
+            <p id="dl-notes"></p>
+          </section>
 
-        <section class="section-inner">
-          <h2>${text(x.reqTitle)}</h2>
-          <ul>
+          <section>
+            <h2>${text(x.updatesTitle)}</h2>
+            <p>${x.updatesBody}</p>
+          </section>
+
+          <section>
+            <h2>${text(x.reqTitle)}</h2>
+            <ul>
 ${reqs}
-          </ul>
-        </section>
-
+            </ul>
+          </section>
       </div>
     </section>
   </main>`;
@@ -478,31 +549,58 @@ function render404(catalogue) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
   <title>${text(n.title)}</title>
+  <meta name="description" content="${attr(n.message)}">
   <style>
-    body {
-      margin: 0; min-height: 100vh; display: grid; place-items: center;
-      background: #121212; color: #e6e6eb;
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-      text-align: center;
+    /* Hallmark · shape: error page, one centred column · genre: modern-minimal · theme: Cobalt, recoloured with Devia's violet tokens · redesign: full
+     * hero: Corridor · nav: none · footer: none · imagery: none · signature: the number 404 set large
+     * axes: light/grotesk-sans/cool · posture: restrained · contrast: pass · fold: pass · v2.0.0 */
+    /* Hallmark · pre-emit critique: P3 H4 E4 S3 R5 V3 · weakest: P, an error page has little to argue; kept to one number, one line and two links */
+    :root {
+      color-scheme: light dark;
+      --color-paper: oklch(98.5% 0.003 270); --color-ink: oklch(12% 0.015 270); --color-muted: oklch(48% 0.014 270); --color-accent: oklch(55% 0.24 280); --color-accent-ink: oklch(98.5% 0.006 285);
+      --font-body: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      --space-sm: 12px; --space-xl: 40px;
     }
-    h1 { font-size: 3rem; margin: 0 0 0.5rem; }
-    p { color: #a6a6b3; }
-    a { color: #8ab4f8; }
+    @media (prefers-color-scheme: dark) {
+      :root { --color-paper: oklch(9% 0.012 270); --color-ink: oklch(96% 0.004 270); --color-muted: oklch(68% 0.012 270); --color-accent: oklch(72% 0.26 295); --color-accent-ink: oklch(9% 0.012 270); }
+    }
+    html, body { overflow-x: clip; }
+    body {
+      margin: 0; min-height: 100svh; display: grid; place-items: center;
+      background: var(--color-paper); color: var(--color-ink);
+      font-family: var(--font-body); text-align: center; padding-inline: var(--space-xl);
+    }
+    ::selection { background: var(--color-accent); color: var(--color-accent-ink); }
+    html { scrollbar-color: var(--color-muted) var(--color-paper); }
+    h1 { font-size: 3rem; margin: 0 0 var(--space-sm); overflow-wrap: break-word; min-width: 0; text-wrap: balance; }
+    p { color: var(--color-muted); }
+    a { color: var(--color-accent); }
+    a:hover { text-decoration-thickness: 2px; }
+    a:active { opacity: 0.7; }
+    a:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
   </style>
 </head>
 <body>
   <main>
     <h1>404</h1>
     <p>${text(n.message)}</p>
-    <p><a href="javascript:history.back()">${text(n.back)}</a> · <a href="/" id="home-link">${text(n.home)}</a></p>
+    <p><a href="javascript:history.back()">${text(n.back)}</a><br><a href="/" id="home-link">${text(n.home)}</a></p>
   </main>
   <script>
     // En una project page el sitio cuelga del primer segmento de la ruta
     // (p. ej. /devia/ o /devia.github.io/); en una org page cuelga de la raíz.
     (function () {
-      var seg = location.pathname.split('/')[1];
+      var parts = location.pathname.split('/');
+      var seg = parts[1];
       if (seg) document.getElementById('home-link').href = '/' + seg + '/';
+      // Old URLs, from when each language folder lived at the site root
+      // (/devia/en/docs/): send them to /devia/i18n/en/docs/.
+      var LANGS = ['en', 'ca', 'fr', 'de', 'it', 'pt', 'ru', 'zh', 'hi', 'ar'];
+      if (parts.length > 2 && LANGS.indexOf(parts[2]) !== -1) {
+        location.replace('/' + seg + '/i18n/' + parts.slice(2).join('/') + location.search + location.hash);
+      }
     })();
   </script>
 </body>
@@ -514,14 +612,30 @@ function render404(catalogue) {
 // driver
 // ---------------------------------------------------------------------------
 
+/** `--langs es,en` builds only those languages (useful while a new content
+ *  schema is still being translated); without it every language builds. */
+function requestedLangs() {
+  const i = process.argv.indexOf('--langs');
+  return i === -1 ? null : String(process.argv[i + 1] || '').split(',').filter(Boolean);
+}
+
 function loadCatalogue() {
-  LANGS = LANGS.filter(({ code }) => existsSync(join(I18N_DIR, `${code}.json`)));
+  const wanted = requestedLangs();
+  LANGS = LANGS.filter(({ code }) => existsSync(join(I18N_DIR, `${code}.json`)) && (!wanted || wanted.includes(code)));
   if (!LANGS.some((l) => l.code === DEFAULT_LANG)) {
     throw new Error(`Missing default translation file: build/i18n/${DEFAULT_LANG}.json`);
   }
   const catalogue = {};
   for (const { code } of LANGS) {
     catalogue[code] = JSON.parse(readFileSync(join(I18N_DIR, `${code}.json`), 'utf8'));
+  }
+  // es.json is the reference: every other language must have exactly its keys.
+  for (const { code } of LANGS) {
+    if (code === DEFAULT_LANG) continue;
+    const errors = schemaErrors(catalogue[code], catalogue[DEFAULT_LANG]);
+    if (errors.length) {
+      throw new Error(`${code}.json does not match es.json:\n  ${errors.slice(0, 10).join('\n  ')}${errors.length > 10 ? `\n  … and ${errors.length - 10} more` : ''}`);
+    }
   }
   return catalogue;
 }
@@ -540,18 +654,16 @@ function ctxFor(lang, page) {
 }
 
 function outPathFor(lang, page) {
-  const langSeg = lang === DEFAULT_LANG ? '' : `${lang}/`;
-  return join(ROOT, `${langSeg}${page.seg}index.html`);
+  return join(ROOT, `${langSegment(lang)}${page.seg}index.html`);
 }
 
-/** Remove generated language folders + root pages from a previous run so that
+/** Remove the generated language folders of a previous run (the `i18n/` folder
+ *  and the old layout, where each language lived at the site root) so that
  *  removing a language or page never leaves stale files behind. */
 function clean() {
-  for (const { code } of LANGS) {
-    if (code === DEFAULT_LANG) continue;
-    const dir = join(ROOT, code);
-    if (existsSync(dir)) rmSync(dir, { recursive: true, force: true });
-  }
+  const codes = ['es', 'en', 'ca', 'fr', 'de', 'it', 'pt', 'ru', 'zh', 'hi', 'ar'].filter((c) => c !== DEFAULT_LANG);
+  const dirs = [join(ROOT, LANG_ROOT), ...codes.map((c) => join(ROOT, c))];
+  for (const dir of dirs) if (existsSync(dir)) rmSync(dir, { recursive: true, force: true });
 }
 
 function build() {

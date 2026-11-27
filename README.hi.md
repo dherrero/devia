@@ -36,11 +36,11 @@
 
 यह रिपॉज़िटरी **Devia Desktop की सार्वजनिक साइट** को होस्ट करती है: दस्तावेज़, डाउनलोड पेज, प्रकाशित बिल्ड (Releases के रूप में) और वह update feed जिसे ऐप जाँचता है।
 
-> **स्रोत कोड यहाँ नहीं है।** Devia Desktop एक **FreeWare** है: मुफ़्त और 100% सुविधाओं के साथ, लेकिन क्लोज़्ड-सोर्स। यह रिपॉज़िटरी इसलिए मौजूद है ताकि इसे इंस्टॉल करना, दस्तावेज़ पढ़ना और समस्याएँ रिपोर्ट करना आसान और पारदर्शी हो।
+> **स्रोत कोड [dherrero/devia-app](https://github.com/dherrero/devia-app) में है।** Devia Desktop **ओपन सोर्स** है (Apache-2.0): मुफ़्त और 100% सुविधाओं के साथ। यह रिपॉज़िटरी इसलिए मौजूद है ताकि इसे इंस्टॉल करना, दस्तावेज़ पढ़ना और समस्याएँ रिपोर्ट करना आसान और पारदर्शी हो।
 
 ## Devia Desktop क्या है?
 
-एक डेस्कटॉप ऐप (Windows, macOS और Linux) जो agentic CLI tools के साथ काम को एक visual, व्यवस्थित और multi-project अनुभव में बदल देती है: streaming chat और diff viewer, git worktrees में अलग-अलग चलने वाले 4 तक agents की split view, एकीकृत spec-driven kanban, persistent memory, MCP server manager, Telegram के ज़रिए remote control, local voice transcription और बहुत कुछ।
+एक मुफ़्त और ओपन सोर्स डेस्कटॉप ऐप (Windows, macOS और Linux) जो एक ही विंडो से CLI coding agents को चलाने देती है: Claude Code, Codex, Gemini CLI, OpenCode और कुल 13 agents। इसमें streaming chat और diff viewer, git worktrees में अलग-अलग चलने वाले 4 तक agents की split view, spec-driven kanban और agent द्वारा पढ़ी और अपडेट की जाने वाली persistent memory, अपना code graph, MCP server manager, interactive cards, Claude Code, Codex और Grok से sessions का import, Telegram से remote control और बहुत कुछ शामिल है। सब कुछ स्थानीय रूप से चलता है।
 
 सभी विवरण [दस्तावेज़](https://dherrero.github.io/devia/docs/) में।
 
@@ -64,7 +64,7 @@ Devia Desktop में कोई bug मिला या कोई विचा
 ```
 .
 ├── index.html  docs/  descargas/   # स्पैनिश में पेज (डिफ़ॉल्ट भाषा, रूट में)
-├── en/  fr/  de/  …                 # हर भाषा के लिए एक फ़ोल्डर (कुल 11) समान पेजों के साथ
+├── i18n/en/  i18n/fr/  …          # हर भाषा के लिए एक फ़ोल्डर (कुल 11) समान पेजों के साथ
 ├── 404.html                        # Error पेज
 ├── updates/                        # Update manifest (+ प्रति-प्लेटफ़ॉर्म feeds)
 ├── assets/                         # CSS, JS और logo
@@ -75,4 +75,4 @@ Devia Desktop में कोई bug मिला या कोई विचा
 
 ---
 
-<p align="center">© 2026 Dani Herrero · Devia Desktop एक FreeWare है</p>
+<p align="center">© 2026 Dani Herrero · Devia Desktop ओपन सोर्स है (Apache-2.0)</p>

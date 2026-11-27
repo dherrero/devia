@@ -96,10 +96,10 @@
   function apply(manifest) {
     if (!manifest || !manifest.version) return;
 
-    var heroVersion = document.getElementById('hero-version');
-    if (heroVersion) {
-      heroVersion.textContent = (i18n.heroVersionLabel || 'v') + manifest.version;
-      heroVersion.hidden = false;
+    var homeVersion = document.getElementById('home-version');
+    if (homeVersion) {
+      homeVersion.textContent = (i18n.heroVersionLabel || 'v') + manifest.version;
+      homeVersion.hidden = false;
     }
 
     var dlVersion = document.getElementById('dl-version');
@@ -127,6 +127,12 @@
         }
       }
     });
+
+    // Highlight the first available download for the visitor's system.
+    var ua = (navigator.userAgent || '') + ' ' + (navigator.platform || '');
+    var os = /Win/i.test(ua) ? 'win32-x64' : /Mac/i.test(ua) ? 'darwin' : /Linux|X11/i.test(ua) ? 'linux' : null;
+    var mine = os && document.querySelector('.platform[data-platform="' + os + '"] .dl-btn:not([hidden])');
+    if (mine) mine.classList.add('key-primary');
 
     document.querySelectorAll('.dl-fallback').forEach(function (el) {
       var entry = platforms[el.dataset.key];

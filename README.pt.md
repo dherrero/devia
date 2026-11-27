@@ -36,11 +36,11 @@
 
 Este repositório aloja o **site público do Devia Desktop**: a documentação, a página de transferências, as builds publicadas (como Releases) e o feed de atualizações que a aplicação consulta.
 
-> **O código-fonte não está aqui.** O Devia Desktop é **FreeWare**: gratuito e com 100% das funcionalidades, mas de código fechado. Este repositório existe para tornar fácil e transparente instalá-lo, consultar a documentação e reportar problemas.
+> **O código-fonte está em [dherrero/devia-app](https://github.com/dherrero/devia-app).** O Devia Desktop é **código aberto** (Apache-2.0): gratuito e com 100% das funcionalidades. Este repositório existe para tornar fácil e transparente instalá-lo, consultar a documentação e reportar problemas.
 
 ## O que é o Devia Desktop?
 
-Uma aplicação de ambiente de trabalho (Windows, macOS e Linux) que transforma o trabalho com ferramentas CLI agênticas numa experiência visual, organizada e multiprojeto: chat com streaming e visualizador de diffs, vista dividida com até 4 agentes em paralelo isolados em git worktrees, kanban spec-driven integrado, memória persistente, gestor de servidores MCP, controlo remoto por Telegram, transcrição de voz local e mais.
+Uma aplicação de ambiente de trabalho (Windows, macOS e Linux), gratuita e de código aberto, para dirigir agentes de programação CLI a partir de uma única janela: Claude Code, Codex, Gemini CLI, OpenCode e 13 agentes no total. Inclui chat com streaming e visualizador de diffs, vista dividida com até 4 agentes em paralelo isolados em git worktrees, um kanban spec-driven e uma memória persistente que o agente lê e atualiza, um grafo de código próprio, gestor de servidores MCP, cartões interativos, importação de sessões do Claude Code, Codex e Grok, controlo remoto por Telegram e mais. Tudo funciona em local.
 
 Todos os detalhes na [documentação](https://dherrero.github.io/devia/docs/).
 
@@ -64,7 +64,7 @@ Encontraste um erro no Devia Desktop ou tens uma ideia? **As [Issues](https://gi
 ```
 .
 ├── index.html  docs/  descargas/   # Páginas em espanhol (idioma por omissão, na raiz)
-├── en/  fr/  de/  …                 # Uma pasta por idioma (11 no total) com as mesmas páginas
+├── i18n/en/  i18n/fr/  …          # Uma pasta por idioma (11 no total) com as mesmas páginas
 ├── 404.html                        # Página de erro
 ├── updates/                        # Manifesto de atualizações (+ feeds por plataforma)
 ├── assets/                         # CSS, JS e logótipo
@@ -75,4 +75,4 @@ Site estático multilingue (11 idiomas), servido com GitHub Pages. As páginas `
 
 ---
 
-<p align="center">© 2026 Dani Herrero · O Devia Desktop é FreeWare</p>
+<p align="center">© 2026 Dani Herrero · O Devia Desktop é código aberto (Apache-2.0)</p>

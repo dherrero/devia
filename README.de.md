@@ -36,11 +36,11 @@
 
 Dieses Repository beherbergt die **öffentliche Website von Devia Desktop**: die Dokumentation, die Download-Seite, die veröffentlichten Builds (als Releases) und den Update-Feed, den die Anwendung abfragt.
 
-> **Der Quellcode befindet sich nicht hier.** Devia Desktop ist **FreeWare**: kostenlos und mit 100 % der Funktionen, aber mit geschlossenem Quellcode. Dieses Repository existiert, um die Installation, die Dokumentation und das Melden von Problemen einfach und transparent zu machen.
+> **Der Quellcode liegt in [dherrero/devia-app](https://github.com/dherrero/devia-app).** Devia Desktop ist **Open Source** (Apache-2.0): kostenlos und mit 100 % der Funktionen. Dieses Repository existiert, um die Installation, die Dokumentation und das Melden von Problemen einfach und transparent zu machen.
 
 ## Was ist Devia Desktop?
 
-Eine Desktop-App (Windows, macOS und Linux), die die Arbeit mit agentischen CLI-Tools in ein visuelles, strukturiertes und multiprojektfähiges Erlebnis verwandelt: Streaming-Chat mit Diff-Viewer, geteilte Ansicht mit bis zu 4 parallel laufenden Agenten, isoliert in git worktrees, integriertes spec-driven Kanban, persistenter Speicher, MCP-Server-Manager, Fernsteuerung über Telegram, lokale Sprachtranskription und mehr.
+Eine Desktop-App (Windows, macOS und Linux), kostenlos und Open Source, um CLI-Coding-Agenten aus einem einzigen Fenster zu steuern: Claude Code, Codex, Gemini CLI, OpenCode und insgesamt 13 Agenten. Sie bietet Streaming-Chat mit Diff-Viewer, eine geteilte Ansicht mit bis zu 4 parallel laufenden Agenten, isoliert in git worktrees, ein spec-driven Kanban und ein persistentes Gedächtnis, das der Agent liest und aktualisiert, einen eigenen Code-Graphen, einen MCP-Server-Manager, interaktive Karten, den Import von Sitzungen aus Claude Code, Codex und Grok, Fernsteuerung über Telegram und mehr. Alles läuft lokal.
 
 Alle Details in der [Dokumentation](https://dherrero.github.io/devia/docs/).
 
@@ -64,7 +64,7 @@ Hast du einen Fehler in Devia Desktop gefunden oder eine Idee? **Die [Issues](ht
 ```
 .
 ├── index.html  docs/  descargas/   # Seiten auf Spanisch (Standardsprache, im Wurzelverzeichnis)
-├── en/  fr/  de/  …                 # Ein Ordner pro Sprache (11 insgesamt) mit denselben Seiten
+├── i18n/en/  i18n/fr/  …          # Ein Ordner pro Sprache (11 insgesamt) mit denselben Seiten
 ├── 404.html                        # Fehlerseite
 ├── updates/                        # Update-Manifest (+ Feeds pro Plattform)
 ├── assets/                         # CSS, JS und Logo
@@ -75,4 +75,4 @@ Statische mehrsprachige Website (11 Sprachen), bereitgestellt über GitHub Pages
 
 ---
 
-<p align="center">© 2026 Dani Herrero · Devia Desktop ist FreeWare</p>
+<p align="center">© 2026 Dani Herrero · Devia Desktop ist Open Source (Apache-2.0)</p>

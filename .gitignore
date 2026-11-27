@@ -1,3 +1,7 @@
 .claude/settings.local.json
 .playwright-mcp/
 node_modules/
+.hallmark/shots/
+.hallmark/before/
+.hallmark/*.json.bak
+.DS_Store

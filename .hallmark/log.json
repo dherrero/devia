@@ -1,0 +1,25 @@
+[
+ {
+  "shape": "Narrative Workflow",
+  "theme": "cobalt",
+  "axes": "light/grotesk-sans/cool",
+  "hero": "Settled",
+  "nav": "edge-aligned",
+  "footer": "mast",
+  "imagery": "product built in a slot",
+  "entry": "Devia site redesign (es,en)",
+  "sections": [
+   "Hero",
+   "Stage x5",
+   "Band",
+   "Close"
+  ],
+  "signature": "diff viewer with plan/apply/apply-yolo modes",
+  "waived": [
+   "84"
+  ],
+  "prompt": "Devia Desktop site, developer tool, technical tone",
+  "date": "2026-11-25",
+  "mode": "build"
+ }
+]

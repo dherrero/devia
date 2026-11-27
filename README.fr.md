@@ -36,11 +36,11 @@
 
 Ce dépôt héberge le **site public de Devia Desktop** : la documentation, la page de téléchargements, les builds publiées (en tant que Releases) et le flux de mises à jour que l'application consulte.
 
-> **Le code source ne se trouve pas ici.** Devia Desktop est un **FreeWare** : gratuit et avec 100 % de ses fonctionnalités, mais à code fermé. Ce dépôt existe pour rendre son installation, sa documentation et le signalement de problèmes faciles et transparents.
+> **Le code source se trouve dans [dherrero/devia-app](https://github.com/dherrero/devia-app).** Devia Desktop est **open source** (Apache-2.0) : gratuit et avec 100 % de ses fonctionnalités. Ce dépôt existe pour rendre son installation, sa documentation et le signalement de problèmes faciles et transparents.
 
 ## Qu'est-ce que Devia Desktop ?
 
-Une application de bureau (Windows, macOS et Linux) qui transforme le travail avec les outils CLI agentiques en une expérience visuelle, organisée et multi-projets : chat en streaming et visionneuse de diffs, vue divisée avec jusqu'à 4 agents en parallèle isolés dans des git worktrees, kanban spec-driven intégré, mémoire persistante, gestionnaire de serveurs MCP, contrôle à distance via Telegram, transcription vocale locale et plus encore.
+Une application de bureau (Windows, macOS et Linux), gratuite et open source, pour piloter des agents de codage CLI depuis une seule fenêtre : Claude Code, Codex, Gemini CLI, OpenCode et 13 agents au total. Elle propose un chat en streaming avec visionneuse de diffs, une vue divisée avec jusqu'à 4 agents en parallèle isolés dans des git worktrees, un kanban spec-driven et une mémoire persistante que l'agent lit et met à jour, un graphe de code propre, un gestionnaire de serveurs MCP, des cartes interactives, l'import de sessions de Claude Code, Codex et Grok, le contrôle à distance via Telegram, et plus encore. Tout fonctionne en local.
 
 Tous les détails dans la [documentation](https://dherrero.github.io/devia/docs/).
 
@@ -64,7 +64,7 @@ Vous avez trouvé un bug dans Devia Desktop ou vous avez une idée ? **Les [Issu
 ```
 .
 ├── index.html  docs/  descargas/   # Pages en espagnol (langue par défaut, à la racine)
-├── en/  fr/  de/  …                 # Un dossier par langue (11 au total) avec les mêmes pages
+├── i18n/en/  i18n/fr/  …          # Un dossier par langue (11 au total) avec les mêmes pages
 ├── 404.html                        # Page d'erreur
 ├── updates/                        # Manifeste de mises à jour (+ flux par plateforme)
 ├── assets/                         # CSS, JS et logo
@@ -75,4 +75,4 @@ Site statique multilingue (11 langues), servi via GitHub Pages. Les pages `*.htm
 
 ---
 
-<p align="center">© 2026 Dani Herrero · Devia Desktop est un FreeWare</p>
+<p align="center">© 2026 Dani Herrero · Devia Desktop est open source (Apache-2.0)</p>
